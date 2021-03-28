@@ -1,0 +1,155 @@
+.chats {
+	list-style-type: none;
+	margin: 0;
+	padding: rem(12px) rem(15px) rem(15px);
+	
+	& > li {
+		& + li {
+			margin-top: rem(15px);
+			
+			@include clearfix();
+		}
+	}
+	& > div {
+		& + div {
+			margin-top: rem(15px);
+			
+			@include clearfix();
+		}
+	}
+	& .name {
+		color: $dark;
+		display: block;
+		margin-bottom: rem(5px);
+		font-weight: 500;
+		text-decoration: none;
+		
+		& .label {
+			font-size: rem(8px);
+			padding: rem(1px) rem(4px) rem(2px);
+			margin-left: rem(3px);
+			position: relative;
+			top: rem(-1px);
+		}
+	}
+	& .date-time {
+		font-size: rem(10px);
+		display: block;
+		float: right;
+		color: lighten($dark, 30%);
+		margin-top: rem(3px);
+		font-weight: 500;
+		
+		@if $enable-rtl {
+			float: left;
+		}
+	}
+	& .image {
+		float: left;
+		width: rem(60px);
+		height: rem(60px);
+		overflow: hidden;
+		
+		@include border-radius($border-radius);
+		@if $enable-rtl {
+			float: right;
+		}
+		
+		& img {
+			max-width: 100%;
+		}
+		& + .message {
+			margin-left: rem(75px);
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: rem(75px);
+			}
+		}
+	}
+	& .message {
+		padding: rem(7px) rem(12px);
+		font-size: rem(12px);
+		position: relative;
+		background: $white;
+		
+		@include border-radius($border-radius * 3);
+		
+		&:before {
+			content: '';
+			position: absolute;
+			left: rem(-13px);
+			top: rem(15px);
+			border: 7px solid transparent;
+			border-right-color: $white;
+			
+			@if $enable-rtl {
+				left: auto;
+				right: rem(-13px);
+				border-right-color: transparent;
+				border-left-color: $white;
+			}
+		}
+	}
+	& .right {
+		& .name {
+			text-align: right;
+			
+			@if $enable-rtl {
+				text-align: left;
+			}
+		}
+		& .date-time {
+			float: left;
+			
+			@if $enable-rtl {
+				float: right;
+			}
+		}
+		& .image {
+			float: right;
+			
+			@if $enable-rtl {
+				float: left;
+			}
+			
+			& + .message {
+				margin-left: 0;
+				margin-right: rem(75px);
+				
+				@if $enable-rtl {
+					margin-right: 0;
+					margin-left: rem(75px);
+				}
+			}
+		}
+		& .message {
+			text-align: right;
+			
+			&:before {
+				left: auto;
+				right: rem(-13px);
+				border-right-color: transparent;
+				border-left-color: $white;
+				
+				@if $enable-rtl {
+					right: auto;
+					left: rem(-13px);
+					border-right-color: $white;
+					border-left-color: transparent;
+				}
+			}
+		}
+	}
+}
+.panel-body .chats {
+	padding: 0;
+}
+.slimScrollDiv .chats {
+	padding-right: rem(15px);
+	
+	@if $enable-rtl {
+		padding-right: 0;
+		padding-left: rem(15px);
+	}
+}

@@ -1,0 +1,220 @@
+$pos-stock-header-height: rem(52px);
+
+.pos-stock {
+	padding-top: $pos-stock-header-height;
+	
+	@include media-breakpoint-up(lg) {
+		height: 100%;
+	
+		@include display-flex();
+		@include flex-direction-column();
+	}
+	
+	& .pos-stock-header {
+		background: $white;
+		padding: rem(10px) rem(25px);
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: $header-zindex;
+		height: $pos-stock-header-height;
+		
+		@include display-flex();
+		@include flex-align(center);
+		
+		& .logo,
+		& .time,
+		& .nav {
+			width: 33.33%;
+			
+			@include media-breakpoint-down(sm) {
+				width: 50%;
+			}
+		}
+		& .logo {
+			@include display-flex();
+			
+			& > div,
+			& > a {
+				text-align: center;
+				color: $black;
+				text-decoration: none;
+				
+				@include display-flex();
+				@include flex-align(center);
+				
+				& .logo-img {
+					& img {
+						height: rem(32px);
+					}
+				}
+				& .logo-text {
+					font-size: rem(16px);
+					letter-spacing: rem(1px);
+					
+					@if $enable-rtl {
+						margin-right: rem(15px);
+					} @else {
+						margin-left: rem(15px);
+					}
+				}
+			}
+		}
+		& .time {
+			font-weight: 600;
+			font-size: rem(20px);
+			
+			@include display-flex();
+			@include flex-align(center);
+			@include flex-justify-content(center);
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+		& .nav {
+			@include flex-align(center);
+			@include flex-justify-content(flex-end);
+			
+			& .nav-item {
+				& .nav-link {
+					padding: rem(5px) rem(15px);
+					font-weight: 600;
+					font-size: rem(13px);
+					color: $gray-900;
+					
+					@include display-flex();
+					@include flex-align(center);
+					
+					@include media-breakpoint-down(sm) {
+						padding: rem(5px) rem(10px);
+					}
+					& .nav-icon {
+						height: rem(20px);
+						color: $gray-900;
+					}
+					& .nav-img {
+						height: rem(30px);
+						
+						@include border-radius(30px);
+						
+						& + .nav-text {
+							margin-left: rem(10px);
+						}
+					}
+					& .nav-text {
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+	& .pos-stock-body {
+		height: calc(100% - 52px);
+		background: $gray-900;
+		
+		@include flex(1);
+		@include display-flex();
+		
+		& .pos-stock-content {
+			@include flex(1);
+			
+			& .pos-stock-content-container {
+				padding: rem(1px);
+				height: 100%;
+				
+				& .pos-stock-product {
+					height: 100%;
+					padding: rem(1px);
+					
+					& .pos-stock-product-container {
+						background: $white;
+						height: 100%;
+						
+						& .product {
+							height: 100%;
+							
+							@include display-flex();
+							@include flex-direction-column();
+							
+							& .product-img {
+								& .img {
+									padding-top: 56.25%;
+									padding-top: 75%;
+									background-size: cover;
+									background-position: center;
+									background-repeat: no-repeat;
+								}
+							}
+							& .product-info {
+								padding: rem(15px) rem(20px);
+								
+								@include flex(1);
+								
+								& .title {
+									font-size: $font-size-lg;
+									font-weight: 600;
+								}
+								& .desc {
+									color: $gray-700;
+									margin-bottom: rem(15px);
+								}
+							}
+							& .product-option {
+								margin: 0 0 rem(5px);
+								
+								& .option {
+									padding: rem(0);
+									@include flex(1);
+									@include display-flex();
+									@include flex-align(center);
+									
+									& .option-label {
+										font-weight: 600;
+										padding-right: rem(10px);
+										width: rem(90px);
+									}
+									& .option-input {
+										@include flex(1);
+										
+										& .form-control {
+											border-width: 2px;
+											font-weight: 600;
+											font-size: $font-size-lg;
+											height: rem(34px);
+											padding: rem(3px) rem(10px);
+										}
+									}
+									& + .option {
+										padding-top: rem(15px);
+									}
+								}
+							}
+							& .product-action {
+								@include display-flex();
+								
+								& .btn {
+									font-weight: 600;
+									padding: rem(12px) 0;
+									@include flex(1);
+									@include border-radius(0);
+									
+									&.btn-default {
+										border: none;
+										background: $gray-100;
+						
+										&:hover,
+										&:focus {
+											background: $gray-300;
+										}
+									}
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

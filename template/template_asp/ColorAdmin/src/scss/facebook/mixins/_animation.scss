@@ -1,0 +1,19 @@
+@mixin animation($setting) {
+	-webkit-animation: $setting;
+	-moz-animation: $setting;
+	-ms-animation: $setting;
+	-o-animation: $setting;
+	animation: $setting;
+}
+@mixin animation-duration($setting) {
+	-webkit-animation-duration: $setting;
+	animation-duration: $setting;
+}
+@mixin animation-fill-mode($setting) {
+	-webkit-animation-fill-mode: $setting;
+	animation-fill-mode: $setting;
+}
+@mixin animation-delay($setting) {
+	-webkit-animation-delay: $setting;
+	animation-delay: $setting;
+}

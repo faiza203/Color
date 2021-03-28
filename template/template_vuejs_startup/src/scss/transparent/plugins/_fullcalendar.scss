@@ -1,0 +1,291 @@
+.fc {
+	@if $enable-rtl {
+		direction: rtl;
+		text-align: right;
+	}
+	
+	& .fc-toolbar {
+		&.fc-toolbar-chunk,
+		&.fc-header-toolbar {
+			margin-bottom: 0;
+			
+			@include clearfix();
+		
+			& h2 {
+				font-size: rem(20px);
+				line-height: rem(30px);
+				margin-bottom: rem(10px);
+			}
+		
+			& .fc-button-group {
+				margin-bottom: rem(10px);
+				
+				& .fc-button {
+					text-shadow: none;
+					background: rgba($white, .25);
+					text-transform: capitalize;
+					font-weight: 600;
+					border: none;
+					padding: rem(6px) rem(12px);
+					height: auto;
+					color: $white;
+					margin: 0;
+				
+					@include box-shadow(none);
+					@include transition(all .1s linear);
+				
+					& + .fc-button {
+						margin-left: 1px;
+					}
+					
+					& .fc-icon {
+						margin: 0 rem(-3px);
+						top: 0;
+						
+						& .fc-icon-left-single-arrow, {
+							@include fontawesome();
+							
+							&:after {
+								content: '\f0d9';
+							}
+						}
+						& .fc-icon-right-single-arrow {
+							@include fontawesome();
+							
+							&:after {
+								content: '\f0da';
+							}
+						}
+					}
+					
+					&.fc-state-disabled {
+						opacity: 1;
+						color: lighten($dark, 45%);
+						cursor: not-allowed;
+					}
+					&.fc-state-active {
+						background: $white;
+						color: $dark;
+						
+						&:hover,
+						&:focus {
+							color: $dark;
+						}
+					}
+					&:hover,
+					&:focus {
+						color: $white;
+						outline: none;
+					}
+					
+					&.fc-prev-button,
+					&.fc-next-button {
+						color: $white;
+						
+						&:hover,
+						&:focus {
+							color: $white;
+						}
+					}
+					&.fc-today-button {
+						color: $white;
+						
+						&.fc-state-disabled {
+							color: lighten($dark, 65%);
+							cursor: not-allowed;
+						}
+					}
+				}
+			}
+		}
+	}
+	& .fc-view-container {
+		background: rgba(mix($white, $black, 15%), .65);
+		
+		& .fc-head {
+			& .fc-head-container {
+				border: none;
+				
+				& .fc-widget-header {
+					border-bottom: 1px solid rgba($white, .15);
+					
+					& th {
+						background: rgba($white, .25);
+						font-weight: 600;
+						color: $white;
+						padding: rem(2px) rem(15px);
+						border-color: rgba($white, .15);
+						
+						&.fc-axis {
+							padding-left: rem(4px);
+							padding-right: rem(4px);
+						}
+					}
+				}
+			}
+		}
+		& .fc-body {
+			& > tr {
+				& > td {
+					&.fc-widget-content {
+						border: none;
+						
+						& .fc-divider {
+							background: rgba($white, .5);
+							border-color: transparent;
+						}
+						& .fc-widget-content {
+							border-color: rgba($white, .15);
+						}
+					}
+				}
+			}
+			& .fc-bg {
+				& td {
+					border-color: lighten($border-color, 5%);
+				
+					&.fc-highlight {
+						background: lighten($dark, 65%);
+					}
+					&.fc-today {
+						background: rgba(mix($white, $yellow, 50%), .35);
+					}
+				
+					&:first-child {
+						border-left: none;
+					}
+				}
+			}
+			& .fc-content-skeleton {
+				& .fc-day-number {
+					font-weight: 600;
+				}
+				& .fc-event-container {
+					& .fc-event {
+						border: none;
+						background: lighten($dark, 45%);
+						font-weight: 600;
+						color: $white;
+
+						@include border-radius(0);
+			
+						&.fc-day-grid-event {
+							padding: rem(1px) rem(2px);
+						}
+					}
+				}
+			}
+			& .fc-highlight-skeleton {
+				& .fc-highlight {
+					background: lighten($dark, 65%);
+				}
+			}
+		}
+	}
+	& .fc-scroller {
+		overflow: initial;
+		height: auto !important;
+	}
+	& .fc-time,
+	& .fc-axis {
+		font-weight: 600;
+	}
+	& .fc-event,
+	& a.fc-event,
+	& a.fc-event:not([href]) {
+		border: none;
+		background: lighten($dark, 15%);
+		font-weight: 600;
+		color: $white;
+
+		@include border-radius(0);
+		
+		&:hover,
+		&:focus {
+			color: $white;
+			opacity: 0.85;
+		}
+
+		&.fc-day-grid-event {
+			padding: rem(1px) rem(2px);
+		}
+	}
+}
+.fc-event-list {
+	& .fc-event {
+		background: none;
+		border: none;
+		color: $white;
+		padding: rem(7px) rem(10px) rem(7px) rem(35px);
+		font-size: rem(12px);
+		line-height: rem(16px);
+		position: relative;
+		background: rgba($white, .25);
+		margin-bottom: rem(5px);
+		
+		@include border-radius($border-radius);
+		
+		& + .fc-event {
+			margin-top: 0;
+		}
+		& .fc-event-icon {
+			float: right;
+			margin-left: rem(10px);
+			
+			& i {
+				float: left;
+				line-height: rem(18px);
+			}
+		}
+		&.ui-draggable-dragging {
+			border: none;
+		}
+		&:before {
+			content: '\f0b2';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: rem(25px);
+			text-align: center;
+			padding-top: rem(7px);
+			padding-bottom: rem(7px);
+			background: rgba($black, .25);
+			color: lighten($dark, 60%);
+			font-size: rem(14px);
+			
+			@include fontawesome();
+			@include border-radius($border-radius 0 0 $border-radius);
+		}
+		&:hover,
+		&:focus {
+			color: $dark;
+			cursor: pointer;
+			background: $white;
+			
+			&:before {
+				color: lighten($dark, 30%);
+			}
+		}
+	}
+}
+
+
+.fc-event.fc-event-dragging {
+	background: $black;
+	
+	@include box-shadow($box-shadow-lg);
+	@include display-flex();
+	@include flex-align(center);
+	@include border-radius($border-radius);
+	
+	& .fc-event-icon {
+		@if $enable-rtl {
+			margin-left: rem(10px);
+			margin-right: rem(10px);
+		} @else {
+			margin-right: rem(10px);
+			margin-left: rem(10px);
+		}
+	}
+}

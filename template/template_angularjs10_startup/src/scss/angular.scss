@@ -1,0 +1,832 @@
+@import 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import 'node_modules/@swimlane/ngx-datatable/themes/bootstrap.scss';
+@import 'default/styles';
+
+/* Perfect Scrollbar */
+.ps {
+	& .ps__rail-x {
+		z-index: 10;
+
+		&:focus,
+		&:hover,
+		&.ps--clicking {
+			background: none;
+		}
+	}
+	& .ps__rail-y {
+		z-index: 10;
+		width: 6px !important;
+		background: none !important;
+
+		&:focus,
+		&:hover,
+		&.ps--clicking {
+			width: 6px !important;
+			background: none !important;
+
+			& .ps__thumb-y,
+			& > .ps__thumb_y {
+				width: 6px !important;
+			}
+		}
+	}
+}
+.page-sidebar-minified {
+	& .sidebar {
+		& .ps {
+			& .ps__rail-x,
+			& .ps__rail-y {
+				display: none !important;
+			}
+		}
+	}
+}
+
+
+/* Countdown Timer */
+.countdown-section {
+	display: block;
+	text-align: center;
+
+  .countdown-show1 & {
+    width: 98%;
+  }
+  .countdown-show2 & {
+    width: 48%;
+  }
+  .countdown-show3 & {
+    width: 32.5%;
+  }
+  .countdown-show4 & {
+    width: 24.5%;
+  }
+  .countdown-show5 & {
+    width: 19.5%;
+  }
+  .countdown-show6 & {
+    width: 16.25%;
+  }
+  .countdown-show7 & {
+    width: 14%;
+  }
+}
+.countdown-period {
+  display: block;
+}
+
+
+/* Calendar */
+.fc {
+  & .fc-toolbar {
+    display: block;
+
+    & > * {
+      & > * {
+        float: none;
+      }
+    }
+  }
+}
+
+
+/* Material Header Sort */
+.mat-sort-header-sorted {
+  & .mat-sort-header-button {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
+/* Ng Bootstrap Datepicker */
+ngb-datepicker {
+  border: none;
+
+  &.dropdown-menu {
+    padding: 5px;
+
+    @include border-radius($border-radius-lg);
+  }
+  & .ngb-dp-header {
+    background: none;
+
+    & ngb-datepicker-navigation-select {
+      & > .custom-select {
+        font-size: 12px;
+        height: 26px;
+        margin: 0 5px;
+      }
+    }
+  }
+  & .ngb-dp-months {
+    & .ngb-dp-month {
+      & ngb-datepicker-month-view {
+        & .ngb-dp-week {
+          border: none;
+          background: none !important;
+
+          & .ngb-dp-weekday {
+            font-style: initial;
+            font-size: 12px;
+            font-weight: bold;
+            color: $dark;
+          }
+          & .ngb-dp-day {
+            font-weight: 600;
+
+            &:focus {
+              outline: none;
+            }
+            & .btn-light {
+              color: lighten($dark, 30%);
+
+              &:hover,
+              &:focus,
+              &:active {
+                background: lighten($dark, 75%);
+                color: $dark;
+              }
+              &:focus,
+              &:active,
+              &.active {
+                outline: none !important;
+
+                @include box-shadow(none !important);
+              }
+              &.bg-primary {
+                color: $white;
+                background: $form-component-active-bg !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Tag Input */
+.ng2-tag-input {
+  border: 1px solid lighten($border-color, 5%) !important;
+  padding: 3px 12px !important;
+  min-height: 34px !important;
+
+  @include border-radius($border-radius);
+
+  & .ng2-tags-container {
+    & tag {
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: 0;
+      font-weight: 600;
+      padding: 3px 8px;
+      height: auto;
+      line-height: 16px;
+      background: $form-component-active-bg;
+      color: $white;
+
+      @include border-radius($border-radius-sm);
+
+      & svg {
+        height: 16px !important;
+      }
+    }
+    & .ng2-tag-input__text-input {
+      height: 24px;
+      font-size: 12px;
+      font-weight: 500;
+      color: $dark;
+
+      @include placeholder(lighten($dark, 30%));
+    }
+  }
+}
+.inbox .email-to .form-control {
+  height: auto;
+  min-height: 34px;
+
+  & .ng2-tag-input {
+    height: auto !important;
+    border: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: -5px;
+    margin-bottom: -5px;
+  }
+}
+
+
+/* Angular Calendar */
+.angular-calendar-inline {
+  & .cal-month-view {
+    & .cal-header {
+      border-bottom: 1px solid lighten($border-color, 5%);
+
+      & .cal-cell {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: $dark;
+        padding: 5px 10px;
+      }
+    }
+    & .cal-days {
+      border: none;
+
+      & .cal-cell-row {
+        &:hover {
+          background: none;
+        }
+        & .cal-cell {
+          position: relative;
+          min-height: initial;
+
+          &:hover,
+          &:focus {
+            background: lighten($dark, 75%);
+            color: $dark;
+          }
+          & .cal-cell-top {
+            position: relative;
+            min-height: initial;
+
+            & .cal-day-number {
+              color: lighten($dark, 30%);
+              font-size: 12px;
+              font-weight: 600;
+              margin-right: 3px;
+              margin-bottom: 3px;
+              margin-top: 20px;
+              min-width: 20px;
+              min-height: 20px;
+              opacity: 1;
+
+              @include border-radius(20px);
+              @include display-flex();
+              @include flex-align(center);
+              @include flex-justify-content(center);
+            }
+            & .cal-day-badge {
+              text-indent: 20px;
+              width: 5px;
+              height: 5px;
+              min-width: 3px;
+              padding: 0;
+              overflow: hidden;
+              position: absolute;
+              bottom: 25px;
+              margin: 0;
+              right: 11px;
+              background: $red;
+            }
+          }
+          & .cal-events {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            & .cal-event {
+              width: 5px;
+              height: 5px;
+              display: inline-block;
+              margin: 1px;
+              background: lighten($dark, 50%);
+
+              @include border-radius(50%);
+            }
+          }
+          &.cal-today {
+            background: none;
+
+            & .cal-cell-top {
+              & .cal-day-number {
+                background: $dark;
+                color: $white;
+              }
+            }
+          }
+          &.cal-event-highlight {
+            background: lighten($dark, 75%) !important;
+          }
+          &.cal-day-cell {
+            &:not(:last-child) {
+              border-right-color: lighten($border-color, 5%);;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Ngx Loading bar */
+ngx-loading-bar {
+	color: $primary !important;
+
+	& .ngx-spinner {
+    top: $header-height + $content-padding-y - 7 !important;
+    right: $content-padding-x - 20 !important;
+    left: auto !important;
+	}
+	& .ngx-bar {
+		background: $primary !important;
+    height: 2px !important;
+	}
+}
+
+
+/* Ngx Daterangepickr Material */
+.ngx-daterangepicker-action {
+  &.btn {
+    & .form-control {
+      height: auto;
+      width: auto;
+      display: inline-block;
+      background: none;
+      border: none;
+      color: inherit;
+      padding: 0;
+      font-weight: inherit;
+    }
+  }
+}
+.md-drppicker.shown {
+  color: $body-color;
+  font-size: $font-size-base;
+  z-index: 1020;
+  border: none;
+  font-family: inherit;
+  padding: 0;
+
+  @include border-radius($border-radius-lg);
+  @include box-shadow(0 6px 30px rgba($black, .2));
+  @if $enable-rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  &.double {
+    @media (max-width: 563px) {
+      width: rem(280px);
+    }
+  }
+
+  &:before {
+    display: none;
+  }
+  &:after {
+    border-width: rem(7px);
+    top: rem(-7px);
+    left: rem(10px);
+  }
+
+  & .calendar {
+    max-width: inherit;
+    padding: rem(15px);
+    margin: 0;
+
+    & .calendar-table {
+      padding: 0;
+
+      & table {
+        & thead {
+          & tr {
+            & th {
+              min-width: auto;
+              width: auto;
+              height: auto;
+              line-height: 1;
+              padding: rem(7px) rem(7px);
+              color: $dark;
+              font-weight: bold;
+              border: none;
+              display: table-cell;
+
+              &.prev,
+              &.next {
+                & span {
+                  border-color: $dark;
+                }
+                &:hover,
+                &:focus {
+                  background: $light;
+                  color: $dark;
+                }
+              }
+              &.month {
+                & .dropdowns {
+                  border: 1px solid $border-color;
+                  background: $white;
+                  font-size: rem(12px);
+                  padding: 1px;
+                  height: auto;
+                  margin: 0;
+                  cursor: default;
+
+                  @include border-radius($border-radius);
+                  @include transition(all .2s linear);
+
+                  &:focus {
+                    outline: none;
+                    border-color: $input-focus-border-color;
+
+                    @include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color ,.3));
+                  }
+                  & + .dropdowns {
+                    margin-left: rem(10px);
+                  }
+                }
+              }
+            }
+            &:last-child {
+              & th {
+                padding-bottom: rem(14px);
+              }
+            }
+          }
+        }
+        & tbody {
+          & tr {
+            & td {
+              min-width: auto;
+              width: auto;
+              height: auto;
+              line-height: 1;
+              padding: rem(7px) rem(9px);
+              font-weight: 600;
+              color: $dark;
+              border: none;
+              opacity: 1;
+
+              &.available {
+                @include border-radius($border-radius);
+
+                &:hover,
+                &:focus {
+                  background: $light;
+                }
+                &.in-range {
+                  background: lighten($form-component-active-bg, 40%);
+                  color: darken($form-component-active-color, 30%);
+
+                  @include border-radius(0);
+                }
+                &.active {
+                  background: $form-component-active-bg;
+                  color: $white;
+                }
+                &.start-date {
+                  @include border-radius($border-radius 0 0 $border-radius);
+                }
+                &.end-date {
+                  @include border-radius(0 $border-radius $border-radius 0);
+                }
+              }
+              &.off {
+                background: none;
+                color: lighten($dark, 60%);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.left {
+      padding: rem(10px) !important;
+
+      @media (min-width: 730px) {
+        clear: none !important;
+        border-left: 1px solid $border-color;
+      }
+
+      & .calendar-table {
+        padding: 0 !important;
+      }
+    }
+    &.right {
+      padding: rem(10px) !important;
+      border-left: 1px solid $border-color;
+
+      @media (min-width: 730px) {
+        clear: none !important;
+      }
+
+      @media (max-width: 563px) {
+        border-left: none;
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+  & .buttons {
+    padding: rem(10px);
+    clear: both;
+    text-align: right;
+    border-top: 1px solid $border-color;
+    line-height: 12px;
+    vertical-align: middle;
+    margin: 0;
+
+    & .btn {
+      margin-left: rem(8px);
+      font-size: rem(12px);
+      font-weight: bold;
+      padding: rem(4px) rem(8px);
+      line-height: rem(20px);
+      background-color: $blue;
+      border-color: $blue;
+
+      @include border-radius($border-radius-sm);
+      @include box-shadow(none !important);
+
+      @if $enable-rtl {
+        margin-left: 0;
+        margin-right: rem(8px);
+      }
+
+      &.btn-default {
+        color: $dark;
+        background-color: $light;
+        border-color: $light;
+
+        &.clear {
+          & svg {
+            height: rem(20px) !important;
+            width: rem(20px) !important;
+            margin-top: rem(-10px) !important;
+          }
+        }
+      }
+    }
+    & .drp-selected {
+      font-weight: 600;
+      color: lighten($dark, 30%);
+    }
+  }
+  & .ranges {
+    display: none;
+
+    @media (min-width: 730px) {
+      float: left;
+      min-width: rem(140px);
+    }
+  }
+  &.show-ranges {
+    & .ranges {
+      position: relative;
+      display: block;
+
+      @if $enable-rtl {
+        float: right;
+      }
+      @media (max-width: 991px) {
+        float: none;
+        margin: 0;
+        padding: rem(10px);
+        border-bottom: 1px solid $border-color;
+        overflow: scroll;
+        max-width: rem(560px);
+
+        @if $enable-rtl {
+          float: none;
+        }
+      }
+
+      & ul {
+        @media (max-width: 991px) {
+          width: auto;
+          padding-right: rem(10px);
+
+          @include display-flex();
+          @include flex-wrap(nowrap);
+        }
+
+        & li {
+          & button {
+            font-weight: 600;
+            color: lighten($dark, 30%);
+            white-space: nowrap;
+
+            @media (max-width: 991px) {
+              margin-right: rem(10px) !important;
+
+              @include border-radius($border-radius);
+            }
+            &:hover,
+            &:focus {
+              background: $light;
+              color: $dark;
+            }
+            &.active {
+              background: $form-component-active-bg;
+              color: $white;
+              margin-right: rem(-1px);
+            }
+          }
+        }
+      }
+    }
+    & .drp-calendar {
+      &.left {
+        border-left: 1px solid $border-color;
+
+        @if $enable-rtl {
+          border-left: none !important;
+        }
+        @media (max-width: 991px) {
+          border-left: none;
+        }
+      }
+      &.right {
+        @if $enable-rtl {
+          border-right: 1px solid $border-color;
+        }
+        @media (max-width: 991px) {
+          @if $enable-rtl {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Accordion */
+.card-accordion {
+  & ngb-accordion {
+    & .card {
+      border: none;
+
+      & + .card {
+        border-top: 1px solid $border-color;
+      }
+      & .card-header {
+        padding: 0;
+
+        & > .btn {
+          text-decoration: none;
+          padding: rem(12px) rem(15px);
+          display: block;
+          width: 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+
+/* ngx-datatable */
+.panel {
+	& > .table-responsive .ngx-datatable.bootstrap,
+	& > .ngx-datatable.bootstrap {
+		& .datatable-header {
+			& .datatable-header-inner {
+				& .datatable-header-cell {
+						&:first-child {
+							padding-left: rem(15px);
+						}
+						&:last-child {
+							padding-right: rem(15px);
+						}
+				}
+			}
+		}
+		& .datatable-body {
+			& .datatable-body-row {
+				& .datatable-row-center {
+					& .datatable-body-cell {
+						&:first-child {
+							padding-left: rem(15px);
+						}
+						&:last-child {
+							padding-right: rem(15px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.ngx-datatable.bootstrap {
+	& .datatable-header {
+		& .datatable-header-inner {
+			& .datatable-header-cell {
+				padding: $table-cell-padding;
+				font-weight: 600;
+				border-bottom: 1px solid #b8c1ca;
+				vertical-align: top;
+				line-height: inherit;
+
+				& .datatable-header-cell-template-wrap {
+					@include display-flex();
+					@include flex-align(center);
+
+					& .datatable-header-cell-wrapper {
+						@include flex(1);
+
+						& .datatable-header-cell-label {
+							display: block;
+						}
+					}
+					& .sort-btn {
+						@include fontawesome();
+
+						&.datatable-icon-sort-unset:before {
+							content: '\f0dc';
+							opacity: 0.25;
+						}
+						&.datatable-icon-up:before {
+							color: $component-active-bg;
+							content: '\f0de';
+						}
+						&.datatable-icon-down:before {
+							color: $component-active-bg;
+							content: '\f0dd';
+						}
+					}
+				}
+			}
+		}
+	}
+	& .datatable-body {
+		& .datatable-body-row {
+			border-top: none;
+
+			&.datatable-row-even {
+				background: $table-accent-bg;
+			}
+			& .datatable-row-center {
+				& .datatable-body-cell {
+					padding: $table-cell-padding;
+					vertical-align: top;
+					border-top: none;
+					border-bottom: 1px solid #e4e7ea;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+	& .datatable-footer {
+		background: none;
+		color: inherit;
+		margin-top: rem(-3px);
+
+		& .datatable-pager {
+			& ul {
+				& li {
+					& a {
+						padding: $pagination-padding-y $pagination-padding-x;
+						color: $pagination-color;
+						border: 1px solid $pagination-border-color;
+						min-width: inherit;
+						width: auto;
+						height: auto;
+						line-height: inherit;
+
+						@include border-radius($border-radius);
+
+						&:hover {
+							color: $pagination-hover-color;
+							background: $pagination-hover-bg !important;
+							border-color: $pagination-hover-border-color;
+						}
+					}
+					&.active {
+						& a {
+							color: $pagination-active-color;
+							background: $pagination-active-bg !important;
+							border-color: $pagination-active-border-color;
+						}
+					}
+				}
+			}
+			& .datatable-icon-left,
+			& .datatable-icon-skip,
+			& .datatable-icon-right,
+			& .datatable-icon-prev {
+				font-size: inherit;
+				line-height: inherit;
+
+				@include fontawesome();
+			}
+			& .datatable-icon-left:before {
+				content: '\f104';
+			}
+			& .datatable-icon-skip:before {
+				content: '\f101';
+			}
+			& .datatable-icon-right:before {
+				content: '\f105';
+			}
+			& .datatable-icon-prev:before {
+				content: '\f100';
+			}
+		}
+	}
+}

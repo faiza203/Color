@@ -1,0 +1,366 @@
+.timeline {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		top: rem(5px);
+		bottom: rem(5px);
+		width: rem(5px);
+		background: $dark;
+		left: 20%;
+		margin-left: rem(-2.5px);
+		
+		@if $enable-rtl {
+			left: auto;
+			right: 20%;
+			margin-left: 0;
+			margin-right: rem(-2.5px);
+		}
+		@include media-breakpoint-down(md) {
+			left: 15%;
+			
+			@if $enable-rtl {
+				left: auto;
+				right: 15%;
+			}
+		}
+		@include media-breakpoint-down(xs) {
+			left: 50%;
+			
+			@if $enable-rtl {
+				left: auto;
+				right: 50%;
+			}
+		}
+	}
+	& > li {
+		position: relative;
+		min-height: 50px;
+		padding: 20px 0;
+	}
+	& img {
+		max-width: 100%;
+		display: block;
+	}
+	& .timeline-time {
+		position: absolute;
+		left: 0;
+		width: 18%;
+		text-align: right;
+		top: rem(30px);
+		
+		@if $enable-rtl {
+			text-align: left;
+			left: auto;
+			right: 0;
+		}
+		@include media-breakpoint-down(md) {
+			width: 12%;
+		}
+		@include media-breakpoint-down(xs) {
+			width: 50%;
+			text-align: right;
+			padding-right: rem(20px);
+			
+			@if $enable-rtl {
+				text-align: left;
+				padding-right: 0;
+				padding-left: rem(20px);
+			}
+		}
+
+		& .date {
+			display: block;
+			font-weight: 500;
+			line-height: rem(16px);
+			font-size: rem(12px);
+		}
+		& .time {
+			display: block;
+			font-weight: 500;
+			line-height: rem(24px);
+			font-size: rem(20px);
+			color: $dark;
+		}
+	}
+	& .timeline-icon {
+		left: 15%;
+		position: absolute;
+		width: 10%;
+		text-align: center;
+		top: rem(40px);
+		
+		@if $enable-rtl {
+			left: auto;
+			right: 15%;
+		}
+		@include media-breakpoint-down(md) {
+			left: 10%;
+			
+			@if $enable-rtl {
+				left: auto;
+				right: 10%;
+			}
+		}
+		@include media-breakpoint-down(xs) {
+			left: 45%;
+			
+			@if $enable-rtl {
+				left: auto;
+				right: 45%;
+			}
+		}
+		
+		& a {
+			text-decoration: none;
+			width: rem(20px);
+			height: rem(20px);
+			display: inline-block;
+			background: $body-bg;
+			line-height: rem(10px);
+			color: $white;
+			font-size: rem(14px);
+			border: 5px solid $dark;
+			
+			@include transition(border-color .2s linear);
+			@include border-radius($border-radius-lg * 4);
+		}
+	}
+	& .timeline-header {
+		padding-bottom: rem(10px);
+		border-bottom: 1px solid $border-color;
+		line-height: rem(30px);
+		
+		& .userimage {
+			float: left;
+			width: rem(34px);
+			height: rem(34px);
+			overflow: hidden;
+			margin: rem(-2px) rem(10px) rem(-2px) 0;
+			
+			@include border-radius($border-radius-lg * 6);
+			@if $enable-rtl {
+				float: right;
+				margin-left: rem(10px);
+				margin-right: 0;
+			}
+		}
+		& .username {
+			font-size: rem(16px);
+			font-weight: 500;
+			color: $dark;
+			
+			& a {
+				color: $dark;
+			}
+		}
+		& .views {
+			float: right;
+			color: lighten($dark, 30%);
+			font-weight: 500;
+			
+			@if $enable-rtl {
+				float: left;
+			}
+		}
+	}
+	& .timeline-body {
+		margin-left: 23%;
+		margin-right: 17%;
+		background: $white;
+		position: relative;
+		padding: rem(20px) rem(25px);
+		
+		@include border-radius($border-radius-lg);
+		@if $enable-rtl {
+			margin-left: 17%;
+			margin-right: 23%;
+		}
+		@include media-breakpoint-down(lg) {
+			margin-left: 25%;
+			margin-right: 10%;
+			
+			@if $enable-rtl {
+				margin-left: 10%;
+				margin-right: 25%;
+			}
+		}
+		@include media-breakpoint-down(md) {
+			margin-left: 20%;
+			margin-right: 0;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: 20%;
+			}
+		}
+		@include media-breakpoint-down(xs) {
+			margin-left: 0;
+			margin-top: rem(60px);
+			padding: rem(15px);
+			
+			@if $enable-rtl {
+				margin-right: 0;
+			}
+		}
+		
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			border: 10px solid transparent;
+			border-right-color: $white;
+			left: rem(-20px);
+			top: rem(20px);
+			
+			@if $enable-rtl {
+				left: auto;
+				right: rem(-20px);
+				border-right-color: transparent;
+				border-left-color: $white;
+			}
+			@include media-breakpoint-down(xs) {
+				border-right-color: transparent;
+				border-bottom-color: $white;
+				left: 50%;
+				margin-left: rem(-10px);
+				top: rem(-20px);
+				
+				@if $enable-rtl {
+					border-left-color: transparent;
+					right: 50%;
+					margin-right: rem(-10px);
+				}
+			}
+		}
+		& > div {
+			& + div {
+				margin-top: rem(15px);
+				
+				&:last-child {
+					margin-bottom: rem(-20px);
+					padding-bottom: rem(20px);
+					
+					@include border-radius(0 0 $border-radius-lg $border-radius-lg);
+					@include media-breakpoint-down(xs) {
+						margin-bottom: rem(-15px);
+						padding-bottom: rem(15px);
+					}
+				}
+			}
+		}
+	}
+	& .timeline-content {
+		letter-spacing: 0.25px;
+		line-height: rem(18px);
+		font-size: rem(13px);
+		
+		@include clearfix();
+	}
+	& .timeline-title {
+		margin-top: 0;
+	}
+	& .timeline-footer {
+		background: $white;
+		border-top: 1px solid $border-color;
+		padding-top: rem(15px);
+		font-weight: 500;
+		
+		& a {
+			&:not(.btn) {
+				color: lighten($dark, 30%);
+				
+				&:hover,
+				&:focus {
+					color: $dark;
+				}
+			}
+		}
+	}
+	& .timeline-likes {
+		color: lighten($dark, 30%);
+		font-weight: 500;
+		font-size: rem(12px);
+		
+		@include display-flex();
+		@include flex-wrap(wrap);
+		
+		& .stats-right {
+			margin-left: auto;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+		& .stats {
+			@include display-flex();
+			
+			& .stats-icon {
+				font-size: rem(9px);
+			}
+		}
+		& .stats-total {
+			margin-left: rem(3px);
+			line-height: rem(20px);
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: rem(3px);
+			}
+		}
+		& .stats-text {
+			line-height: rem(20px);
+			
+			& + .stats-text {
+				margin-left: rem(10px);
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(10px);
+				}
+			}
+		}
+	}
+	&	.timeline-comment-box {
+		background: $light;
+		margin-left: rem(-25px);
+		margin-right: rem(-25px);
+		padding: rem(20px) rem(25px);
+		
+		@include media-breakpoint-down(xs) {
+			margin-left: rem(-15px);
+			margin-right: rem(-15px);
+			padding: rem(15px);
+		}
+		
+		& .user {
+			float: left;
+			width: rem(34px);
+			height: rem(34px);
+			overflow:hidden;
+			
+			@include border-radius($border-radius-lg * 6);
+			@if $enable-rtl {
+				float: right;
+			}
+			
+			&  + .input {
+				margin-left: rem(44px);
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(44px);
+				}
+			}
+			& img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}
+}

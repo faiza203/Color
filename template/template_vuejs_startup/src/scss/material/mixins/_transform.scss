@@ -1,0 +1,7 @@
+@mixin transform($setting) {
+	-webkit-transform: $setting;
+	-moz-transform: $setting;
+	-ms-transform: $setting;
+	-o-transform: $setting;
+	transform: $setting;
+}

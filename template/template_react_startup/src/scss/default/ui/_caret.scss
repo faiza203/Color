@@ -1,0 +1,16 @@
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: rem(2px);
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-top: 4px solid\9;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	
+	@if $enable-rtl {
+		margin-left: 0;
+		margin-right: rem(2px);
+	}
+}

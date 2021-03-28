@@ -1,0 +1,9 @@
+.dropdown-menu {
+	font-size: $font-size-base;
+	min-width: rem(180px);
+	
+	@include box-shadow($dropdown-box-shadow);
+	@if $enable-rtl {
+		text-align: right;
+	}
+}

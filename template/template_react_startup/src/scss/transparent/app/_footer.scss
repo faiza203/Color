@@ -1,0 +1,22 @@
+.footer {
+	z-index: $footer-zindex;
+	padding: rem(10px) 0;
+	margin: 0 $content-padding-x 0 ($content-padding-x + $sidebar-width - rem(10px));
+	border-top: 1px solid rgba($white, .15);
+	line-height: rem(20px);
+	font-weight: 500;
+	color: rgba($white, .75);;
+	position: relative;
+	
+	@if $enable-rtl {
+		margin-left: $content-padding-x;
+		margin-right: $content-padding-x + $sidebar-width - rem(10px);
+	}
+	@include media-breakpoint-down(sm) {
+		margin-left: $content-padding-x-sm;
+		
+		@if $enable-rtl {
+			margin-right: $content-padding-x-sm;
+		}
+	}
+}

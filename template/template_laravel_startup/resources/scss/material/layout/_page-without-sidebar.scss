@@ -1,0 +1,23 @@
+.page-without-sidebar {
+	& .content {
+		@if $enable-rtl {
+			margin-right: 0;
+		} @else {
+			margin-left: 0;
+		}
+	}
+	& .footer {
+		@if $enable-rtl {
+			margin-right: $content-padding-x;
+		} @else {
+			margin-left: $content-padding-x;
+		}
+	}
+	& .header {
+		& .navbar-brand {
+			@include media-breakpoint-down(sm) {
+				@include flex-justify-content(center);
+			}
+		}
+	}
+}

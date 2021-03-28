@@ -1,0 +1,36 @@
+.parsley-error {
+	background: $white !important;
+	border-color: $danger !important;
+	color: $dark !important;
+	
+	&:focus {
+		border-color: $danger !important;
+		outline: 0;
+		
+		@include box-shadow(0 0 0 0.125rem rgba($danger, .3) !important);
+	}
+}
+.parsley-success {
+	background: $white !important;
+	border-color: $teal !important;
+	color: $dark !important;
+	
+	&:focus {
+		border-color: $teal !important;
+		outline: 0;
+		
+		@include box-shadow(0 0 0 0.125rem rgba($teal, .3) !important);
+	}
+}
+.parsley-errors-list {
+	padding: 0 !important;
+	list-style-type: none !important;
+	margin: 0 !important;
+	color: darken($danger, 15%);
+	font-size: rem(12px) !important;
+	line-height: inherit !important;
+	
+	&.filled {
+		margin-top: rem(5px) !important;
+	}
+}

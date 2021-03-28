@@ -1,0 +1,63 @@
+.widget {
+	overflow: hidden;
+	margin-bottom: rem(20px);
+	background: rgba($white, .15);
+	color: inherit;
+	padding: 0;
+	
+	@include border-radius(0);
+	
+	& .widget-header {
+		display: table;
+		width: 100%;
+		
+		& .widget-header-title {
+			font-size: rem(12px);
+			margin: 0;
+			line-height: rem(20px);
+			width: 100%;
+			display: table-cell;
+			padding: rem(10px) rem(15px);
+		}
+		& .widget-header-icon {
+			width: 1%;
+			display: table-cell;
+			padding: rem(10px) rem(15px);
+			
+			& + .widget-header-icon {
+				padding-left: 0;
+				
+				@if $enable-rtl {
+					padding-left: rem(15px);
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	& .widget-body {
+		padding: rem(15px);
+	}
+	
+	&.widget-rounded {
+		@include border-radius($border-radius);
+	}
+	&.inverse-mode {
+		background: rgba($dark, .25);
+		
+		& .vertical-box {
+			&.with-border-top {
+				border-color: lighten($dark, 15%);
+			}
+			&.with-grid {
+				& > .vertical-box-column {
+					& + .vertical-box-column {
+						border-color: lighten($dark, 15%);
+					}
+				}	
+			}
+		}
+		& hr {
+			background: lighten($dark, 15%);
+		}
+	}
+}

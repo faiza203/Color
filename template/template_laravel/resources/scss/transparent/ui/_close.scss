@@ -1,0 +1,11 @@
+.close {
+	margin-left: rem(15px);
+	text-shadow: none;
+	line-height: rem(14px);
+	
+	@if $enable-rtl {
+		float: left;
+		margin-left: 0;
+		margin-right: rem(15px);
+	}
+}

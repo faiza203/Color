@@ -1,0 +1,101 @@
+.switcher {
+	display: inline-block;
+	
+	& label {
+		display: block;
+		margin: 0;
+		width: rem(46px);
+		height: rem(28px);
+		position: relative;
+		
+		&:before {
+			content: '';
+			display: block;
+			width: rem(46px);
+			height: rem(28px);
+			background: lighten($dark, 65%);
+			border: 1px solid $border-color;
+			
+			@include border-radius(rem(46px));
+			@include transition(all .2s linear);
+		}
+		&:after {
+			content: '';
+			height: rem(24px);
+			width: rem(24px);
+			position: absolute;
+			left: rem(2px);
+			top: rem(2px);
+			background: $white;
+			
+			@include border-radius(rem(24px));
+			@include box-shadow(0 1px 3px rgba($black, .15));
+			@include transition(all .2s linear);
+			@if $enable-rtl {
+				left: auto;
+				right: rem(2px);
+			}
+		}
+	}
+	& input {
+		display: none;
+		
+		&:checked {
+			& + label {
+				&:before {
+					background: $form-component-active-bg;
+					border: 2px solid $form-component-active-bg;
+				}
+				&:after {
+					left: rem(20px);
+					
+					@if $enable-rtl {
+						left: auto;
+						right: rem(20px);
+					}
+				}
+			}
+		}
+	}
+	
+	&.switcher-success input:checked + label:before {
+		background: $success;
+		border-color: $success;
+	}
+	&.switcher-lime input:checked + label:before {
+		background: $lime;
+		border-color: $lime;
+	}
+	&.switcher-indigo input:checked + label:before {
+		background: $indigo;
+		border-color: $indigo;
+	}
+	&.switcher-purple input:checked + label:before {
+		background: $purple;
+		border-color: $purple;
+	}
+	&.switcher-inverse input:checked + label:before {
+		background: $inverse;
+		border-color: $inverse;
+	}
+	&.switcher-warning input:checked + label:before {
+		background: $warning;
+		border-color: $warning;
+	}
+	&.switcher-danger input:checked + label:before {
+		background: $danger;
+		border-color: $danger;
+	}
+	&.switcher-info input:checked + label:before {
+		background: $info;
+		border-color: $info;
+	}
+	&.switcher-pink input:checked + label:before {
+		background: $pink;
+		border-color: $pink;
+	}
+	&.switcher-yellow input:checked + label:before {
+		background: $yellow;
+		border-color: $yellow;
+	}
+}

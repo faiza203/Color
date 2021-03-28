@@ -1,0 +1,18 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function rem-default($number) {
+	$number: strip-unit($number);
+	@return (($number / 16) * 1rem);
+}
+
+@function rem($number) {
+	@return $number;
+	//$number: strip-unit($number);
+	//@return (($number / 16) * 1rem);
+}
+

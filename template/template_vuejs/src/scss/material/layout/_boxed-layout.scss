@@ -1,0 +1,61 @@
+.boxed-layout {
+	height: 100%;
+	background-image: url(/material/images/cover-pattern.png);
+	
+	& .top-menu {
+		max-width: $boxed-layout-width;
+		width: 100%;
+		left: 50%;
+		margin-left: $boxed-layout-width / -2;
+		position: absolute;
+		
+		@include media-breakpoint-down(sm) {
+			position: relative;
+			left: 0;
+			margin: 0;
+		}
+		
+		& .pace-progress,
+		& .pace-activity {
+			position: absolute;
+		}
+	}
+	& .pace {
+		width: $boxed-layout-width;
+		left: 50%;
+		margin-left: $boxed-layout-width / -2;
+		position: absolute;
+	}
+	& .page-container {
+		max-width: $boxed-layout-width;
+		width: 100%;
+		margin: 0 auto;
+		min-height: 100%;
+		background: $body-bg;
+		position: relative;
+		overflow: hidden;
+		
+		@include box-shadow(0 0px 30px rgba($black, .5));
+	}
+	& .header {
+		max-width: $boxed-layout-width;
+		width: 100%;
+		right: auto;
+		left: auto;
+	}
+	& .sidebar,
+	& .sidebar-bg {
+		@include media-breakpoint-up(md) {
+			left: auto;
+			right: auto;
+		}
+	}
+}
+@media (max-width: $boxed-layout-width) {
+	.boxed-layout {
+		& .top-menu {
+			left: 0;
+			margin-left: 0;
+		}
+	}
+}

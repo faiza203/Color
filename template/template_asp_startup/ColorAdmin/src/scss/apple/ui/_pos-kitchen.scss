@@ -1,0 +1,277 @@
+$pos-kitchen-header-height: rem(52px);
+
+.pos-kitchen {
+	min-height: 100%;
+	padding-top: $pos-kitchen-header-height;
+	
+	@include display-flex();
+	@include flex-direction-column();
+	
+	& .pos-kitchen-header {
+		background: $white;
+		padding: rem(10px) rem(25px);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: $header-zindex;
+		height: $pos-kitchen-header-height;
+		
+		@include display-flex();
+		@include flex-align(center);
+		
+		& .logo,
+		& .time,
+		& .nav {
+			width: 33.33%;
+			
+			@include media-breakpoint-down(sm) {
+				width: 50%;
+			}
+		}
+		& .logo {
+			@include display-flex();
+			
+			& > div,
+			& > a {
+				text-align: center;
+				color: $black;
+				text-decoration: none;
+				
+				@include display-flex();
+				@include flex-align(center);
+				
+				& .logo-img {
+					& img {
+						height: rem(32px);
+					}
+				}
+				& .logo-text {
+					font-size: rem(16px);
+					letter-spacing: rem(1px);
+					
+					@if $enable-rtl {
+						margin-right: rem(15px);
+					} @else {
+						margin-left: rem(15px);
+					}
+				}
+			}
+		}
+		& .time {
+			font-weight: 600;
+			font-size: rem(20px);
+			
+			@include display-flex();
+			@include flex-align(center);
+			@include flex-justify-content(center);
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+		& .nav {
+			@include flex-align(center);
+			@include flex-justify-content(flex-end);
+			
+			& .nav-item {
+				& .nav-link {
+					padding: rem(5px) rem(15px);
+					
+					@include media-breakpoint-down(sm) {
+						padding: rem(5px) rem(10px);
+					}
+					& .nav-icon {
+						height: rem(20px);
+						color: $gray-900;
+					}
+				}
+			}
+		}
+	}
+	& .pos-kitchen-body {
+		@include flex(1);
+		
+		& .pos-task-row {
+			& .pos-task {
+				border-bottom: 1px solid $gray-300;
+				
+				@include media-breakpoint-up(md) {
+					@include display-flex();
+				}					
+				& .pos-task-info {
+					width: 30%;
+					padding: rem(25px);
+					
+					@if $enable-rtl {
+						text-align: left;
+					} @else {
+						text-align: right;
+					}
+					@include media-breakpoint-down(sm) {
+						width: auto;
+						position: relative;
+						
+						@if $enable-rtl {
+							text-align: right;
+						} @else {
+							text-align: left;
+						}
+					}
+					
+					& .table-no {
+						font-size: rem(24px);
+					}
+					& .order-type {
+						font-size: rem(14px);
+					}
+					& .order-no {
+						margin-bottom: rem(5px);
+					}
+					& .time-pass {
+						font-size: rem(16px);
+						font-weight: 600;
+						margin-top: rem(25px);
+						
+						@include media-breakpoint-down(sm) {
+							position: absolute;
+							right: 0;
+							top: 0;
+							margin: 0;
+							padding: rem(25px);
+						}
+					}
+				}
+				& .pos-task-body {
+					padding: rem(25px);
+					
+					@if $enable-rtl {
+						border-right: 1px solid $gray-300;
+					} @else {
+						border-left: 1px solid $gray-300;
+					}
+					@include flex(1);
+					@include media-breakpoint-down(sm) {
+						border-left: none;
+						padding-top: 0;
+					}
+					
+					& .pos-task-completed {
+						font-size: rem(16px);
+						line-height: rem(36px);
+						
+						@include media-breakpoint-down(sm) {
+							border-top: 1px solid $gray-300;
+							margin-top: rem(-10px);
+							padding-top: rem(10px);
+						}
+					}
+					& .pos-task-product-row {
+						margin: 0 rem(-10px) rem(-20px);
+						
+						@include display-flex();
+						@include flex-wrap(wrap);
+						
+						& .pos-task-product {
+							width: 25%;
+							margin-bottom: rem(20px);
+							padding-left: rem(10px);
+							padding-right: rem(10px);
+							
+							@include flex(0 0 25%);
+							@include display-flex();
+							@include flex-direction-column();
+							
+							@include media-breakpoint-down(lg) {
+								width: 33.33%;
+								
+								@include flex(0 0 33.33%);
+							}
+							@include media-breakpoint-down(xs) {
+								width: 100%;
+								
+								@include flex(0 0 100%);
+							}
+							
+							& .pos-task-product-img {
+								padding-top: 75%;
+								position: relative;
+								margin-bottom: rem(10px);
+							
+								& .cover {
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									background-size: cover;
+									background-repeat: no-repeat;
+									background-position: center;
+								
+									@include border-radius($border-radius-lg);
+								}
+								& .caption {
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									background: rgba($gray-600, .75);
+									color: $white;
+									font-size: rem(24px);
+									
+									@include border-radius($border-radius-lg);
+									@include display-flex();
+									@include flex-align(center);
+									@include flex-justify-content(center);
+								}
+							}
+							& .pos-task-product-info {
+								@include display-flex();
+								@include flex(1);
+								
+								& .info {
+									@include flex(1);
+									
+									& .title {
+										font-size: rem(16px);
+										font-weight: 600;
+										
+										& + .desc {
+											padding-top: rem(3px);
+										}
+									}
+									& .desc {
+										font-size: rem(14px);
+										color: $gray-700;
+									}
+								}
+								& .qty {
+									font-size: rem(18px);
+									font-weight: 600;
+								}
+							}
+							& .pos-task-product-action {
+								padding-top: rem(10px);
+								
+								& .btn {
+									display: block;
+									font-weight: 600;
+									font-size: rem(14px);
+									
+									& + .btn {
+										margin-top: rem(10px);
+									}
+								}
+							}
+							&.completed {
+								& .pos-task-product-info {
+									opacity: 0.75;
+								}	
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

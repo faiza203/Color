@@ -1,0 +1,475 @@
+body {
+	& div {
+		&.dt-autofill-background {
+			z-index: $header-zindex + 10;
+		}
+		&.dt-autofill-list {
+			z-index: $header-zindex + 20;
+			border: none;
+			padding: 0;
+			
+			@include box-shadow(none);
+			@include border-radius($border-radius);
+			
+			& ul {
+				& > li {
+					@include display-flex();
+					@include flex(1);
+					
+					& .dt-autofill-question {
+						padding: rem(15px);
+						border-color: rgba($dark, .15);
+						font-weight: 600;
+						color: rgba($black, .75);
+						
+						@include flex(1);
+						@include display-flex();
+						@include flex-align(center);
+					}
+					& .dt-autofill-button {
+						padding: rem(15px);
+						width: rem(120px);
+						border-color: rgba($dark, .15);
+						
+						& .btn {
+							display: block;
+							width: 100%;
+							position: relative;
+							color: transparent;
+							background: $table-component-active-bg;
+							border-color: $table-component-active-bg;
+							
+							&:hover,
+							&:focus {
+								background: darken($table-component-active-bg, 15%);
+								border-color: darken($table-component-active-bg, 15%);
+							}
+							&:before {
+								content: 'Fill This';
+								color: $white;
+								position: absolute;
+								left: 0;
+								right: 0;
+							}
+						}
+					}
+					&:first-child {
+						@include border-radius($border-radius $border-radius 0 0);
+					}
+					&:last-child {
+						@include border-radius(0 0 $border-radius $border-radius);
+					}
+					&:hover,
+					&:focus {
+						background: $white;
+					}
+				}
+			}
+		}
+		&.dt-button-info {
+			border: none;
+			padding: rem(15px);
+			background: rgba($dark, .95);
+			
+			@include border-radius($border-radius * 2);
+			@include box-shadow(none);
+			
+			& h2 {
+				border: none;
+				background: none;
+				padding: 0;
+				font-weight: 600;
+				margin: 0;
+				font-size: rem(24px);
+				color: $white;
+			}
+			& > div {
+				padding: 0;
+				margin-top: rem(5px);
+				font-size: rem(12px);
+				font-weight: 600;
+				color: rgba($white, .75);
+			}
+		}
+		&.DTCR_pointer {
+			width: rem(2px);
+			background: $table-component-active-bg;
+			margin-left: rem(-1px);
+		}
+	}
+	
+	& table {
+		&.dataTable {
+			border-collapse: collapse !important;
+	
+			& thead { 
+				& tr {
+					& th {
+						&.sorting,
+						&.sorting_asc,
+						&.sorting_desc {
+							&:before {
+								display: none;
+							}
+							&:after {
+								opacity: 1;
+								color: rgba($white, .5);
+								bottom: rem(8px);
+								
+								@include fontawesome();
+							}
+						}
+				
+						&.sorting {
+							&:after {
+								content: '\f0dc';
+							}
+						}
+						&.sorting_asc {
+							&:after {
+								content: '\f0dd';
+								color: $table-component-active-color;
+							}
+						}
+						&.sorting_desc {
+							&:after {
+								content: '\f0de';
+								color: $table-component-active-color;
+							}
+						}
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+			}
+			& tbody {
+				& tr {
+					& td {
+						&.focus {
+							outline: none;
+							z-index: 10;
+							position: relative;
+							
+							@include box-shadow(inset 0 0 0 2px $table-component-active-bg);
+						}
+						&:focus {
+							outline: none;
+						}
+					}
+					
+					&.selected {
+						background: rgba(mix($white, $yellow, 20%), .25);
+						
+						& td {
+							background: none;
+							font-weight: 500;
+						}
+					}
+					&.dt-rowReorder-moving {
+						outline: 2px solid rgba($black, .25);
+					}
+				}
+			}
+			
+			&.fixedHeader-floating {
+				z-index: $header-zindex + 10;
+				background: rgba(mix($white, $black, 10%), .95);
+			}
+			&.dt-rowReorder-float {
+				outline: 2px solid $table-component-active-bg;
+			}
+			&.collapsed {
+				& tbody {
+					& tr {
+						& td {
+							& .dtr-details {
+								& > li {
+									border-bottom: 1px solid $border-color;
+								}
+							}
+							&:first-child {
+								&:before {
+									background: rgba($white, .25) !important;
+									color: rgba($white, .75) !important;
+									border: none !important;
+									top: rem(10px) !important;
+									left: rem(8px) !important;
+									line-height: rem(16px) !important;
+									font-weight: bold !important;
+									height: rem(16px) !important;
+									width: rem(16px) !important;
+									text-align: center !important;
+									text-indent: 0 !important;
+									font-size: rem(14px) !important;
+									
+									@include box-shadow(none !important);
+									@include border-radius($border-radius-sm !important);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& .DTFC_ScrollWrapper {
+		margin: 0 0 rem(15px);
+		
+		& .dataTables_scroll,
+		& .DTFC_LeftWrapper,
+		& .DTFC_RightWrapper {
+			& .dataTable {
+				margin: 0 !important;
+			}
+		}
+		& .dataTables_scrollBody,
+		& .DTFC_LeftBodyWrapper,
+		& .DTFC_RightBodyWrapper {
+			& .dataTable {
+				border-bottom: none !important;
+				
+				& thead {
+					& tr {
+						& th {
+							border: none !important;
+						}
+					}
+				}
+			}
+		}
+		& .dataTables_scroll {
+			border-bottom: 1px solid lighten($border-color, 5%);
+		}
+	}
+}
+.dataTables_wrapper {
+	&.dt-bootstrap,
+	&.dt-bootstrap4 {
+		display: block;
+		
+		& .dataTables_length {
+			margin-bottom: rem(15px);
+			
+			& .custom-select {
+				@include appearance(none);
+			}
+			@include media-breakpoint-up(sm) {
+				@include display-inline-flex();
+			}
+			
+			& + .dt-buttons {
+				@include media-breakpoint-up(md) {
+					margin-left: rem(10px);
+				}
+			}
+			& label {
+				margin-left: auto;
+				color: rgba($white, .75);
+				font-weight: 600;
+				margin: 0;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include flex-justify-content(center);
+				
+				& .form-control {
+					display: block;
+					margin: 0 rem(8px);
+					height: rem(34px);
+				}
+			}
+		}
+		& .dataTables_filter {
+			margin-bottom: rem(15px);
+			
+			@include media-breakpoint-up(sm) {
+				float: right;
+				
+				@include display-inline-flex();
+				@if $enable-rtl {
+					float: left;
+				}
+			}
+			
+			& label {
+				color: rgba($white, .75);
+				font-weight: 600;
+				margin: 0;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include flex-justify-content(center);
+				
+				& .form-control {
+					display: block;
+					margin-left: rem(8px);
+					width: rem(260px);
+					height: rem(34px);
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: rem(8px);
+					}
+					@include placeholder($input-placeholder-color);
+					@include media-breakpoint-down(md) {	
+						width: 100%;
+					}
+				}
+			}
+		}
+		& .dataTable {
+			margin: 0 0 rem(15px) !important;
+		}
+		& .dataTables_info {
+			font-weight: 600;
+			color: rgba($white, .75);
+			
+			@include media-breakpoint-down(xs) {
+				padding-bottom: rem(8px);
+			}
+		}
+		& .dataTables_paginate {
+			@include display-flex();
+			
+			& .pagination {
+				@include media-breakpoint-up(sm) {
+					margin-left: auto;
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: auto;
+					}
+				}
+				@include media-breakpoint-down(xs) {
+					margin-left: auto;
+					margin-right: auto;
+				}
+				
+				& .paginate_button {
+					& a {
+						position: relative;
+						display: block;
+						padding: rem(8px) rem(12px);
+						margin-left: -1px;
+						line-height: 1.25;
+						color: rgba($white, .75);
+						background-color: rgba($white, .15);
+						border: 1px solid transparent;
+						font-weight: 600;
+						text-decoration: none;
+						outline: none;
+						
+						@include border-radius($border-radius);
+						
+						&:hover,
+						&:focus {
+							color: $white;
+							background: rgba($white, .3);
+						}
+					}
+					
+					&.active {
+						& a {
+							border-color: $pagination-active-bg;
+							background: $pagination-active-bg;
+							color: $pagination-active-color;
+						}
+					}
+					&.disabled {
+						& a {
+							color: rgba($white, .25) !important;
+							pointer-events: none;
+							cursor: auto;
+							background-color: rgba($white, .15) !important;
+							border-color: transparent !important
+						}
+					}
+				}
+			}
+		}
+		
+		& .dt-autofill-handle {
+			background: $table-component-active-bg;
+			border-color: $table-component-active-color;
+			margin-left: rem(1px);
+		}
+		& .dt-autofill-select {
+			background: $table-component-active-color;
+			
+			&.left {
+				margin-left: rem(1px);
+				margin-top: 0;
+			}
+			&.top {
+				margin-left: rem(1px);
+				margin-top: 0;
+			}
+			&.right {
+				margin-left: rem(-1px);
+				margin-top: 0;
+				margin-bottom: rem(-1px);
+			}
+			&.bottom {
+				margin-left: rem(1px);
+				margin-top: rem(-2px);
+			}
+		}
+		& .dt-buttons {
+			margin-bottom: rem(15px);
+				
+			& .btn {
+				padding: rem(6px) rem(12px);
+				line-height: rem(20px);
+			}
+		}
+		& .dataTables_scroll {
+			margin: 0 0 rem(15px) !important;
+			
+			& .dataTable {
+				margin: 0 !important;
+			}
+			& .dataTables_scrollBody {
+				background: none;
+				
+				& .dataTable {
+					background: none !important;
+					border-bottom: none !important;
+					
+					& thead {
+						& tr {
+							& th {
+								border: none !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.DTS {
+			& .dataTables_scroll {
+				& .dataTables_scrollBody {
+					border-bottom: 1px solid lighten($border-color, 5%);
+				}
+			}
+		}
+		& .dataTable.DTFC_Cloned {
+			background: none;
+			
+			& tbody,
+			& thead {
+				background: none;
+				
+				& tr {
+					background: none !important;
+					
+					& td,
+					& th {
+						background: none !important;
+						border-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+}

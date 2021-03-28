@@ -1,0 +1,181 @@
+.result-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+	@include clearfix();
+	
+	& > li {
+		background: $white;
+		overflow: hidden;
+		position: relative;
+		
+		@include display-flex();
+		@include flex-wrap(wrap);
+		@include border-radius($border-radius-lg);
+		@include clearfix();
+		@include media-breakpoint-down(md) {
+			padding-top: rem(160px);
+		}
+		@include media-breakpoint-down(xs) {
+			display: block;
+		}
+		
+		& + li {
+			margin-top: rem(10px);
+		}
+		& .result-image {
+			width: rem(240px);
+			padding: 0;
+			overflow: hidden;
+			background: $dark;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			@include media-breakpoint-down(lg) {
+				width: rem(180px);
+			}
+			@include media-breakpoint-down(md) {
+				width: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: rem(160px);
+			}
+			
+			& a {
+				display: block;
+			}
+			& img {
+				width: 100%;
+			}
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+			}
+		}
+		& .result-info {
+			padding: rem(20px);
+			position: relative;
+			border-top: 1px solid $border-color-transparent;
+			border-bottom: 1px solid $border-color-transparent;
+			
+			@include flex(1);
+			@include media-breakpoint-down(lg) {
+				padding: rem(15px);
+			}
+			@include media-breakpoint-down(md) {
+				border-top: none;
+				border-left: 1px solid $border-color-transparent;
+				
+				@include border-radius(0 0 0 $border-radius-lg);
+			}
+			@include media-breakpoint-down(xs) {
+				border-bottom: none;
+				border-right: 1px solid $border-color-transparent;
+				
+				@include border-radius(0);
+			}
+			
+			& .title {
+				margin: 0 0 rem(5px);
+				font-size: rem(18px);
+				line-height: rem(22px);
+				
+				@include media-breakpoint-down(md) {
+					font-size: rem(16px);
+					line-height: rem(20px);
+				}
+			
+				& a {
+					color: $dark;
+				}
+			}
+			& .location {
+				color: lighten($dark, 30%);
+				margin-bottom: rem(15px);
+			}
+			& .decs {
+				margin-bottom: rem(20px);
+				max-height: rem(32px);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				line-height: rem(16px);
+			}
+			& .btn-row {
+				@include clearfix();
+				@include display-flex();
+				@include flex-wrap(wrap);
+			
+				& a {
+					color: $dark;
+					background: $light;
+					font-size: rem(14px);
+					line-height: rem(18px);
+					padding: rem(8px) rem(10px);
+				
+					@include border-radius($border-radius);
+				
+					& + a {
+						margin-left: rem(5px);
+						
+						@if $enable-rtl {
+							margin-left: 0;
+							margin-right: rem(5px);
+						}
+					}
+					&:hover,
+					&:focus {
+						background: lighten($dark, 65%);
+					}
+				}
+			}
+		}
+		& .result-price {
+			width: rem(240px);
+			font-size: rem(28px);
+			text-align: center;
+			background: $light;
+			color: $dark;
+			padding: rem(20px);
+			position: relative;
+			border: 1px solid $border-color;
+			
+			@include display-flex();
+			@include flex-direction-column();
+			@include flex-justify-content(center);
+			@include flex-align(center);
+			@include border-radius(0 $border-radius-lg $border-radius-lg 0);
+			@include media-breakpoint-down(lg) {
+				width: rem(180px);
+				padding: rem(15px);
+			}
+			@include media-breakpoint-down(md) {
+				border-top: none;
+				@include border-radius(0 0 $border-radius-lg 0);
+			}
+			@include media-breakpoint-down(xs) {
+				width: auto;
+				border: 1px solid $border-color;
+				@include border-radius(0 0 $border-radius-lg $border-radius-lg);
+			}
+			
+			& small {
+				display: block;
+				font-size: rem(11px);
+				font-weight: 500;
+				color: lighten($dark, 30%);
+			}
+			& .btn {
+				margin-top: rem(30px);
+				
+				@include media-breakpoint-down(xs) {
+					margin-top: rem(15px);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,116 @@
+<!-- begin #sidebar-right -->
+<div id="sidebar-right" class="sidebar sidebar-right">
+  <!-- begin sidebar scrollbar -->
+  <perfect-scrollbar class="height-full">
+    <!-- begin sidebar user -->
+    <ul class="nav m-t-10">
+      <li class="nav-widget text-white">
+        <p class="m-b-0 f-s-10 f-w-700">TOTAL VISITORS</p>
+        <div>
+          <ngx-trend
+            height="60"
+            autoDraw="true"
+            autoDrawDuration="0"
+            autoDrawEasing="ease-out"
+            smooth="true"
+            [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+            [gradient]="[global.COLOR_BLUE]"
+            radius="0.1"
+            strokeWidth="5"
+            strokeLinecap="butt"
+          >
+          </ngx-trend>
+        </div>
+        <p class="m-b-0 f-s-10 f-w-700">TOTAL PAGE VIEWS</p>
+        <div>
+          <ngx-trend
+            height="60"
+            autoDraw="true"
+            autoDrawDuration="0"
+            autoDrawEasing="ease-out"
+            smooth="true"
+            [data]="[0,10,3,5,0,0,1,8,2,2,5,9,5,9,0]"
+            [gradient]="[global.COLOR_GREEN]"
+            radius="0.1"
+            strokeWidth="5"
+            strokeLinecap="butt"
+          >
+          </ngx-trend>
+        </div>
+        <p class="m-b-0 f-s-10 f-w-700">TOTAL UNIQUE VISITORS</p>
+        <div>
+          <ngx-trend
+            height="60"
+            autoDraw="true"
+            autoDrawDuration="0"
+            autoDrawEasing="ease-out"
+            smooth="true"
+            [data]="[3,5,0,0,1,8,2,9,0,0,2,5,9,5,10]"
+            [gradient]="[global.COLOR_ORANGE]"
+            radius="0.1"
+            strokeWidth="5"
+            strokeLinecap="butt"
+          >
+          </ngx-trend>
+        </div>
+        <p class="m-b-0 f-s-10 f-w-700">BOUNCE RATE</p>
+        <div>
+          <ngx-trend
+            height="60"
+            autoDraw="true"
+            autoDrawDuration="0"
+            autoDrawEasing="ease-out"
+            smooth="true"
+            [data]="[0,2,3,5,0,0,1,8,2,9,0,5,9,5,10]"
+            [gradient]="[global.COLOR_RED]"
+            radius="0.1"
+            strokeWidth="5"
+            strokeLinecap="butt"
+          >
+          </ngx-trend>
+        </div>
+      </li>
+      <li class="nav-widget">
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-accordion-1">
+          <ngb-panel class="card-inverse text-white">
+            <ng-template ngbPanelHeader>
+              <span class="text-inverse">
+                <i class="fa fa-plus-circle pull-right m-t-3"></i>
+                Accordion #1
+              </span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel>
+            <ng-template ngbPanelHeader>
+              <span class="text-inverse">
+                <i class="fa fa-plus-circle pull-right m-t-3"></i>
+                Accordion #2
+              </span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel>
+            <ng-template ngbPanelHeader>
+              <span class="text-inverse">
+                <i class="fa fa-plus-circle pull-right m-t-3"></i>
+                Accordion #3
+              </span>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </li>
+    </ul>
+    <!-- end sidebar user -->
+  </perfect-scrollbar>
+  <!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg sidebar-right"></div>
+<!-- end #sidebar-right -->

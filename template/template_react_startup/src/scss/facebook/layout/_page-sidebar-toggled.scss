@@ -1,0 +1,85 @@
+@include keyframes(sidebarSlideInLeft) {
+	from { left: rem(-220px); }
+	to { left: 0; }
+}
+@include keyframes(sidebarSlideInRight) {
+	from { right: rem(-220px); }
+	to { right: 0; }
+}
+@include media-breakpoint-down(sm) {
+	.page-sidebar-toggled {
+		& .sidebar,
+		& .sidebar-bg {
+			@if $enable-rtl {
+				right: 0;
+				
+				@include animation(sidebarSlideInRight .2s);
+			} @else {
+				left: 0;
+			
+				@include animation(sidebarSlideInLeft .2s);
+			}
+		}
+		& .sidebar-bg {
+			position: fixed;
+			
+			@include box-shadow(rgba($dark, .25) 5px 0 25px);
+		}
+		&.page-with-right-sidebar {
+			& .sidebar,
+			& .sidebar-bg {
+				@if $enable-rtl {
+					left: 0;
+					right: auto;
+					
+					@include animation(sidebarSlideInLeft .2s);
+				} @else {
+					left: auto;
+					right: 0;
+				
+					@include animation(sidebarSlideInRight .2s);
+				}
+			}
+			&.page-sidebar-minified {
+				& .sidebar,
+				& .sidebar-bg {
+					@if $enable-rtl {
+						left: 0;
+						right: auto;
+						
+						@include animation(sidebarSlideInLeft .2s);
+					} @else {
+						left: auto;
+						right: 0;
+					
+						@include animation(sidebarSlideInRight .2s);
+					}
+				}
+			}
+		}
+		&.page-with-two-sidebar {
+			& .sidebar-right {
+				&.sidebar,
+				&.sidebar-bg {
+					@include animation(none);
+				}
+			}
+		}
+		&.page-sidebar-minified {
+			&.sidebar,
+			&.sidebar-bg {
+				position: fixed;
+				
+				@if $enable-rtl {
+					right: 0;
+					
+					@include animation(sidebarSlideInRight .2s);
+				} @else {
+					left: 0;
+				
+					@include animation(sidebarSlideInLeft .2s);
+				}
+			}
+		}
+	}
+}

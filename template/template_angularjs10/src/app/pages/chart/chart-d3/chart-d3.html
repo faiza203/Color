@@ -1,0 +1,83 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
+	<li class="breadcrumb-item active">d3 Chart</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">d3 Chart <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin alert -->
+<div class="alert alert-info">
+	<span class="label label-inverse m-r-5">NOTE!</span> NVD3 Chart is not supported in old browser like IE8.
+</div>
+<!-- end alert -->
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Line Chart">
+			<nvd3 [options]="lineChartOptions" [data]="lineChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Bar Chart">
+			<nvd3 [options]="barChartOptions" [data]="barChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Stacked Area Chart">
+			<nvd3 [options]="stackedAreaChartOptions" [data]="stackedAreaChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Stacked Bar Chart">
+			<nvd3 [options]="stackedBarChartOptions" [data]="stackedBarChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Pie Chart">
+			<nvd3 [options]="pieChartOptions" [data]="pieChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Donut Chart">
+			<nvd3 [options]="donutChartOptions" [data]="donutChartData"></nvd3>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->

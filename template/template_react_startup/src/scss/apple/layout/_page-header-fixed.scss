@@ -1,0 +1,11 @@
+.page-header-fixed {
+	padding-top: $header-height;
+	
+	@include media-breakpoint-down(sm) {
+		padding-top: ($header-height-sm * 2) + rem(1px);
+	}
+	
+	& .header {
+		position: fixed;
+	}
+}

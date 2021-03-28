@@ -1,0 +1,35 @@
+.swal-overlay {
+	& .swal-modal {
+		& .swal-icon--success,
+		& .swal-icon--success__ring {
+			border-color: rgba($green, .2);
+		}
+		& .swal-icon--success__line--long,
+		& .swal-icon--success__line--tip {
+			background-color: $green;
+		}
+		& .swal-icon--info {
+			border-color: $info;
+		
+			&:before,
+			&:after {
+				background-color: $info;
+			}
+		}
+		& .swal-icon--warning {
+			border-color: $warning;
+			
+			& .swal-icon--warning__body,
+			& .swal-icon--warning__dot {
+				background-color: $warning;
+			}
+		}
+		& .swal-icon--error {
+			border-color: $danger;
+			
+			& .swal-icon--error__line {
+				background-color: $danger;
+			}
+		}
+	}
+}

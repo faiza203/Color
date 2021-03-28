@@ -1,0 +1,65 @@
+.jvectormap-container {
+	& .jvectormap-zoomin, 
+	& .jvectormap-zoomout {
+		width: rem(16px);
+		height: rem(16px);
+		padding: 0;
+		line-height: rem(16px);
+		left: rem(15px);
+		color: $dark;
+		background: $white;
+		
+		@include box-shadow(0 2px 8px rgba($black, .25));
+		@if $enable-rtl {
+			left: auto;
+			right: rem(15px);
+		}
+	}
+	& .jvectormap-label {
+		padding: rem(3px) rem(6px);
+		border: none;
+		background: rgba($black, .6);
+	}
+}
+.jvectormap-tip {
+	padding: rem(3px) rem(6px) !important;
+	border: none !important;
+	background: rgba($black, .6) !important;
+}
+.map {
+	& .jvectormap-zoomin,
+	& .jvectormap-zoomout {
+		width: rem(20px) !important;
+		height: rem(20px) !important;
+		font-size: rem(14px);
+		line-height: rem(20px) !important;
+		left: $content-padding-x !important;
+		
+		@if $enable-rtl {
+			left: auto !important;
+			right: $content-padding-x !important;
+		}
+		@include media-breakpoint-down(sm) {
+			left: $content-padding-x-sm !important;
+			
+			@if $enable-rtl {
+				left: auto !important;
+				right: $content-padding-x-sm !important;
+			}
+		}
+	}
+	& .jvectormap-zoomin {
+		top: $header-height + rem(20px);
+		
+		@include media-breakpoint-down(lg) {
+			top: $header-height + rem(20px) + rem(30px);
+		}
+	}
+	& .jvectormap-zoomout {
+		top: $header-height + rem(45px);
+		
+		@include media-breakpoint-down(lg) {
+			top: $header-height + rem(20px) + rem(55px);
+		}
+	}
+}

@@ -1,0 +1,33 @@
+@include keyframes(rotation) {
+	from { @include transform(rotate(0deg)); }
+	to { @include transform(rotate(359deg)); }
+}
+
+.spinner {
+	height: rem(36px);
+	width: rem(36px);
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: rem(-18px) 0 0 rem(-18px);
+	border: 2px solid $silver;
+	border-top: 2px solid $primary;
+	
+	@include border-radius(36px);
+	@include animation(rotation .6s infinite linear);
+}
+.spinner-small {
+	height: rem(28px);
+	width: rem(28px);
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: rem(-15px) 0 0 rem(-15px);
+	border: 2px solid $silver;
+	border-top: 2px solid $primary;
+	
+	@include border-radius(30px);
+	@include animation(rotation .6s infinite linear);
+}

@@ -1,0 +1,237 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: $primary;
+	
+	&:hover,
+	&:focus {
+		color: mix($black, $primary, 20%);
+	}
+}
+.header {
+	& .navbar-nav {
+		& > li {
+			& > a {
+				& .label {
+					@include box-shadow(none !important);
+				}
+			}
+		}
+	}
+	&.navbar-default {
+		& .navbar-brand {
+			& i {
+				color: $primary;
+			}
+		}
+		& .navbar-nav {
+			& > li {
+				& > a {
+					& .label {
+						background: $primary;
+						
+						@if $primary-color == 'yellow' {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.navbar-inverse {
+		background: $primary;
+		
+		& .navbar-brand {
+			@if $primary-color == 'yellow' {
+				color: $black;
+			}
+			& i {
+				@if $primary-color == 'yellow' {
+					color: $black;
+				}
+			}
+		}
+		& .navbar-nav {
+			@include media-breakpoint-down(sm) {
+				border-color: mix($white, $primary, 20%);
+			}
+			& > li {
+				& > a {
+					@if $primary-color == 'yellow' {
+						color: $black;
+					}
+					& .label {
+						background: $dark;
+						
+						@if $primary-color == 'black' {
+							background: $red;
+							color: $white;
+						}
+					}
+					&:hover,
+					&:focus {
+						@if $primary-color == 'yellow' {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			& > a {
+				& .label {
+					&.label-theme {
+						$color: $primary;
+						$textColor: $white;
+						@if $primary-color == 'red' {
+							$color: $green;
+						}
+						@if $primary-color == 'pink' {
+							$color: $blue;
+						}
+						@if $primary-color == 'orange' or $primary-color == 'lime' {
+							$color: $purple;
+						}
+						@if $primary-color == 'green' or $primary-color == 'teal' or $primary-color == 'aqua' or $primary-color == 'blue' or $primary-color == 'black' {
+							$color: $pink;
+						}
+						@if $primary-color == 'purple' or $primary-color == 'indigo' {
+							$color: $yellow;
+							$textColor: $black;
+						}
+						@if $primary-color == 'yellow' {
+							$color: $black;
+							$textColor: $yellow;
+						}
+						
+						background: $color;
+						color: $textColor;
+						
+						@include gradient-enabled {
+							@include gradient-linear(to bottom, (lighten($color, 5%) 0%, darken($color, 5%) 100%));
+						}
+					}
+				}
+			}
+			&.active {
+				& > a {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' {
+						color: $black;
+					}
+					@include gradient-enabled {
+						@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+					}
+					
+					& .label,
+					& .badge {
+						color: $white;
+						background: rgba($black, .65);
+						
+						@include gradient-enabled {
+							color: $white;
+							background: rgba($black, .65);
+						}
+					}
+				}
+			}
+		}
+	}
+	& .sub-menu {
+		& > li {
+			&.active {
+				& > a {
+					color: $primary;
+					
+					@if $primary-color == 'yellow' {
+						color: $blue;
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.bg-theme {
+	background-color: $primary !important;
+}
+.label-theme {
+	background-color: $primary;
+}
+.text-theme {
+	color: $primary;
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .sub-menu {
+			& > li {
+				&.active {
+					&:after {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.coming-soon {
+	& .brand {
+		& .logo {
+			background: $primary;
+		}	
+	}
+}
+.todolist {
+	& > li {
+		&.active {
+			& > a {
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}

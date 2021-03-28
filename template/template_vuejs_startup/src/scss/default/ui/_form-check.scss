@@ -1,0 +1,27 @@
+.form-check {
+	@if $enable-rtl {
+		padding-left: 0;
+		padding-right: 1.25rem;
+	}
+	
+	& .form-check-input {
+		@if $enable-rtl {
+			margin-right: -1.25rem;
+			margin-left: 0;
+		}
+	}
+	&.form-check-inline {
+		@if $enable-rtl {
+			padding-right: 0;
+			margin-right: 0;
+			margin-left: .75rem;
+		}
+		
+		& .form-check-input {
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: .3125rem;
+			}
+		}
+	}
+}

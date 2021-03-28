@@ -1,0 +1,25 @@
+.widget-map {
+	background: $white;
+	border: 1px solid $border-color-transparent;
+	
+	& .widget-map-body {
+		& iframe {
+			display: block;
+		}
+	}
+	& .widget-map-list {
+		& .widget-list-item {
+			border: none;
+			
+			& + .widget-list-item {
+				border-top: 1px solid $border-color-transparent;
+			}
+		}
+	}
+	&.widget-map-rounded {
+		@include border-radius($border-radius);
+	}
+	&.inverse-mode {
+		background: $dark;
+	}
+}

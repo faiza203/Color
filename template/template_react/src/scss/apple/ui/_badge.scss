@@ -1,0 +1,41 @@
+.badge {
+	font-size: 75%;
+	font-weight: 600;
+	display: inline-block;
+	min-width: rem(10px);
+	padding: rem(3px) rem(7px);
+	color: $white;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: #777;
+	
+	@include border-radius($border-radius * 3);
+	
+	@each $color, $value in $theme-colors {
+		&.badge-#{$color} {
+			@if $color == 'primary' {
+				background: $blue;
+			}
+			@if $color == 'light' {
+				color: $dark;
+			}
+			@if $color != 'primary' {
+				background: $value;
+			}
+		}
+	}
+	@each $color, $value in $colors {
+		&.badge-#{$color} {
+			background: $value;
+		}
+	}
+	
+	&.badge-square {
+		@include border-radius(0);
+	}
+	&.badge-default {
+		background: lighten($dark, 70%);
+		color: $dark;
+	}
+}

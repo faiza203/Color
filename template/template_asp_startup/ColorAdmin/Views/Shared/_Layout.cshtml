@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en" @ViewData["HtmlAttribute"]>
+<head>
+    <meta charset="utf-8" />
+    <title>Color Admin | @ViewData["Title"]</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+    <meta name="author" content="@ViewData["MetaAuthor"]" />
+    <meta name="keywords" content="@ViewData["MetaKeywords"]" />
+
+    @RenderSection("MetaTag", required: false)
+
+    <!-- ================== BEGIN core-css ================== -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+		<link href="~/css/default/app.min.css" rel="stylesheet" />
+    <!-- ================== END core-css ================== -->
+
+    @RenderSection("Styles", required: false)
+</head>
+<body class="@ViewData["BodyClass"]">
+		<!-- begin #page-container -->
+		<div id="page-container" class="page-container fade page-sidebar-fixed @(ViewData["PageWithoutHeader"] == null ? "page-header-fixed" : "") @ViewData["PageContainerClass"]">
+        @if (ViewData["PageWithoutHeader"] == null) {
+            <partial name="_Header" />
+        }
+        
+        @if (ViewData["PageWithTopMenu"] != null) {
+            <partial name="_TopMenu" />
+        }
+
+        @if (ViewData["PageWithoutSidebar"] == null) {
+            <partial name="_Sidebar" />
+        }
+        
+        @if (ViewData["PageWithTwoSidebar"] != null) {
+            <partial name="_SidebarRight" />
+        }
+
+        @if (ViewData["PageWithoutContainer"] == null) {
+            <div id="content" class="content @ViewData["PageContentClass"]" @ViewData["PageContentAttribute"]>
+                @RenderBody()
+
+                <!-- BEGIN btn-scroll-top -->
+                <a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+                <!-- END btn-scroll-top -->
+            </div>
+        } else {
+            @RenderBody()
+
+            <!-- BEGIN btn-scroll-top -->
+            <a href="#" data-click="scroll-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+            <!-- END btn-scroll-top -->
+        }
+
+        @RenderSection("OutterAppContainerContent", required: false)
+
+        @if (ViewData["PageWithFooter"] != null) {
+            <partial name="_Footer" />
+        }
+    </div>
+
+    <!-- ================== BEGIN core-js ================== -->
+    <script src="~/js/app.min.js"></script>
+		<script src="~/js/theme/default.min.js"></script>
+    <!-- ================== END core-js ================== -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

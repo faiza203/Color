@@ -1,0 +1,93 @@
+.content {
+	margin-left: $sidebar-width;
+	padding: $content-padding-y $content-padding-x;
+	
+	@if $enable-rtl {
+		margin-left: 0;
+		margin-right: $sidebar-width;
+	}
+	@include media-breakpoint-down(sm) {
+		margin-left: 0;
+		padding: $content-padding-y-sm $content-padding-x-sm;
+		
+		@if $enable-rtl {
+			margin-right: 0;
+		}
+	}
+	
+	&.content-full-width {
+		padding: 0;
+		
+		& .page-header {
+			margin: $content-padding-y $content-padding-x;
+			position: relative;
+			z-index: 10;
+			
+			@include media-breakpoint-down(sm) {
+				margin: $content-padding-y-sm $content-padding-x-sm;
+				
+				& + .page-header {
+					margin-top: -$content-padding-y-sm;
+				}
+			}
+		}
+		& .breadcrumb {
+			position: relative;
+			z-index: 20;
+			margin: 0 $content-padding-x 0 0;
+			
+			@if $enable-rtl {
+				margin-left: $content-padding-x;
+				margin-right: 0;
+			}
+			@include media-breakpoint-down(lg) {
+				margin: $content-padding-y $content-padding-x;
+				
+				& + .page-header {
+					margin-top: -$content-padding-y;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				margin: $content-padding-y-sm $content-padding-x-sm;
+				
+				& + .page-header {
+					margin-top: -$content-padding-y-sm;
+				}
+			}
+		}
+	}
+	&.content-inverse-mode {
+		& h1,
+		& h2,
+		& h3,
+		& h4,
+		& h5,
+		& h6 {
+			color: $white;
+		}
+		& .breadcrumb {
+			color: $white;
+			
+			& a {
+				color: $white;
+			}
+			& > li {
+				color: rgba($white, .75);
+			}
+		}
+		& .page-header {
+			color: $white;
+			
+			& small {
+				color: rgba($white, .75);
+			}
+		}
+		& .slimScrollDiv {
+			& .slimScrollBar {
+				&:before {
+					background: rgba($white, .5) !important;
+				}
+			}
+		}
+	}
+}

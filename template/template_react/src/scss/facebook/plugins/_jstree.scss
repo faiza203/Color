@@ -1,0 +1,197 @@
+.jstree {
+	& .jstree-container-ul {
+		& .jstree-node {
+			position: relative;
+			background: none !important;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: rem(10px);
+				top: 0;
+				bottom: 1px;
+				border-left: 1px dotted lighten($dark, 60%);
+				
+				@if $enable-rtl {
+					left: auto;
+					right: rem(10px);
+					border-left: 0;
+					border-right: 1px dotted lighten($dark, 60%);
+				}
+			}
+			&:last-child {
+				&:before {
+					bottom: rem(11px);
+				}	
+			}
+			& > .jstree-icon {
+				&.jstree-ocl {
+					position: relative;
+					background: none;
+				
+					&:before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						right: 1px;
+						top: 50%;
+						border-top: 1px dotted lighten($dark, 60%);
+						
+						@if $enable-rtl {
+							right: 50%;
+							left: 1px;
+						}
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						margin-left: rem(-3px);
+						margin-top: rem(-3px);
+						border: 5px solid transparent;
+						
+						@include transition(all .2s linear);
+						@if $enable-rtl {
+							left: auto;
+							right: 50%;
+							margin-left: 0;
+							margin-right: rem(-3px);
+						}
+					}
+				}
+			}
+			
+			& .jstree-anchor {
+				color: lighten($dark, 30%);
+				font-weight: 600;
+				
+				& .jstree-icon {
+					&.jstree-checkbox {
+						background: none;
+						
+						&:before {
+							content: '';
+							position: absolute;
+							left: rem(4px);
+							top: rem(4px);
+							right: rem(4px);
+							bottom: rem(4px);
+							border: 1px solid $border-color;
+							display: block;
+							background: $white;
+							
+							@include border-radius($border-radius-sm);
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							left: rem(7px);
+							top: rem(7px);
+							right: rem(7px);
+							bottom: rem(7px);
+							display: block;
+								
+							@include fontawesome();
+						}
+						
+						&.jstree-undetermined {
+							&:after {
+								background: lighten($dark, 65%);
+							}
+						}
+					}
+				}
+				
+				&.jstree-clicked {
+					color: $dark;
+					
+					& .jstree-icon {
+						&.jstree-checkbox {
+							&:after {
+								content: '\f00c';
+								font-size: rem(10px);
+								line-height: rem(15px);
+								color: $dark;
+								top: rem(5px);
+								left: rem(5px);
+								right: rem(5px);
+								bottom: rem(5px);
+							}
+						}
+					}
+				}
+				&.jstree-disabled {
+					color: lighten($dark, 45%);
+						
+					& > .jstree-icon {
+						opacity: 0.4;
+						
+						@include filter(none);
+					}
+				}
+			}
+			& .jstree-hovered,
+			& .jstree-wholerow-hovered {
+				background: none;
+				color: $dark;
+				
+				@include box-shadow(none);
+			}
+			& .jstree-clicked,
+			& .jstree-wholerow-clicked {
+				background: $light;
+			
+				@include box-shadow(none);
+			}
+			
+			&.jstree-open {
+				& .jstree-anchor {
+					& > .fa-folder {
+						&:before {
+							content: '\f07c';
+							color: lighten($dark, 45%);
+						}
+					}
+					&.jstree-clicked {
+						& > .fa-folder {
+							&:before {
+								color: $dark;
+							}
+						}
+					}
+				}
+				
+				& > .jstree-ocl {
+					&:after {
+						border-left-color: lighten($dark, 45%);
+						
+						@include transform(rotate(45deg));
+						@if $enable-rtl {
+							border-left-color: transparent;
+							border-right-color: lighten($dark, 45%);
+							
+							@include transform(rotate(-45deg));
+						}
+					}
+				}
+			}
+			&.jstree-closed {
+				& > .jstree-ocl {
+					&:after {
+						border-left-color: lighten($dark, 45%);
+						margin-top: rem(-5px);
+						
+						@include transform(rotate(0deg));
+						@if $enable-rtl {
+							border-left-color: transparent;
+							border-right-color: lighten($dark, 45%);
+							
+							@include transform(rotate(0));
+						}
+					}
+				}
+			}
+		}
+	}
+}

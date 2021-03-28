@@ -1,0 +1,16 @@
+.card {
+	& .card-header {
+		& .card-header-tabs {
+			margin-top: rem(-5px);
+		}
+		& .card-header-pills {
+			margin-top: rem(-8px);
+			margin-bottom: rem(-8px);
+		}
+	}
+	& > .widget-list {
+		& .widget-list-item {
+			@include border-radius(0);
+		}
+	}
+}

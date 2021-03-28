@@ -1,0 +1,90 @@
+html {
+	& .nvd3-svg {
+		direction: ltr;
+	}
+	& .nvtooltip {
+		font-family: inherit;
+		font-size: rem(12px);
+		border: none;
+		padding: rem(5px) rem(10px);
+		background: rgba($white, .95);
+		
+		@include box-shadow(0 4px 16px rgba($black, .15));
+		@include border-radius($border-radius * 2);
+		
+		& table {
+			& thead {
+				& tr {
+					& th {
+						& strong {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+			& tbody {
+				& td {
+					&.legend-color-guide {
+						& div {
+							border: none;
+						
+							@include border-radius($border-radius);
+						}
+					}
+				}
+			}
+		}
+	}
+	& .nvd3-inverse-mode {
+		& .nvd3 {
+			& line {
+				&.nv-guideline {
+					stroke: rgba($white, .5);
+				}
+			}
+			& .nv-bars {
+				& text {
+					fill: rgba($white, 1);
+				}
+			}
+			& .nv-axis {
+				& line,
+				& path {
+					fill: none;
+					stroke: rgba($white, .15);
+				}
+			}
+			& .nv-legend-text,
+			& .nv-x text,
+			& .nv-y text {
+				font-family: inherit;
+				fill: rgba($white, .75);
+				font-size: rem(11px);
+				font-weight: 600;
+			}
+			& .nv-label {
+				& text {
+					fill: rgba($white, .75) !important;
+				}
+			}
+			& .nv-legend-symbol {
+				r: 3
+			}
+			&.nv-pie {
+				& .nv-pie-title {
+					fill: rgba($white, .75)
+				}
+				& path {
+					stroke: rgba($black, .2);
+				}
+			}
+		}
+	}
+	& .nvd3 {
+		& .nv-legend-symbol {
+			stroke-width: 0 !important;
+			
+			@include transform(translate(-1px));
+		}
+	}
+}

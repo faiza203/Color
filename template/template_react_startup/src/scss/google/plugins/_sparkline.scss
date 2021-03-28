@@ -1,0 +1,10 @@
+body {
+	& .jqstooltip {
+		border: none;
+		width: auto !important;
+		height: auto !important;
+		background: rgba($dark, .9);
+	
+		@include border-radius($border-radius);
+	}
+}

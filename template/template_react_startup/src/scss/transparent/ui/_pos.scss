@@ -1,0 +1,52 @@
+.pos {
+	& .slimScrollBar {
+		display: none !important;
+	}
+}
+
+.pos-mobile-sidebar-toggler {
+	position: fixed;
+	bottom: rem(60px);
+	right: rem(12px);
+	z-index: 1020;
+	background: $white;
+	padding: rem(10px);
+	width: rem(60px);
+	height: rem(60px);
+	text-decoration: none;
+	color: $gray-900;
+	display: none;
+	
+	@include border-radius(50px);
+	@include box-shadow($box-shadow-lg);
+	@include flex-align(center);
+	@include media-breakpoint-down(md) {
+		@include display-flex();
+	}
+	
+	&:hover {
+		color: $gray-600;
+	}
+	& .img {
+		width: rem(32px);
+		height: rem(32px);
+		display: block;
+		margin: 0 auto;
+	}
+	& .badge {
+		position: absolute;
+		right: rem(10px);
+		top: rem(10px);
+		background: $primary;
+		color: $white;
+		width: rem(20px);
+		height: rem(20px);
+		font-size: $font-size-lg;
+		font-weight: 600;
+		padding: 0;
+		
+		@include display-flex();
+		@include flex-align(center);
+		@include flex-justify-content(center);
+	}
+}

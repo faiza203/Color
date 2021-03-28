@@ -1,0 +1,252 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    var menuController = ViewContext.RouteData.Values["controller"].ToString();
+    var menuAction = ViewContext.RouteData.Values["action"].ToString();
+    var sidebarMenu = Configuration.GetSection("sidebarMenu").GetChildren().ToArray();
+}
+
+<!-- BEGIN #sidebar -->
+<div id="sidebar" class="sidebar @ViewData["PageSidebarClass"]">
+    <!-- BEGIN scrollbar -->
+    <div data-scrollbar="true" data-height="100%">
+        <!-- BEGIN nav -->
+        <ul class="nav">
+					<li class="nav-profile">
+						<a href="javascript:;" data-toggle="nav-profile">
+							<div class="cover with-shadow"></div>
+							<div class="image image-icon bg-black text-grey-darker">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="info">
+								<b class="caret pull-right"></b> Sean Ngu
+								<small>Front end developer</small>
+							</div>
+						</a>
+					</li>
+					<li>
+						<ul class="nav nav-profile">
+							<li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
+							<li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
+							<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- end sidebar user -->
+				<!-- begin sidebar nav -->
+				<ul class="nav">
+					@if (ViewData["PageSidebarSearch"] != null) {
+						<li class="nav-search">
+							<input type="text" class="form-control" placeholder="Sidebar menu filter..." data-sidebar-search="true" />
+						</li>
+					}
+					
+					<li class="nav-header">Navigation</li>
+					@foreach (var menu in sidebarMenu) {
+						var menuChildren = menu.GetSection("children").GetChildren().ToArray();
+						var menuActiveLvl1 = "";
+						var menuActiveLvl2 = "";
+						var menuActiveLvl3 = "";
+
+						@if (menuChildren.Length > 0) {
+							@foreach (var submenu in menuChildren) {
+								var menuChildrenLvl1 = submenu.GetSection("children").GetChildren().ToArray();
+								@if (menuChildrenLvl1.Length > 0) {
+									@foreach (var submenu2 in menuChildrenLvl1) {
+										var menuChildrenLvl2 = submenu2.GetSection("children").GetChildren().ToArray();
+										@if (menuChildrenLvl2.Length > 0) {
+											@foreach (var submenu3 in menuChildrenLvl2) {
+												if (menuAction == submenu3["action"]) {
+													menuActiveLvl3 = "active";
+												}
+											}
+										} else {
+											if (menuAction == submenu2["action"]) {
+												menuActiveLvl2 = "active";
+											}
+										}
+									}
+								} else {
+									if (menuAction == submenu["action"]) {
+										menuActiveLvl1 = "active";
+									}
+								}
+							}
+						}
+						
+						<li class="@((menuController == @menu["controller"] || (menuActiveLvl1 == "active" || menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildren.Length > 0 ? "has-sub" : "")">
+							@if (menuChildren.Length == 0 && menu["action"] != null && menu["controller"] != null) {
+								<a asp-controller="@menu["controller"]" asp-action="@menu["action"]">
+									@if (menu["badge"] != null) {
+										<span class="badge pull-right">@menu["badge"]</span>
+									}
+									@if (menu["icon"] != null) {
+										<i class="@menu["icon"]"></i>
+									}
+									@if (menu["img"] != null) {
+										<div class="icon-img">
+											<img src="@menu["img"]" alt="" />
+										</div>
+									}
+									<span>
+										@menu["text"]
+										
+										@if (menu["label"] != null)
+										{
+											<span class="label label-theme">@menu["label"]</span>
+										}
+									</span>
+								</a>
+							} else {
+								<a href="javascript:;">
+									@if (menuChildren.Length > 0) {
+										<b class="caret"></b>
+									}
+									@if (menu["icon"] != null) {
+										<i class="@menu["icon"]"></i>
+									}
+									@if (menu["img"] != null) {
+										<div class="icon-img">
+											<img src="~@menu["img"]" alt="" />
+										</div>
+									}
+									<span>
+										@menu["text"]
+										
+										@if (menu["label"] != null) {
+											<span class="label label-theme">@menu["label"]</span>
+										}
+									</span>
+								</a>
+							}
+							@if (menuChildren.Length > 0) {
+								<ul class="sub-menu">
+									@foreach (var submenu in menuChildren) {
+										var menuChildrenLvl1 = submenu.GetSection("children").GetChildren().ToArray();
+										
+										menuActiveLvl2 = "";
+										menuActiveLvl3 = "";
+										
+										@if (menuChildrenLvl1.Length > 0) {
+											@foreach (var submenu2 in menuChildrenLvl1) {
+												var menuChildrenLvl2 = submenu2.GetSection("children").GetChildren().ToArray();
+												@if (menuChildrenLvl2.Length > 0) {
+													@foreach (var submenu3 in menuChildrenLvl2) {
+														if (menuAction == submenu3["action"]) {
+															menuActiveLvl3 = "active";
+														}
+													}
+												} else {
+													if (menuAction == submenu2["action"]) {
+														menuActiveLvl2 = "active";
+													}
+												}
+											}
+										} else {
+											if (menuAction == submenu["action"]) {
+												menuActiveLvl2 = "active";
+											}
+										}
+										
+										<li class="@((menuAction == @submenu["action"] || (menuActiveLvl2 == "active" || menuActiveLvl3 == "active")) ? "active" : "") @(menuChildrenLvl1.Length > 0 ? "has-sub" : "")">
+											@if (menuChildrenLvl1.Length == 0 && submenu["action"] != null && submenu["controller"] != null) {
+												<a asp-controller="@submenu["controller"]" asp-action="@submenu["action"]">
+														@submenu["text"]
+													
+														@if (submenu["highlight"] != null) {
+															<i class="fa fa-paper-plane text-theme"></i>
+														}
+												</a>
+											} else {
+												<a href="javascript:;">
+													@if (menuChildrenLvl1.Length > 0) {
+														<b class="caret"></b>
+													}
+													<span>
+														@submenu["text"]
+														@if (submenu["highlight"] != null) {
+															<i class="fa fa-paper-plane text-theme"></i>
+														}
+													</span>
+												</a>
+											}
+											@if (menuChildrenLvl1.Length > 0) {
+												<ul class="sub-menu">
+													@foreach (var submenu2 in menuChildrenLvl1) {
+														var menuChildrenLvl2 = submenu2.GetSection("children").GetChildren().ToArray();
+														menuActiveLvl3 = "";
+														
+														@if (menuChildrenLvl2.Length > 0) {
+															@foreach (var submenu3 in menuChildrenLvl2) {
+																if (menuAction == submenu3["action"]) {
+																	menuActiveLvl3 = "active";
+																}
+															}
+														}
+														<li class="@((menuAction == @submenu2["action"] || menuActiveLvl3 == "active") ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
+															@if (menuChildrenLvl2.Length == 0 && submenu2["action"] != null && submenu2["controller"] != null) {
+																<a asp-controller="@submenu2["controller"]" asp-action="@submenu2["action"]">
+																		@submenu2["text"]
+													
+																		@if (submenu2["highlight"] != null) {
+																			<i class="fa fa-paper-plane text-theme"></i>
+																		}
+																</a>
+															} else {
+																<a href="javascript:;">
+																	@if (menuChildrenLvl2.Length > 0) {
+																		<b class="caret"></b>
+																	}
+																	<span>
+																		@submenu2["text"]
+																		@if (submenu2["highlight"] != null) {
+																			<i class="fa fa-paper-plane text-theme"></i>
+																		}
+																	</span>
+																</a>
+																
+																@if (menuChildrenLvl2.Length > 0) {
+																	<ul class="sub-menu">
+																		@foreach (var submenu3 in menuChildrenLvl2) {
+																			<li class="@(menuAction == @submenu3["action"] ? "active" : "") @(menuChildrenLvl2.Length > 0 ? "has-sub" : "")">
+																				@if (menuChildrenLvl2.Length == 0 && submenu2["action"] != null && submenu3["controller"] != null) {
+																					<a asp-controller="@submenu3["controller"]" asp-action="@submenu3["action"]">
+																							@submenu3["text"]
+													
+																							@if (submenu3["highlight"] != null) {
+																								<i class="fa fa-paper-plane text-theme"></i>
+																							}
+																					</a>
+																				} else {
+																					<a href="javascript:;">
+																						<span>
+																							@submenu3["text"]
+																							@if (submenu3["highlight"] != null) {
+																								<i class="fa fa-paper-plane text-theme"></i>
+																							}
+																						</span>
+																					</a>
+																				}
+																			</li>
+																		}
+																	</ul>
+																}
+															}
+														</li>
+													}
+												</ul>
+											}
+										</li>
+									}
+								</ul>
+							}
+						</li>
+
+					}
+				</ul>
+        <!-- END nav -->
+    </div>
+    <!-- END scrollbar -->
+</div>
+<!-- END #sidebar -->
+<div class="sidebar-bg"></div>

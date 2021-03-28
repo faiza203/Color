@@ -1,0 +1,39 @@
+
+.registered-users-list {
+	list-style-type: none;
+	margin: rem(7.5px);
+	padding: 0;
+	
+	@include display-flex();
+	@include flex-wrap(wrap);
+	
+	& > li {
+		width: 25%;
+		font-size: rem(12px);
+		padding: rem(7.5px);
+		color: $white;
+		
+		& > a {
+			display: block;
+			margin-bottom: rem(10px);
+		}
+		& img {
+			max-width: 100%;
+			
+			@include border-radius($border-radius);
+		}
+		& .username {
+			font-size: rem(12px);
+			color: $white;
+			margin-bottom: 0;
+			font-weight: 600;
+			
+			& small {
+				display: block;
+				font-size: rem(11px);
+				color: rgba($white, .75);
+				line-height: rem(15px);
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.alert {
+	@each $color, $value in $theme-colors {
+		&.alert-#{$color} {
+			@if $color == 'primary' {
+				@include alert-variant(mix($white, $blue, 75%), $blue, darken($blue, 30%));
+			}
+			@if $color == 'success' {
+				@include alert-variant(mix($white, $teal, 75%), $teal, darken($teal, 30%));
+			}
+			@if $color != 'primary' and $color != 'success' {
+				@include alert-variant(mix($white, $value, 75%), $value, darken($value, 30%));
+			}
+		}
+	}
+	@each $color, $value in $colors {
+		&.alert-#{$color} {
+    	@include alert-variant(mix($white, $value, 75%), $value, darken($value, 30%));
+		}
+	}
+}

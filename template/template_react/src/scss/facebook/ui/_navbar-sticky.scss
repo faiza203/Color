@@ -1,0 +1,28 @@
+.navbar {
+	&.navbar-sticky {
+		top: $header-height + $content-padding-y;
+		position: sticky;
+		border-left: 1px solid $gray-400;
+		padding: 0;
+		
+		& .nav {
+			width: 100%;
+			
+			@include flex-direction-column();
+			
+			& .nav-link {
+				color: $gray-600;
+				padding: rem(3px) rem(24px);
+				font-weight: 600;
+				
+				&:hover {
+					color: $gray-800;
+				}
+				&.active {
+					color: $gray-900;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

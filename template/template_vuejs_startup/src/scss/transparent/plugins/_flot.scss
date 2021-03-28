@@ -1,0 +1,28 @@
+.legend {
+	background: rgba($white, .9);
+	z-index: 1020;
+	& .legendLayer {
+		& .background {
+			fill: none;
+		}
+	}
+}
+.flot-x-axis,
+.flot-y-axis {
+	& text {
+		fill: $white;
+	}
+}
+.flot-tooltip {
+	position: absolute;
+	display: none;
+	border: 0;
+	padding: rem(6px) rem(10px);
+	color: rgba($white, .9);
+	font-weight: 600;
+	font-size: rem(11px);
+	background: rgba($dark-darker, .85);
+	z-index: 10000 !important;
+	
+	@include border-radius($border-radius);
+}

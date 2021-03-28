@@ -1,0 +1,10 @@
+.widget-map {
+	background: rgba($white, .2);
+	
+	&.widget-map-rounded {
+		@include border-radius($border-radius);
+	}
+	&.inverse-mode {
+		background: rgba($black, .2);
+	}
+}

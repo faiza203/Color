@@ -1,0 +1,13 @@
+.page-header {
+	font-size: rem(28px);
+	margin: 0 0 rem(20px);
+	padding: 0;
+	border: none;
+	line-height: rem(32px);
+	font-weight: 600;
+	
+	& small {
+		line-height: rem(20px);
+		font-size: rem(14px);
+	}
+}

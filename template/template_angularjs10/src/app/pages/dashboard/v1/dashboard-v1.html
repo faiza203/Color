@@ -1,0 +1,548 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item active">Dashboard</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Dashboard <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin row -->
+<div class="row">
+  <!-- begin col-3 -->
+  <div class="col-xl-3 col-md-6">
+    <div class="widget widget-stats bg-blue">
+      <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+      <div class="stats-info">
+        <h4>TOTAL VISITORS</h4>
+        <p>3,291,922</p>
+      </div>
+      <div class="stats-link">
+        <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- end col-3 -->
+  <!-- begin col-3 -->
+  <div class="col-xl-3 col-md-6">
+    <div class="widget widget-stats bg-info">
+      <div class="stats-icon"><i class="fa fa-link"></i></div>
+      <div class="stats-info">
+        <h4>BOUNCE RATE</h4>
+        <p>20.44%</p>
+      </div>
+      <div class="stats-link">
+        <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- end col-3 -->
+  <!-- begin col-3 -->
+  <div class="col-xl-3 col-md-6">
+    <div class="widget widget-stats bg-orange">
+      <div class="stats-icon"><i class="fa fa-users"></i></div>
+      <div class="stats-info">
+        <h4>UNIQUE VISITORS</h4>
+        <p>1,291,922</p>
+      </div>
+      <div class="stats-link">
+        <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- end col-3 -->
+  <!-- begin col-3 -->
+  <div class="col-xl-3 col-md-6">
+    <div class="widget widget-stats bg-red">
+      <div class="stats-icon"><i class="fa fa-clock"></i></div>
+      <div class="stats-info">
+        <h4>AVG TIME ON SITE</h4>
+        <p>00:12:23</p>
+      </div>
+      <div class="stats-link">
+        <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- end col-3 -->
+</div>
+<!-- end row -->
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-8 -->
+	<div class="col-xl-8">
+		<!-- begin panel -->
+		<panel title="Website Analytics (Last 7 Days)">
+      <div class="height-sm">
+        <ngx-charts-line-chart
+          [animations]="false"
+          [scheme]="lineChartColor"
+          [results]="lineChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'"
+          [roundDomains]="true"
+          [autoScale]="true">
+        </ngx-charts-line-chart>
+      </div>
+		</panel>
+		<!-- end panel -->
+
+    <!-- begin tabs -->
+    <ngb-tabset class="nav-tabs-inverse nav-justified nav-justified-mobile">
+      <ngb-tab>
+        <ng-template ngbTabTitle><i class="fa fa-camera fa-lg m-r-5"></i> <span class="d-none d-md-inline">Latest Post</span></ng-template>
+        <ng-template ngbTabContent>
+          <perfect-scrollbar class="height-sm">
+            <ul class="media-list media-list-with-divider">
+              <li class="media media-lg">
+                <a href="javascript:;" class="pull-left">
+                  <img class="media-object" src="/assets/img/gallery/gallery-1.jpg" alt="" />
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Aenean viverra arcu nec pellentesque ultrices. In erat purus, adipiscing nec lacinia at, ornare ac eros.</h4>
+                  Nullam at risus metus. Quisque nisl purus, pulvinar ut mauris vel, elementum suscipit eros. Praesent ornare ante massa, egestas pellentesque orci convallis ut. Curabitur consequat convallis est, id luctus mauris lacinia vel. Nullam tristique lobortis mauris, ultricies fermentum lacus bibendum id. Proin non ante tortor. Suspendisse pulvinar ornare tellus nec pulvinar. Nam pellentesque accumsan mi, non pellentesque sem convallis sed. Quisque rutrum erat id auctor gravida.
+                </div>
+              </li>
+              <li class="media media-lg">
+                <a href="javascript:;" class="pull-left">
+                  <img class="media-object" src="/assets/img/gallery/gallery-10.jpg" alt="" />
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Vestibulum vitae diam nec odio dapibus placerat. Ut ut lorem justo.</h4>
+                  Fusce bibendum augue nec fermentum tempus. Sed laoreet dictum tempus. Aenean ac sem quis nulla malesuada volutpat. Nunc vitae urna pulvinar velit commodo cursus. Nullam eu felis quis diam adipiscing hendrerit vel ac turpis. Nam mattis fringilla euismod. Donec eu ipsum sit amet mauris iaculis aliquet. Quisque sit amet feugiat odio. Cras convallis lorem at libero lobortis, placerat lobortis sapien lacinia. Duis sit amet elit bibendum sapien dignissim bibendum.
+                </div>
+              </li>
+              <li class="media media-lg">
+                <a href="javascript:;" class="pull-left">
+                  <img class="media-object" src="/assets/img/gallery/gallery-7.jpg" alt="" />
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Maecenas eget turpis luctus, scelerisque arcu id, iaculis urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.</h4>
+                  Morbi placerat est nec pharetra placerat. Ut laoreet nunc accumsan orci aliquam accumsan. Maecenas volutpat dolor vitae sapien ultricies fringilla. Suspendisse vitae orci sed nibh ultrices tristique. Aenean in ante eget urna semper imperdiet. Pellentesque sagittis a nulla at scelerisque. Nam augue nulla, accumsan quis nisi a, facilisis eleifend nulla. Praesent aliquet odio non imperdiet fringilla. Morbi a porta nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+                </div>
+              </li>
+              <li class="media media-lg">
+                <a href="javascript:;" class="pull-left">
+                  <img class="media-object" src="/assets/img/gallery/gallery-8.jpg" alt="" />
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor accumsan rutrum.</h4>
+                  Fusce augue diam, vestibulum a mattis sit amet, vehicula eu ipsum. Vestibulum eu mi nec purus tempor consequat. Vestibulum porta non mi quis cursus. Fusce vulputate cursus magna, tincidunt sodales ipsum lobortis tincidunt. Mauris quis lorem ligula. Morbi placerat est nec pharetra placerat. Ut laoreet nunc accumsan orci aliquam accumsan. Maecenas volutpat dolor vitae sapien ultricies fringilla. Suspendisse vitae orci sed nibh ultrices tristique. Aenean in ante eget urna semper imperdiet. Pellentesque sagittis a nulla at scelerisque.
+                </div>
+              </li>
+            </ul>
+          </perfect-scrollbar>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><i class="fa fa-archive fa-lg m-r-5"></i> <span class="d-none d-md-inline">Purchase</span></ng-template>
+        <ng-template ngbTabContent>
+          <perfect-scrollbar class="height-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th class="hidden-sm">Product</th>
+                  <th></th>
+                  <th>Amount</th>
+                  <th>User</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>13/02/2013</td>
+                  <td class="hidden-sm">
+                    <a href="javascript:;">
+                      <img src="/assets/img/product/product-1.png" alt=""  />
+                    </a>
+                  </td>
+                  <td class="text-nowrap">
+                    <h6><a href="javascript:;">Nunc eleifend lorem eu velit eleifend, <br />eget faucibus nibh placerat.</a></h6>
+                  </td>
+                  <td>$349.00</td>
+                  <td class="text-nowrap"><a href="javascript:;">Derick Wong</a></td>
+                </tr>
+                <tr>
+                  <td>13/02/2013</td>
+                  <td class="hidden-sm">
+                    <a href="javascript:;">
+                      <img src="/assets/img/product/product-2.png" alt="" />
+                    </a>
+                  </td>
+                  <td class="text-nowrap">
+                    <h6><a href="javascript:;">Nunc eleifend lorem eu velit eleifend, <br />eget faucibus nibh placerat.</a></h6>
+                  </td>
+                  <td>$399.00</td>
+                  <td class="text-nowrap"><a href="javascript:;">Derick Wong</a></td>
+                </tr>
+                <tr>
+                  <td>13/02/2013</td>
+                  <td class="hidden-sm">
+                    <a href="javascript:;">
+                      <img src="/assets/img/product/product-3.png" alt="" />
+                    </a>
+                  </td>
+                  <td class="text-nowrap">
+                    <h6><a href="javascript:;">Nunc eleifend lorem eu velit eleifend, <br />eget faucibus nibh placerat.</a></h6>
+                  </td>
+                  <td>$499.00</td>
+                  <td class="text-nowrap"><a href="javascript:;">Derick Wong</a></td>
+                </tr>
+                <tr>
+                  <td>13/02/2013</td>
+                  <td class="hidden-sm">
+                    <a href="javascript:;">
+                      <img src="/assets/img/product/product-4.png" alt="" />
+                    </a>
+                  </td>
+                  <td class="text-nowrap">
+                    <h6><a href="javascript:;">Nunc eleifend lorem eu velit eleifend, <br />eget faucibus nibh placerat.</a></h6>
+                  </td>
+                  <td>$230.00</td>
+                  <td class="text-nowrap"><a href="javascript:;">Derick Wong</a></td>
+                </tr>
+                <tr>
+                  <td>13/02/2013</td>
+                  <td class="hidden-tablet hidden-phone">
+                    <a href="javascript:;">
+                      <img src="/assets/img/product/product-5.png" alt="" />
+                    </a>
+                  </td>
+                  <td class="text-nowrap">
+                    <h6><a href="javascript:;">Nunc eleifend lorem eu velit eleifend, <br />eget faucibus nibh placerat.</a></h6>
+                  </td>
+                  <td>$500.00</td>
+                  <td class="text-nowrap"><a href="javascript:;">Derick Wong</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </perfect-scrollbar>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><i class="fa fa-envelope fa-lg m-r-5"></i> <span class="d-none d-md-inline">Email</span></ng-template>
+        <ng-template ngbTabContent>
+          <perfect-scrollbar class="height-sm">
+            <ul class="media-list media-list-with-divider">
+              <li class="media media-sm">
+                <a href="javascript:;" class="pull-left">
+                  <img src="/assets/img/user/user-1.jpg" alt="" class="media-object rounded-corner" />
+                </a>
+                <div class="media-body">
+                  <a href="javascript:;"><h4 class="media-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4></a>
+                  <p class="m-b-5">
+                    Aenean mollis arcu sed turpis accumsan dignissim. Etiam vel tortor at risus tristique convallis. Donec adipiscing euismod arcu id euismod. Suspendisse potenti. Aliquam lacinia sapien ac urna placerat, eu interdum mauris viverra.
+                  </p>
+                  <i class="text-muted">Received on 04/16/2013, 12.39pm</i>
+                </div>
+              </li>
+              <li class="media media-sm">
+                <a href="javascript:;" class="pull-left">
+                  <img src="/assets/img/user/user-2.jpg" alt="" class="media-object rounded-corner" />
+                </a>
+                <div class="media-body">
+                  <a href="javascript:;"><h4 class="media-heading">Praesent et sem porta leo tempus tincidunt eleifend et arcu.</h4></a>
+                  <p class="m-b-5">
+                    Proin adipiscing dui nulla. Duis pharetra vel sem ac adipiscing. Vestibulum ut porta leo. Pellentesque orci neque, tempor ornare purus nec, fringilla venenatis elit. Duis at est non nisl dapibus lacinia.
+                  </p>
+                  <i class="text-muted">Received on 04/16/2013, 12.39pm</i>
+                </div>
+              </li>
+              <li class="media media-sm">
+                <a href="javascript:;" class="pull-left">
+                  <img src="/assets/img/user/user-3.jpg" alt="" class="media-object rounded-corner" />
+                </a>
+                <div class="media-body">
+                  <a href="javascript:;"><h4 class="media-heading">Ut mi eros, varius nec mi vel, consectetur convallis diam.</h4></a>
+                  <p class="m-b-5">
+                    Ut mi eros, varius nec mi vel, consectetur convallis diam. Nullam eget hendrerit eros. Duis lacinia condimentum justo at ultrices. Phasellus sapien arcu, fringilla eu pulvinar id, mattis quis mauris.
+                  </p>
+                  <i class="text-muted">Received on 04/16/2013, 12.39pm</i>
+                </div>
+              </li>
+              <li class="media media-sm">
+                <a href="javascript:;" class="pull-left">
+                  <img src="/assets/img/user/user-4.jpg" alt="" class="media-object rounded-corner" />
+                </a>
+                <div class="media-body">
+                  <a href="javascript:;"><h4 class="media-heading">Aliquam nec dolor vel nisl dictum ullamcorper.</h4></a>
+                  <p class="m-b-5">
+                    Aliquam nec dolor vel nisl dictum ullamcorper. Duis vel magna enim. Aenean volutpat a dui vitae pulvinar. Nullam ligula mauris, dictum eu ullamcorper quis, lacinia nec mauris.
+                  </p>
+                  <i class="text-muted">Received on 04/16/2013, 12.39pm</i>
+                </div>
+              </li>
+            </ul>
+          </perfect-scrollbar>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+		<!-- end tabs -->
+
+		<!-- begin panel -->
+		<panel title="Quick Post" noBody="true" footerClass="text-right">
+		  <ng-container beforeBody>
+        <div class="panel-toolbar">
+          <div class="btn-group m-r-5">
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
+            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
+            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-align-center"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
+          </div>
+        </div>
+			</ng-container>
+
+      <ng-container noBody>
+			  <textarea class="form-control no-rounded-corner bg-light" rows="14">Enter some comment.</textarea>
+			</ng-container>
+
+			<ng-container footer>
+        <a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
+        <a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Action</a>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+
+		<!-- begin panel -->
+		<panel title="Message">
+      <perfect-scrollbar class="height-sm">
+        <ul class="media-list media-list-with-divider media-messaging">
+          <li class="media media-sm">
+            <a href="javascript:;" class="pull-left">
+              <img src="/assets/img/user/user-5.jpg" alt="" class="media-object rounded-corner" />
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">John Doe</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id nunc non eros fermentum vestibulum ut id felis. Nunc molestie libero eget urna aliquet, vitae laoreet felis ultricies. Fusce sit amet massa malesuada, tincidunt augue vitae, gravida felis.</p>
+            </div>
+          </li>
+          <li class="media media-sm">
+            <a href="javascript:;" class="pull-left">
+              <img src="/assets/img/user/user-6.jpg" alt="" class="media-object rounded-corner" />
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Terry Ng</h5>
+              <p>Sed in ante vel ipsum tristique euismod posuere eget nulla. Quisque ante sem, scelerisque iaculis interdum quis, eleifend id mi. Fusce congue leo nec mauris malesuada, id scelerisque sapien ultricies.</p>
+            </div>
+          </li>
+          <li class="media media-sm">
+            <a href="javascript:;" class="pull-left">
+              <img src="/assets/img/user/user-8.jpg" alt="" class="media-object rounded-corner" />
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">Fiona Log</h5>
+              <p>Pellentesque dictum in tortor ac blandit. Nulla rutrum eu leo vulputate ornare. Nulla a semper mi, ac lacinia sapien. Sed volutpat ornare eros, vel semper sem sagittis in. Quisque risus ipsum, iaculis quis cursus eu, tristique sed nulla.</p>
+            </div>
+          </li>
+          <li class="media media-sm">
+            <a href="javascript:;" class="pull-left">
+              <img src="/assets/img/user/user-7.jpg" alt="" class="media-object rounded-corner" />
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">John Doe</h5>
+              <p>Morbi molestie lorem quis accumsan elementum. Morbi condimentum nisl iaculis, laoreet risus sed, porta neque. Proin mi leo, dapibus at ligula a, aliquam consectetur metus.</p>
+            </div>
+          </li>
+        </ul>
+      </perfect-scrollbar>
+
+      <ng-container footer>
+        <form>
+          <div class="input-group">
+            <input type="text" class="form-control bg-light" placeholder="Enter message" />
+            <span class="input-group-append">
+              <button class="btn btn-primary" type="button"><i class="fa fa-pencil-alt"></i></button>
+            </span>
+          </div>
+        </form>
+      </ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-8 -->
+	<!-- begin col-4 -->
+	<div class="col-xl-4">
+		<!-- begin panel -->
+		<panel title="Analytics Details" bodyClass="p-t-0">
+      <div class="table-responsive">
+        <table class="table table-valign-middle">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Total</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label class="label label-danger">Unique Visitor</label></td>
+              <td>13,203 <span class="text-success"><i class="fa fa-arrow-up"></i></span></td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_RED]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="label label-warning">Bounce Rate</label></td>
+              <td>28.2%</td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_ORANGE]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="label label-success">Total Page Views</label></td>
+              <td>1,230,030</td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_GREEN]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="label label-primary">Avg Time On Site</label></td>
+              <td>00:03:45</td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_BLUE]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="label label-default">% New Visits</label></td>
+              <td>40.5%</td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_GREY]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="label label-inverse">Return Visitors</label></td>
+              <td>73.4%</td>
+              <td class="p-t-0 p-b-0">
+                <ngx-trend
+                  height="38"
+                  autoDraw="true"
+                  autoDrawDuration="0"
+                  autoDrawEasing="ease-out"
+                  smooth="true"
+                  [data]="[0,2,5,9,5,10,3,5,0,0,1,8,2,9,0]"
+                  [gradient]="[global.COLOR_BLACK]"
+                  radius="0.1"
+                  strokeWidth="5"
+                  strokeLinecap="butt"
+                >
+                </ngx-trend>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+		</panel>
+		<!-- end panel -->
+
+		<!-- begin panel -->
+		<panel title="Visitors User Agent">
+      <div class="height-sm">
+        <ngx-charts-pie-chart
+          [scheme]="pieChartColor"
+          [results]="pieChartData"
+          [legend]="false"
+          [explodeSlices]="false"
+          [labels]="true"
+          [doughnut]="false">
+        </ngx-charts-pie-chart>
+      </div>
+		</panel>
+		<!-- end panel -->
+
+		<!-- begin panel -->
+		<panel title="Todo List" bodyClass="p-0">
+      <ul class="todolist">
+        <ng-container *ngFor="let list of todolist">
+          <li [ngClass]="{ 'active': list.checked }" (click)="checkTodoList(list.checked)">
+            <a href="javascript">
+              <div class="todolist-input"><i class="fa fa-square"></i></div>
+              <div class="todolist-title">{{ list.title }}</div>
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+		</panel>
+		<!-- end panel -->
+
+		<!-- begin panel -->
+		<panel title="World Visitors" bodyClass="p-0">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="3" [styles]="mapStyles" class="height-sm">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-4 -->
+</div>
+<!-- end row -->

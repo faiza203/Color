@@ -1,0 +1,42 @@
+.media {
+	@include display-flex();
+	@include flex(1);
+	
+	& + .media {
+		margin-top: rem(15px);
+	}
+	& .media-heading {
+		margin-top: 0;
+		margin-bottom: rem(5px);
+	}
+	& .media-object {
+		width: rem(128px);
+	}
+	&.media-lg .media-object {
+		width: rem(256px);
+	}
+	&.media-sm .media-object {
+		width: rem(64px);
+	}
+	&.media-xs .media-object {
+		width: rem(32px);
+	}
+	& > .pull-left,
+	& > .media-left {
+		padding-right: rem(15px);
+		
+		@if $enable-rtl {
+			padding-right: 0;
+			padding-left: rem(15px);
+		}
+	}
+	& > .pull-right,
+	& > .media-right {
+		padding-left: rem(15px);
+		
+		@if $enable-rtl {
+			padding-left: 0;
+			padding-right: rem(15px);
+		}
+	}
+}

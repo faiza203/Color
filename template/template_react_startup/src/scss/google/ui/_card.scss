@@ -1,0 +1,13 @@
+.card {
+	& > .widget-list {
+		& .widget-list-item {
+			@include border-radius(0);
+		}
+	}
+	&.border-0 {
+		@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+	}
+	& .tab-content {
+		@include box-shadow(none);	
+	}
+}

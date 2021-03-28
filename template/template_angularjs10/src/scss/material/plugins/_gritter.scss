@@ -1,0 +1,184 @@
+body {
+	& #gritter-notice-wrapper {
+		width: rem(420px);
+		z-index: $header-zindex + 10;
+		
+		@include media-breakpoint-down(xs) {
+			width: rem(320px);
+		}
+		@include media-breakpoint-down(xxs) {
+			width: rem(280px);
+		}
+		
+		& .gritter-item-wrapper {
+			background: none;
+			background: rgba($dark-darker, .9);
+			
+			@include border-radius($border-radius-lg);
+			
+			& .gritter-top,
+			& .gritter-bottom {
+				background: none;
+				display: none;
+			}
+			& .gritter-item {
+				font-family: inherit;
+				padding: rem(12px) rem(95px) rem(12px) rem(15px);
+				background: none;
+				
+				@include display-flex();
+				@include flex(1);
+				@include flex-align(center);
+				@if $enable-rtl {
+					padding-right: rem(15px);
+					padding-left: rem(95px);
+				}
+				@include media-breakpoint-down(xs) {
+					padding: rem(10px) rem(70px) rem(10px) rem(10px);
+					
+					@if $enable-rtl {
+						padding-right: rem(10px);
+						padding-left: rem(70px);
+					}
+				}
+				
+				& .gritter-with-image,
+				& .gritter-without-image {
+					float: none;
+					width: auto;
+					
+					@include flex(1);
+				}
+				& .gritter-image {
+					margin: 0 rem(15px) 0 0;
+					height: auto;
+					
+					@include border-radius($border-radius * 20);
+					@if $enable-rtl {
+						margin-right: 0;
+						margin-left: rem(15px);
+					}
+					@include media-breakpoint-down(xs) {
+						width: rem(36px);
+						margin-right: rem(10px);
+						
+						@if $enable-rtl {
+							margin-right: 0;
+							margin-left: rem(10px);
+						}
+					}
+					@include media-breakpoint-down(xxs) {
+						width: rem(24px);
+					}
+				}
+				& .gritter-title {
+					font-size: rem(14px);
+					line-height: rem(20px);
+					padding-bottom: 0;
+					font-weight: 500;
+					color: $white;
+					text-shadow: none;
+					
+					@include media-breakpoint-down(xs) {
+						font-size: rem(12px);
+						line-height: rem(18px);
+					}
+				}
+				& p {
+					font-size: rem(11px);
+					line-height: rem(16px);
+					letter-spacing: 0.15px;
+					color: lighten($dark, 60%);
+					
+					@include media-breakpoint-down(xs) {
+						font-size: rem(10px);
+						line-height: rem(14px);
+						letter-spacing: 0;
+					}
+				}
+				& .gritter-close {
+					left: auto;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					background: none;
+					width: rem(80px);
+					height: auto;
+					display: block !important;
+					font-family: inherit;
+					border-left: 1px solid rgba($white, .1);
+					color: lighten($dark, 45%);
+					
+					@if $enable-rtl {
+						right: auto;
+						left: 0;
+						border-left: none;
+						border-right: 1px solid rgba($white, .1);
+						text-align: right;
+					}
+					@include media-breakpoint-down(xs) {
+						width: rem(60px);
+					}
+					
+					&:before {
+						content: 'Close';
+						position: absolute;
+						text-align: center;
+						top: 50%;
+						right: 0;
+						left: 0;
+						color: inherit;
+						z-index: 10;
+						text-indent: 0;
+						font-family: inherit;
+						font-size: rem(12px);
+						font-weight: 500;
+						line-height: rem(12px);
+						margin-top: rem(-6px);
+					}
+					&:hover,
+					&:focus {
+						color: $white;
+						outline: none;
+					}
+				}
+			}
+			
+			&.gritter-light {
+				& .gritter-item,
+				& .gritter-bottom,
+				& .gritter-top {
+					background: rgba($white, .95);
+					color: lighten($dark, 30%);
+				}
+				& .gritter-item {
+					& .gritter-title {
+						color: $dark;
+						font-weight: 500;
+					}
+					& p {
+						color: lighten($dark, 15%);
+					}
+				}
+				& .gritter-close {
+					border-color: $border-color;
+					color: lighten($dark, 30%);
+					
+					&:hover,
+					&:focus {
+						&:before {
+							color: $dark;
+						}
+					}
+				}
+			}
+			&.without-rounded-img {
+				& .gritter-item {
+					& .gritter-image {
+						@include border-radius(0);
+					}
+				}
+			}
+		}
+	}
+}

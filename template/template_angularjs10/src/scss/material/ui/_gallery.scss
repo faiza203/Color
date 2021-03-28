@@ -1,0 +1,118 @@
+.gallery {
+	margin: rem(-5px);
+	
+	& .image {
+		width: 25%;
+		display: block;
+		overflow: hidden;
+		padding: rem(5px);
+		
+		@include media-breakpoint-down(lg) {
+			width: 33.33%;
+		}
+		@include media-breakpoint-down(md) {
+			width: 50%;
+		}
+		@include media-breakpoint-down(xs) {
+			width: 100%;
+		}
+		
+		& a {
+			@include transition(all .2s linear);
+			
+			&:hover,
+			&:focus {
+				opacity: .8;
+			}
+		}
+		& img,
+		& .img {
+			width: 100%;
+			height: rem(200px);
+			
+			@include border-radius($border-radius $border-radius 0 0);
+		}
+		& .img {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		& .image-inner {
+			position: relative;
+			background: $white;
+			
+			@include border-radius($border-radius $border-radius 0 0);
+		}
+		& .image-caption {
+			position: absolute;
+			top: rem(15px);
+			left: 0;
+			background: rgba($dark-darker, .75);
+			color: $white;
+			font-weight: 500;
+			padding: rem(5px) rem(15px);
+			margin: 0;
+		}
+		& .image-info {
+			background: $white;
+			padding: rem(15px);
+			color: lighten($dark, 15%);
+			
+			@include border-radius(0 0 $border-radius $border-radius);
+			
+			& .title {
+				margin: 0 0 rem(10px);
+				line-height: rem(20px);
+				font-size: rem(15px);
+				font-weight: 500;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: $dark;
+			}
+			& .rating {
+				line-height: rem(20px);
+				margin: 0 0 rem(5px);
+				
+				@include display-flex();
+				
+				& span {
+					&.star {
+						margin-right: rem(1px);
+						
+						&:before {
+							content: '\f005';
+							color: lighten($dark, 65%);
+							
+							@include fontawesome();
+						}
+						&.active {
+							&:before {
+								color: $orange;
+							}
+						}
+					}
+				}
+			}
+			& .desc {
+				line-height: rem(17px);
+				font-size: rem(12px);
+				height: rem(51px);
+				overflow: hidden;
+			}
+		}
+	}
+}
+.gallery-option-set {
+	display: block;
+	margin-bottom: rem(-5px);
+	
+	& .btn {
+		margin: 0 rem(5px) rem(5px) 0;
+		
+		@if $enable-rtl {
+			margin-right: 0;
+			margin-left: rem(5px);
+		}
+	}
+}

@@ -1,0 +1,76 @@
+.todolist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	& > li {
+		border-bottom: 1px solid lighten($border-color, 5%);
+		
+		& > a {
+			display: block;
+			color: $dark;
+			
+			& .todolist-title {
+				display: table-cell;
+				padding: rem(10px);
+			}
+			& .todolist-input {
+				display: table-cell;
+				text-align: center;
+				font-size: rem(18px);
+				border-right: 1px solid lighten($border-color, 5%);
+				padding: rem(10px);
+				color: lighten($dark, 70%);
+				
+				@if $enable-rtl {
+					border-right: 0;
+					border-left: 1px solid lighten($border-color, 5%);
+				}
+				
+				& i {
+					display: block;
+					width: rem(28px);
+					text-align: center;
+				}
+			}
+			&:hover,
+			&:focus {
+				background: $light;
+				text-decoration: none;
+				
+				& .todolist-input {
+					& i {
+						&:before {
+							content: '\f14a';
+							color: rgba($dark, .4);
+							
+							@include fontawesome();
+						}
+					}
+				}
+			}
+		}
+		
+		&.active {
+			& > a {
+				& .todolist-title {
+					text-decoration: line-through;
+				}
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}

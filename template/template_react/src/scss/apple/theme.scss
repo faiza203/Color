@@ -1,0 +1,163 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: $primary;
+	
+	&:hover,
+	&:focus {
+		color: mix($black, $primary, 20%);
+	}
+}
+.header {
+	& .navbar-brand {
+		& .navbar-logo {
+			color: $primary;
+			text-shadow: 3px -3px mix($white, $primary, 70%);
+		}
+	}
+	& .navbar-nav {
+		& > li {
+			& > a {
+				& .label {
+					background: $primary;
+					@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' or $primary-color == 'aqua' {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			& > a {
+				& .label {
+					&.label-theme {
+						@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' or $primary-color == 'aqua' {
+							color: $black;
+						}
+						@include gradient-enabled {
+							@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+						}
+					}
+				}
+			}
+			&.active {
+				& > a {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' or $primary-color == 'aqua' {
+						color: $black;
+					}
+					@include gradient-enabled {
+						@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+					}
+					& i {
+						@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' or $primary-color == 'aqua' {
+							color: $black;
+						}
+					}
+					& .label,
+					& .badge {
+						color: $white;
+						background: rgba($black, .65);
+						
+						@include gradient-enabled {
+							color: $white;
+							background: rgba($black, .65);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+				}
+			}
+		}
+	}
+}
+.bg-theme {
+	background-color: $primary !important;
+}
+.label-theme {
+	background-color: $primary;
+}
+.text-theme {
+	color: $primary;
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .sub-menu {
+			& > li {
+				&.active {
+					> a {
+						background: $primary;
+						
+						@if $primary-color == 'yellow' or $primary-color == 'lime' or $primary-color == 'green' or $primary-color == 'teal' {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.todolist {
+	& > li {
+		&.active {
+			& > a {
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.pace {
+	& .pace-progress {
+		background: $primary;
+	}
+	& .pace-activity {
+		border-top-color: $primary;
+		border-left-color: $primary;
+	}
+}

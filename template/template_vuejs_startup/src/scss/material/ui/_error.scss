@@ -1,0 +1,50 @@
+.error {
+	margin: 0 auto;
+	text-align: center;
+	height: 100vh;
+	
+	@include display-flex();
+	@include flex-direction-column();
+	@include flex-justify-content(center);
+	
+	& .error-code,
+	& .error-content {
+		@include flex(1);
+		@include transform(translateZ(0));
+	}
+	& .error-code {
+		color: $dark;
+		font-size: rem(200px);
+		line-height: 1;
+		text-shadow: 10px 10px 0px rgba($dark, .2);
+		padding: rem(30px);
+		
+		@include display-flex();
+		@include flex-justify-content(center);
+		@include flex-align(flex-end);
+		@include media-breakpoint-down(sm) {
+			font-size: rem(160px);
+		}
+		@include media-breakpoint-down(xs) {
+			font-size: rem(120px);
+		}
+	}
+	& .error-content {
+		top: 50%;
+		bottom: 0;
+		padding: rem(30px);
+		background: $dark;
+		background-image: url(/material/images/error-page-pattern.png);
+	}
+	& .error-message {
+		color: $white;
+		font-size: rem(24px);
+		letter-spacing: 0.5px;
+		margin-bottom: rem(5px);
+	}
+	& .error-desc {
+		font-size: rem(12px);
+		color: rgba($white, .6);
+		letter-spacing: 0.5px;
+	}
+}

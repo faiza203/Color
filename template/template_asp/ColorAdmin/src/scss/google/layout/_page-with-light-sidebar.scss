@@ -1,0 +1,273 @@
+.page-with-light-sidebar {
+	& .sidebar {
+		background: $white;
+		
+		& .nav {
+			& > li {
+				& > a {
+					color: lighten($black, 10%);
+					
+					& i,
+					& .caret {
+						color: lighten($black, 45%);
+					}
+					
+					&:hover {
+						color: $black;
+						background: $light;
+					}
+					& .label,
+					& .badge {
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 60%);
+							color: mix($black, $primary, 30%);
+						}@else {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 10%);
+						}
+					}
+				}
+				&.active {
+					& > a {
+						font-weight: 500;
+						
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 35%);
+						}@else {
+							color: mix($black, $primary, 15%);
+							background: mix($white, $primary, 85%);
+						}
+						
+						& i,
+						& .caret {
+							color: inherit;
+						}
+						& .label,
+						& .badge {
+							background: mix($black, $primary, 15%);
+							color: $white;
+						}
+					}
+					&.has-sub {
+						& > a {
+							color: lighten($black, 10%);
+							font-weight: normal;
+							background: none;
+					
+							& i {
+								color: lighten($black, 35%);
+							}
+							& > .caret {
+								color: $primary;
+							}
+							& .label,
+							& .badge {
+								@if($primary-color == 'yellow' or $primary-color == 'lime') {
+									background: mix($white, $primary, 60%);
+									color: mix($black, $primary, 30%);
+								}@else {
+									background: mix($white, $primary, 75%);
+									color: mix($black, $primary, 10%);
+								}
+							}
+					
+							&:hover {
+								color: $black;
+								background: $light;
+							}
+						}
+					}
+				}
+				&.nav-header {
+					color: lighten($dark, 30%);
+				}
+				&.nav-profile {
+					& > a {
+						& .cover {
+							&.with-shadow {
+								&:before {
+									background: rgba($border-color, 0);
+								}
+							}
+						}
+						&:hover {
+							& .cover {
+								&.with-shadow {
+									&:before {
+										background: rgba($border-color, .5);
+									}
+								}
+							}
+						}
+					}
+					
+					&.active {
+						& > a {
+							color: mix($white, $black, 5%) !important;
+							background: $light;
+							
+							& .caret {
+								color: inherit;
+							}
+						}
+					}
+				}
+			}
+			& .sidebar-minify-btn {
+				background: $grey;
+				color: $dark;
+			
+				& i {
+					color: lighten($dark, 45%);
+				}
+			
+				&:hover,
+				&:focus {
+					background: $grey !important;
+					color: $dark !important;
+					
+					& i {
+						color: $dark !important;
+					}
+				}
+			}
+			&.nav-profile {
+				border-color: darken($light, 5%);
+			}
+		}
+		& .sub-menu {
+			& > li {
+				& > a {
+					color: lighten($black, 10%);
+					
+					& > .caret {
+						color: inherit;
+					}
+					& i,
+					& .caret {
+						color: lighten($black, 45%);
+					}
+					& .text-theme {
+						color: $primary;
+					}
+					&:hover,
+					&:focus {
+						color: $black;
+						background: $light;
+					}
+				}
+				&.active {
+					& > a {
+						font-weight: 500;
+						
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 35%);
+						}@else {
+							background: mix($white, $primary, 85%);
+							color: mix($black, $primary, 15%);
+						}
+					}
+					&.has-sub {
+						& > a {
+							color: lighten($black, 10%);
+							font-weight: normal;
+							background: none;
+					
+							& i {
+								color: lighten($black, 35%);
+							}
+							& > .caret {
+								color: $primary;
+							}
+					
+							&:hover {
+								color: $black;
+								background: $light;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& .sidebar-bg {
+		background: $white;
+	}
+	& .slimScrollDiv {
+		& .slimScrollBar {
+			&:before {
+				background: $black !important;
+			}
+		}
+	}
+	& .float-sub-menu-container {
+		background: $white;
+		margin-top: 1px;
+		@include box-shadow(0 0 0 1px $border-color-transparent);
+		
+		@if $enable-rtl {
+			margin-right: 1px;
+		} @else {
+			margin-left: 1px;
+		}
+		
+		& .float-sub-menu-arrow,
+		& .float-sub-menu-line {
+			background: darken($light, 7.5%);
+		}
+		& .float-sub-menu {
+			& li {
+				& > a {
+					color: lighten($black, 10%);
+					
+					&:hover {
+						color: $primary;
+					}
+					&:after {
+						background: darken($light, 7.5%);
+					}
+				}
+				&:before {
+					background: darken($light, 7.5%);
+				}
+				&:after {
+					background: $light;
+					border-color: darken($light, 7.5%);
+					border-width: 2px;
+				}
+				&.active,
+				&.expand,
+				&.expanding {
+					& > a {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+	&.page-sidebar-minified {
+		& .sidebar {
+			& .nav {
+				& > li {
+					&.active {
+						& > a {
+							@if($primary-color == 'yellow' or $primary-color == 'lime') {
+								background: mix($white, $primary, 75%);
+								color: mix($black, $primary, 35%);
+							}@else {
+								color: mix($black, $primary, 15%);
+								background: mix($white, $primary, 85%);
+							}
+							
+							& i {
+								color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

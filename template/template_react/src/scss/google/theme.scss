@@ -1,0 +1,281 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: $primary;
+	
+	&:hover,
+	&:focus {
+		color: mix($black, $primary, 20%);
+	}
+}
+.header {
+	& .navbar-nav {
+		& > li {
+			& > a {
+				& .label {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			& > a {
+				& .badge {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' or $primary-color == 'lime' {
+						color: $black;
+					}@else {
+						color: $white;
+					}
+				}
+				& .label {
+					&.label-theme {
+						background: $primary;
+					
+						@if $primary-color == 'yellow' or $primary-color == 'lime' {
+							color: $black;
+						}@else {
+							color: $white;
+						}
+					}
+				}
+			}
+			&.active {
+				& > a {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' or $primary-color == 'lime' {
+						color: $black;
+					}@else {
+						color: $white;
+					}
+				}
+				&.has-sub {
+					& > a {
+						& .label,
+						& .badge {
+							background: $primary;
+					
+							@if $primary-color == 'yellow' or $primary-color == 'lime' {
+								color: $black;
+							}@else {
+								color: $white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& li {
+		&.active {
+			& > a {
+				background: $primary;
+					
+				@if $primary-color == 'yellow' or $primary-color == 'lime' {
+					color: $black;
+				}@else {
+					color: $white;
+				}
+			}
+			&.has-sub {
+				& > a {
+					& .caret {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .nav {
+			& > li {
+				& > a {
+					& .label,
+					& .badge {
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 60%);
+							color: mix($black, $primary, 30%);
+						}@else {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 10%);
+						}
+					}
+				}
+				&.active {
+					& > a {
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 35%);
+						}@else {
+							color: mix($black, $primary, 15%);
+							background: mix($white, $primary, 85%);
+						}
+						
+						& i,
+						& .caret {
+							color: inherit;
+						}
+						& .label,
+						& .badge {
+							background: mix($black, $primary, 15%);
+							color: $white;
+						}
+					}
+					&.has-sub {
+						& > a {
+							& > .caret {
+								color: $primary;
+							}
+							& .label,
+							& .badge {
+								@if($primary-color == 'yellow' or $primary-color == 'lime') {
+									background: mix($white, $primary, 60%);
+									color: mix($black, $primary, 30%);
+								}@else {
+									background: mix($white, $primary, 75%);
+									color: mix($black, $primary, 10%);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		& .sub-menu {
+			& > li {
+				& > a {
+					& .text-theme {
+						color: $primary;
+					}
+				}
+				&.active {
+					& > a {
+						@if($primary-color == 'yellow' or $primary-color == 'lime') {
+							background: mix($white, $primary, 75%);
+							color: mix($black, $primary, 35%);
+						}@else {
+							background: mix($white, $primary, 85%);
+							color: mix($black, $primary, 15%);
+						}
+					}
+					&.has-sub {
+						& > a {
+							& > .caret {
+								color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.page-sidebar-minified {
+		& .sidebar {
+			& .nav {
+				& > li {
+					&.active {
+						& > a {
+							@if($primary-color == 'yellow' or $primary-color == 'lime') {
+								background: mix($white, $primary, 75%);
+								color: mix($black, $primary, 35%);
+							}@else {
+								color: mix($black, $primary, 15%);
+								background: mix($white, $primary, 85%);
+							}
+							
+							& i {
+								color: $primary;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .sub-menu {
+			& > li {
+				&.active {
+					&:after {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.coming-soon {
+	& .brand {
+		& .logo {
+			background: $primary;
+		}	
+	}
+}
+.todolist {
+	& > li {
+		&.active {
+			& > a {
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.pace {
+	& .pace-progress {
+		background: $primary;
+	}
+	& .pace-activity {
+		border-top-color: $primary;
+		border-left-color: $primary;
+	}
+}

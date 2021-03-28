@@ -1,0 +1,85 @@
+@include keyframes(sidebarSlideInRight) {
+	from { right: rem(-220px); }
+	to { right: 0; }
+}
+@include keyframes(sidebarSlideInLeft) {
+	from { left: rem(-220px); }
+	to { left: 0; }
+}
+@include media-breakpoint-down(sm) {
+	.page-with-two-sidebar {
+		& .sidebar-right {
+			&.sidebar,
+			&.sidebar-bg {
+				position: fixed;
+				
+				@if $enable-rtl {
+					left: -$sidebar-width;
+					right: auto;
+				} @else {
+					right: -$sidebar-width;
+					left: auto;
+				}
+			}
+		}
+		& .header {
+			& .navbar-brand {
+				margin: 0;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include flex-justify-content(center);
+			}
+		}
+		&.page-right-sidebar-toggled {
+			& .sidebar-right {
+				&.sidebar,
+				&.sidebar-bg {
+					@if $enable-rtl {
+						left: 0;
+						right: auto;
+						
+						@include animation(sidebarSlideInLeft .2s);
+					} @else {
+						right: 0;
+						left: auto;
+					
+						@include animation(sidebarSlideInRight .2s);
+					}
+				}
+			}
+		}
+		&.page-with-wide-sidebar {
+			& .sidebar-right {
+				&.sidebar,
+				&.sidebar-bg {
+					@if $enable-rtl {
+						left: -$sidebar-wide-width;
+						right: auto;
+					} @else {
+						right: -$sidebar-wide-width;
+						left: auto;
+					}
+				}
+			}
+			&.page-right-sidebar-toggled {
+				& .sidebar-right {
+					&.sidebar,
+					&.sidebar-bg {
+						@if $enable-rtl {
+							left: 0;
+							right: auto;
+						
+							@include animation(sidebarSlideInLeft .2s);
+						} @else {
+							right: 0;
+							left: auto;
+					
+							@include animation(sidebarSlideInRight .2s);
+						}
+					}
+				}
+			}
+		}
+	}
+}

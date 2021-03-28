@@ -1,0 +1,509 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item"><a href="javascript:;">UI Elements</a></li>
+	<li class="breadcrumb-item active">Widget Boxes</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Widget Boxes <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Panel (Default)">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Panel (Default)"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel noButton="true">
+			<ng-container header>
+				<h4 class="panel-title">Panel Header with Dropdown</h4>
+				<div class="btn-group ml-auto" ngbDropdown>
+					<button type="button" class="btn btn-success btn-xs">Action</button>
+					<button type="button" class="btn btn-success btn-xs dropdown-toggle" ngbDropdownToggle><b class="caret"></b></button>
+					<div class="dropdown-menu" ngbDropdownMenu>
+						<a href="javascript:;" class="dropdown-item">Action</a>
+						<a href="javascript:;" class="dropdown-item">Another action</a>
+						<a href="javascript:;" class="dropdown-item">Something else here</a>
+						<div class="dropdown-divider"></div>
+						<a href="javascript:;" class="dropdown-item">Separated link</a>
+					</div>
+				</div>
+			</ng-container>
+
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel noButton="true"&gt;
+  &lt;ng-container header&gt;
+    &lt;h4 class="panel-title"&gt;Panel Header with Dropdown&lt;/h4&gt;
+    &lt;div class="btn-group ml-auto" ngbDropdown&gt;
+      &lt;button type="button" class="btn btn-success btn-xs"&gt;Action&lt;/button&gt;
+      &lt;button type="button" class="btn btn-success btn-xs dropdown-toggle" ngbDropdownToggle&gt;&lt;/button&gt;
+      &lt;div class="dropdown-menu" ngbDropdownMenu&gt;
+        &lt;a href="javascript:;" class="dropdown-item"&gt;Action&lt;/a&gt;
+        ...
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+        </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel noButton="true">
+			<ng-container header>
+				<h4 class="panel-title">Panel Header with Radio Button</h4>
+				<div class="btn-group btn-group-toggle ml-auto" ngbRadioGroup [(ngModel)]="model">
+					<label ngbButtonLabel class="btn btn-success btn-xs active">
+						<input type="radio" ngbButton name="options" [value]="1" checked /> Option 1
+					</label>
+					<label ngbButtonLabel class="btn btn-success btn-xs">
+						<input type="radio" ngbButton name="options" [value]="2" /> Option 2
+					</label>
+				</div>
+			</ng-container>
+
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel noButton="true"&gt;
+  &lt;ng-container header&gt;
+    &lt;h4 class="panel-title"&gt;Panel Header with Radio Button&lt;/h4&gt;
+    &lt;div class="btn-group btn-group-toggle ml-auto" ngbRadioGroup [(ngModel)]="model"&gt;
+      &lt;label ngbButtonLabel class="btn btn-success btn-xs active"&gt;
+        &lt;input type="radio" ngbButton name="options" [value]="1" checked /&gt; Option 1
+      &lt;/label&gt;
+      &lt;label ngbButtonLabel class="btn btn-success btn-xs"&gt;
+        &lt;input type="radio" ngbButton name="options" [value]="2" /&gt; Option 2
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel noButton="true">
+			<ng-container header>
+				<h4 class="panel-title">Panel Header with Progress Bar</h4>
+				<div class="progress progress-sm ml-auto">
+					<div class="progress-bar progress-bar-striped bg-success progress-bar-animated" style="width: 40%">40%</div>
+				</div>
+			</ng-container>
+
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel noButton="true"&gt;
+  &lt;ng-container header&gt;
+    &lt;h4 class="panel-title"&gt;Panel Header with Progress Bar&lt;/h4&gt;
+    &lt;div class="progress progress-sm ml-auto"&gt;
+      &lt;div class="progress-bar progress-bar-striped bg-success progress-bar-animated" style="width: 40%"&gt;40%&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel>
+			<ng-container header>
+			  <span class="label label-success m-r-10">NEW</span>
+				<h4 class="panel-title">Panel Header with Label</h4>
+			</ng-container>
+
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel&gt;
+  &lt;ng-container header&gt;
+    &lt;span class="label label-success m-r-10"&gt;NEW&lt;/span&gt;
+    &lt;h4 class="panel-title"&gt;Panel Header with Label&lt;/h4&gt;
+  &lt;/ng-container&gt;
+
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Hover View Icon" panelClass="panel-hover-icon">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Hover View Icon" panelClass="panel-hover-icon"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel title="Panel with Scrollbar">
+      <perfect-scrollbar style="height: 280px">
+        <p>
+          <span class="fa-stack fa-4x pull-left m-r-10 text-inverse">
+            <i class="fab fa-twitter fa-stack-1x"></i>
+          </span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed enim arcu.
+          Ut posuere in ligula quis ultricies. In in justo turpis. Donec ut dui at massa gravida
+          interdum nec vitae justo. Quisque ullamcorper vehicula dictum. Nullam hendrerit interdum eleifend.
+          Aenean luctus sed arcu laoreet scelerisque. Vivamus non ullamcorper mauris, id sagittis lorem.
+          Proin tincidunt mauris et dolor mattis imperdiet. Sed facilisis mattis diam elementum adipiscing.
+        </p>
+        <p>
+          <span class="fa-stack fa-4x pull-right m-l-10 text-inverse">
+            <i class="fab fa-google-plus fa-stack-1x"></i>
+          </span>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          Ut ante velit, pretium non nisi a, egestas placerat diam. Nullam aliquet iaculis ultricies.
+          Aliquam volutpat, sapien quis volutpat elementum, ligula purus auctor diam, at vestibulum nulla augue
+          vel purus. Praesent ac nisl a magna tincidunt interdum sed in turpis. Maecenas nec condimentum risus.
+          In congue pretium est, eget euismod tortor ornare quis.
+        </p>
+        <p>
+          <span class="fa-stack fa-4x pull-left m-r-10 text-inverse">
+            <i class="fab fa-facebook fa-stack-1x"></i>
+          </span>
+          Praesent eu ultrices justo. Vestibulum ante
+          ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+          Cras mattis ipsum quis sapien consectetur fringilla.
+          Etiam sagittis sem tempus purus elementum, vitae pretium sapien porta. Curabitur iaculis ante ut aliquam luctus.
+          Vivamus ullamcorper blandit imperdiet. Ut egestas, orci id rhoncus cursus, orci risus scelerisque enim, eget mattis eros lacus quis ligula.
+          Vivamus ullamcorper urna eget hendrerit laoreet.
+        </p>
+        <p>
+          <span class="fa-stack fa-4x pull-right m-l-10 text-inverse">
+            <i class="fab fa-apple fa-stack-1x"></i>
+          </span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          Morbi accumsan velit dolor. Donec convallis eleifend magna, at euismod tellus convallis a.
+          Curabitur in nisi dolor. Cras viverra scelerisque orci, sed interdum ligula volutpat non.
+          Nunc eu enim ac neque tempor feugiat. Duis posuere lacus non magna eleifend,
+          non dictum sem feugiat. Duis eleifend condimentum pulvinar.
+        </p>
+      </perfect-scrollbar>
+
+      <ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Panel with Scrollbar"&gt;
+  &lt;perfect-scrollbar style="height: 200px"&gt;
+    ...
+  &lt;/perfect-scrollbar&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel title="Panel with Toolbar & Footer" noBody="true">
+		  <ng-container beforeBody>
+        <div class="panel-toolbar">
+          <div class="btn-group m-r-5">
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-bold"></i></a>
+            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-italic"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-underline"></i></a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-left"></i></a>
+            <a class="btn btn-white active" href="javascript:;"><i class="fa fa-align-center"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-right"></i></a>
+            <a class="btn btn-white" href="javascript:;"><i class="fa fa-align-justify"></i></a>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container noBody>
+			  <textarea class="form-control no-rounded-corner" rows="5">This is a form textarea.</textarea>
+			</ng-container>
+
+			<ng-container footer>
+				<a href="javascript:;" class="btn btn-white btn-sm">Cancel</a>
+				<a href="javascript:;" class="btn btn-primary btn-sm m-l-5">Action</a>
+			</ng-container>
+
+			<ng-container afterFooter>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Panel with Toolbar & Footer" noBody="true"&gt;
+  &lt;ng-container beforeBody&gt;
+    &lt;div class="panel-toolbar"&gt;
+      &lt;div class="btn-group m-r-5"&gt;
+        &lt;a class="btn btn-white" href="javascript:;"&gt;&lt;i class="fa fa-bold"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class="btn btn-white active" href="javascript:;"&gt;&lt;i class="fa fa-italic"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class="btn btn-white" href="javascript:;"&gt;&lt;i class="fa fa-underline"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="btn-group"&gt;
+        &lt;a class="btn btn-white" href="javascript:;"&gt;&lt;i class="fa fa-align-left"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class="btn btn-white active" href="javascript:;"&gt;&lt;i class="fa fa-align-center"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class="btn btn-white" href="javascript:;"&gt;&lt;i class="fa fa-align-right"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;a class="btn btn-white" href="javascript:;"&gt;&lt;i class="fa fa-align-justify"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container noBody&gt;
+    &lt;textarea class="form-control no-rounded-corner" rows="5"&gt;This is a form textarea.&lt;/textarea&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container footer&gt;
+    &lt;a href="javascript:;" class="btn btn-white btn-sm"&gt;Cancel&lt;/a&gt;
+    &lt;a href="javascript:;" class="btn btn-primary btn-sm m-l-5"&gt;Action&lt;/a&gt;
+  &lt;/ng-container&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel title="Panel with Alert Box">
+		  <ng-container beforeBody>
+        <div class="alert alert-success fade show">
+          <span class="close" data-dismiss="alert">×</span>
+          <i class="fa fa-check fa-2x pull-left m-r-10"></i>
+          <p class="m-b-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac posuere lacus, quis suscipit sem. Nulla sagittis aliquam erat non convallis.</p>
+        </div>
+      </ng-container>
+
+      <p>Panel Content Here</p>
+
+      <ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Panel with Alert Box"&gt;
+  &lt;ng-container beforeBody&gt;
+    &lt;div class="alert alert-success fade show"&gt;
+      &lt;span class="close" data-dismiss="alert"&gt;×&lt;/span&gt;
+      &lt;i class="fa fa-check fa-2x pull-left m-r-10"&gt;&lt;/i&gt;
+      &lt;p class="m-b-0"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac posuere lacus, quis suscipit sem. Nulla sagittis aliquam erat non convallis.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+
+<h3 class="m-b-20">Panel Theme</h3>
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel variant="default" title="Panel (Default)">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="default" title="Panel (Default)"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="success" title="Panel Success">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="success" title="Panel Success"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="warning" title="Panel Warning">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="warning" title="Panel Warning"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="danger" title="Panel Danger">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="danger" title="Panel Danger"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Panel Inverse">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Panel Inverse"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="primary" title="Panel Primary">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="primary" title="Panel Primary"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="info" title="Panel Info">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variants="info" title="Panel Info"&gt;...&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+
+<h3>Full Color Panel Theme</h3>
+<p class="m-b-20">
+	You can customize the panel body / header <code>background</code> & <code>text color</code> by adding predefined CSS class. E.g <code>.bg-black</code>. Full list of available predefined background class can be found <a href="helper_css.html">here</a>.
+</p>
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Full Color Panel" bodyClass="bg-dark text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel title="Full Color Panel" bodyClass="bg-dark text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="primary" title="Full Color Panel" bodyClass="bg-blue text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variant="primary" title="Full Color Panel" bodyClass="bg-blue text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="success" title="Full Color Panel" bodyClass="bg-teal text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variant="success" title="Full Color Panel" bodyClass="bg-teal text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel variant="warning" title="Full Color Panel" bodyClass="bg-orange text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variant="warning" title="Full Color Panel" bodyClass="bg-orange text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="danger" title="Full Color Panel" bodyClass="bg-red text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variant="danger" title="Full Color Panel" bodyClass="bg-red text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+		<!-- begin panel -->
+		<panel variant="info" title="Full Color Panel" bodyClass="bg-aqua text-white">
+			<p>Panel Content Here</p>
+
+			<ng-container outsideBody>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'xml'">&lt;panel variant="info" title="Full Color Panel" bodyClass="bg-aqua text-white"&gt;
+  &lt;p&gt;Panel Content Here&lt;/p&gt;
+&lt;/panel&gt;</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->

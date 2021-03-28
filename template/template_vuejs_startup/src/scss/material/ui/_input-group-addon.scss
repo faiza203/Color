@@ -1,0 +1,38 @@
+.input-group-addon {
+	padding: rem(6px) rem(12px);
+	font-size: rem(14px);
+	font-weight: 400;
+	color: $dark;
+	text-align: center;
+	background: $input-group-addon-bg;
+	
+	@include border-radius($border-radius);
+	@include display-flex();
+	@include flex-align(center);
+	
+	&:focus {
+		outline: none;
+	}
+}
+.form-control {
+	& + .input-group-addon {
+		@if $enable-rtl {
+			@include border-top-right-radius(0);
+			@include border-bottom-right-radius(0);
+		} @else {
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+		}
+	}
+}
+.input-prepend {
+	& .input-group-addon {
+		@if $enable-rtl {
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+		} @else {
+			@include border-top-right-radius(0);
+			@include border-bottom-right-radius(0);
+		}
+	}
+}

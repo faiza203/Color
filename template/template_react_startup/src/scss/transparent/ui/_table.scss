@@ -1,0 +1,78 @@
+.table {
+	& thead {
+		& tr {
+			& th {
+				font-weight: 600;
+				border-bottom: 1px solid lighten($dark, 55%);
+			}
+		}
+	}
+	& thead,
+	& tbody,
+	& tfoot {
+		& tr {
+			& td,
+			& th {
+				&.with-form-control,
+				&.with-input-group,
+				&.with-radio,
+				&.with-img,
+				&.with-btn,
+				&.with-btn-group,
+				&.with-checkbox {
+					padding-top: rem(4px);
+					padding-bottom: rem(4px);
+				}
+				&.with-radio,
+				&.with-checkbox {
+					& .radio,
+					& .checkbox {
+						padding-top: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	&.table-transparent {
+		color: rgba($white, .75);
+		background: none;
+		
+		& thead,
+		& tbody,
+		& tfoot {
+			& tr {
+				& th,
+				& td {
+					border-color: rgba($white, .15);
+				}
+			}
+		}
+		& thead {
+			& tr {
+				& th {
+					border-bottom-color: rgba($white, .5);
+				}
+			}
+		}
+	}
+	&:not(.table-bordered) {
+		& thead {
+			& tr {
+				& th {
+					border-top: none;
+				}
+			}
+		}
+	}
+}
+
+
+@each $color, $value in $theme-colors {
+	.table-#{$color},
+	.table-#{$color} > td,
+	.table-#{$color} > th {
+		border-color: transparent;
+		background: rgba(mix($white, $value, 25%), .25);
+	}
+}

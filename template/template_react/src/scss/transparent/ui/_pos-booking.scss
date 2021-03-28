@@ -1,0 +1,235 @@
+$pos-booking-header-height: rem(52px);
+
+.pos-booking {
+	padding-top: $pos-booking-header-height;
+	
+	@include media-breakpoint-up(lg) {
+		height: 100%;
+	
+		@include display-flex();
+		@include flex-direction-column();
+	}
+	
+	& .pos-booking-header {
+		background: rgba($black, .95);
+		padding: rem(10px) rem(25px);
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: $pos-booking-header-height;
+		z-index: $header-zindex;
+		
+		@include display-flex();
+		@include flex-align(center);
+		
+		& .logo,
+		& .time,
+		& .nav {
+			width: 33.33%;
+			
+			@include media-breakpoint-down(sm) {
+				width: 50%;
+			}
+		}
+		& .logo {
+			@include display-flex();
+			
+			& > div,
+			& > a {
+				text-align: center;
+				color: $white;
+				text-decoration: none;
+				
+				@include display-flex();
+				@include flex-align(center);
+				
+				& .logo-img {
+					& img {
+						height: rem(32px);
+					}
+				}
+				& .logo-text {
+					font-weight: 500;
+					font-size: rem(16px);
+					letter-spacing: rem(1px);
+					
+					@if $enable-rtl {
+						margin-right: rem(15px);
+					} @else {
+						margin-left: rem(15px);
+					}
+				}
+			}
+		}
+		& .time {
+			font-weight: 500;
+			font-size: rem(20px);
+			color: $white;
+			
+			@include display-flex();
+			@include flex-align(center);
+			@include flex-justify-content(center);
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+		& .nav {
+			@include flex-align(center);
+			@include flex-justify-content(flex-end);
+			
+			& .nav-item {
+				& .nav-link {
+					padding: rem(5px) rem(15px);
+					font-weight: 600;
+					font-size: rem(13px);
+					color: $white;
+					
+					@include display-flex();
+					@include flex-align(center);
+					
+					@include media-breakpoint-down(sm) {
+						padding: rem(5px) rem(10px);
+					}
+					& .nav-icon {
+						height: rem(20px);
+						color: $white;
+					}
+					& .nav-img {
+						height: rem(30px);
+						
+						@include border-radius(30px);
+						
+						& + .nav-text {
+							margin-left: rem(10px);
+						}
+					}
+					& .nav-text {
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+	& .pos-booking-body {
+		height: calc(100% - 52px);
+		
+		@include flex(1);
+		@include display-flex();
+		
+		& .pos-booking-content {
+			@include flex(1);
+			
+			& .pos-booking-content-container {
+				padding: rem(25px);
+				height: 100%;
+			}
+			& .table-booking {
+				display: block;
+				margin-bottom: rem(20px);
+				text-decoration: none;
+				
+				& .table-booking-container {
+					background: $gray-900;
+					color: $white;
+					
+					@include border-radius($border-radius-lg);
+					@include transition(box-shadow .1s linear);
+					
+					&:hover {
+						@include box-shadow(0 0 0 5px rgba($white,.5));
+					}
+					& .table-booking-header {
+						padding: rem(15px);
+							
+						& .title {
+							font-weight: 600;
+							color: $gray-500;
+						}
+						& .no {
+							font-size: $font-size-lg * 2.5;
+							font-weight: 600;
+						}
+						& .desc {
+							font-weight: 600;
+							color: $gray-500;
+						}
+					}
+					& .table-booking-body {
+						background: $gray-800;
+						
+						@include border-bottom-left-radius($border-radius-lg);
+						@include border-bottom-right-radius($border-radius-lg);
+						
+						& .booking {
+							font-size: rem(11px);
+							line-height: rem(16px);
+							padding: rem(5px) rem(15px);
+							
+							@include display-flex();
+							
+							& .time {
+								width: rem(60px);
+								font-weight: 600;
+								color: $gray-300;
+							}
+							& .info {
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								overflow: hidden;
+								
+								@include flex(1);
+							}
+							& .status {
+								font-size: rem(6px);
+								color: $gray-500;
+								
+								@if $enable-rtl {
+									padding-right: rem(15px);
+								} @else {
+									padding-left: rem(15px);
+								}
+								@include display-flex();
+								@include flex-align(center);
+								
+								&.upcoming {
+									color: $warning;
+								}
+								&.in-progress {
+									color: $success;
+								}
+							}
+							&.highlight {
+								background: $gray-700;
+							}
+							& + .booking {
+								border-top: 1px solid $gray-700;
+							}
+						}
+					}
+				}
+			}
+			& .date {
+				border: 2px solid rgba($white, .25);
+				max-width: rem(240px);
+				
+				@include border-radius($border-radius-lg);
+				
+				& .form-control {
+					border: none;
+					background: none;
+					font-size: $font-size-lg;
+					font-weight: 600;
+					color: $white;
+					
+					@include box-shadow(none);
+					@include border-radius(0);
+					@include placeholder($gray-300);
+				}
+				& .input-group-addon {
+					background: none;
+				}
+			}
+		}
+	}
+}

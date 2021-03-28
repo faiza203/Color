@@ -1,0 +1,85 @@
+body {
+	& .colorpicker {
+		border: none;
+		padding: rem(5px);
+		z-index: 1010;
+		
+		@include border-radius($border-radius);
+		
+		& .colorpicker-hue,
+		& .colorpicker-alpha {
+			margin-bottom: rem(5px);
+			margin-left: rem(5px);
+			
+			@include border-radius($border-radius);
+			@include box-shadow(none);
+		}
+		& .colorpicker-saturation {
+			margin-bottom: rem(5px);
+			
+			@include border-radius($border-radius);
+			@include box-shadow(none);
+			
+			& i {
+				border-color: rgba($black, .25);
+			}
+		}
+		& .colorpicker-color,
+		& .colorpicker-alpha {
+			@include border-radius($border-radius);
+			@include box-shadow(none);
+			
+			& div {
+				@include border-radius($border-radius);
+				@include box-shadow(none);
+			}
+		}
+		& .colorpicker-bar {
+			margin-top: rem(5px);
+			
+			@include border-radius($border-radius);
+			@include box-shadow(none);
+			
+			& div {
+				@include border-radius($border-radius);
+				@include box-shadow(none);
+			}
+		}
+		
+		&:before {
+			display: none;
+		}
+		&:after {
+			border-width: rem(7px);
+			top: rem(-7px);
+		}
+		&.colorpicker-left {
+			&:after {
+				left: rem(12px);
+			}
+		}
+		&.colorpicker-right {
+			&:after {
+				right: rem(12px);
+			}
+		}
+		&.colorpicker-with-alpha {
+			width: rem(168px);
+		}
+	}
+	& .colorpicker-component {
+		& .input-group-addon {
+			@include display-flex();
+			@include flex-align(center);
+		}
+	}
+	& .colorpicker-bs-popover {
+		& .popover-body {
+			padding: rem(5px);
+			
+			& .colorpicker-popup.colorpicker-bs-popover-content {
+				padding: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,235 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item"><a href="javascript:;">UI Elements</a></li>
+	<li class="breadcrumb-item active">Tabs & Accordions</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Tabs & Accordions <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin nav-tabs -->
+	  <ngb-tabset>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+          <span class="d-sm-none">Tab 1</span>
+					<span class="d-sm-block d-none">Default Tab 1</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <h3 class="m-t-10"><i class="fa fa-cog"></i> Lorem ipsum dolor sit amet</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+            est diam sagittis orci, a ornare nisi quam elementum tortor. Proin interdum ante porta est convallis
+            dapibus dictum in nibh. Aenean quis massa congue metus mollis fermentum eget et tellus.
+            Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, nec eleifend orci eros id lectus.
+          </p>
+          <p class="text-right m-b-0">
+            <a href="javascript:;" class="btn btn-white m-r-5">Default</a>
+            <a href="javascript:;" class="btn btn-primary">Primary</a>
+          </p>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Tab 2</span>
+					<span class="d-sm-block d-none">Default Tab 2</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+          </blockquote>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p>
+            Nullam ac sapien justo. Nam augue mauris, malesuada non magna sed, feugiat blandit ligula.
+            In tristique tincidunt purus id iaculis. Pellentesque volutpat tortor a mauris convallis,
+            sit amet scelerisque lectus adipiscing.
+          </p>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Tab 3</span>
+					<span class="d-sm-block d-none">Default Tab 3</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <p>
+            <span class="fa-stack fa-4x pull-left m-r-10">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x"></i>
+            </span>
+            Praesent tincidunt nulla ut elit vestibulum viverra. Sed placerat magna eget eros accumsan elementum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis lobortis neque.
+            Maecenas justo odio, bibendum fringilla quam nec, commodo rutrum quam.
+            Donec cursus erat in lacus congue sodales. Nunc bibendum id augue sit amet placerat.
+            Quisque et quam id felis tempus volutpat at at diam. Vivamus ac diam turpis.Sed at lacinia augue.
+            Nulla facilisi. Fusce at erat suscipit, dapibus elit quis, luctus nulla.
+            Quisque adipiscing dui nec orci fermentum blandit.
+            Sed at lacinia augue. Nulla facilisi. Fusce at erat suscipit, dapibus elit quis, luctus nulla.
+            Quisque adipiscing dui nec orci fermentum blandit.
+          </p>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+		<!-- end nav-tabs -->
+
+		<!-- begin nav-pills -->
+	  <ngb-tabset type="pills">
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Pills 1</span>
+					<span class="d-sm-block d-none">Pills Tab 1</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
+            <h3 class="m-t-10">Nav Pills Tab 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+              est diam sagittis orci, a ornare nisi quam elementum tortor.
+              Proin interdum ante porta est convallis dapibus dictum in nibh.
+              Aenean quis massa congue metus mollis fermentum eget et tellus.
+              Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
+              nec eleifend orci eros id lectus.
+            </p>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Pills 2</span>
+					<span class="d-sm-block d-none">Pills Tab 2</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
+            <h3 class="m-t-10">Nav Pills Tab 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+              est diam sagittis orci, a ornare nisi quam elementum tortor.
+              Proin interdum ante porta est convallis dapibus dictum in nibh.
+              Aenean quis massa congue metus mollis fermentum eget et tellus.
+              Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
+              nec eleifend orci eros id lectus.
+            </p>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Pills 3</span>
+					<span class="d-sm-block d-none">Pills Tab 3</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
+            <h3 class="m-t-10">Nav Pills Tab 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+              est diam sagittis orci, a ornare nisi quam elementum tortor.
+              Proin interdum ante porta est convallis dapibus dictum in nibh.
+              Aenean quis massa congue metus mollis fermentum eget et tellus.
+              Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
+              nec eleifend orci eros id lectus.
+            </p>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>
+					<span class="d-sm-none">Pills 4</span>
+					<span class="d-sm-block d-none">Pills Tab 4</span>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <div class="bg-white rounded mt-3 p-15">
+            <h3 class="m-t-10">Nav Pills Tab 4</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+              est diam sagittis orci, a ornare nisi quam elementum tortor.
+              Proin interdum ante porta est convallis dapibus dictum in nibh.
+              Aenean quis massa congue metus mollis fermentum eget et tellus.
+              Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
+              nec eleifend orci eros id lectus.
+            </p>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+		<!-- end nav-pills -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin #accordion -->
+		<div class="card-accordion">
+      <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #1</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #2</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #3</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #4</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #5</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #6</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span class="text-inverse">Collapsible Group Item #7</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+		<!-- end #accordion -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->

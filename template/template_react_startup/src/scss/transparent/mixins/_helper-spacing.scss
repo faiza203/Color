@@ -1,0 +1,27 @@
+@mixin helper-spacing($direction, $classProperty, $className) {
+	@for $i from -1 through 12 {
+		$classInt: $i;
+		$cssValue: rem($i * 1px);
+		$cssProperty: $classProperty;
+		
+		@if ($direction == 'top') {
+			$cssProperty: $classProperty + '-top';
+		} @else if ($direction == 'right') {
+			$cssProperty: $classProperty + '-right';
+		} @else if ($direction == 'bottom') {
+			$cssProperty: $classProperty + '-bottom';
+		} @else if ($direction == 'left') {
+			$cssProperty: $classProperty + '-left';
+		}
+		@if ($i == -1) {
+			$classInt: auto;
+			$cssValue: auto;
+		} @else if ($i > 5) {
+			$classInt: ($i - 4) * 5;
+			$cssValue: rem(($i - 4) * 5px);
+		}
+		.#{$className}-#{$classInt} {
+			#{$cssProperty}: $cssValue !important;
+		}
+	}
+}

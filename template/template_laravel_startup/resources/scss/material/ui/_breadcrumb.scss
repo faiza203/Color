@@ -1,0 +1,34 @@
+.breadcrumb {
+	padding: 0;
+	margin: 0;
+	background: none;
+	
+	@include media-breakpoint-up(lg) {
+		@if $enable-rtl {
+			float: left !important;
+		}
+	}
+	
+	& .breadcrumb-item {
+		line-height: rem(32px);
+		
+		& + .breadcrumb-item {
+			@if $enable-rtl {
+				padding-right: .5rem;
+				padding-left: 0;
+			}
+			
+			&:before {
+				color: lighten($dark, 45%);
+				
+				@if $enable-rtl {
+					padding-right: 0;
+					padding-left: .5rem;
+				}
+			}
+		}
+		& a {
+			color: $dark;
+		}
+	}
+}

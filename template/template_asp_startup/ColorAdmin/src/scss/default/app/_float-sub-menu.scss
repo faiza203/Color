@@ -1,0 +1,250 @@
+.float-sub-menu-container {
+	position: fixed;
+	width: $sidebar-width;
+	margin: 0;
+	background: darken($dark, 4%);
+	z-index: $float-submenu-zindex;
+	
+	& .float-sub-menu {
+		margin: 0;
+		list-style-type: none;
+		
+		@if $enable-rtl {
+			padding: rem(9px) rem(39px) rem(9px) 0;
+		} @else {
+			padding: rem(9px) 0 rem(9px) rem(39px);
+		}
+		
+		& li {
+			position: relative;
+			
+			& > a {
+				line-height: rem(18px);
+				padding: rem(3px) rem(20px) rem(3px) rem(15px);
+				display: block;
+				text-decoration: none;
+				position: relative;
+				color: rgba($white, .6);
+				
+				@if $enable-rtl {
+					padding: rem(3px) rem(15px) rem(3px) rem(20px);
+				} @else {
+					padding: rem(3px) rem(20px) rem(3px) rem(15px);
+				}
+				
+				& .caret {
+					display: block;
+					width: rem(20px);
+					height: rem(20px);
+					line-height: rem(20px);
+					text-align: center;
+					font-size: rem(11px);
+					margin-top: rem(-1px);
+					border: none;
+				
+					@include fontawesome();
+					@if $enable-rtl {
+						float: left;
+					} @else {
+						float: right;
+					}
+				
+					&:before {
+						display: block;
+						text-align: center;
+						opacity: 0.5;
+						
+						@if $enable-rtl {
+							content: '\f053';
+						} @else {
+							content: '\f054';
+						}
+						@include transition(all .2s linear);
+					}
+				}
+				
+				&:hover,
+				&:focus {
+					color: $white;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					background: $dark;
+					top: rem(11px);
+					width: rem(11px);
+					height: rem(2px);
+					
+					@if $enable-rtl {
+						right: rem(-11px);
+					} @else {
+						left: rem(-11px);
+					}
+				}
+			}
+			
+			&:before {
+				content: '';
+				background: $dark;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: rem(2px);
+				
+				@if $enable-rtl {
+					right: rem(-13px);
+				} @else {
+					left: rem(-13px);
+				}
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: rem(6px);
+				height: rem(6px);
+				border: 1px solid rgba($white, .25);
+				top: rem(11px);
+				margin-top: rem(-2px);
+				z-index: 10;
+				background: darken($dark, 4%);
+				
+				@include border-radius($border-radius);
+				@if $enable-rtl {
+					right: 0;
+				} @else {
+					left: 0;
+				}
+			}
+			&:first-child {
+				&:before {
+					top: rem(-14px);
+				}
+				&:last-child {
+					&:before {
+						height: rem(27px);
+					}
+				}
+			}
+			&:last-child {
+				&:before {
+					bottom: auto;
+					height: rem(13px);
+				}
+			}
+			&.has-sub {
+				& > a {
+					&:before {
+						background: $dark;
+					}
+				}
+			}
+			&.active {
+				& > a {
+					color: $white;
+					
+					& .caret {
+						&:before {
+							opacity: 1.0;
+							
+							@if $enable-rtl {
+								@include transform(rotate(-90deg));
+							} @else {
+								@include transform(rotate(90deg));
+							}
+						}
+					}
+				}
+				&:after {
+					border-color: $primary;
+				}
+			}
+			&.expanding,
+			&.expand {
+				& > a {
+					color: $white;
+					
+					& .caret {
+						&:before {
+							opacity: 1.0;
+						
+							@if $enable-rtl {
+								@include transform(rotate(-90deg));
+							} @else {
+								@include transform(rotate(90deg));
+							}
+						}
+					}
+				}
+			}
+			&.closed,
+			&.closing {
+				& > a {
+					& .caret {
+						&:before {
+							@include transform(rotate(0deg));
+						}
+					}
+				}
+			}
+		}
+		& > li {
+			&:first-child {
+				&:before {
+					top: rem(11px);
+				}
+				&:last-child {
+					&:before {
+						height: 0 !important;
+					}
+				}
+			}
+		}
+		& .active {
+			& > .sub-menu {
+				display: block;
+			}
+		}
+		& .sub-menu {
+			display: none;
+			list-style-type: none;
+			background: none;
+			
+			@if $enable-rtl {
+				padding: 0 rem(15px) 0 0;
+			} @else {
+				padding: 0 0 0 rem(15px);
+			}
+		}
+	}
+	& .float-sub-menu-arrow {
+		position: absolute;
+		top: rem(20px);
+		width: rem(28px);
+		height: rem(2px);
+		background: $dark;
+		
+		@if $enable-rtl {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+	}
+	& .float-sub-menu-line {
+		position: absolute;
+		top: rem(20px);
+		width: rem(2px);
+		background: $dark;
+		
+		@if $enable-rtl {
+			right: rem(26px);
+		} @else {
+			left: rem(26px);
+		}
+	}
+	& .foat-sub-menu-arrow {
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}

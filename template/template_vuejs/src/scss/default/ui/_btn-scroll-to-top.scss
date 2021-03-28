@@ -1,0 +1,11 @@
+.btn-scroll-to-top {
+	position: fixed;
+	bottom: rem(20px);
+	right: rem(25px);
+	z-index: $btn-scroll-to-top-zindex;
+	
+	@if $enable-rtl {
+		right: auto;
+		left: rem(25px);
+	}
+}

@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~nvd3/build/nv.d3.css';
+@import '~angular-calendar/css/angular-calendar.css';

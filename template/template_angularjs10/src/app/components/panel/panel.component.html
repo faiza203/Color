@@ -1,0 +1,45 @@
+<!-- begin panel -->
+<div class="panel" [ngClass]="[ (this.expand) ? 'panel-expand': '', (this.reload) ? 'panel-loading': '', (this.panelClass) ? this.panelClass : '', (this.variant) ? 'panel-' + this.variant : 'panel-inverse' ]" *ngIf="!this.remove">
+  <!-- begin panel-heading -->
+  <div class="panel-heading">
+    <h4 class="panel-title" *ngIf="this.title">{{ title }}</h4>
+    <ng-content select="[header]"></ng-content>
+    <div class="panel-heading-btn" *ngIf="!this.noButton">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" (click)="panelExpand()"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" (click)="panelReload()"><i class="fa fa-redo"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" (click)="panelCollapse()"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" (click)="panelRemove()"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <!-- end panel-heading -->
+
+  <!-- begin before-body -->
+  <ng-content select="[beforeBody]"></ng-content>
+  <!-- end before-body -->
+
+  <!-- begin panel-body -->
+  <div class="panel-body" [ngClass]="[ (this.collapse) ? 'd-none': '', (this.bodyClass) ? this.bodyClass : '' ]" *ngIf="!this.noBody">
+    <ng-content></ng-content>
+    <div class="panel-loader" *ngIf="this.reload"><span class="spinner-small"></span></div>
+  </div>
+  <!-- end panel-body -->
+
+  <!-- begin no-body -->
+  <ng-content select="[noBody]"></ng-content>
+  <!-- end no-body -->
+
+  <!-- begin outside-body -->
+  <ng-content select="[outsideBody]"></ng-content>
+  <!-- end outside-body -->
+
+  <!-- begin panel-footer -->
+  <div class="panel-footer" #panelFooter [hidden]="!showFooter" [ngClass]="[ (this.footerClass) ? this.footerClass : '' ]">
+    <ng-content select="[footer]"></ng-content>
+  </div>
+  <!-- end panel-footer -->
+
+  <!-- begin after-footer -->
+  <ng-content select="[afterFooter]"></ng-content>
+  <!-- end after-footer -->
+</div>
+<!-- end panel -->

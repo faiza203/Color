@@ -1,0 +1,22 @@
+.page-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url(/transparent/images/page-cover.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: $page-cover-zindex;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: lighten($black, 20%);
+		opacity: .66;
+	}
+}

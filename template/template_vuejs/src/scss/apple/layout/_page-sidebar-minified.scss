@@ -1,0 +1,252 @@
+.page-sidebar-minified {
+	& .sidebar {
+		width: $sidebar-minified-width;
+		position: absolute;
+		
+		& .nav {
+			& > li {
+				& > a {
+					padding: rem(10px) rem(10px) rem(10px) rem(5px);
+					
+					& span {
+						display: none;
+					}
+					& i,
+					& .icon-img {
+						margin: rem(-5px) auto;
+						float: none;
+						display: block;
+					}
+				}
+			}
+			& li {
+				&.has-sub {
+					& > .sub-menu {
+						display: none !important;
+					}
+				}
+			}
+		}
+		& .nav-profile {
+			display: none;
+			
+			&.expand {
+				display: none !important;
+			}
+		}
+		& .nav-header,
+		& .nav-search {
+			display: none;
+		}
+		& .caret {
+			position: absolute;
+			top: rem(9px);
+			
+			@if $enable-rtl {
+				left: rem(0);
+			} @else {
+				right: rem(0);
+			}
+			
+			&:before {
+				@include transform(rotate(0deg) !important);
+			}
+		}
+		& .slimScrollDiv {
+			& .slimScrollBar,
+			& .slimScrollRail {
+				display: none !important;
+			}
+		}
+		&.sidebar-right {
+			& .slimScrollDiv,
+			& .slimScrollDiv > div {
+				overflow: hidden !important;
+			}
+			& .slimScrollBar {
+				display: block !important;
+			}
+		}
+	}
+	& .sidebar-bg {
+		width: $sidebar-minified-width;
+	}
+	& .content {
+		@if $enable-rtl {
+			margin-right: $sidebar-minified-width;
+		} @else {
+			margin-left: $sidebar-minified-width;
+		}
+		@include media-breakpoint-down(sm) {
+			@if $enable-rtl {
+				margin-right: 0;
+			} @else {
+				margin-left: 0;
+			}
+		}
+	}
+	& .footer {
+		@if $enable-rtl {
+			margin-right: $sidebar-minified-width + $content-padding-x;
+		} @else {
+			margin-left: $sidebar-minified-width + $content-padding-x;
+		}
+		@include media-breakpoint-down(sm) {
+			@if $enable-rtl {
+				margin-right: $content-padding-x-sm;
+			} @else {
+				margin-left: $content-padding-x-sm;
+			}
+		}
+	}
+	& .sidebar-minify-btn {
+		padding: rem(5px) !important;
+		float: none;
+		text-align: center;
+		width: rem(30px);
+		height: rem(30px);
+		margin: rem(10px) auto !important;
+		background: rgba($white, .15) !important;
+		
+		@include display-flex();
+		@include flex-align(center);
+		@include border-radius($border-radius * 10);
+		
+		& i {
+			margin: 0 auto !important;
+			float: none !important;
+			color: rgba($white, .5) !important;
+			
+			&:before {
+				content: '\f3d1';
+			}
+		}
+		& span {
+			display: none !important;
+		}
+		&:hover,
+		&:focus {
+			background: rgba($white, .25) !important;
+		}
+	}
+	& .map {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				right: $sidebar-minified-width;
+			} @else {
+				left: $sidebar-minified-width;
+			}
+		}
+	}
+	
+	&.page-with-right-sidebar {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				right: 0;
+				left: $sidebar-minified-width;
+			} @else {
+				right: $sidebar-minified-width;
+				left: 0;
+			}
+		}
+		
+		& .content {
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: $sidebar-minified-width;
+			} @else {
+				margin-right: $sidebar-minified-width;
+				margin-left: 0;
+			}
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					margin-left: 0;
+				} @else {
+					margin-right: 0;
+				}
+			}
+		}
+		& .footer {
+			@if $enable-rtl {
+				margin-right: $content-padding-x;
+				margin-left: $sidebar-minified-width + $content-padding-x;
+			} @else {
+				margin-right: $sidebar-minified-width + $content-padding-x;
+				margin-left: $content-padding-x;
+			}
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					margin-right: $content-padding-x-sm;
+				} @else {
+					margin-right: $content-padding-x-sm;
+				}
+			}
+		}
+		& .sidebar {
+			& .nav {
+				& > li {
+					& > a {
+						& .icon-img,
+						& i {
+							float: none;
+							width: auto;
+							
+							@if $enable-rtl {
+								margin: 0 rem(5px) 0 0;
+							} @else {
+								margin: 0 0 0 rem(5px);
+							}
+						}
+						& .caret {
+							position: absolute;
+							
+							@if $enable-rtl {
+								left: auto;
+								right: rem(3px);
+							} @else {
+								right: auto;
+								left: rem(3px);
+							}
+							&:before {
+								content: '\f053';
+							}
+						}
+					}
+					& > .sub-menu {
+						@if $enable-rtl {
+							padding: rem(10px) 0 rem(10px) rem(30px);
+						} @else {
+							padding: rem(10px) rem(30px) rem(10px) 0;
+						}
+					}
+				}
+			}
+		}
+		& .sidebar-minify-btn {
+			& i {
+				&:before {
+					content: '\f100';
+				}
+			}
+		}
+	}
+	&.page-sidebar-fixed {
+		& .sidebar {
+			position: fixed;
+			
+			& .slimScrollDiv,
+			& .slimScrollDiv > div {
+				overflow: hidden !important;
+			}
+		}
+	}
+	&:not(.page-sidebar-fixed) {
+		& .sidebar {
+			& .slimScrollDiv,
+			& .slimScrollDiv > div {
+				overflow: visible !important;
+				height: auto !important;
+			}
+		}
+	}
+}

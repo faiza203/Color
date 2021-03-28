@@ -1,0 +1,20 @@
+@mixin border-radius($setting) {
+	-webkit-border-radius: $setting;
+	border-radius: $setting;
+}
+@mixin border-top-right-radius($setting) {
+	-webkit-border-top-right-radius: $setting;
+	border-top-right-radius: $setting;
+}
+@mixin border-top-left-radius($setting) {
+	-webkit-border-top-left-radius: $setting;
+	border-top-left-radius: $setting;
+}
+@mixin border-bottom-right-radius($setting) {
+	-webkit-border-bottom-right-radius: $setting;
+	border-bottom-right-radius: $setting;
+}
+@mixin border-bottom-left-radius($setting) {
+	-webkit-border-bottom-left-radius: $setting;
+	border-bottom-left-radius: $setting;
+}

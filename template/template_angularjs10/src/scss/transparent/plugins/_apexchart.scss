@@ -1,0 +1,120 @@
+.apexcharts-canvas {
+	@if $enable-rtl {
+		direction: ltr;
+		text-align: left;
+	}
+	& .apexcharts-tooltip {
+		border: none !important;
+		font-size: inherit;
+		
+		@include box-shadow($dropdown-box-shadow);
+		
+		& .apexcharts-tooltip-title {
+			font-family: inherit !important;
+			padding: rem(6px) rem(12px);
+			margin: 0;
+			border: 0 !important;
+			font-weight: 600;
+		}
+		& .apexcharts-tooltip-marker {
+			width: rem(8px);
+			height: rem(8px);
+			margin-right: rem(5px);
+		}
+		& .apexcharts-tooltip-series-group {
+			padding-left: rem(12px);
+			padding-right: rem(12px);
+			
+			& .apexcharts-tooltip-y-group {
+				padding: rem(6px) 0;
+			}
+			& + .apexcharts-tooltip-series-group {
+				margin-top: rem(-6px);
+			}
+			&.active, 
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+		&.light {
+			& .apexcharts-tooltip-title {
+				background: $light;
+			}
+		}
+		&.dark {
+			& .apexcharts-tooltip-title {
+				background: rgba($black, .5);
+			}
+		}
+	}
+	& .apexcharts-xaxistooltip,
+	& .apexcharts-yaxistooltip {
+		border: 0 !important;
+		font-size: inherit;
+		
+		@include box-shadow($dropdown-box-shadow);
+		@include border-radius($border-radius);
+		
+		&:after {
+			display: none;
+		}
+		&.light {
+			background: $white;
+			
+			&.apexcharts-xaxistooltip-top:before,
+			&.apexcharts-yaxistooltip-top:before {
+				border-top-color: $white;
+			}
+			&.apexcharts-xaxistooltip-bottom:before,
+			&.apexcharts-yaxistooltip-bottom:before {
+				border-bottom-color: $white;
+			}
+			&.apexcharts-xaxistooltip-left:before,
+			&.apexcharts-yaxistooltip-left:before {
+				border-left-color: $white;
+			}
+			&.apexcharts-xaxistooltip-right:before,
+			&.apexcharts-yaxistooltip-right:before {
+				border-right-color: $white;
+			}
+		}
+		&.dark {
+			background: $dark-darker;
+			
+			&.apexcharts-xaxistooltip-top:before,
+			&.apexcharts-yaxistooltip-top:before {
+				border-top-color: $dark-darker;
+			}
+			&.apexcharts-xaxistooltip-bottom:before,
+			&.apexcharts-yaxistooltip-bottom:before {
+				border-bottom-color: $dark-darker;
+			}
+			&.apexcharts-xaxistooltip-left:before,
+			&.apexcharts-yaxistooltip-left:before {
+				border-left-color: $dark-darker;
+			}
+			&.apexcharts-xaxistooltip-right:before,
+			&.apexcharts-yaxistooltip-right:before {
+				border-right-color: $dark-darker;
+			}
+		}
+	}
+	& .apexcharts-legend {
+		&.right,
+		&.left,
+		&.center {
+			& .apexcharts-legend-series {
+				padding: rem(5px) 0;
+				
+				@include display-flex();
+				@include flex-align(center);
+				
+				& .apexcharts-legend-marker {
+					margin-right: rem(5px);
+					width: rem(8px) !important;
+					height: rem(8px) !important;
+				}
+			}
+		}
+	}
+}

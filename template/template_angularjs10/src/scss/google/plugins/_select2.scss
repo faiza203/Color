@@ -1,0 +1,371 @@
+body {
+	& .select2-container {
+		& .select2-choice {
+			height: auto !important;
+			line-height: 18px !important;
+			padding: 0 !important;
+			border: none !important;
+			background: none !important;
+			margin-right: rem(-5px);
+			
+			@include box-shadow(none !important);
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: rem(-5px);
+			}
+			
+			& .select2-chosen {
+				font-weight: 500;
+				color: lighten($dark, 45%);
+			}
+			& .select2-search-choice-close {
+				background: lighten($dark, 70%) !important;
+				font-size: rem(9px);
+				text-align: center;
+				width: rem(16px);
+				height: rem(16px);
+				line-height: rem(16px);
+				color: lighten($dark, 45%);
+				top: rem(1px);
+				right: rem(20px);
+				
+				@include fontawesome();
+				@include border-radius($border-radius * 5);
+				@if $enable-rtl {
+					right: auto;
+					left: rem(20px);
+				}
+				
+				&:before {
+					content: '\f00d';
+				}
+				&:hover,
+				&:focus {
+					background: lighten($dark, 60%) !important;
+					color: lighten($dark, 30%);
+				}
+			}
+			& .select2-arrow {
+				background: none;
+				border: none;
+				display: block;
+				width: rem(14px);
+				text-align: center;
+				right: rem(-1px);
+				top: rem(1px);
+				
+				@if $enable-rtl {
+					right: auto;
+					left: rem(-1px);
+				}
+				
+				& b {
+					background: none !important;
+					
+					@include fontawesome();
+					
+					&:before {
+						content: '\f078';
+						color: lighten($dark, 60%);
+					}
+				}
+			}
+		}
+		&.select2-container-multi {
+			& .select2-choices {
+				padding: 0;
+				border: none;
+				background: none;
+				
+				@include box-shadow(none);
+				
+				& .select2-search-choice {
+					margin: 0 rem(5px) rem(5px) 0;
+					background: lighten($dark, 70%);
+					color: lighten($dark, 30%);
+					font-weight: 500;
+					border: none;
+					padding: rem(3px) rem(3px) rem(3px) rem(6px);
+					
+					@include display-flex();
+					@include flex-align(center);
+					@include box-shadow(none);
+					
+					& .select2-search-choice-close {
+						position: relative;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						top: 0;
+						margin-left: rem(5px);
+						color: lighten($dark, 60%);
+						background: none !important;
+						
+						@include fontawesome();
+						
+						&:before {
+							content: '\f00d';
+							font-size: rem(12px);
+						}
+						&:hover,
+						&:focus {
+							color: lighten($dark, 30%);
+							text-decoration: none;
+						}
+					}
+				}
+				& .select2-search-field {
+					& input {
+						padding: 0 !important;
+						height: rem(19px) !important;
+					}
+				}
+			}
+		}
+	}
+	& .select2-drop {
+		margin-top: rem(-3px);
+		
+		& .select2-results {
+			padding: 0;
+			margin: rem(5px) 0;
+			
+			& .select2-result {
+				font-weight: 500;
+				color: $dark;
+				
+				&.select2-highlighted {
+					background: $border-color !important;
+					color: $dark;
+				}
+			}
+		}
+		& .select2-search {
+			position: relative;
+			
+			& input {
+				border: 1px solid $border-color;
+				background: none !important;
+				
+				@include border-radius($input-border-radius);
+				@include transition(all .2s linear);
+				
+				&:focus {
+					border-color: $input-focus-border-color;
+					
+					@include box-shadow($input-focus-box-shadow);
+				}
+			}
+			&:before {
+				content: '\f002';
+				position: absolute;
+				right: rem(12px);
+				top: 50%;
+				margin-top: rem(-5px);
+				font-size: rem(12px);
+				line-height: rem(14px);
+				color: lighten($dark, 60%);
+				
+				@include fontawesome();
+			}
+		}
+		&.select2-drop-active {
+			border-color: $border-color;
+		}
+		&.select2-drop-above {
+			margin-top: rem(3px);
+			border-top-color: $border-color !important;
+		}
+	}
+}
+
+.select2 {
+	@if $enable-rtl {
+		direction: rtl;
+	}
+	
+	&.select2-container {
+		display: block;
+		
+		& .selection {
+			& .select2-selection {
+				&.select2-selection--single,
+				&.select2-selection--multiple {
+					border-color: $border-color;
+					outline: 0;
+					height: rem(34px);
+					
+					@include display-flex();
+					@include flex-align(center);
+					
+					& .select2-selection__rendered {
+						line-height: 1;
+						padding: rem(6px) rem(12px);
+						font-weight: 500;
+						color: $dark;
+						
+						@include display-flex();
+						@include flex-wrap(wrap);
+						@include flex(1);
+					}
+					& .select2-selection__arrow {
+						height: auto;
+						width: auto;
+						position: relative;
+						top: 0;
+						right: 0;
+						padding: rem(6px) rem(12px);
+						
+						@include display-flex();
+						@include flex-align(center);
+						
+						& b {
+							position: relative;
+							top: 0;
+							left: 0;
+							margin: 0;
+							border: none;
+							color: $dark;
+							width: auto;
+							height: auto;
+							
+							@include fontawesome();
+							
+							&:before {
+								content: '\f0d7';
+							}
+						}
+					}
+				}
+				&.select2-selection--multiple {
+					height: auto;
+					min-height: rem(34px);
+					
+					& .select2-selection__rendered {
+						padding: rem(6px) rem(12px) rem(1px);
+						
+						& .select2-search--inline {
+							float: none;
+							min-width: rem(100px);
+							
+							& .select2-search__field {
+								margin-top: 0;
+								margin-bottom: rem(5px);
+								font-weight: 400;
+								
+								@include placeholder(lighten($dark, 30%));
+							}
+						}
+					}
+					& .select2-selection__choice {
+						border: none;
+						background: $light;
+						margin-right: rem(5px);
+						margin-bottom: rem(5px);
+						margin-top: 0;
+						padding: rem(3px) rem(7px);
+						color: $dark;
+						border: 1px solid $border-color;
+						float: none;
+						
+						@include border-radius($border-radius);
+						@if $enable-rtl {
+							margin-right: 0;
+							margin-left: rem(5px);
+						}
+						
+						& .select2-selection__choice__remove {
+							color: lighten($dark, 45%);
+							font-size: rem(13px);
+							margin-right: 0;
+							margin-left: rem(5px);
+							margin-bottom: rem(-1px);
+							float: right;
+						}
+					}
+				}
+			}
+		}
+		
+		&.select2-container--above {
+			&.select2-container--open {
+				& .selection {
+					& .select2-selection {
+						&.select2-selection--single {
+							& .select2-selection__arrow {
+								& b {
+									&:before {
+										content: '\f0d8';
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.select2-container {
+	& .select2-dropdown {
+		border: none;
+		
+		@include box-shadow(0 8px 16px rgba($black ,.15));
+		
+		& .select2-search--dropdown {
+			padding: rem(6px);
+			
+			& input {
+				border-color: $border-color;
+				height: rem(34px);
+				padding: rem(6px) rem(12px);
+				outline: none;
+				color: $dark;
+				
+				@include border-radius($border-radius);
+				@include transition(all .2s linear);
+				
+				&:focus {
+					border-color: $input-focus-border-color;
+					
+					@include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color ,.3));
+				}
+			}
+		}
+		& .select2-results {
+			& .select2-results__options {
+				& .select2-results__option {
+					font-weight: 400;
+					color: lighten($dark, 15%);
+					
+					& .select2-results__group {
+						padding: rem(16px) rem(6px) rem(6px);
+						color: $dark;
+						font-size: rem(12px);
+					}
+					& .select2-results__option {
+						padding: rem(6px) rem(16px);
+					}
+					&.select2-results__option--highlighted {
+						background: $light;
+						color: $dark;
+					}
+					&.select2-results__message {
+						font-weight: 400;
+						font-size: rem(12px);
+						color: lighten($dark, 30%);
+						padding: rem(6px);
+					}
+					&[aria-selected=true] {
+						background: $form-component-active-bg;
+						color: $white;
+					}
+				}
+			}
+		}
+		
+		&.select2-dropdown--above {
+			@include box-shadow(0 -8px 16px rgba($black ,.15));
+		}
+	}
+}

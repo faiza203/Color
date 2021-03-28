@@ -1,0 +1,284 @@
+.irs {
+	font-family: inherit !important;
+	
+	& .irs {
+		& .irs-line {
+			height: rem(4px);
+			top: rem(27px);
+		
+			& .irs-line-left,
+			& .irs-line-mid,
+			& .irs-line-right {
+				background: lighten($dark, 70%);
+				height: rem(4px);
+			}
+			& .irs-line-left {
+				@include border-radius($border-radius 0 0 $border-radius);
+			}
+			& .irs-line-right {
+				@include border-radius(0 $border-radius $border-radius 0);
+			}
+		}
+		& .irs-to,
+		& .irs-from, 
+		& .irs-single {
+			background: $dark;
+		}
+	}
+	& .irs-bar-edge {
+		background: lighten($dark, 70%);
+		border-right: 1px solid $white;
+		top: rem(27px);
+		height: rem(4px);
+		
+		@include border-radius($border-radius 0 0 $border-radius);
+	}
+	& .irs-bar {
+		background: $form-component-active-bg;
+		height: rem(4px);
+		top: rem(27px);
+	}
+	& .irs-min,
+	& .irs-max {
+		font-size: $font-size-base;
+		background: lighten($dark, 75%);
+		color: lighten($dark, 15%);
+		font-weight: 500;
+	}
+	& .irs-slider {
+		background: $white;
+		cursor: pointer;
+		
+		@include box-shadow(0 1px 3px rgba($black, .25));
+		@include border-radius($border-radius * 10);
+	}
+	
+	&.irs--flat {
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+		}
+		& .irs-handle {
+			height: rem(14px);
+			
+			& > i {
+				&:first-child {
+					background: $form-component-active-bg;
+					width: rem(4px);
+				}
+			}
+			&:hover,
+			&:focus,
+			&.state_hover {
+				& > i {
+					&:first-child {
+						background: mix($black, $form-component-active-bg, 50%);
+					}
+				}
+			}
+		}
+	}
+	&.irs--big {
+		height: rem(40px);
+		
+		& .irs {
+			& .irs-line {
+				background: lighten($dark, 70%);
+				border: none;
+			}
+		}
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+		& .irs-handle {
+			top: rem(20px);
+			width: rem(20px);
+			height: rem(20px);
+			background: $white;
+			border: none;
+			
+			@include box-shadow(0 2px 6px rgba($black, .25));
+			
+			&:hover,
+			&:focus,
+			&.state_hover {
+				background: $white;
+				
+				@include box-shadow(0 2px 6px rgba($black, .5));
+			}
+		}
+	}
+	&.irs--modern {
+		height: rem(40px);
+		
+		& .irs {
+			& .irs-line {
+				background: lighten($dark, 70%);
+				border: none;
+			}
+		}
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+		& .irs-handle {
+			width: rem(12px);
+			border: none;
+			background: $silver;
+			
+			@include box-shadow(none);
+			@include border-radius(0 0 $border-radius $border-radius);
+			
+			& > i {
+				&:nth-child(1) {
+					background: none;
+					border: rem(6px) solid transparent;
+					border-bottom-color: $silver;
+					top: rem(-12px);
+					left: 0;
+					
+					@include transform(none);
+				}
+				&:nth-child(2) {
+					background: $silver;
+					left: rem(1px);
+					
+					@include border-radius(0);
+				}
+				&:nth-child(3) {
+					top: rem(2px);
+					left: rem(4px);
+					width: rem(4px);
+					height: rem(8px);
+					border-color: mix($white, $silver, 75%);
+				}
+			}
+			&:hover,
+			&:focus,
+			&.state_hover {
+				background: $silver;
+				
+				& > i {
+					&:nth-child(1) {
+						border: rem(6px) solid transparent;
+						border-bottom-color: $silver;
+					}
+					&:nth-child(2) {
+						background: $silver;
+					}
+					&:nth-child(3) {
+						border-color: mix($black, $silver, 50%);
+					}
+				}
+			}
+		}
+	}
+	&.irs--sharp {
+		height: rem(40px);
+		
+		& .irs {
+			& .irs-line {
+				background: lighten($dark, 70%);
+				border: none;
+			}
+		}
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+		& .irs-handle {
+			top: rem(23px);
+			background: mix($white, $form-component-active-bg, 25%);
+			
+			& > i {
+				&:first-child {
+					border-top-color: mix($white, $form-component-active-bg, 25%);
+				}
+			}
+			&:hover,
+			&:focus,
+			&.state_hover {
+				background: $dark;
+				
+				& > i {
+					&:first-child {
+						border-top-color: $dark;
+					}
+				}
+			}
+		}
+	}
+	&.irs--round {
+		height: rem(40px);
+		
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+		& .irs-handle {
+			top: rem(20px);
+			width: rem(20px);
+			height: rem(20px);
+			border: rem(3px) solid $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+	}
+	&.irs--square {
+		height: rem(40px);
+		
+		& .irs-bar {
+			height: rem(4px);
+			top: rem(27px);
+			background: $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+		& .irs-handle {
+			top: rem(21px);
+			width: rem(16px);
+			height: rem(16px);
+			border: rem(3px) solid $form-component-active-bg;
+			
+			@include box-shadow(none);
+		}
+	}
+	&.irs--flat,
+	&.irs--big,
+	&.irs--modern,
+	&.irs--sharp,
+	&.irs--round,
+	&.irs--square {
+		& .irs-from,
+		& .irs-to,
+		& .irs-single {
+			font-size: rem(11px);
+			font-weight: 500;
+			
+			&:before {
+				border-top-color: $dark;	
+			}
+		}
+		& .irs-min,
+		& .irs-max {
+			color: $dark;
+			font-size: rem(11px);
+			font-weight: 500;
+			background: mix($white, $silver, 50%);
+		}
+	}
+}

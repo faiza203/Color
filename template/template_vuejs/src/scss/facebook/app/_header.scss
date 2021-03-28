@@ -1,0 +1,479 @@
+@include keyframes(navbar-input-expand) {
+	from { width: rem(360px); }
+	to { width: rem(420px); }
+}
+@include keyframes(navbar-input-expand-md) {
+	from { width: rem(240px); }
+	to { width: rem(280px); }
+}
+.header {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: $header-zindex;
+	margin-bottom: 0;
+	padding: 0;
+	
+	@include transition(box-shadow .2s linear);
+	@include clearfix();
+	@include display-flex();
+	@include flex(1);
+	@include media-breakpoint-down(sm) {
+		display: block;
+	}
+	
+	& .navbar-toggle {
+		position: relative;
+		padding: rem(10px);
+		margin-right: rem(10px);
+		margin-left: auto;
+		background-color: transparent;
+		background-image: none;
+		border: none;
+		outline: none;
+		
+		@include border-radius($border-radius);
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+		@if $enable-rtl {
+			margin-right: 0;
+			margin-left: rem(10px);
+		}
+		
+		& .icon-bar {
+			display: block;
+			width: rem(22px);
+			height: rem(2px);
+			
+			@include border-radius($border-radius);
+			
+			& + .icon-bar {
+				margin-top: rem(4px);
+			}
+		}
+		&:hover {
+			background: none;
+			opacity: 0.75;
+		}
+		&.pull-left {
+			margin-left: rem(10px);
+			margin-right: 0;
+			
+			@if $enable-rtl {
+				margin-right: rem(10px);
+				margin-left: 0;
+			}
+		}
+	}
+	& .navbar-header {
+		@include clearfix();
+		@include display-flex();
+		@include flex-align(center);
+		@include media-breakpoint-up(md) {
+			width: $sidebar-width;
+		}
+	}
+	& .navbar-brand {
+		padding: rem(10px) rem(20px);
+		height: $header-height;
+		font-weight: 100;
+		font-size: rem(18px);
+		line-height: rem(30px);
+		text-decoration: none;
+		
+		@include flex(1);
+		@include flex-align(center);
+		@include display-flex();
+		@if $enable-rtl {
+			margin-right: 0;
+			margin-left: rem(16px);
+		}
+		
+		& i {
+			@if $enable-rtl {
+				margin-left: rem(10px);
+			} @else {
+				margin-right: rem(10px);
+			}
+		}
+		& img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+		& b {
+			font-weight: bold;
+			
+			@if $enable-rtl {
+				margin-left: rem(5px);
+			} @else {
+				margin-right: rem(5px);
+			}
+		}
+		& small {
+			font-size: rem(10px);
+			font-weight: 700;
+			margin-top: rem(-20px);
+		}
+	}
+	& .navbar-nav {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		@include display-flex();
+		@include flex-direction-row();
+		@include media-breakpoint-down(sm) {
+			@include flex-justify-content(flex-end);
+			@include flex(1);
+			
+			border-top: 1px solid mix($white, $border-color, 25%);
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		
+		& > li {
+			position: relative;
+			
+			& > a {
+				display: block;
+				text-decoration: none;
+				line-height: rem(20px);
+				padding: rem(15px);
+				border: none;
+				font-weight: 600;
+				
+				& .label {
+					position: absolute;
+					top: rem(8px);
+					right: rem(5px);
+					display: block;
+					background: lighten($red, 8%);
+					line-height: rem(12px);
+					font-weight: 700;
+					color: $white;
+					padding: rem(3px) rem(6px);
+					
+					@include box-shadow(0 2px 6px rgba($dark, .5));
+					@include border-radius($border-radius-lg * 5);
+				}
+				& i {
+					top: 1px;
+					position: relative;
+					font-size: rem(16px);
+				}
+				&:hover,
+				&:focus {
+					opacity: .75;
+				}
+				&.icon {
+					& i {
+						font-size: rem(24px);
+						height: rem(24px);
+						margin: rem(-2px) 0;
+						display: block;
+					}
+				}
+			}
+			
+			&.active {
+				& > a {
+					background: $light;
+					opacity: 1;
+				}
+			}
+			&.dropdown {
+				& .dropdown-menu {
+					margin: 0;
+				}
+				
+				&.dropdown-lg {
+					position: static;
+					
+					& .dropdown-menu {
+						left: rem(20px) !important;
+						right: rem(20px) !important;
+						padding: rem(20px);
+							
+						@include transform(none !important);
+						@include media-breakpoint-up(md) {
+							top: 100% !important;
+						}
+						@include media-breakpoint-down(sm) {
+							overflow: scroll;
+							top: $header-height-sm * 2 + rem(1px) !important;
+							max-height: calc(100vh - #{$header-height-sm * 2 + rem(1px)});
+						}
+						
+						&.dropdown-menu-lg {
+							& .nav {
+								& > li {
+									& > a {
+										padding: 0;
+										background: none;
+										line-height: rem(24px);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.show {
+				& > a,
+				& > a:hover,
+				& > a:focus {
+					background: none;
+					color: $dark;
+					opacity: 1;
+				}
+			}
+			&.divider {
+				height: rem(34px);
+				margin-top: rem(10px);
+				background: $light;
+				width: 1px;
+			}
+		}
+		&.navbar-right {
+			margin-left: auto;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+	}
+	& .navbar-form {
+		padding: 0 rem(15px);
+		margin: rem(9px) 0;
+		
+		@include media-breakpoint-down(sm) {
+			padding-left: rem(5px);
+			padding-right: rem(5px);
+			
+			@include flex(1);
+		}
+		
+		& .form-group {
+			margin: 0;
+			position: relative;
+		}
+		& .form-control {
+			width: rem(360px);
+			padding: rem(5px) rem(10px);
+			height: rem(32px);
+			background: $light;
+			border-color: $light;
+			
+			@include border-radius($border-radius-sm);
+			@include media-breakpoint-down(md) {
+				width: rem(240px);
+			}
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+			
+			&:focus {
+				width: rem(420px);
+				border-color: $light;
+				
+				@include box-shadow(none);
+				@include animation(navbar-input-expand .2s);
+				@include media-breakpoint-down(md) {
+					width: rem(280px);
+					
+					@include animation(navbar-input-expand-md .2s);
+				}
+				@include media-breakpoint-down(sm) {
+					width: 100%;
+					
+					@include animation(none);
+				}
+			}
+		}
+		& .btn-search {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			border: none;
+			background: none;
+			
+			@include border-radius(0 $border-radius-lg * 5 $border-radius-lg * 5 0);
+			@include display-flex();
+			@include flex-align(center);
+			@if $enable-rtl {
+				right: auto;
+				left: 0;
+			}
+			
+			& > i[class*="ion-"] {
+				font-size: rem(22px);
+				display: block;
+			}
+		}
+	}
+	& .navbar-user {
+		& img {
+			float: left;
+			width: rem(30px);
+			height: rem(30px);
+			margin: rem(-5px) rem(10px) rem(-5px) 0;
+			
+			@include border-radius($border-radius-lg * 5);
+		}
+		& .image {
+			float: left;
+			width: rem(30px);
+			height: rem(30px);
+			margin: rem(-5px) rem(10px) rem(-5px) 0;
+			overflow: hidden;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			@include border-radius($border-radius-lg * 5);
+			
+			&.image-icon {
+				font-size: rem(22px);
+				text-align: center;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include flex-justify-content(center);
+				
+				& i {
+					float: none;
+					display: block;
+					font-size: rem(22px);
+					text-align: center;
+					width: auto;
+					margin: 0 auto rem(-8px);
+				}
+			}
+		}
+	}
+	& .navbar-language {
+		& .flag-icon {
+			font-size: rem(15px);
+			
+			@if $enable-rtl {
+				margin-left: rem(7px);
+			} @else {
+				margin-right: rem(7px);
+			}
+		}
+	}
+	& .navbar-collapse {
+		@include media-breakpoint-up(md) {
+			display: block;
+			
+			@include flex-basis(auto);
+		}
+		@include media-breakpoint-only(md) {
+			display: none;
+		}
+		@include media-breakpoint-down(md) {
+			& .navbar-nav {
+				& > li {
+					@include flex(1);
+					
+					& > a {
+						@include display-flex();
+						@include flex-align(center);
+						@include flex-justify-content(center);
+					}
+				}
+			}
+		}
+	}
+	
+	&.navbar-default {
+		background: $white;
+		
+		& .navbar-brand {
+			color: $dark;
+			
+			& i {
+				color: $primary;
+			}
+		}
+		& .navbar-toggle {
+			& .icon-bar {
+				background: $dark;
+			}
+		}
+		& .navbar-nav {
+			& > li {
+				& > a {
+					color: $dark;
+					
+					& .label {
+						@include box-shadow(none);
+					}
+				}
+			}
+		}
+	}
+	&.navbar-inverse {
+		background: $primary;
+		
+		& .navbar-toggle {
+			color: $white;
+			
+			& .icon-bar {
+				background: $white;
+			}
+		}
+		& .navbar-brand {
+			color: $white;
+		}
+		& .navbar-nav {
+			@include media-breakpoint-down(sm) {
+				border-color: mix($white, $primary, 20%);
+			}
+			& > li {
+				& > a {
+					color: $white;
+					
+					&:hover,
+					&:focus {
+						color: $white;
+					}
+				}
+				
+				&.active {
+					& > a {
+						background: $dark;
+						opacity: 1;
+					}
+				}
+				&.divider {
+					background: rgba($white, .2);
+				}
+			}
+		}
+		& .navbar-form {
+			margin: rem(10px) 0;
+			
+			& .form-control {
+				background: $white;
+				border-color: transparent;
+				height: rem(30px);
+				color: $dark;
+				
+				@include placeholder(rgba($dark, .5));
+			}
+			& .btn-search {
+				color: $dark;
+			}
+		}
+	}
+}
+.has-scroll {
+	& .header {
+		@include box-shadow(0 0 16px rgba($black, .15));
+	}
+}

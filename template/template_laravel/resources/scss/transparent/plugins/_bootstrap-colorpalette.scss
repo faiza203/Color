@@ -1,0 +1,17 @@
+body {
+	& .bootstrap-colorpalette {
+		& .btn-color {
+			width: rem(19px);
+			height: rem(19px);
+			border-color: rgba($white, .15);
+		
+			@include border-radius($border-radius);
+			
+			&:hover,
+			&:focus {
+				outline: none;
+				border: 1px solid rgba($white, .5) !important;
+			}
+		}
+	}
+}

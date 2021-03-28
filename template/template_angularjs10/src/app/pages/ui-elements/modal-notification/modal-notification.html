@@ -1,0 +1,109 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item"><a href="javascript:;">UI Elements</a></li>
+	<li class="breadcrumb-item active">Modal & Notification</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Modal & Notification <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="NgbModal">
+      <p class="lead">
+        A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to the "open" method!
+      </p>
+      <!-- #modal-dialog -->
+      <ng-template #modalDialog let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Dialog</h4>
+          <button type="button" class="close" (click)="d('Cross click')">×</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Modal body content here...
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-white" (click)="c('Close click')">Close</button>
+          <a href="javascript:;" class="btn btn-success">Action</a>
+        </div>
+      </ng-template>
+
+      <ng-container outsideBody>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Demo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Default NgBootstrap Modal Dialog Box.</td>
+              <td><button class="btn btn-sm btn-success" (click)="open(modalDialog)">Demo</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hljs-wrapper">
+          <textarea highlight-js [options]="{}" [lang]="'typescript'">&lt;ng-template #modalDialog let-c="close" let-d="dismiss"&gt;
+  &lt;div class="modal-header"&gt;
+    &lt;h4 class="modal-title"&gt;Modal Dialog&lt;/h4&gt;
+    &lt;button type="button" class="close" (click)="d('Cross click')"&gt;×&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-body"&gt;
+    &lt;p&gt;
+      Modal body content here...
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;button class="btn btn-white" (click)="c('Close click')"&gt;Close&lt;/button&gt;
+    &lt;a href="javascript:;" class="btn btn-success"&gt;Action&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;</textarea>
+        </div>
+      </ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel>
+			<ng-container header>
+				<h4 class="panel-title">Bootstrap SweetAlert <span class="label label-success">NEW</span></h4>
+			</ng-container>
+
+      <p class="lead m-b-10 text-inverse">
+        SweetAlert for Bootstrap. A beautiful replacement for JavaScript's "alert"
+      </p>
+      <hr />
+      <p class="">
+        Try any of those!
+      </p>
+      <a href="javascript:;" [swal]="['Question Type', 'description here', 'question']" class="btn btn-primary m-r-5">Primary</a>
+      <a href="javascript:;" [swal]="['Info Type', 'description here', 'info']" class="btn btn-info m-r-5">Info</a>
+      <a href="javascript:;" [swal]="['Success Type', 'description here', 'success']" class="btn btn-success m-r-5">Success</a>
+      <a href="javascript:;" [swal]="['Warning Type', 'description here', 'warning']" class="btn btn-warning m-r-5">Warning</a>
+      <a href="javascript:;" [swal]="['Error Type', 'description here', 'error']" class="btn btn-danger m-r-5">Danger</a>
+
+      <ng-container outsideBody>
+			  <div class="hljs-wrapper">
+			    <textarea highlight-js [options]="{}" [lang]="'xml, typescript'">// modal-notification.html
+&lt;a href="javascript:;" [swal]="['Question Type', 'description here', 'question']" class="btn btn-primary"&gt;Primary&lt;/a&gt;
+</textarea>
+			  </div>
+			</ng-container>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->

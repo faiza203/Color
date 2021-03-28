@@ -1,0 +1,537 @@
+.login {
+	&.login-v1 {
+		height: 100vh;
+		width: 100%;
+		
+		@include display-flex();
+		@include flex-align(center);
+		@include media-breakpoint-down(xs) {
+			background: mix($white, $dark, 5%);
+		}
+		
+		& .login-container {
+			@include flex(1);
+			
+			& .login-header {
+				width: rem(400px);
+				padding: 0;
+				margin: 0 auto;
+				margin-bottom: rem(15px);
+				font-weight: 300;
+				position: relative;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include media-breakpoint-down(xs) {
+					width: auto;
+					left: 0;
+					margin: 0;
+					padding: 0 rem(30px);
+				}
+		
+				& .brand {
+					padding: 0;
+					font-size: rem(28px);
+					color: $white;
+					
+					@include media-breakpoint-down(xs) {
+						color: $white;
+						font-size: rem(24px);
+					}
+			
+					& .logo {
+						float: left;
+						margin-top: rem(7px);
+						display: block;
+						margin-right: rem(10px);
+						position: relative;
+						width: rem(28px);
+						height: rem(28px);
+						background: none;
+						border: 2px solid rgba($white ,.25);
+			
+						@include border-radius($border-radius * 10);
+			
+						&:before {
+							content: '';
+							position: absolute;
+							top: rem(4px);
+							left: rem(4px);
+							width: rem(16px);
+							height: rem(16px);
+							border: 2px solid rgba($white,.5);
+				
+							@include border-radius($border-radius * 10);
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							top: rem(10px);
+							left: rem(10px);
+							width: rem(4px);
+							height: rem(4px);
+							background: rgba($white,.75);
+				
+							@include border-radius($border-radius * 10);
+						}
+					}
+					& small {
+						font-size: rem(14px);
+						display: block;
+						color: rgba($white, .75);
+						
+						@include media-breakpoint-down(xs) {
+							font-size: rem(12px);
+							color: mix($white, $dark, 50%);
+						}
+					}
+				}
+				& .icon {
+					margin-left: auto;
+					color: rgba($white, .15);
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: auto;
+					}
+					@include media-breakpoint-down(xs) {
+						color: rgba($white, .15);
+					}
+			
+					& i {
+						font-size: rem(64px);
+						
+						@include media-breakpoint-down(xs) {
+							font-size: rem(36px);
+						}
+					}
+				}
+			}
+			& .login-body {
+				padding: rem(30px);
+				background: mix($white, $dark, 5%);
+			
+				& .login-content {
+					padding: 0;
+					color: lighten($dark, 60%);
+					width: rem(400px);
+					margin: 0 auto;
+			
+					@include media-breakpoint-down(xs) {
+						width: auto;
+					}
+		
+					& .form-control {
+						border-color: transparent;
+						background: rgba($white, .15);
+						color: $white;
+			
+						@include placeholder(rgba($white, .5));
+			
+						&:focus {
+							@include box-shadow(0 0 0 3px rgba($white, .5));
+						}
+					}
+				}
+			}
+		}
+	}
+	&.login-v2 {
+		width: rem(400px);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: 0 0 0 rem(-200px);
+		left: 50%;
+		
+		@include display-flex();
+		@include flex-direction-column();
+		@include flex-justify-content(center);
+		@include border-radius($border-radius);
+		@include media-breakpoint-down(xs) {
+			position: relative;
+			margin: 0;
+			left: 0;
+			width: auto;
+			padding: rem(30px) 0;
+			height: 100vh;
+		}
+		
+		& a {
+			color: $white;
+		}
+		& label {
+			color: rgba($white, .6);
+		}
+		& .login-header {
+			padding: 0 rem(20px);
+			color: $white;
+			position: relative;
+			
+			& .brand {
+				padding: 0;
+				font-size: rem(28px);
+				color: $white;
+				
+				@include media-breakpoint-down(xs) {
+					font-size: rem(24px);
+				}
+			
+				& .logo {
+					float: left;
+					margin-top: rem(7px);
+					display: block;
+					margin-right: rem(10px);
+					position: relative;
+					width: rem(28px);
+					height: rem(28px);
+					background: none;
+					border: 2px solid rgba($white ,.25);
+			
+					@include border-radius($border-radius * 10);
+			
+					&:before {
+						content: '';
+						position: absolute;
+						top: rem(4px);
+						left: rem(4px);
+						width: rem(16px);
+						height: rem(16px);
+						border: 2px solid rgba($white,.5);
+				
+						@include border-radius($border-radius * 10);
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						top: rem(10px);
+						left: rem(10px);
+						width: rem(4px);
+						height: rem(4px);
+						background: rgba($white,.75);
+				
+						@include border-radius($border-radius * 10);
+					}
+				}
+				& small {
+					font-size: rem(14px);
+					display: block;
+					color: rgba($white, .6);
+					
+					@include media-breakpoint-down(xs) {
+						font-size: rem(12px);
+					}
+				}
+			}
+			& .icon {
+				position: absolute;
+				right: rem(20px);
+				top: 0;
+				bottom: 0;
+				color: rgba($white, .85);
+				
+				@include display-flex();
+				@include flex-align(center);
+				@if $enable-rtl {
+					right: auto;
+					left: rem(20px);
+				}
+			
+				& i {
+					font-size: rem(56px);
+					
+					@include media-breakpoint-down(xs) {
+						font-size: rem(36px);
+					}
+				}
+			}
+		}
+		& .login-content {
+			padding: rem(20px);
+			color: lighten($dark, 45%);
+			
+			& .form-control {
+				border: 1px solid transparent;
+				
+				&:focus {
+					border-color: transparent;
+				
+					@include box-shadow(0 0 0 3px rgba($white, .35));
+				}
+			}
+		}
+	}
+	&.login-with-news-feed {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		
+		& .news-feed {
+			position: fixed;
+			left: 0;
+			right: rem(500px);
+			top: 0;
+			bottom: 0;
+			overflow: hidden;
+			
+			@include transform(translateZ(0));
+			@if $enable-rtl {
+				right: 0;
+				left: rem(500px);
+			}
+			@include media-breakpoint-down(lg) {
+				right: rem(400px);
+				
+				@if $enable-rtl {
+					right: 0;
+					left: rem(400px);
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				right: 0;
+				display: none;
+				
+				@if $enable-rtl {
+					left: 0;
+				}
+			}
+			
+			& .news-image {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				top: 0;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			& .news-caption {
+				color: rgba($white, .85);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: rem(60px) rem(60px) rem(30px);
+				font-size: rem(18px);
+				letter-spacing: rem(0.25px);
+				z-index: 20;
+				font-weight: 300;
+				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+				
+				@include media-breakpoint-down(lg) {
+					padding: rem(45px) rem(45px) rem(30px);
+					font-size: rem(16px);
+				}
+				
+				& .caption-title {
+					font-weight: 300;
+					color: $white;
+					font-size: rem(36px);
+				
+					@include media-breakpoint-down(lg) {
+						font-size: rem(28px);
+					}
+				}
+			}
+		}
+		& .right-content {
+			min-height: 100%;
+			width: rem(500px);
+			margin-left: auto;
+			padding: rem(60px);
+			
+			@include display-flex();
+			@include flex-direction-column();
+			@include flex-justify-content(center);
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: auto;
+			}
+			@include media-breakpoint-down(lg) {
+				width: rem(400px);
+				padding: rem(45px);
+			}
+			@include media-breakpoint-down(sm) {
+				width: auto;
+			}
+			@include media-breakpoint-down(xs) {
+				padding: rem(30px);
+			}
+			
+			& .login-content {
+				width: auto;
+			}
+			& .login-header {
+				position: relative;
+			
+				& + .login-content {
+					padding-top: rem(30px);
+				}
+				& .brand {
+					padding: 0;
+					font-size: rem(28px);
+					color: $white;
+					
+					@include media-breakpoint-down(sm) {
+						font-size: rem(20px);
+					}
+			
+					& .logo {
+						float: left;
+						margin-top: rem(7px);
+						display: block;
+						margin-right: rem(10px);
+						position: relative;
+						width: rem(28px);
+						height: rem(28px);
+						background: none;
+						border: 2px solid rgba($white ,.25);
+			
+						@include border-radius($border-radius * 10);
+			
+						&:before {
+							content: '';
+							position: absolute;
+							top: rem(4px);
+							left: rem(4px);
+							width: rem(16px);
+							height: rem(16px);
+							border: 2px solid rgba($white,.5);
+				
+							@include border-radius($border-radius * 10);
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							top: rem(10px);
+							left: rem(10px);
+							width: rem(4px);
+							height: rem(4px);
+							background: rgba($white,.75);
+				
+							@include border-radius($border-radius * 10);
+						}
+					}
+					& small {
+						font-size: rem(14px);
+						display: block;
+						color: rgba($white, .75);
+					
+						@include media-breakpoint-down(lg) {
+							font-size: rem(12px);
+							line-height: rem(18px);
+						}
+					}
+				}
+				& .icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					color: lighten($dark-darker, 75%);
+				
+					@include display-flex();
+					@include flex-align(center);
+					@if $enable-rtl {
+						right: auto;
+						left: 0;
+					}
+				
+					& i {
+						font-size: rem(56px);
+						
+						@include media-breakpoint-down(sm) {
+							font-size: rem(36px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.login-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	& .login-cover-bg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background: linear-gradient(to bottom, rgba($black, 0.45) 0%, rgba($black, .9));
+	}
+	& .login-cover-image {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	@include transition(background .2s linear);
+}
+.login-bg-list {
+	list-style-type: none;
+	position: absolute;
+	right: rem(20px);
+	bottom: rem(20px);
+	margin: 0;
+	padding: 0 0 0 rem(20px);
+	z-index: 1020;
+	
+	@include display-flex();
+	@include flex-wrap(wrap);
+	
+	& > li {
+		width: rem(66px);
+		height: rem(66px);
+		overflow: hidden;
+		border: 3px solid transparent;
+		
+		@include border-radius(66px);
+		@include media-breakpoint-down(xs) {
+			width: rem(46px);
+			height: rem(46px);
+		}
+		
+		& a {
+			display: block;
+			height: rem(60px);
+			height: rem(60px);
+			overflow: hidden;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		& img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+		&:hover,
+		&:focus {
+			border-color: rgba($white, .5);
+		}
+		&.active {
+			border-color: $white;
+			z-index: 1020;
+			position: relative;
+		}
+	}
+}

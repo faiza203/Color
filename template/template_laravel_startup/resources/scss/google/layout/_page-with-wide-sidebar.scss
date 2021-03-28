@@ -1,0 +1,206 @@
+@include keyframes(wideSidebarSlideInLeft) {
+	from { left: rem(-250px); }
+	to { left: 0; }
+}
+@include keyframes(wideSidebarSlideInRight) {
+	from { right: rem(-250px); }
+	to { right: 0; }
+}
+
+.page-with-wide-sidebar {
+	& .sidebar,
+	& .sidebar-bg {
+		width: $sidebar-wide-width;
+		
+		@include media-breakpoint-down(sm) {
+			width: $sidebar-wide-width;
+			
+			@if $enable-rtl {
+				right: $sidebar-wide-width * -1;
+			} @else {
+				left: $sidebar-wide-width * -1;
+			}
+		}
+	}
+	& .header {
+		& .navbar-header {
+			@include media-breakpoint-up(md) {
+				width: $sidebar-wide-width;
+			}
+		}
+	}
+	& .content {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				margin-right: $sidebar-wide-width;
+			} @else {
+				margin-left: $sidebar-wide-width;
+			}
+		}
+	}
+	& .footer {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				margin-right: $sidebar-wide-width + $content-padding-x;
+			} @else {
+				margin-left: $sidebar-wide-width + $content-padding-x;
+			}
+		}
+	}
+	& .map {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				right: $sidebar-wide-width;
+			} @else {
+				left: $sidebar-wide-width;
+			}
+		}
+	}
+	
+	&.page-with-right-sidebar {
+		& .content {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					margin-right: 0;
+					margin-left: $sidebar-wide-width;
+				} @else {
+					margin-left: 0;
+					margin-right: $sidebar-wide-width;
+				}
+			}
+		}
+		& .footer {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					margin-right: $content-padding-x;
+					margin-left: $sidebar-wide-width + $content-padding-x;
+				} @else {
+					margin-left: $content-padding-x;
+					margin-right: $sidebar-wide-width + $content-padding-x;
+				}
+			}
+		}
+		& .map {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					left: $sidebar-wide-width;
+					right: 0;
+				} @else {
+					right: $sidebar-wide-width;
+					left: 0;
+				}
+			}
+		}
+	}
+	&.page-with-two-sidebar {
+		& .content {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					margin-left: $sidebar-wide-width;
+					margin-right: $sidebar-wide-width;
+				} @else {
+					margin-right: $sidebar-wide-width;
+					margin-left: $sidebar-wide-width;
+				}
+			}
+		}
+		&.page-right-sidebar-toggled {
+			& .sidebar,
+			& .sidebar-bg {
+				@include media-breakpoint-down(sm) {
+					@if $enable-rtl {
+						right: auto;
+						left: 0;
+					
+						@include animation(wideSidebarSlideInLeft .2s);
+					} @else {
+						left: auto;
+						right: 0;
+					
+						@include animation(wideSidebarSlideInRight .2s);
+					}
+				}
+			}
+		}
+	}
+	&.page-sidebar-minified {
+		& .sidebar {
+			width: $sidebar-minified-width;
+			
+			& + .sidebar-bg {
+				width: $sidebar-minified-width;
+			}
+		}
+		& .sidebar-right {
+			&.sidebar,
+			&.sidebar-bg {
+				width: $sidebar-wide-width;
+			}
+		}
+		&:not(.page-with-right-sidebar) {
+			& .content {
+				@include media-breakpoint-up(md) {
+					@if $enable-rtl {
+						margin-right: $sidebar-minified-width;
+					} @else {
+						margin-left: $sidebar-minified-width;
+					}
+				}
+			}
+			& .footer {
+				@include media-breakpoint-up(md) {
+					@if $enable-rtl {
+						margin-right: $sidebar-minified-width + $content-padding-x;
+						margin-left: $sidebar-wide-width + $content-padding-x;
+					} @else {
+						margin-left: $sidebar-minified-width + $content-padding-x;
+						margin-right: $sidebar-wide-width + $content-padding-x;
+					}
+				}
+			}
+		}
+		& .map {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					right: $sidebar-minified-width;
+				} @else {
+					left: $sidebar-minified-width;
+				}
+			}
+		}
+	}
+	&.page-sidebar-toggled {
+		& .sidebar,
+		& .sidebar-bg {
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					right: 0;
+		
+					@include animation(wideSidebarSlideInRight .2s);
+				} @else {
+					left: 0;
+		
+					@include animation(wideSidebarSlideInLeft .2s);
+				}
+			}
+		}
+		&.page-with-right-sidebar {
+			& .sidebar,
+			& .sidebar-bg {
+				@include media-breakpoint-down(sm) {
+					@if $enable-rtl {
+						left: 0;
+						right: auto;
+						
+						@include animation(wideSidebarSlideInLeft .2s);
+					} @else {
+						left: auto;
+						right: 0;
+					
+						@include animation(wideSidebarSlideInRight .2s);
+					}
+				}
+			}	
+		}
+	}
+}

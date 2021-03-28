@@ -1,0 +1,462 @@
+.inbox {
+	& .nav-title {
+		font-size: rem(11px);
+		color: rgba($white, .5);
+		padding: rem(15px) rem(15px) rem(7px);
+	}
+	& .nav-inbox {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: block;
+		
+		& > li {
+			display: block;
+			
+			& + li {
+				margin-top: 0;
+			}
+			& > a {
+				display: block;
+				text-decoration: none;
+				border-radius: 0;
+				padding: rem(8px) rem(20px);
+				color: rgba($white, .75);
+				font-weight: 600;
+				
+				& i {
+					width: rem(20px);
+				}
+				& .badge {
+					background: rgba($dark, .5);
+					color: $white;
+					padding: rem(4px) rem(8px);
+					font-size: rem(10px);
+					line-height: rem(11px);
+				}
+				&:hover,
+				&:focus {
+					color: $white;
+				}
+			}
+			&.active {
+				& > a {
+					background: rgba($white, .15);
+					color: $white;
+				}
+			}
+		}
+	}
+	& .float-right-link {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		
+		@include display-flex();
+		@include flex-align(center);
+		@if $enable-rtl {
+			right: auto;
+			left: 0;
+		}
+	}
+	& .email-to {
+		position: relative;
+		
+		& .tagit {
+			border: none !important;
+			border-bottom: 1px solid $border-color !important;
+			padding: rem(10px) rem(12px) rem(10px) rem(45px) !important;
+			background: none;
+			
+			@include border-radius(0);
+			@if $enable-rtl {
+				padding-right: rem(45px) !important;
+				padding-left: rem(12px) !important;
+			}
+			
+			& input {
+				font-weight: 500;
+				color: $white;
+			}
+		}
+		& .form-control {
+			border: none !important;
+			border-bottom: 1px solid $border-color !important;
+			padding: rem(10px) rem(12px) rem(10px) rem(45px) !important;
+			background: none !important;
+			
+			@include border-radius(0);
+			@if $enable-rtl {
+				padding-right: rem(45px) !important;
+				padding-left: rem(12px) !important;
+			}
+		}
+		& .control-label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			line-height: rem(16px);
+			padding-left: rem(10px);
+			width: rem(45px);
+			margin-bottom: 0;
+			
+			@include display-flex();
+			@include flex-align(center);
+			@if $enable-rtl {
+				padding-left: 0;
+				padding-right: rem(10px);
+				left: auto;
+				right: 0;
+			}
+		}
+	}
+	& .email-subject {
+		& .form-control {
+			border: none !important;
+			border-bottom: 1px solid $border-color !important;
+			padding: rem(10px) rem(12px) rem(10px) rem(12px) !important;
+			background: none !important;
+			
+			@include border-radius(0);
+			
+			&:focus {
+				@include box-shadow(none);
+			}
+		}
+	}
+	& .email-content {
+		padding: 0;
+		margin: 0;
+		
+		& .wysihtml5-toolbar {
+			padding: rem(10px) 0 0;
+			
+			& .btn {
+				font-size: rem(12px);
+				margin-bottom: rem(5px);
+			}
+			& .btn-group {
+				margin-bottom: rem(5px);
+				
+				& .btn {
+					margin-bottom: 0;
+				}
+			}
+			& > li {
+				margin: 0 rem(5px) rem(5px) 0;
+				
+				@if $enable-rtl {
+					margin-right: 0;
+					margin-left: rem(5px);
+				}
+			}
+		}
+		& .wysihtml5-sandbox {
+			padding: rem(15px) !important;
+			border: 1px solid $border-color !important;
+			
+			@include border-radius(0 !important);
+		}
+	}
+	& .attached-document {
+		list-style-type: none;
+		margin: rem(15px) 0 0;
+		padding: 0;
+		
+		@include display-flex();
+		@include flex-wrap(wrap);
+		
+		& > li {
+			width: rem(180px);
+			background: rgba($black, .25);
+			color: $white;
+			font-weight: 600;
+			position: relative;
+			margin-right: rem(15px);
+			margin-bottom: rem(15px);
+			border: 1px solid $border-color;
+			
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: rem(15px);
+			}
+			
+			&:before {
+				position: absolute;
+				top: rem(-1px);
+				right: rem(-1px);
+				font-size: rem(12px);
+				background: lighten($dark, 65%);
+				width: rem(20px);
+				height: rem(20px);
+				line-height: rem(20px);
+				text-align: center;
+				
+				@include fontawesome();
+			}
+			& img {
+				max-width: 100%;
+			}
+			& .document-name {
+				padding: rem(5px) rem(10px);
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				background: rgba($black, .25);
+				border-top: 1px solid $border-color;
+				
+				& a {
+					color: $white;
+				}
+			}
+			& .document-file {
+				height: rem(70px);
+				background: none;
+				overflow: hidden;
+				text-align: center;
+				line-height: rem(70px);
+				font-size: rem(32px);
+				margin: rem(-1px);
+			}
+		}
+	}
+	& .list-email {
+		border-top: 1px solid lighten($border-color, 5%);
+		border-bottom: 1px solid lighten($border-color, 5%);
+		margin: -1px 0;
+		
+		& > li {
+			&.list-group-item {
+				border: none;
+				margin-bottom: 0;
+				padding: rem(15px);
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+				
+				@include border-radius(0);
+				@include clearfix();
+				@include display-flex();
+				@include flex-align(center);
+				
+				& + li {
+					&.list-group-item {
+						border-top: 1px solid lighten($border-color, 5%);
+					}
+				}
+				
+				& a {
+					color: rgba($white, .75);
+					text-decoration: none;
+				}
+				& .email-info {
+					max-width: calc(100% - 46px);
+					
+					@include flex(1);
+					
+					& > a {
+						margin-top: rem(-15px);
+						margin-right: rem(-15px);
+						margin-bottom: rem(-15px);
+						padding: rem(15px);
+						max-width: 100%;
+						
+						@include display-flex();
+						@include flex-wrap(wrap);
+						@if $enable-rtl {
+							margin-right: 0;
+							margin-left: rem(-15px);
+						}
+						@include media-breakpoint-down(sm) {
+							display: block;
+						}
+					}
+				}
+				& .email-user {
+					width: rem(30px);
+					height: rem(30px);
+					min-width: rem(30px);
+					overflow: hidden;
+					font-size: rem(18px);
+					line-height: rem(30px);
+					text-align: center;
+					color: darken($white, 30%);
+					background: rgba($dark, .25);
+					margin: rem(-5px) 0;
+					
+					@include border-radius(30px);
+					
+					& img {
+						max-width: 100%;
+						display: block;
+					}
+				}
+				& .email-sender {
+					display: block;
+					width: rem(200px);
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					
+					@include media-breakpoint-down(lg) {
+						width: rem(160px);
+					}
+					@include media-breakpoint-down(md) {
+						width: rem(120px);
+					}
+					@include media-breakpoint-down(sm) {
+						width: auto;
+						font-size: rem(14px);
+						padding-right: rem(90px);
+						
+						@if $enable-rtl {
+							padding-right: rem(15px);
+							padding-left: rem(90px);
+						}
+					}
+				}
+				& .email-title {
+					display: block;
+					line-height: rem(20px);
+					width: rem(300px);
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					
+					@include media-breakpoint-up(md) {
+						padding-left: rem(15px);
+						
+						@if $enable-rtl {
+							padding-left: 0;
+							padding-right: rem(15px);
+						}
+					}
+					@include media-breakpoint-down(lg) {
+						width: auto;
+						
+						@include flex(1);
+					}
+					
+					& + .email-desc {
+						@include media-breakpoint-up(md) {
+							padding-left: rem(20px);
+							
+							@if $enable-rtl {
+								padding-left: 0;
+								padding-right: rem(20px);
+							}
+							&:before {
+								content: '';
+								position: absolute;
+								left: rem(6px);
+								top: rem(8px);
+								width: rem(4px);
+								height: rem(4px);
+								background: lighten($dark, 45%);
+								@include border-radius($border-radius-lg);
+								@if $enable-rtl {
+									left: auto;
+									right: rem(6px);
+								}
+							}
+						}
+					}
+				}
+				& .email-desc {
+					display: block;
+					position: relative;
+					color: rgba($white, .75);
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					padding-right: rem(50px);
+					
+					@include flex(1);
+					@include media-breakpoint-down(lg) {
+						display: none;
+					}
+					@include media-breakpoint-down(sm) {
+						display: block;
+						padding-right: 0;
+					}
+				}
+				& .email-time {
+					display: block;
+					padding: 0 rem(15px) 0 0;
+					font-size: rem(11px);
+					font-weight: 500;
+					color: rgba($white, .5);
+					text-align: right;
+					width: rem(100px);
+					position: absolute;
+					right: 0;
+					top: rem(15px);
+					height: rem(20px);
+					background: none;
+					
+					@include display-flex();
+					@include flex-align(center);
+					@include flex-justify-content(flex-end);
+					@if $enable-rtl {
+						padding-right: 0;
+						padding-left: rem(15px);
+						right: auto;
+						left: 0;
+						text-align: left;
+					}
+					@include media-breakpoint-down(lg) {
+						width: rem(90px);
+					}
+				}
+				& .email-checkbox {
+					& .custom-checkbox {
+						width: rem(16px);
+						padding-left: rem(16px);
+						
+						@if $enable-rtl {
+							padding-left: 0;
+							padding-right: rem(16px);
+						}
+						
+						& .custom-control-label {
+							&::before,
+							&::after {
+								left: rem(-16px);
+								
+								@if $enable-rtl {
+									left: auto;
+									right: rem(-16px);
+								}
+							}
+						}
+					}
+					& + .email-user {
+						margin-left: rem(15px);
+						
+						@if $enable-rtl {
+							margin-left: 0;
+							margin-right: rem(15px);
+						}
+					} 
+				}
+				
+				&.unread {
+					& .email-title {
+						font-weight: 500;
+						color: $white;
+					}
+					& .email-sender {
+						color: $white;
+						font-weight: 500;
+					}
+				}
+				&.selected {
+					background: rgba($yellow, .15);
+				}
+			}
+		}
+	}
+}

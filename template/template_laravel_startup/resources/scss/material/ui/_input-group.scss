@@ -1,0 +1,71 @@
+.input-group {
+	& > .form-control,
+	& > .custom-file,
+	& > .custom-select {
+		@if $enable-rtl {
+			&:not(:first-child) {
+				@include border-top-right-radius(0);
+				@include border-bottom-right-radius(0);
+			}
+			&:not(:last-child) {
+				@include border-top-left-radius(0);
+				@include border-bottom-left-radius(0);
+			}
+			&:first-child {
+				@include border-top-right-radius($border-radius);
+				@include border-bottom-right-radius($border-radius);
+			}
+			&:last-child {
+				@include border-top-left-radius($border-radius);
+				@include border-bottom-left-radius($border-radius);
+			}
+		}
+	}
+	& .input-group-prepend {
+		@if $enable-rtl {
+			& > .btn,
+			& > .input-group-text {
+				@include border-radius(0);
+			}
+			&:first-child {
+				& > .input-group-text {
+					@include border-top-right-radius($border-radius);
+					@include border-bottom-right-radius($border-radius);
+				}
+				& > .btn {
+					@include border-radius(0);
+					
+					&:first-child {
+						@include border-top-right-radius($border-radius);
+						@include border-bottom-right-radius($border-radius);
+					}
+				}
+			}
+		}
+	}
+	& .input-group-append {
+		@if $enable-rtl {
+			& > .btn,
+			& > .input-group-text {
+				@include border-radius(0);
+			}
+			&:last-child {
+				& > .input-group-text {
+					@include border-top-left-radius($border-radius);
+					@include border-bottom-left-radius($border-radius);
+				}
+				& > .btn {
+					@include border-radius(0);
+					
+					&:last-child:not(:first-child) {
+						border-left: none;
+					}
+					&:last-child {
+						@include border-top-left-radius($border-radius);
+						@include border-bottom-left-radius($border-radius);
+					}
+				}
+			}
+		}
+	}
+}

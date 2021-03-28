@@ -1,0 +1,43 @@
+.label {
+	display: inline;
+	padding: rem(3px) rem(6px) rem(4px);
+	font-size: 75%;
+	font-weight: 500;
+	color: $white;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	
+	@include border-radius($border-radius-sm);
+	
+	@each $color, $value in $theme-colors {
+		&.label-#{$color} {
+			@if $color == 'primary' {
+				background: $blue;
+			}
+			@if $color == 'light' {
+				background: $white;
+				color: $dark;
+			}
+			@if $color != 'primary' and $color != 'light' {
+				background: $value;
+			}
+		}
+	}
+	@each $color, $value in $colors {
+		&.label-#{$color} {
+			@if $color == 'yellow' {
+				color: $dark;
+			}
+			background: $value;
+		}
+	}
+	
+	&.label-square {
+		@include border-radius(0);
+	}
+	&.label-default {
+		background: lighten($dark, 70%);
+		color: $dark;
+	}
+}

@@ -1,0 +1,161 @@
+.sw-main {
+	&.sw-theme-default {
+		@include box-shadow(none);
+		
+		& .step-anchor {
+			background: $light;
+			overflow: hidden;
+			
+			@include display-flex();
+			@include flex(1);
+			@include flex-wrap(nowrap);
+			@include border-radius($border-radius $border-radius 0 0);
+			@include media-breakpoint-down(lg) {
+				overflow: scroll;
+				white-space: nowrap;
+			}
+			
+			& > li {
+				display: block;
+				float: none;
+				padding: 0;
+				margin: 0;
+				
+				@include media-breakpoint-up(lg) {
+					@include flex(1);
+				}
+				
+				& > a {
+					display: block;
+					font-size: rem(14px);
+					font-weight: 500;
+					line-height: rem(20px);
+					padding: rem(20px) !important;
+					margin: 0;
+					color: $dark;
+					
+					@include border-radius(0);
+					@include display-flex();
+					@include media-breakpoint-down(lg) {
+						padding: rem(15px) !important;
+					}
+					
+					& .number {
+						padding: 0;
+						height: rem(24px);
+						width: rem(24px);
+						font-size: rem(14px);
+						line-height: rem(24px);
+						text-align: center;
+						margin-right: rem(10px);
+						background: lighten($dark, 65%);
+						color: $dark;
+						font-weight: bold;
+						position: relative;
+						
+						@include border-radius($border-radius * 10);
+						@if $enable-rtl {
+							margin-right: 0;
+							margin-left: rem(10px);
+						}
+					}
+					& small {
+						display: block;
+						font-size: rem(12px);
+						font-weight: 500;
+						line-height: rem(16px);
+						color: lighten($dark, 30%);
+					}
+					&:after {
+						display: none !important;
+					}
+					&:hover,
+					&:focus {
+						color: $dark;
+					}
+				}
+				&.active {
+					background: $form-component-active-bg !important;
+					
+					& > a {
+						color: $white !important;
+						
+						& .number {
+							background: mix($black, $form-component-active-bg, 25%);
+							color: $white;
+						}
+						& small {
+							color: mix($white, $form-component-active-bg, 50%);
+						}
+					}
+				}
+				&.done {
+					& > a {
+						& .number {
+							background: $dark !important;
+							
+							&:before {
+								content: '\f00c';
+								background: $dark !important;
+								position: absolute;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								color: $white;
+								
+								@include fontawesome();
+								@include border-radius($border-radius * 10);
+							}
+						}
+					}
+				}
+			}
+		}
+		& .sw-container {
+			margin: 0 !important;
+			padding: 0;
+			
+			@include border-radius(0 !important);
+			
+			& .step-content {
+				background: $white;
+				padding: $content-padding-y $content-padding-x;
+				border: none !important;
+				
+				@include media-breakpoint-down(sm) {
+					padding: $content-padding-y-sm $content-padding-x-sm;
+				}
+			}
+		}
+		& .sw-toolbar {
+			background: $light;
+			padding: rem(15px);
+			
+			@include clearfix();
+			
+			& .sw-btn-group {
+				margin: 0;
+				
+				@include box-shadow(none);
+				
+				& .btn {
+					min-width: rem(100px);
+				
+					@include border-radius($border-radius !important);
+					@include box-shadow((0 0 2px rgba($dark-darker,.2), 0 4px 4px -2px rgba($dark-darker,.2)));
+				
+					& + .btn {
+						margin-left: rem(10px);
+						border-left: none;
+						
+						@if $enable-rtl {
+							margin-left: 0;
+							margin-right: rem(10px);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+div {
+	& + .widget-input {
+		border-top: 1px solid $border-color;
+		
+		&.widget-input-rounded {
+			@include border-radius(0 0 $border-radius $border-radius);
+		}
+	}
+}
+.widget-input {
+	position: relative;
+	background: rgba($white, .15);
+	
+	&.widget-input-rounded {
+		@include border-radius($border-radius);
+	}
+}
+.widget-input-container {
+	display: table;
+	width: 100%;
+	
+	& .widget-input-icon {
+		display: table-cell;
+		vertical-align: middle;
+		width: 1%;
+		padding: 0 rem(5px);
+		
+		& a {
+			display: block;
+			padding: rem(10px);
+			font-size: rem(18px);
+		}
+	}
+	& .widget-input-box {
+		display: table-cell;
+		vertical-align: middle;
+		padding: rem(5px) 0;
+		
+		& .form-control {
+			border-color: transparent;
+			background: rgba($white, .15);
+			
+			@include border-radius($border-radius * 10);
+			
+			&:focus {
+				@include box-shadow(none);
+			}
+		}
+	}
+	& .widget-input-divider {
+		display: table-cell;
+		vertical-align: middle;
+		width: rem(1px);
+		
+		&:after {
+			content: '';
+			width: rem(1px);
+			height: rem(26px);
+			background: lighten($dark, 65%);
+			display: block;
+		}
+	}
+}
+.inverse-mode {
+	&.widget-input,
+	& .widget-input {
+		background: rgba($black, .25);
+	}
+	& .widget-input-box {
+		& .form-control {
+			background: rgba($white, .15);
+			border-color: transparent;
+			color: $white;
+			
+			@include placeholder(rgba($white, .45));
+		}
+	}
+	& .widget-input-divider {
+		&:after {
+			background: lighten($dark, 15%);
+		}
+	}
+}
+.inverse-mode div + .widget-input,
+div + .widget-input.inverse-mode  {
+	border-color: rgba($white, .15);
+}

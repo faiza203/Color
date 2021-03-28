@@ -1,0 +1,40 @@
+.wysihtml5-sandbox {
+	width: 100% !important;
+	border-color: $border-color !important;
+	padding: rem(15px) !important;
+	background: $white !important;
+	color: $black !important;
+}
+body {
+	& ul.wysihtml5-toolbar {
+		@include display-flex();
+		@include flex-wrap(wrap);
+	
+		& > li {
+			float: none;
+		}
+		&	.glyphicon {
+			@include fontawesome();
+		
+			&.glyphicon-quote:before { display: none; }
+			&.glyphicon-quote:after { content: '\f10d'; }
+			&.glyphicon-list:before { content: '\f03a'; }
+			&.glyphicon-indent-right:before { content: '\f038'; }
+			&.glyphicon-indent-left:before { content: '\f036'; }
+			&.glyphicon-th-list:before { content: '\f00b'; }
+			&.glyphicon-share:before { content: '\f064'; }
+			&.glyphicon-picture:before { content: '\f03e'; }
+		}
+		& + .form-control {
+			color: $black !important;
+		}
+	}
+}
+.panel-form {
+	& .wysihtml5-toolbar {
+		padding: rem(15px) rem(15px) rem(5px);
+	}
+	& .wysihtml5-sandbox {
+		@include border-radius(0 0 $border-radius $border-radius !important);
+	}
+}

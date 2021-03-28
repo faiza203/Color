@@ -1,0 +1,177 @@
+.coming-soon {
+	& .brand {
+		line-height: rem(40px);
+		font-size: rem(28px);
+		font-weight: rem(300);
+		margin-bottom: rem(10px);
+		color: $white;
+		text-align: center;
+		
+		& .logo {
+			font-size: rem(72px);
+			margin-bottom: rem(10px);
+			display: block;
+			
+			@include media-breakpoint-down(md) {
+				font-size: rem(48px);
+			}
+		}	
+	}
+	& .coming-soon-header {
+		background: url(/transparent/images/coming-soon.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: rem(100px) rem(50px) rem(50px);
+		position: relative;
+		
+		@include media-breakpoint-down(md) {
+			padding: rem(50px) rem(25px) rem(25px);
+		}
+		
+		& .desc {
+			position: relative;
+			z-index: 10;
+			text-align: center;
+			font-size: rem(13px);
+			color: rgba($white, .5);
+			letter-spacing: 0.5px;
+			margin-bottom: rem(50px);
+		
+			@include media-breakpoint-down(md) {
+				font-size: rem(12px);
+				letter-spacing: 0.25px;
+				margin-bottom: rem(15px);
+			}
+		}
+		& .timer {
+			position: relative;
+			z-index: 10;
+			margin-bottom: 0;
+			padding: rem(10px) 0;
+			
+			@include clearfix();
+			
+			& .is-countdown {
+				background: none;
+				border: none;
+				margin: 0 auto;
+				width: rem(720px);
+				
+				@include media-breakpoint-down(md) {
+					width: rem(520px);
+				}
+				@include media-breakpoint-down(sm) {
+					width: rem(480px);
+				}
+				@include media-breakpoint-down(xs) {
+					width: auto;
+				}
+				
+				& .countdown-row {
+					@include display-flex();
+					@include flex-wrap(wrap);
+				}
+				& .countdown-section {
+					padding: 0 rem(10px);
+					float: none;
+					
+					& + .countdown-section {
+						border-left: 1px solid rgba($white, .2);
+						
+						@if $enable-rtl {
+							border-left: none;
+							border-right: 1px solid rgba($white, .2);
+						}
+					}
+					& .countdown-amount {
+						font-size: rem(36px);
+						color: $white;
+						
+						@include media-breakpoint-down(md) {
+							font-size: rem(24px);
+						}
+					}
+					& .countdown-period {
+						font-size: rem(14px);
+						color: rgba($white, .6);
+						
+						@include media-breakpoint-down(md) {
+							font-size: rem(12px);
+						}
+					}
+				}
+			}
+		}
+		& .brand {
+			position: relative;
+			z-index: 10;
+			
+			& .logo {
+				display: block;
+				margin: 0 auto rem(10px);
+				position: relative;
+				width: rem(48px);
+				height: rem(48px);
+				border: 3px solid rgba($white,.25);
+				
+				@include border-radius($border-radius * 10);
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: rem(7px);
+					left: rem(7px);
+					width: rem(28px);
+					height: rem(28px);
+					border: 3px solid rgba($white,.5);
+					
+					@include border-radius($border-radius * 10);
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					top: rem(17px);
+					left: rem(17px);
+					width: rem(8px);
+					height: rem(8px);
+					background: rgba($white,.75);
+					
+					@include border-radius($border-radius * 10);
+				}
+			}
+		}
+		& .bg-cover {
+			background: rgba($body-bg, .75);
+			position: absolute;
+			right: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 0;
+		}
+	}
+	& .coming-soon-content {
+		color: $white;
+		text-align: center;
+		padding: rem(25px);
+		
+		& .desc {
+			margin-bottom: rem(25px);
+			font-size: rem(13px);
+		}
+		& .input-group {
+			width: rem(480px);
+			margin: 0 auto rem(10px);
+			
+			@include media-breakpoint-down(md) {
+				width: rem(360px);
+			}
+			@include media-breakpoint-down(sm) {
+				width: rem(300px);
+			}
+			@include media-breakpoint-down(xs) {
+				width: auto;
+			}
+		}
+	}
+}

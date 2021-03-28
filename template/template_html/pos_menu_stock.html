@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Color Admin | POS - Menu Stock</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END BASE CSS STYLE ================== -->
+</head>
+<body class="pace-top">
+	<!-- begin #page-loader -->
+	<div id="page-loader" class="fade show">
+		<span class="spinner"></span>
+	</div>
+	<!-- end #page-loader -->
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="page-empty bg-white fade page-content-full-height">
+		
+		<!-- begin #content -->
+		<div id="content" class="content p-0">
+			<!-- BEGIN pos-stock -->
+			<div class="pos pos-stock" id="pos-stock">
+				<!-- BEGIN pos-stock-header -->
+				<div class="pos-stock-header">
+					<div class="logo">
+						<a href="pos_counter_checkout.html">
+							<div class="logo-img"><img src="../assets/img/pos/logo.svg" /></div>
+							<div class="logo-text">Pine & Dine</div>
+						</a>
+					</div>
+					<div class="time" id="time">00:00</div>
+					<div class="nav">
+						<div class="nav-item">
+							<a href="pos_kitchen_order.html" class="nav-link">
+								<svg viewBox="0 0 16 16" class="nav-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 0 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.812 6.812 0 0 0 1.16 8zm5.48-.079V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324h-1.6zm0 3.75V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352h1.141z"/>
+								</svg>
+							</a>
+						</div>
+						<div class="nav-item">
+							<a href="pos_table_booking.html" class="nav-link">
+								<svg viewBox="0 0 16 16" class="nav-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+									<path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+								</svg>
+							</a>
+						</div>
+						<div class="nav-item">
+							<a href="pos_menu_stock.html" class="nav-link">
+								<svg viewBox="0 0 16 16" class="nav-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+									<path fill-rule="evenodd" d="M7.5 7.793V1h1v6.5H15v1H8.207l-4.853 4.854-.708-.708L7.5 7.793z"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-stock-header -->
+				
+				<!-- BEGIN pos-stock-body -->
+				<div class="pos-stock-body">
+					<!-- BEGIN pos-stock-content -->
+					<div class="pos-stock-content">
+						<div class="pos-stock-content-container" data-scrollbar="true" data-height="100%" data-skip-mobile="true">
+							<div class="row row-space-0">
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-1.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Grill Chicken Chop&reg;</div>
+													<div class="desc">chicken, egg, mushroom, salad</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="20" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product1" checked value="1" />
+																	<label for="product1"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-2.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Grill Pork Chop&reg;</div>
+													<div class="desc">pork, egg, mushroom, salad</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="30" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product2" checked value="1" />
+																	<label for="product2"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-3.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Capellini Tomato Sauce&reg;</div>
+													<div class="desc">spaghetti, tomato, mushroom</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="15" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product3" checked value="1" />
+																	<label for="product3"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-4.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Vegan Salad Bowl&reg;</div>
+													<div class="desc">apple, carrot, tomato</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="10" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product4" checked value="1" />
+																	<label for="product4"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-5.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Hawaiian Pizza&reg;</div>
+													<div class="desc">pizza, crab meat, pineapple</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="10" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product5" checked value="1" />
+																	<label for="product5"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-6.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Avocado Shake</div>
+													<div class="desc">avocado, milk, vanilla</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="0" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product6" value="1" />
+																	<label for="product6"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-7.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Coffee Latte</div>
+													<div class="desc">espresso, milk</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="50" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product7" checked value="1" />
+																	<label for="product7"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-8.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Vita C Detox Juice</div>
+													<div class="desc">apricot, apple, carrot and ginger juice</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="50" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product8" checked value="1" />
+																	<label for="product8"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-9.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Pancake</div>
+													<div class="desc">Non dairy, egg, baking soda, sugar, all purpose flour</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="13" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product9" checked value="1" />
+																	<label for="product9"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-10.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Mushroom soup</div>
+													<div class="desc">Evaporated milk, marsala wine, beef cubes, chicken broth, butter</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="30" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product10" checked value="1" />
+																	<label for="product10"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-11.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Baked chicken wing</div>
+													<div class="desc">Chicken wings, a1 steak sauce, honey, cayenne pepper</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="32" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product11" checked value="1" />
+																	<label for="product11"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-12.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Veggie Spaghetti</div>
+													<div class="desc">Yellow squash, pasta, roasted red peppers, zucchini</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="7" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product12" checked value="1" />
+																	<label for="product12"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-13.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Vanilla Ice Cream</div>
+													<div class="desc">Heavy whipping cream, white sugar, vanilla extract</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="50" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product13" checked value="1" />
+																	<label for="product13"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-14.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Perfect Yeast Doughnuts</div>
+													<div class="desc">Chocolate hazelnut spread, bread flour, doughnuts, quick rise yeast, butter</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="10" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product14" checked value="1" />
+																	<label for="product14"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-15.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Macarons</div>
+													<div class="desc">Almond flour, egg whites, heavy cream, food coloring, powdered sugar</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="20" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product15" checked value="1" />
+																	<label for="product15"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+									<div class="pos-stock-product">
+										<div class="pos-stock-product-container">
+											<div class="product">
+												<div class="product-img">
+													<div class="img" style="background-image: url(../assets/img/pos/product-16.jpg)"></div>
+												</div>
+												<div class="product-info">
+													<div class="title">Perfect Vanilla Cupcake</div>
+													<div class="desc">Baking powder, all purpose flour, plain kefir, vanilla extract</div>
+													
+													<div class="product-option">
+														<div class="option">
+															<div class="option-label">Stock:</div>
+															<div class="option-input">
+																<input type="text" class="form-control" value="16" />
+															</div>
+														</div>
+														<div class="option">
+															<div class="option-label">Availability:</div>
+															<div class="option-input">
+																<div class="switcher switcher-success d-block">
+																	<input type="checkbox" name="" id="product16" checked value="1" />
+																	<label for="product16"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="product-action">
+													<a href="#" class="btn btn-default"><i class="fa fa-times fa-fw"></i> Cancel</a>
+													<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Update</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END pos-stock-content -->
+				</div>
+				<!-- END pos-stock-body -->
+			</div>
+			<!-- END pos-stock -->
+		</div>
+		<!-- end #content -->
+		
+		<!-- begin theme-panel -->
+		<div class="theme-panel theme-panel-lg">
+			<a href="javascript:;" data-click="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
+			<div class="theme-panel-content">
+				<h5>App Settings</h5><ul class="theme-list clearfix">
+					<li><a href="javascript:;" class="bg-red" data-theme="red" data-theme-file="../assets/css/default/theme/red.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Red">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-pink" data-theme="pink" data-theme-file="../assets/css/default/theme/pink.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Pink">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-orange" data-theme="orange" data-theme-file="../assets/css/default/theme/orange.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Orange">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-yellow" data-theme="yellow" data-theme-file="../assets/css/default/theme/yellow.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Yellow">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-lime" data-theme="lime" data-theme-file="../assets/css/default/theme/lime.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Lime">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-green" data-theme="green" data-theme-file="../assets/css/default/theme/green.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Green">&nbsp;</a></li>
+					<li class="active"><a href="javascript:;" class="bg-teal" data-theme="default" data-theme-file="" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Default">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-aqua" data-theme="aqua" data-theme-file="../assets/css/default/theme/aqua.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Aqua">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-blue" data-theme="blue" data-theme-file="../assets/css/default/theme/blue.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Blue">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-purple" data-theme="purple" data-theme-file="../assets/css/default/theme/purple.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Purple">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-indigo" data-theme="indigo" data-theme-file="../assets/css/default/theme/indigo.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Indigo">&nbsp;</a></li>
+					<li><a href="javascript:;" class="bg-black" data-theme="black" data-theme-file="../assets/css/default/theme/black.min.css" data-click="theme-selector" data-toggle="tooltip" data-trigger="hover" data-container="body" data-title="Black">&nbsp;</a></li>
+				</ul>
+				<div class="divider"></div>
+				<div class="row m-t-10">
+					<div class="col-6 control-label text-inverse f-w-600">Header Fixed</div>
+					<div class="col-6 d-flex">
+						<div class="custom-control custom-switch ml-auto">
+							<input type="checkbox" class="custom-control-input" name="header-fixed" id="headerFixed" value="1" checked />
+							<label class="custom-control-label" for="headerFixed">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row m-t-10">
+					<div class="col-6 control-label text-inverse f-w-600">Header Inverse</div>
+					<div class="col-6 d-flex">
+						<div class="custom-control custom-switch ml-auto">
+							<input type="checkbox" class="custom-control-input" name="header-inverse" id="headerInverse" value="1" />
+							<label class="custom-control-label" for="headerInverse">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row m-t-10">
+					<div class="col-6 control-label text-inverse f-w-600">Sidebar Fixed</div>
+					<div class="col-6 d-flex">
+						<div class="custom-control custom-switch ml-auto">
+							<input type="checkbox" class="custom-control-input" name="sidebar-fixed" id="sidebarFixed" value="1" checked />
+							<label class="custom-control-label" for="sidebarFixed">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row m-t-10">
+					<div class="col-6 control-label text-inverse f-w-600">Sidebar Grid</div>
+					<div class="col-6 d-flex">
+						<div class="custom-control custom-switch ml-auto">
+							<input type="checkbox" class="custom-control-input" name="sidebar-grid" id="sidebarGrid" value="1" />
+							<label class="custom-control-label" for="sidebarGrid">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row m-t-10">
+					<div class="col-md-6 control-label text-inverse f-w-600">Sidebar Gradient</div>
+					<div class="col-md-6 d-flex">
+						<div class="custom-control custom-switch ml-auto">
+							<input type="checkbox" class="custom-control-input" name="sidebar-gradient" id="sidebarGradient" value="1" />
+							<label class="custom-control-label" for="sidebarGradient">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<h5>Admin Design (5)</h5>
+				<div class="theme-version">
+					<a href="../template_html/index_v2.html" class="active">
+						<span style="background-image: url(../assets/img/theme/default.jpg);"></span>
+					</a>
+					<a href="../template_transparent/index_v2.html">
+						<span style="background-image: url(../assets/img/theme/transparent.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="../template_apple/index_v2.html">
+						<span style="background-image: url(../assets/img/theme/apple.jpg);"></span>
+					</a>
+					<a href="../template_material/index_v2.html">
+						<span style="background-image: url(../assets/img/theme/material.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="../template_facebook/index_v2.html">
+						<span style="background-image: url(../assets/img/theme/facebook.jpg);"></span>
+					</a>
+					<a href="../template_google/index_v2.html">
+						<span style="background-image: url(../assets/img/theme/google.jpg);"></span>
+					</a>
+				</div>
+				<div class="divider"></div>
+				<h5>Language Version (7)</h5>
+				<div class="theme-version">
+					<a href="../template_html/index.html" class="active">
+						<span style="background-image: url(../assets/img/version/html.jpg);"></span>
+					</a>
+					<a href="../template_ajax/index.html">
+						<span style="background-image: url(../assets/img/version/ajax.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="../template_angularjs/index.html">
+						<span style="background-image: url(../assets/img/version/angular1x.jpg);"></span>
+					</a>
+					<a href="../template_angularjs10/index.html">
+						<span style="background-image: url(../assets/img/version/angular10x.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="javascript:alert('Laravel Version only available in downloaded version.');">
+						<span style="background-image: url(../assets/img/version/laravel.jpg);"></span>
+					</a>
+					<a href="../template_vuejs/index.html">
+						<span style="background-image: url(../assets/img/version/vuejs.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="../template_reactjs/index.html">
+						<span style="background-image: url(../assets/img/version/reactjs.jpg);"></span>
+					</a>
+					<a href="javascript:alert('.NET Core 3.1 MVC Version only available in downloaded version.');">
+						<span style="background-image: url(../assets/img/version/dotnet.jpg);"></span>
+					</a>
+				</div>
+				<div class="divider"></div>
+				<h5>Frontend Design (4)</h5>
+				<div class="theme-version">
+					<a href="../../../frontend/template/template_one_page_parallax/index.html">
+						<span style="background-image: url(../assets/img/theme/one-page-parallax.jpg);"></span>
+					</a>
+					<a href="../../../frontend/template/template_e_commerce/index.html">
+						<span style="background-image: url(../assets/img/theme/e-commerce.jpg);"></span>
+					</a>
+				</div>
+				<div class="theme-version">
+					<a href="../../../frontend/template/template_blog/index.html">
+						<span style="background-image: url(../assets/img/theme/blog.jpg);"></span>
+					</a>
+					<a href="../../../frontend/template/template_forum/index.html">
+						<span style="background-image: url(../assets/img/theme/forum.jpg);"></span>
+					</a>
+				</div>
+				<div class="divider"></div>
+				<div class="row m-t-10">
+					<div class="col-md-12">
+						<a href="https://seantheme.com/color-admin/documentation/" class="btn btn-inverse btn-block btn-rounded" target="_blank"><b>Documentation</b></a>
+						<a href="javascript:;" class="btn btn-default btn-block btn-rounded" data-click="reset-local-storage"><b>Reset Local Storage</b></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end theme-panel -->
+		
+		<!-- begin scroll to top btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+		<!-- end scroll to top btn -->
+	</div>
+	<!-- end page container -->
+	
+	<!-- ================== BEGIN BASE JS ================== -->
+	<script src="../assets/js/app.min.js"></script>
+	<script src="../assets/js/theme/default.min.js"></script>
+	<!-- ================== END BASE JS ================== -->
+	
+	
+	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="../assets/js/demo/pos-menu-stock.demo.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+</body>
+</html>

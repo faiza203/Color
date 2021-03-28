@@ -1,0 +1,54 @@
+@mixin helper-color($color, $value) {
+	$hue: hue($value);
+	$direction: 'positive';
+	
+	@if ($hue >= 180deg and $hue < 240deg) or ($hue >= 300deg and $hue < 360deg) {
+		$direction: 'negative';
+	}
+	
+  .text-#{$color} {
+  	color: $value !important;
+  }
+  .text-#{$color}-lighter {
+  	color: mix($white, $value, 25%) !important;
+  }
+  .text-#{$color}-darker {
+  	color: mix($black, $value, 25%) !important;
+  }
+  .bg-#{$color} {
+  	background-color: $value !important;
+  }
+  .bg-#{$color}-lighter {
+  	background-color: mix($white, $value, 25%) !important;
+  }
+  .bg-#{$color}-darker {
+  	background-color: mix($black, $value, 25%) !important;
+  }
+  .bg-gradient-#{$color} {
+		background: $value !important;
+		@if $direction == 'positive' {
+			background: -moz-linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
+			background: -webkit-linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
+			background: linear-gradient(to bottom, adjust-hue($value, 5deg) 0%, adjust-hue($value, -20deg) 100%) !important;
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='adjust-hue($value, 5deg)', endColorstr='adjust-hue($value, -20deg)',GradientType=0 ) !important;
+		} @else {
+			background: -moz-linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
+			background: -webkit-linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
+			background: linear-gradient(to bottom, adjust-hue($value, -20deg) 0%, adjust-hue($value, 5deg) 100%) !important;
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='adjust-hue($value, -20deg)', endColorstr='adjust-hue($value, 5deg)',GradientType=0 ) !important;
+		}
+  }
+	.app-theme-#{$color} {
+		& .app-sidebar .nav > li.active > a {
+			background-color: $value !important;
+		}
+	}
+  @for $i from 1 through 9 {
+  	.bg-#{$color}-transparent-#{$i} {
+  		background-color: rgba($value, ($i/10)) !important;
+  	}
+  	.text-#{$color}-transparent-#{$i} {
+  		color: rgba($value, ($i/10)) !important;
+  	}
+  }
+}

@@ -1,0 +1,191 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb float-xl-right">
+	<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+	<li class="breadcrumb-item"><a href="javascript:;">Chart</a></li>
+	<li class="breadcrumb-item active">Ngx Chart</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Ngx Chart <small>header small text goes here...</small></h1>
+<!-- end page-header -->
+
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Basic Line Chart">
+      <div class="height-sm">
+        <ngx-charts-line-chart
+          [animations]="false"
+          [scheme]="chartColor"
+          [results]="chartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'"
+          [roundDomains]="true"
+          [autoScale]="true">
+        </ngx-charts-line-chart>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Area Chart">
+      <div class="height-sm">
+        <ngx-charts-area-chart-stacked
+          [animations]="false"
+          [scheme]="chartColor"
+          [results]="areaChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'">
+        </ngx-charts-area-chart-stacked>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Bar Chart">
+      <div class="height-sm">
+        <ngx-charts-bar-vertical
+          [scheme]="chartColor"
+          [results]="barChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'">
+        </ngx-charts-bar-vertical>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Stacked Bar Chart">
+      <div class="height-sm">
+        <ngx-charts-bar-vertical-stacked
+          [scheme]="chartColor"
+          [results]="stackedBarChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'">
+        </ngx-charts-bar-vertical-stacked>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row --><!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Pie Chart">
+      <div class="height-sm">
+        <ngx-charts-pie-chart
+          [scheme]="chartColor"
+          [results]="pieChartData"
+          [legend]="false"
+          [explodeSlices]="false"
+          [labels]="true"
+          [doughnut]="false">
+        </ngx-charts-pie-chart>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Pie Grid">
+      <div class="height-sm">
+        <ngx-charts-pie-grid
+          [scheme]="chartColor"
+          [results]="pieChartData">
+        </ngx-charts-pie-grid>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->
+<!-- begin row -->
+<div class="row">
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Heat Map">
+      <div class="height-sm">
+        <ngx-charts-heat-map
+          [scheme]="chartColor"
+          [results]="heatMapChartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'">
+        </ngx-charts-heat-map>
+			</div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+	<!-- begin col-6 -->
+	<div class="col-xl-6">
+		<!-- begin panel -->
+		<panel title="Polar Chart">
+      <div class="height-sm">
+        <ngx-charts-polar-chart
+          [animations]="false"
+          [scheme]="chartColor"
+          [results]="chartData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [xAxisLabel]="'Census Date'"
+          [showYAxisLabel]="true"
+          [yAxisLabel]="'GDP Per Capita'"
+          [roundDomains]="true"
+          [autoScale]="true">
+        </ngx-charts-polar-chart>
+      </div>
+		</panel>
+		<!-- end panel -->
+	</div>
+	<!-- end col-6 -->
+</div>
+<!-- end row -->

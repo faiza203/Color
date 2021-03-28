@@ -1,0 +1,241 @@
+.page-with-right-sidebar {
+	& .float-sub-menu-container {
+		& .float-sub-menu-line {
+			left: auto;
+			right: rem(26px);
+			
+			@if $enable-rtl {
+				left: rem(26px);
+				right: auto;
+			}
+		}
+		& .float-sub-menu-arrow {
+			left: auto;
+			right: 0;
+			
+			@if $enable-rtl {
+				left: 0;
+				right: auto;
+			}
+		}
+		& .float-sub-menu li:after {
+			left: auto;
+			right: 0;
+			
+			@if $enable-rtl {
+				left: 0;
+				right: auto;
+			}
+		}
+		& .float-sub-menu {
+			padding-left: 0;
+			padding-right: rem(39px);
+			text-align: right;
+			
+			@if $enable-rtl {
+				padding-left: rem(39px);
+				padding-right: 0;
+			}
+			
+			& li {
+				& > a {
+					padding-left: rem(15px);
+					padding-right: rem(20px);
+					
+					@if $enable-rtl {
+						padding-left: rem(20px);
+						padding-right: rem(15px);
+					}
+					
+					& .caret {
+						float: left;
+						
+						@if $enable-rtl {
+							float: right;
+						}
+						
+						&:before {
+							content: '\f053';
+						}
+					}
+					&:after {
+						right: rem(-11px);
+						left: auto;
+						
+						@if $enable-rtl {
+							right: rem(-11px);
+						}
+					}
+				}
+				&.active,
+				&.expanding,
+				&.expand {
+					& > a {
+						& .caret {
+							&:before {
+								@include transform(rotate(-90deg));
+							}
+						}
+					}
+				}
+				&:before {
+					right: rem(-13px);
+					left: auto;
+					
+					@if $enable-rtl {
+						right: auto;
+						left: rem(-13px);
+					}
+				}
+			}
+			& .sub-menu {
+				padding-left: 0;
+				padding-right: rem(15px);
+				
+				@if $enable-rtl {
+					padding-left: rem(15px);
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	& .sidebar,
+	& .sidebar-bg {
+		left: auto;
+		right: 0;
+		
+		@if $enable-rtl {
+			left: 0;
+			right: auto;
+		}
+		@include media-breakpoint-down(sm) {
+			right: $sidebar-width * -1;
+			
+			@if $enable-rtl {
+				right: auto;
+				left: $sidebar-width * -1;
+			}
+		}
+	}
+	& .content {
+		margin-left: 0;
+		margin-right: $sidebar-width;
+		
+		@if $enable-rtl {
+			margin-right: 0;
+			margin-left: $sidebar-width;
+			padding-left: ($content-padding-x - rem(10px));
+			padding-right: $content-padding-x;
+		} @else {
+			padding-right: ($content-padding-x - rem(10px));
+			padding-left: $content-padding-x;
+		}
+		@include media-breakpoint-down(sm) {
+			margin-right: 0;
+			padding-left: $content-padding-x-sm;
+			padding-right: $content-padding-x-sm;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+			}
+		}
+	}
+	& .footer {
+		margin-left: $content-padding-x;
+		margin-right: $sidebar-width + $content-padding-x;
+		
+		@if $enable-rtl {
+			margin-left: $sidebar-width + $content-padding-x;
+			margin-right: $content-padding-x;
+		}
+		@include media-breakpoint-down(sm) {
+			margin-right: $content-padding-x;
+			
+			@if $enable-rtl {
+				margin-left: $content-padding-x;
+			}
+		}
+	}
+	& .btn-scroll-to-top {
+		left: rem(25px);
+		right: auto;
+		
+		@if $enable-rtl {
+			left: auto;
+			right: rem(25px);
+		}
+	}
+	& .map {
+		@include media-breakpoint-up(md) {
+			right: $sidebar-width;
+			left: 0;
+			
+			@if $enable-rtl {
+				right: 0;
+				left: $sidebar-width;
+			}
+		}
+	}
+	
+	&.page-with-wide-sidebar {
+		& .content {
+			@if $enable-rtl {
+				margin-left: $sidebar-wide-width;
+			} @else {
+				margin-right: $sidebar-wide-width;
+			}
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					margin-left: 0;
+				} @else {
+					margin-right: 0;
+				}
+			}
+		}
+		& .footer {
+			@if $enable-rtl {
+				margin-left: $sidebar-wide-width + $content-padding-x;
+			} @else {
+				margin-right: $sidebar-wide-width + $content-padding-x;
+			}
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					margin-left: $content-padding-x-sm;
+				} @else {
+					margin-right: $content-padding-x-sm;
+				}
+			}
+		}
+		
+		&.page-sidebar-minified {
+			& .content {
+				@if $enable-rtl {
+					margin-left: $sidebar-minified-width;
+				} @else {
+					margin-right: $sidebar-minified-width;
+				}
+				@include media-breakpoint-down(sm) {
+					@if $enable-rtl {
+						margin-left: 0;
+					} @else {
+						margin-right: 0;
+					}
+				}
+			}
+			& .footer {
+				@if $enable-rtl {
+					margin-left: $sidebar-minified-width + $content-padding-x;
+				} @else {
+					margin-right: $sidebar-minified-width + $content-padding-x;
+				}
+				@include media-breakpoint-down(sm) {
+					@if $enable-rtl {
+						margin-left: $content-padding-x-sm;
+					} @else {
+						margin-right: $content-padding-x-sm;
+					}
+				}
+			}
+		}
+	}
+}

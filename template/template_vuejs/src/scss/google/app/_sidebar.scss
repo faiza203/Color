@@ -1,0 +1,667 @@
+@include keyframes(inToRight) {
+	to {
+		@include transform(translate3d(0, 0, 0));
+	}
+}
+
+.sidebar {
+	width: $sidebar-width;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	padding-top: $header-height;
+	background: $dark;
+	z-index: $sidebar-zindex;
+	
+	@include transform(translateZ(0));
+	@if $enable-rtl {
+		left: auto;
+		right: 0;
+		border-left: 1px solid $border-color-transparent;
+	} @else {
+		border-right: 1px solid $border-color-transparent;
+	}
+	@include media-breakpoint-down(sm) {
+		padding-top: 0;
+		left: $sidebar-width * -1;
+		z-index: $header-zindex + 1;
+		
+		@if $enable-rtl {
+			left: auto;
+			right: $sidebar-width * -1;
+			border-left: none;
+		} @else {
+			border-right: none;
+		}
+		@include box-shadow(none);
+	}
+	
+	& .nav {
+		display: block;
+		
+		& > li {
+			position: relative;
+			
+			@include clearfix();
+			
+			& > a {
+				line-height: rem(20px);
+				color: mix($white, $dark, 45%);
+				display: block;
+				text-decoration: none;
+				font-weight: 400;
+				padding: rem(6px) rem(12px) rem(6px) rem(24px);
+				margin-right: rem(12px);
+				
+				@if $enable-rtl {
+					padding-left: rem(12px);
+					padding-right: rem(24px);
+					margin-right: 0;
+					margin-left: rem(12px);
+
+					@include border-radius(24px 0 0 24px);
+				}	@else {					
+					@include border-radius(0 24px 24px 0);
+				}
+				@include clearfix();
+				
+				& i {
+					float: left;
+					margin-right: rem(16px);
+					margin-top: rem(-2px);
+					margin-bottom: rem(-2px);
+					width: rem(24px);
+					height: rem(24px);
+					text-align: center;
+					line-height: rem(24px);
+					font-size: rem(22px);
+					
+					@if $enable-rtl {
+						float: right;
+						margin-right: 0;
+						margin-left: rem(16px);
+					}
+				}
+				& .icon-img {
+					float: left;
+					margin-right: rem(16px);
+					margin-top: rem(-2px);
+					margin-bottom: rem(-2px);
+					width: rem(24px);
+					height: rem(24px);
+					overflow: hidden;
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+					
+					@include border-radius($border-radius);
+					@include display-flex();
+					@include flex-align(center);
+					@if $enable-rtl {
+						float: right;
+						margin-right: 0;
+						margin-left: rem(16px);
+					}
+					
+					& img {
+						max-width: 100%;
+						max-height: 100%;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+				& .badge {
+					padding: rem(3px) rem(8px) rem(2px);
+					line-height: rem(16px);
+					background: $primary;
+					color: $white;
+					font-weight: 600;
+					font-size: rem(10px);
+				}
+				& .label {
+					padding-top: 0;
+					padding-bottom: 0;
+					margin-left: rem(8px);
+					
+					&.label-theme {
+						background: $primary;
+						color: $white;
+						font-weight: 600;
+					}
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: rem(8px);
+					}
+				}
+				& > span {
+					@include display-flex();
+					@include flex(1);
+					@include flex-wrap(wrap);
+				}
+				&:hover {
+					background: mix($white, $dark, 10%);
+					color: mix($white, $dark, 80%);
+				}
+			}
+			&.active {
+				& > a {
+					position: relative;
+					z-index: 10;
+					font-weight: 500;
+					color: $white;
+					background: $primary;
+					
+					& .label,
+					& .badge {
+						background: rgba($black, .25);
+						color: $white;
+					}
+					& .caret {
+						color: inherit;
+					}
+				}
+				&.has-sub {
+					& > a {
+						& .label,
+						& .badge {
+							background: $primary;
+							color: $white;
+						}
+					}
+				}
+			}
+			&.nav-header {
+				margin: 0;
+				padding: rem(15px) rem(20px) rem(5px);
+				line-height: rem(20px);
+				font-size: rem(13px);
+				color: $white;
+				font-weight: 500;
+				
+				& a {
+					padding: 0;
+					margin: 0;
+					display: inline;
+					
+					&:hover,
+					&:focus {
+						background: none;
+						color: $white;
+					}
+					& i {
+						float: none;
+						margin: 0;
+					}
+				}
+			}
+			&.nav-profile {
+				padding: rem(24px);
+				overflow: hidden;
+				
+				& a {
+					padding: 0;
+				}
+				& > a {
+					margin: rem(-24px);
+					padding: rem(24px);
+					display: block;
+					font-weight: 500;
+					color: $white;
+					
+					@include border-radius(0);
+					
+					& .caret {
+						position: relative;
+					}
+					&:hover {
+						background: $light;
+						
+						& .cover {
+							&.with-shadow {
+								&:before {
+									opacity: 0.75;
+								}
+							}
+						}
+					}
+				}
+				& .image {
+					width: rem(60px);
+					height: rem(60px);
+					margin-bottom: rem(12px);
+					overflow: hidden;
+					position: relative;
+					background-size: cover;
+					background-position: center;
+					background-repeat: no-repeat;
+					
+					@include display-flex();
+					@include flex-align(center);
+					@include border-radius($border-radius-lg * 5);
+					
+					& img {
+						max-width: 100%;
+						max-height: 100%;
+					}
+					&.image-icon {
+						& i {
+							float: none;
+							display: block;
+							font-size: rem(64px);
+							text-align: center;
+							width: auto;
+							margin: 0 auto rem(-24px);
+						}
+					}
+				}
+				& .info {
+					font-size: rem(14px);
+					position: relative;
+					
+					& .caret {
+						margin-top: rem(2px);
+					}
+					& small {
+						display: block;
+						margin-bottom: rem(-8px);
+						font-size: rem(13px);
+					}
+				}
+				& .cover {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background: url(/google/images/cover-sidebar-user.jpg);
+					background-repeat: no-repeat;
+					background-size: cover;
+					
+					&.with-shadow {
+						&:before {
+							content: '';
+							position: absolute;
+							left: 0;
+							right: 0;
+							top: 0;
+							bottom: 0;
+							background: rgba($dark-darker, .75);
+							
+							@include transition(all .2s linear);
+						}
+					}
+				}
+			}
+			&.nav-search {
+				padding: rem(20px);
+				
+				& + li {
+					padding-top: 0;
+				}
+			}
+			&.nav-widget {
+				padding: rem(10px) rem(20px);
+				
+				& i {
+					margin-right: auto;
+				}
+			}
+			& .text-theme {
+				margin-left: rem(5px);
+				
+				@if $enable-rtl {
+					margin-right: rem(5px);
+					margin-left: 0;
+				}
+			}
+		}
+		& .has-sub {
+			&.active {
+				& > .sub-menu {
+					display: block;
+				}
+			}
+		}
+		&.nav-profile {
+			padding: rem(5px) 0;
+			border-bottom: 1px solid $grey;
+			display: none;
+			
+			&.active {
+				display: block;
+			}
+		}
+	}
+	& li {
+		& > a {
+			& .caret {
+				display: block;
+				width: rem(20px);
+				height: rem(20px);
+				line-height: rem(20px);
+				text-align: center;
+				font-size: rem(13px);
+				border: none;
+				color: $grey;
+				position: absolute;
+				margin: 0;
+				
+				@include fontawesome();
+				@if $enable-rtl {
+					right: rem(5px);
+				} @else {
+					left: rem(5px);
+				}
+				
+				&:before {
+					content: '\f0da';
+					display: block;
+					text-align: center;
+					
+					@include transition(all .2s linear);
+					@if $enable-rtl {
+						content: '\f0d9';
+					}
+				}
+			}
+		}
+		
+		&.active,
+		&.expanding,
+		&.expand {
+			& > a {
+				& .caret {
+					&:before {
+						opacity: 1.0;
+						
+						@include transform(rotate(90deg));
+						@if $enable-rtl {
+							@include transform(rotate(-90deg));
+						}
+					}
+				}
+			}
+		}
+		&.active {
+			& > a {
+				color: $white;
+				background: $primary;
+			}
+			&.has-sub {
+				& > a {
+					background: none;
+					color: mix($white, $dark, 45%);
+					
+					& .caret {
+						color: $primary;
+					}
+				}
+			}
+		}
+		&.closed,
+		&.closing {
+			& > a {
+				& .caret {
+					&:before {
+						@include transform(rotate(0deg));
+					}
+				}
+			}
+		}
+	}
+	& .sub-menu {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		position: relative;
+		display: none;
+		
+		& > li {
+			position: relative;
+			
+			& > a {
+				padding: rem(6px) rem(12px) rem(6px) rem(80px);
+				display: block;
+				color: rgba($white, .6);
+				text-decoration: none;
+				position: relative;
+				line-height: rem(20px);
+				margin-right: rem(12px);
+				
+				@include border-radius(0 24px 24px 0);
+				@if $enable-rtl {
+					padding-right: rem(80px);
+					padding-left: rem(24px);
+					margin-right: 0;
+					margin-left: rem(12px);
+				
+					@include border-radius(24px 0 0 24px);
+				}
+				& .caret {
+					position: absolute;
+					
+					@if $enable-rtl {
+						right: rem(58px);
+					} @else {
+						left: rem(58px);
+					}
+				}
+				&:hover {
+					color: $white;
+				}
+			}
+			&.active {
+				& > a {
+					color: $white;
+				}
+			}
+		}
+		& .sub-menu {
+			padding: 0;
+			background: none;
+			
+			& > li {
+				& > a {
+					@if $enable-rtl {
+						padding-right: rem(96px);
+					} @else {
+						padding-left: rem(96px);
+					}
+					
+					& .caret {
+						@if $enable-rtl {
+							right: rem(74px);
+						} @else {
+							left: rem(74px);
+						}
+					}
+				}
+					
+				& .sub-menu {
+					& > li {
+						& > a {
+							@if $enable-rtl {
+								padding-right: rem(112px);
+							} @else {
+								padding-left: rem(112px);
+							}
+					
+							& .caret {
+								@if $enable-rtl {
+									right: rem(90px);
+								} @else {
+									left: rem(90px);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& .sidebar-minify-btn {
+		margin: rem(10px) 0;
+		float: right;
+		padding: rem(5px) rem(20px) rem(5px) rem(10px) !important;
+		background: $grey;
+		color: $white;
+		
+		@include border-radius($border-radius * 5 0 0 $border-radius * 5);
+		@if $enable-rtl {
+			float: left;
+			
+			@include border-radius(0 $border-radius * 5 $border-radius * 5 0);
+		}
+		
+		& i {
+			margin: 0 !important;
+			color: $white;
+		}
+		&:hover,
+		&:focus {
+			background: darken($grey, 8%) !important;
+		}
+	}
+	& .slimScrollDiv {
+		& .slimScrollBar {
+			&:before {
+				background: rgba($white, .5) !important;
+			}
+		}
+	}
+	&.sidebar-transparent {
+		background: none;
+		
+		& + .sidebar-bg {
+			background: url(/google/images/cover-sidebar.jpg);
+			background-size: cover;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba($dark, .5);
+			}
+		}
+		& .nav {
+			& > li {
+				& a {
+					color: rgba($white, .8);
+					
+					& .caret {
+						color: inherit;
+					}
+					
+					&:hover,
+					&:focus {
+						background: rgba($dark, .35);
+					}
+				}
+				&.active {
+					& > a {
+						background: rgba($white, .25);
+						color: $white;
+						font-weight: 500;
+					}
+				}
+				&.nav-profile {
+					background: rgba($black, .25);
+					
+					& a {
+						&:hover,
+						&:focus {
+							background: none;
+						}
+					}
+					& .cover {
+						background: none;
+						
+						&.with-shadow {
+							&:before {
+								background: none;
+							}
+						}
+					}
+					&.active {
+						background: rgba($black, .25);
+						
+						& > a {
+							background: none;
+						}
+					}
+				}
+			}
+			&.nav-profile {
+				border-color: $border-color-transparent;
+			}
+		}
+		& .sub-menu {
+			background: none;
+			
+			& > li {
+				&:before {
+					background: rgba($black, .45);
+				}
+				& > a {
+					&:after {
+						background: rgba($black, .45);
+					}
+				}
+				&.active {
+					& > a {
+						background: rgba($white, .25);
+						color: $white;
+						font-weight: 500;
+					}
+				}
+				&.has-sub {
+					& > a {
+						&:after {
+							background: rgba($black, .45);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.sidebar-right {
+		@if $enable-rtl {
+			border-right: 1px solid $border-color-transparent;
+		} @else {
+			border-left: 1px solid $border-color-transparent;
+		}
+	}
+}
+.sidebar-bg {
+	background: $white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: $sidebar-width;
+	z-index: $sidebar-zindex - 10;
+	
+	@if $enable-rtl {
+		left: auto;
+		right: 0;
+		border-left: 1px solid $border-color-transparent;
+	} @else {
+		border-right: 1px solid $border-color-transparent;
+	}
+	@include media-breakpoint-down(sm) {
+		padding-top: 0;
+		left: $sidebar-width * -1;
+		z-index: $header-zindex;
+		
+		@include box-shadow(none);
+		@if $enable-rtl {
+			left: auto;
+			right: $sidebar-width * -1;
+		}
+	}
+}

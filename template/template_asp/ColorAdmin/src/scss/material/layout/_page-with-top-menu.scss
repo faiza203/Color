@@ -1,0 +1,16 @@
+.page-with-top-menu {
+	@include media-breakpoint-up(md) {
+		padding-top: $header-height + $top-menu-height;
+	}
+	
+	& .sidebar {
+		@include media-breakpoint-up(md) {
+			padding-top: $header-height + $top-menu-height;
+		}
+	}
+	&.page-header-fixed {
+		@include media-breakpoint-up(md) {
+			padding-top: $header-height + $top-menu-height;
+		}
+	}
+}

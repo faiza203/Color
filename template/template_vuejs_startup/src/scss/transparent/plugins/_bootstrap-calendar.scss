@@ -1,0 +1,113 @@
+.bootstrap-calendar {
+	& .calendar {
+		background: none;
+		border: none;
+		padding: rem(7px) 0 rem(10px);
+		
+		@include border-radius(0);
+		
+		& .table {
+			&.header {
+				padding: 0;
+				margin: 0 0 rem(2px);
+				position: relative;
+				background: none;
+				color: $white;
+				
+				@include box-shadow(none);
+				
+				& td {
+					width: rem(45px);
+					padding: rem(5px) rem(15px);
+					vertical-align: middle;
+					border: none;
+					
+					&.year {
+						width: calc(100% - 90px);
+					}
+					
+					& .visualmonthyear, {
+						height: 100%;
+						font-size: rem(16px);
+						font-weight: 500;
+						color: $white;
+						
+						@include display-flex();
+						@include flex-align(center);
+						@include flex-justify-content(center);
+					}
+					& .icon-arrow-right,
+					& .icon-arrow-left {
+						cursor: pointer;
+						font-size: rem(14px);
+						height: 100%;
+						color: rgba($white, .75);
+						
+						@include display-flex();
+						@include flex-align(center);
+						@include flex-justify-content(center);
+						@include fontawesome();
+						
+						&:hover,
+						&:focus {
+							color: $white;
+						}
+					}
+					& .icon-arrow-left {
+						&:before {
+							content: '\f060';
+						}
+					}
+					& .icon-arrow-right {
+						&:before {
+							content: '\f061';
+						}
+					}
+				}
+			}
+			&.daysmonth {
+				margin: 0;
+				
+				& tr {
+					& td {
+						border: none;
+						padding: rem(7px) rem(10px);
+						font-weight: 600;
+						color: rgba($white, .75);
+						
+						
+						& a {
+							display: block;
+							text-shadow: none;
+							width: rem(26px);
+							height: rem(26px);
+							line-height: rem(26px);
+							margin: rem(-4px) auto;
+							color: rgba($white, .75);
+							
+							@include border-radius($border-radius * 5);	
+						}
+						
+						&.event {
+							background: none;
+							
+							@include box-shadow(none);
+							
+							& a {
+								color: $white;
+							}
+						}
+					}
+					
+					&.week_days {
+						& td {
+							background: none;
+							color: rgba($white, .75);
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,136 @@
+.register {
+	&.register-with-news-feed {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		
+		& .news-feed {
+			position: fixed;
+			left: 0;
+			right: rem(500px);
+			top: 0;
+			bottom: 0;
+			overflow: hidden;
+			
+			@include transform(translateZ(0));
+			@if $enable-rtl {
+				right: 0;
+				left: rem(500px);
+			}
+			@include media-breakpoint-down(lg) {
+				right: rem(400px);
+				
+				@if $enable-rtl {
+					left: rem(400px);
+					right: 0;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				position: relative;
+				right: 0;
+				display: none;
+				
+				@if $enable-rtl {
+					left: 0;
+				}
+			}
+			
+			& .news-image {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				top: 0;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			& .news-caption {
+				color: rgba($white, .85);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: rem(60px) rem(60px) rem(30px);
+				font-size: rem(18px);
+				letter-spacing: rem(0.25px);
+				z-index: 20;
+				font-weight: 300;
+				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+			
+				@include media-breakpoint-down(lg) {
+					padding: rem(45px) rem(45px) rem(30px);
+					font-size: rem(16px);
+				}
+			
+				& .caption-title {
+					font-weight: 300;
+					color: $white;
+					font-size: rem(36px);
+				
+					@include media-breakpoint-down(lg) {
+						font-size: rem(28px);
+					}
+				}
+			}
+		}
+		& .right-content {
+			min-height: 100%;
+			background: $white;
+			width: rem(500px);
+			margin-left: auto;
+			padding: rem(60px);
+			
+			@include display-flex();
+			@include flex-direction-column();
+			@include flex-justify-content(center);
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: auto;
+			}
+			@include media-breakpoint-down(lg) {
+				width: rem(400px);
+				padding: rem(45px);
+			}
+			@include media-breakpoint-down(sm) {
+				width: auto;
+			}
+			@include media-breakpoint-down(xs) {
+				padding: rem(30px);
+			}
+			& .register-content {
+				width: auto;
+			}
+			& .register-header {
+				position: relative;
+				font-size: rem(32px);
+			
+				@include media-breakpoint-down(lg) {
+					font-size: rem(24px);
+				}
+			
+				& + .register-content {
+					padding-top: rem(15px);
+				}
+				& small {
+					color: lighten($dark, 30%);
+					display: block;
+					font-size: rem(14px);
+					margin-top: rem(10px);
+					line-height: rem(20px);
+					
+					@include media-breakpoint-down(lg) {
+						font-size: rem(12px);
+						line-height: rem(18px);
+					}
+				}
+			}
+		}
+	}
+}

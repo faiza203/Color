@@ -1,0 +1,58 @@
+.nav {
+	&.nav-tabs {
+		& .nav-item {
+			& .nav-link {
+				padding: rem(10px) rem(15px);
+				font-weight: 500;
+				color: lighten($dark, 30%);
+				
+				&.active,
+				&:hover,
+				&:focus {
+					color: $dark;
+				}
+			}
+		}
+		&.nav-tabs-inverse {
+			background: $dark-darker;
+			
+			@include border-radius($border-radius $border-radius 0 0);
+			
+			& .nav-item {
+				& .nav-link {
+					color: lighten($dark, 60%);
+					
+					&.active {
+						color: $dark;
+					}
+				}
+			}
+		}
+		
+		& + .tab-content {
+			padding: rem(15px);
+			background: $white;
+			margin-bottom: rem(20px);
+			
+			@include border-radius(0 0 $border-radius $border-radius);
+		}
+	}
+	
+	&.nav-pills {
+		& .nav-item {
+			& .nav-link {
+				padding: rem(10px) rem(15px);
+				font-weight: 500;
+				color: lighten($dark, 30%);
+				
+				&:hover,
+				&:focus {
+					color: $dark;
+				}
+				&.active {
+					color: $white;
+				}
+			}
+		}
+	}
+}

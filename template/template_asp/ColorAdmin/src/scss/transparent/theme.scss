@@ -1,0 +1,142 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: mix($white, $primary, 50%);
+	
+	&:hover,
+	&:focus {
+		color: mix($white, $primary, 75%);
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					@include gradient-enabled {
+						@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+						
+						@if ($primary-color == 'yellow' or $primary-color == 'lime') {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.header {
+	& .navbar-brand {
+		& .navbar-logo {
+			border-color: rgba(mix($white, $primary, 25%), .25);
+			
+			&:before {
+				border-color: rgba(mix($white, $primary, 25%), .5);
+			}
+			&:after {
+				background: rgba(mix($white, $primary, 25%), .75);
+			}
+		}
+		& b {
+			color: mix($white, $primary, 25%);
+		}
+	}
+	&.navbar-default {
+		& .navbar-brand {
+			& i {
+				color: $primary;
+			}
+		}
+		& .navbar-nav {
+			& > li {
+				& > a {
+					& .label {
+						background: $primary;
+						
+						@if $primary-color == 'yellow' {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.navbar-inverse {
+		background: $primary;
+		
+		& .navbar-brand {
+			@if $primary-color == 'yellow' {
+				color: $black;
+			}
+			& i {
+				@if $primary-color == 'yellow' {
+					color: $black;
+				}
+			}
+		}
+		& .navbar-nav {
+			@include media-breakpoint-down(sm) {
+				border-color: mix($white, $primary, 20%);
+			}
+			& > li {
+				& > a {
+					@if $primary-color == 'yellow' {
+						color: $black;
+					}
+					& .label {
+						background: $dark;
+						
+						@if $primary-color == 'black' {
+							background: $red;
+							color: $white;
+						}
+					}
+					&:hover,
+					&:focus {
+						@if $primary-color == 'yellow' {
+							color: $black;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.bg-theme,
+.btn-scroll-to-top {
+	background-color: $primary !important;
+}
+.label-theme {
+	background-color: $primary;
+}
+.text-theme {
+	color: $primary;
+}

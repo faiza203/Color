@@ -1,0 +1,19 @@
+.dropdown-menu {
+	font-size: $font-size-base;
+	
+	@include box-shadow($dropdown-box-shadow);
+	@if $enable-rtl {
+		text-align: right;
+	}
+}
+.dropdown-item {
+	padding: rem(5px) rem(15px);
+	color: $black;
+	text-decoration: none;
+	
+	&:hover,
+	&:focus {
+		color: $dark;
+		background: $silver;
+	}
+}

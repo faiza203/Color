@@ -1,0 +1,37 @@
+.slimScrollDiv {
+	& .slimScrollBar,
+	& .slimScrollRail {
+		width: rem(6px) !important;
+		right: rem(2px) !important;
+		
+		@if $enable-rtl {
+			right: auto !important;
+			left: rem(2px) !important;
+		}
+	}
+	& .slimScrollBar {
+		background: none !important;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			top: rem(2px);
+			right: 0;
+			bottom: rem(2px);
+			left: 0;
+			background: $white !important;
+			
+			@include border-radius($border-radius * 2);	
+		}
+	}
+}
+
+.inverse-mode {
+	& .slimScrollDiv {
+		& .slimScrollBar {
+			&:before {
+				background: rgba($white, .5) !important;
+			}
+		}
+	}
+}

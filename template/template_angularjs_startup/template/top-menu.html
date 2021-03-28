@@ -1,0 +1,51 @@
+<!-- begin #top-menu -->
+<div id="top-menu" class="top-menu" ng-controller="topMenuController">
+	<!-- begin top-menu nav -->
+	<ul class="nav">
+		<li ui-sref-active="active">
+			<a ui-sref="app.home">
+				<i class="fa fa-th-large"></i>
+				<span>Home</span>
+			</a>
+		</li>
+		<li class="has-sub">
+			<a href="javascript:;">
+				<i class="fa fa-align-left"></i> 
+				<span>Menu Level</span>
+				<b class="caret"></b>
+			</a>
+			<ul class="sub-menu">
+				<li class="has-sub">
+					<a href="javascript:;">
+						Menu 1.1
+						<b class="caret"></b>
+					</a>
+					<ul class="sub-menu">
+						<li class="has-sub">
+							<a href="javascript:;">
+								Menu 2.1
+								<b class="caret"></b>
+							</a>
+							<ul class="sub-menu">
+								<li><a href="javascript:;">Menu 3.1</a></li>
+								<li><a href="javascript:;">Menu 3.2</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">Menu 2.2</a></li>
+						<li><a href="javascript:;">Menu 2.3</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:;">Menu 1.2</a></li>
+				<li><a href="javascript:;">Menu 1.3</a></li>
+			</ul>
+		</li>
+		<li class="menu-control menu-control-left">
+			<a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
+		</li>
+		<li class="menu-control menu-control-right">
+			<a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
+		</li>
+	</ul>
+	<!-- end top-menu nav -->
+</div>
+<!-- end #top-menu -->

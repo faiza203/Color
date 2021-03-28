@@ -1,0 +1,43 @@
+.form-horizontal {
+	&.form-bordered {
+		& .form-group {
+			border-bottom: 1px solid $gray-200;
+			margin: 0;
+			
+			& .col-form-label {
+				padding: rem(15px);
+				font-weight: 600;
+				color: lighten($dark, 15%);
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include media-breakpoint-down(md) {
+					padding-bottom: rem(8px);
+				}
+				
+				& + div {
+					border-left: 1px solid $gray-200;
+					
+					@if $enable-rtl {
+						border-left: none;
+						border-right: 1px solid $gray-200;
+					}
+					@include media-breakpoint-down(md) {
+						border-left: none;
+						padding-top: 0;
+						
+						@if $enable-rtl {
+							border-right: none;
+						}
+					}
+				}
+			}
+			& > div {
+				padding: rem(15px);
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}

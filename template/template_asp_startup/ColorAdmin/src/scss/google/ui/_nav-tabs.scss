@@ -1,0 +1,94 @@
+.nav {
+	&.nav-tabs {
+		& .nav-item {
+			& .nav-link {
+				padding: rem(12px) rem(16px);
+				font-weight: 500;
+				color: lighten($dark, 30%);
+				background: $light;
+				
+				@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+				
+				&:hover,
+				&:focus {
+					color: $dark;
+					background: $white;
+				}
+				&.active {
+					color: $primary;
+					background: $white;
+					position: relative;
+					
+					&:before {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						background: $white;
+						height: 1px;
+					}
+				}
+			}
+			& + .nav-item {
+				@if $enable-rtl {
+					margin-right: rem(6px);
+				} @else {
+					margin-left: rem(6px);
+				}
+			}
+		}
+		&.nav-tabs-inverse {
+			background: $dark;
+			
+			@include border-radius($border-radius $border-radius 0 0);
+			
+			& .nav-item {
+				& .nav-link {
+					background: none;
+					color: lighten($dark, 60%);
+					
+					@include box-shadow(none);
+					
+					&.active {
+						color: $white;
+						background: mix($white, $dark, 30%);
+						
+						@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+					}
+				}
+			}
+		}
+		
+		& + .tab-content {
+			padding: rem(16px);
+			background: $white;
+			margin-bottom: rem(20px);
+			margin-top: rem(-1px);
+			
+			@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+			@include border-radius(0 0 $border-radius $border-radius);
+		}
+	}
+	
+	&.nav-pills {
+		& .nav-item {
+			& .nav-link {
+				padding: rem(10px) rem(15px);
+				font-weight: 500;
+				color: lighten($dark, 30%);
+				
+				&:hover,
+				&:focus {
+					color: $dark;
+				}
+				&.active {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+.tab-content {
+	@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+}

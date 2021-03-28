@@ -1,0 +1,25 @@
+.morris-hover {
+	z-index: 0 !important;
+	
+	&.morris-default-style {
+		padding: rem(6px) rem(10px);
+		color: $dark;
+		background: $light;
+		border: none;
+		font-family: inherit;
+		font-size: rem(12px);
+		text-align: center;
+		
+		@include border-radius($border-radius * 2);
+	}
+}
+.morris-inverse {
+	& .morris-hover {
+		background: rgba($dark-darker, .85) !important;
+		border: none !important;
+		padding: rem(10px) !important;
+		color: $white !important;
+		
+		@include border-radius($border-radius * 2 !important);
+	}
+}

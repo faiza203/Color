@@ -1,0 +1,236 @@
+.widget-chat {
+	background: $white;
+	
+	& .widget-chat-header {
+		display: table;
+		width: 100%;
+		border-bottom: 1px solid $border-color;
+		
+		& > div {
+			& + div {
+				padding-left: 0;
+				
+				@if $enable-rtl {
+					padding-right: 0;
+					padding-left: rem(15px);
+				}
+			}
+		}
+		& .widget-chat-header-icon {
+			padding: rem(12px) rem(15px);
+			display: table-cell;
+			vertical-align: middle;
+			width: 1%
+		}
+		& .widget-chat-header-content {
+			padding: rem(12px) rem(15px);
+			display: table-cell;
+			vertical-align: middle;
+		}
+		& .widget-chat-header-title {
+			font-size: rem(14px);
+			margin: 0;
+		}
+		& .widget-chat-header-desc {
+			font-size: rem(12px);
+			margin: 0;
+		}
+	}
+	& .widget-chat-body {
+		padding: rem(15px);
+		background: lighten($dark, 70%);
+	}
+	& .widget-chat-item {
+		color: $dark;
+		position: relative;
+		min-height: rem(38px);
+		padding: rem(3px) 0;
+	}
+	& .widget-chat-media {
+		width: rem(38px);
+		height: rem(38px);
+		position: absolute;
+		bottom: rem(3px);
+		left: 0px;
+		overflow: hidden;
+		text-align: center;
+		line-height: rem(38px);
+		
+		@include border-radius($border-radius * 10);
+		@if $enable-rtl {
+			right: 0;
+			left: auto;
+		}
+		
+		& img {
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+		}
+	}
+	& .widget-chat-info-container {
+		background: $white;
+		display: inline-block;
+		padding: rem(8px) rem(12px);
+		position: relative;
+		color: $white;
+		
+		@include border-radius($border-radius * 4);
+	}
+	& .widget-chat-message {
+		font-weight: 600;
+		color: $dark;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: rem(-24px);
+			border: 0 solid transparent;
+			border-top-width: rem(15px);
+			border-right-width: rem(10px);
+			border-right-color: $white;
+			border-radius: 50%;
+			width: rem(35px);
+			height: rem(35px);
+			
+			@include transform(rotate(10deg));
+			@if $enable-rtl {
+				left: auto;
+				right: rem(-24px);
+				border-right-width: 0;
+				border-right-color: transparent;
+				border-left-width: rem(10px);
+				border-left-color: $white;
+				
+				@include transform(rotate(-10deg));
+			}
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			width: rem(60px);
+			height: rem(12px);
+		}
+	}
+	& .widget-chat-name {
+		font-weight: 600;
+	}
+	& .widget-chat-time {
+		position: absolute;
+		right: rem(12px);
+		bottom: rem(8px);
+		font-style: italic;
+		color: lighten($dark, 45%);
+		font-weight: 600;
+		font-size: rem(10px);
+		
+		@if $enable-rtl {
+			right: auto;
+			left: rem(12px);
+		}
+	}
+	& .with-media {
+		& .widget-chat-info {
+			margin-left: rem(53px);
+			min-width: 60%;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: rem(53px);
+			}
+		}
+		& .right {
+			& .widget-chat-info {
+				margin-right: rem(53px);
+				
+				@if $enable-rtl {
+					margin-right: 0;
+					margin-left: rem(53px);
+				}
+			}
+		}
+	}
+	& .right {
+		& .widget-chat-media {
+			left: auto;
+			right: 0;
+			
+			@if $enable-rtl {
+				left: 0;
+				right: auto;
+			}
+		}
+		& .widget-chat-info {
+			margin-left: 0;
+			text-align: right;
+			
+			@if $enable-rtl {
+				margin-right: 0;
+				text-align: left;
+			}
+		}
+		& .widget-chat-time {
+			right: auto;
+			left: rem(12px);
+			
+			@if $enable-rtl {
+				right: rem(12px);
+				left: auto;
+			}
+		}
+		& .widget-chat-message {
+			&:after {
+				float: left;
+				
+				@if $enable-rtl {
+					float: right;
+				}
+			}
+			&:before {
+				left: auto;
+				right: rem(-24px);
+				bottom: rem(-5px);
+				border-right-width: 0;
+				border-right-color: transparent;
+				border-left-width: rem(10px);
+				border-left-color: $white;
+				
+				@if $enable-rtl {
+					left: rem(-24px);
+					right: auto;
+					border-left-width: 0;
+					border-left-color: transparent;
+					border-right-width: rem(10px);
+					border-right-color: $white;
+				}
+			}
+		}
+	}
+	
+	&.widget-chat-rounded {
+		@include border-radius($border-radius);
+		
+		&.widget-chat-input {
+			@include border-radius($border-radius $border-radius 0 0);
+		}
+	}
+}
+.inverse-mode {
+	&.widget-chat {
+		background: $dark;
+		
+		& .widget-chat-header {
+			border-color: $dark;
+		}
+		& .widget-chat-header-title {
+			color: $white;
+		}
+		& .widget-chat-header-desc {
+			color: lighten($dark, 60%);
+		}
+		& .widget-chat-body {
+			background: $dark-darker;
+		}
+	}
+}

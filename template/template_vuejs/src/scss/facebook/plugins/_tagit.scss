@@ -1,0 +1,130 @@
+.tagit {
+	&.ui-widget {
+		border: 1px solid $border-color;
+		background: $white;
+		padding: rem(3px) rem(6px);
+		margin-bottom: 0;
+		font-family: inherit;
+		
+		@include border-radius($border-radius);
+		@include display-flex();
+		@include flex-wrap(wrap);
+		
+		& li {
+			float: none;
+			
+			&.tagit-choice {
+				background: lighten($dark, 65%);
+				border: none;
+				color: lighten($dark, 15%);
+				padding: rem(2px) rem(24px) rem(2px) rem(6px);
+				font-weight: 600;
+				
+				@include border-radius($border-radius-sm);
+				@if $enable-rtl {
+					padding-right: rem(6px);
+					padding-left: rem(24px);
+				}
+				
+				& .tagit-close {
+					right: rem(2px);
+					line-height: rem(24px);
+					text-align: center;
+					top: 0;
+					margin: 0;
+					
+					@if $enable-rtl {
+						right: auto;
+						left: rem(2px);
+					}
+					
+					& .ui-icon-close {
+						background: none;
+						height: rem(24px);
+						width: rem(16px);
+						text-indent: 0;
+						
+						@include fontawesome();
+						
+						&:before {
+							content: '\f00d';
+							font-size: rem(10px);
+							color: inherit;
+						}
+					}
+					&:hover,
+					&:focus {
+						& .ui-icon-close {
+							&:before {
+								color: rgba($black, .4);
+							}
+						}
+					}
+				}
+			}
+			&.tagit-new {
+				padding: rem(2px) rem(0);
+			}
+		}
+		
+		&.inverse {
+			& li {
+				&.tagit-choice {
+					background: $dark;
+					color: $white;
+					
+					& .tagit-close {
+						&:hover,
+						&:focus {
+							& .ui-icon-close {
+								&:before {
+									color: rgba($white, .4);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.primary {
+			& li {
+				&.tagit-choice {
+					background: $blue;
+					color: $white;
+				}
+			}
+		}
+		&.info {
+			& li {
+				&.tagit-choice {
+					background: $info;
+					color: $white;
+				}
+			}
+		}
+		&.success {
+			& li {
+				&.tagit-choice {
+					background: $teal;
+					color: $white;
+				}
+			}
+		}
+		&.warning {
+			& li {
+				&.tagit-choice {
+					background: $warning;
+					color: $white;
+				}
+			}
+		}
+		&.danger {
+			& li {
+				&.tagit-choice {
+					background: $danger;
+					color: $white;
+				}
+			}
+		}
+	}
+}

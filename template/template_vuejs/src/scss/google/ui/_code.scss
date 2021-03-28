@@ -1,0 +1,13 @@
+code {
+	padding: rem(2px) rem(4px);
+	font-size: 90%;
+	color: darken($pink, 15%);
+	background-color: lighten($red, 30%);
+	
+	@include border-radius($border-radius);
+}
+.inverse-mode code,
+code.inverse-mode {
+	background: $dark;
+	color: lighten($pink, 15%);
+}

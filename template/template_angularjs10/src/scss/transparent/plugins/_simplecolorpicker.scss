@@ -1,0 +1,60 @@
+.simplecolorpicker {
+	z-index: 1010 !important;
+	
+	&.icon,
+	& .icon,
+	& .color {
+		width: rem(20px);
+		height: rem(20px);
+		
+		@include border-radius($border-radius);
+		
+		&:focus {
+			outline: none !important;
+		}
+	}
+	&.fontawesome {
+		& .color {
+			&[data-selected] {
+				&:after {
+					display: block;
+					text-align: center;
+					
+					@include fontawesome();
+				}
+			}
+		}
+	}
+	&.glyphicons {
+		& .color {
+			&[data-selected] {
+				&:after {
+					content: '\f00c' !important;
+					margin-left: rem(2px) !important;
+					top: 0 !important;
+					display: block;
+					text-align: center;
+					
+					@include fontawesome();
+				}
+			}
+		}
+	}
+	&.inline {
+		padding: rem(5px) 0 0 !important;
+	}
+	&.picker {
+		border: none !important;
+		
+		@include box-shadow($dropdown-box-shadow !important);
+		
+		& .color {
+			width: rem(20px);
+			height: rem(20px);
+			
+			@include display-inline-flex();
+			@include flex-align(center);
+			@include flex-justify-content(center);
+		}	
+	}
+}

@@ -1,0 +1,7 @@
+.custom-switch {
+  & .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: $white;
+    }
+  }
+}

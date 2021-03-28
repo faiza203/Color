@@ -1,0 +1,18 @@
+.btn-scroll-to-top {
+	position: fixed;
+	bottom: rem(20px);
+	right: rem(25px);
+	width: rem(40px) !important;
+	height: rem(40px) !important;
+	line-height: rem(40px) !important;
+	z-index: $btn-scroll-to-top-zindex;
+	
+	& i {
+	 	line-height: rem(40px) !important;
+	}
+	
+	@if $enable-rtl {
+		right: auto;
+		left: rem(25px);
+	}
+}

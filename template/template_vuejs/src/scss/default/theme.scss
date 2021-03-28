@@ -1,0 +1,236 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: $primary;
+	
+	&:hover,
+	&:focus {
+		color: mix($black, $primary, 20%);
+	}
+}
+.header {
+	& .navbar-brand {
+		& .navbar-logo {
+			background: $primary;
+		}
+	}
+	& .navbar-nav {
+		& > li {
+			& > a {
+				& .label {
+					background: $primary;
+					
+					@if ($primary-color == 'yellow') {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			& > a {
+				& .label {
+					&.label-theme {
+						@include gradient-enabled {
+							@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+						}
+					}
+				}
+			}
+			&.active {
+				& > a {
+					@include gradient-enabled {
+						@if ($primary-color == 'yellow') {
+							color: $dark;	
+						}
+						@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+					}
+					
+					& i {
+						color: $primary;
+					}
+					& .label {
+						&.label-theme {
+							@if ($primary-color == 'yellow') {
+								color: $white;	
+							}
+							@include gradient-enabled {
+								background: rgba($black, .65);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& .sub-menu {
+		& > li {
+			&.active {
+				&:after {
+					border-color: $primary;
+				}
+			}
+		}
+	}
+}
+.page-with-light-sidebar {
+	&.gradient-enabled {
+		& .sidebar {
+			& .nav {
+				& > li {
+					&.active {
+						& > a {
+							@if ($primary-color == 'yellow') {
+								color: $dark;
+							} @else {
+								color: $white;
+							}
+							@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+							
+							& .label {
+								&.label-theme {
+									@if ($primary-color == 'yellow') {
+										color: $white;	
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					& i {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+				}
+			}
+		}
+	}
+}
+.bg-theme {
+	background-color: $primary !important;
+	
+	@if ($primary-color == 'yellow') {
+		color: $black;
+	}
+}
+.label-theme {
+	background-color: $primary;
+	
+	@if ($primary-color == 'yellow') {
+		color: $black;
+	}
+}
+.text-theme {
+	color: $primary;
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .sub-menu {
+			& > li {
+				&.active {
+					&:after {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.coming-soon {
+	& .brand {
+		& .logo {
+			background: $primary;
+		}	
+	}
+}
+.todolist {
+	& > li {
+		&.active {
+			& > a {
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.login {
+	&.login-v1 {
+		& .login-container {
+			& .login-header {
+				& .brand {
+					& .logo {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+	&.login-v2 {
+		& .login-header {
+			& .brand {
+				& .logo {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	&.login-with-news-feed {
+		& .right-content {
+			& .login-header {
+				& .brand {
+					& .logo {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.pace {
+	& .pace-progress {
+		background: $primary;
+	}
+	& .pace-activity {
+		border-top-color: $primary;
+		border-left-color: $primary;
+	}
+}

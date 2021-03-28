@@ -1,0 +1,242 @@
+.datepicker {
+	body & {
+		color: $dark;
+		
+		@include border-radius($border-radius * 2);
+		@if $enable-rtl {
+			direction: rtl;
+		}
+		
+		& table {
+			width: 100%;
+			
+			& tfoot {
+				& .today {
+					&:hover,
+					&:focus {
+						background: lighten($dark, 75%);
+					}
+				}
+			}
+		}
+		& .datepicker-days,
+		& .datepicker-months,
+		& .datepicker-years,
+		& .datepicker-decades,
+		& .datepicker-centuries {
+			& table {
+				& thead {
+					& tr {
+						& th {
+							&.prev,
+							&.next,
+							&.datepicker-switch {
+								line-height: 20px;
+								padding: rem(5px);
+								
+								@include border-radius($border-radius);
+								
+								&:hover,
+								&:focus {
+									background: lighten($dark, 75%);
+									
+									&:before {
+										color: $dark;
+									}
+								}
+							}
+							&.prev,
+							&.next {
+								color: transparent;
+								width: 14.28%;
+								position: relative;
+								
+								@include fontawesome();
+								
+								&:before {
+									color: lighten($dark, 30%);
+									position: absolute;
+									font-size: rem(14px);
+									height: rem(14px);
+									top: 50%;
+									margin-top: rem(-7px);
+									line-height: 1;
+								}
+								& i {
+									display: none;
+								}
+							}
+							&.prev {
+								&:before {
+									content: '\f104';
+								}
+							}
+							&.next {
+								&:before {
+									content: '\f105';
+								}
+							}
+							&.datepicker-switch {
+								width: auto;
+							}
+							&.dow {
+								padding: rem(5px) 0;
+							}
+						}
+					}
+				}
+				& tbody {
+					& tr {
+						& td {
+							padding: rem(5px);
+							
+							& span {
+								&.decade,
+								&.year,
+								&.month,
+								&.century {
+									font-weight: 600;
+									color: lighten($dark, 30%);
+									text-shadow: none;
+									
+									@include border-radius($border-radius);
+									
+									&:hover,
+									&:focus {
+										background: lighten($dark, 75%);
+									}
+									&.focused {
+										background: lighten($dark, 70%);
+										color: $dark;
+									}
+									&.active {
+										background: $form-component-active-bg !important;
+										color: $white;
+									}
+								}
+							}
+							&.day {
+								font-weight: 600;
+								color: lighten($dark, 15%);
+								padding: rem(5px);
+									
+								@include border-radius($border-radius);
+								
+								&:hover,
+								&:focus,
+								&.selected,
+								&.highlighted,
+								&.range {
+									background: lighten($dark, 75%);
+									text-shadow: none;
+								}
+								&.today {
+									background: lighten($dark, 70%) !important;
+									color: $dark;
+								}
+								&.active {
+									background: $form-component-active-bg !important;
+									color: $white;
+									text-shadow: none !important;
+								}
+								&.range {
+									@include border-radius(0);
+								}
+								&.range-start {
+									@include border-radius($border-radius 0 0 $border-radius);
+								}
+								&.range-end {
+									@include border-radius(0 $border-radius $border-radius 0);
+								}
+								&.old {
+									color: lighten($dark, 60%);
+								}
+								&.new {
+									color: lighten($dark, 45%);
+								}
+								&.disabled {
+									color: lighten($dark, 60%);
+									
+									&:hover,
+									&:focus {
+										background: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		&.datepicker-inline {
+			display: block;
+			width: auto;
+			padding: 0;
+		}
+		&.dropdown-menu {
+			min-width: rem(250px);
+			width: rem(320px);
+			border: none;
+			font-family: inherit;
+			font-size: rem(12px);
+			
+			@include box-shadow(0 6px 30px rgba($black, .15));
+			@include media-breakpoint-down(xs) {
+				width: rem(250px);
+			}
+			
+			&:before {
+				display: none;
+			}
+			&.datepicker-orient-left {
+				&:after {
+					left: rem(15px);
+				}
+			}
+			&.datepicker-orient-right {
+				&:after {
+					right: rem(15px);
+				}
+			}
+			&.datepicker-orient-top {
+				margin-bottom: rem(7px);
+			}
+			&.datepicker-orient-bottom {
+				margin-top: rem(7px);
+			}
+		}
+	}
+	& .input-daterange {
+		& .input-group-addon {
+			margin: 0;
+			font-weight: 600;
+			background: lighten($dark, 65%);
+			color: lighten($dark, 30%);
+			
+			@include display-flex();
+			@include flex-align(center);
+			@include border-radius(0);
+			
+			& + .form-control {
+				@include border-radius(0 $border-radius $border-radius 0);
+				@if $enable-rtl {
+					@include border-radius(0);
+				}
+			}
+		}
+	}
+}
+body {
+	& .input-daterange {
+		& .input-group-addon {
+			font-size: rem(12px);
+			line-height: 1;
+			min-width: rem(30px);
+		
+			@include display-flex();
+			@include flex-align(center);
+			@include flex-justify-content(center);
+		}
+	}
+}

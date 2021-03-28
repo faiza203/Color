@@ -1,0 +1,101 @@
+.widget-table {
+	&.table {
+		background: $white;
+		
+		@include border-radius($border-radius);
+		@include box-shadow(inset 0 0 0 1px $border-color-transparent);
+		
+		& .widget-table-img {
+			width: rem(100px);
+			height: rem(60px);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			
+			@include border-radius($border-radius);
+		}
+		& .widget-table-title {
+			font-size: rem(14px);
+			margin: 0;
+			line-height: rem(20px);
+		}
+		& .widget-table-desc {
+			margin: 0;
+			font-size: rem(11px);
+			line-height: rem(16px);
+			color: lighten($dark, 15%);
+		}
+		
+		&.table-bordered {
+			& > tbody {
+				& > tr {
+					& td {
+						&:first-child {
+							border-left: none;
+						}
+						&:last-child {
+							border-right: none;
+						}
+					}
+					&:last-child {
+						& > td {
+							border-bottom: none;
+						}
+					}
+				}
+			}
+			& > thead {
+				& > tr {
+					& th {
+						&:first-child {
+							border-left: none;
+						}
+						&:last-child {
+							border-right: none;
+						}
+					}
+				}
+				&:first-child {
+					& > tr {
+						&:first-child {
+							& > td,
+							& > th {
+								border-top: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.inverse-mode {
+			background: $dark;
+			color: lighten($dark, 60%);
+			
+			& .widget-table-desc {
+				color: lighten($dark, 45%);
+			}
+			& thead {
+				& th {
+					color: $white;
+				}
+			}
+			& thead {
+				& > tr {
+					& > th {
+						border-bottom-color: lighten($dark, 15%) !important;
+					}
+				}
+			}
+			& thead,
+			& tbody,
+			& tfoot {
+				& tr {
+					& td,
+					& th {
+						border-color: lighten($dark, 7.5%);
+					}
+				}
+			}
+		}
+	}
+}

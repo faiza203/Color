@@ -1,0 +1,149 @@
+
+.has-success,
+.is-valid {
+	&.checkbox,
+	& .checkbox {
+		&.checkbox-css {
+			& label {
+				color: darken($success, 5%);
+				
+				&:before {
+					background: rgba($success, .5);
+				}
+			}
+		}
+	}
+}
+.has-error,
+.is-invalid {
+	&.checkbox,
+	& .checkbox {
+		&.checkbox-css {
+			& label {
+				color: darken($danger, 5%);
+				
+				&:before {
+					background: rgba($danger, .5);
+				}
+			}
+		}
+	}
+}
+.checkbox {
+	&.checkbox-css {
+		line-height: rem(16px);
+		padding-top: rem(7px);
+		
+		& label {
+			padding-left: rem(24px);
+			margin: 0;
+			position: relative;
+			
+			@if $enable-rtl {
+				padding-left: 0;
+				padding-right: rem(24px);
+			}
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: rem(16px);
+				height: rem(16px);
+				background: lighten($dark, 65%);
+				
+				@include border-radius(rem(4px));
+				@if $enable-rtl {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		& input {
+			display: none;
+			
+			&:checked {
+				& + label {
+					&:before {
+						background: $form-component-active-bg;
+						border-color: $form-component-active-bg;
+					}
+					&:after {
+						content: '';
+						background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+						background-repeat: no-repeat;
+						background-position: center center;
+						background-size: 50% 50%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						color: $white;
+						height: rem(16px);
+						width: rem(16px);
+						text-align: center;
+						
+						@if $enable-rtl {
+							left: auto;
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+		
+		&.checkbox-inline {
+			padding-left: 0;
+			display: inline-block;
+			
+			& + .checkbox-inline {
+				margin-left: rem(15px);
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(15px);
+				}
+			}
+		}
+		&.checkbox-success input:checked + label:before {
+			background: $success;
+			border-color: $success;
+		}
+		&.checkbox-lime input:checked + label:before {
+			background: $lime;
+			border-color: $lime;
+		}
+		&.checkbox-indigo input:checked + label:before {
+			background: $indigo;
+			border-color: $indigo;
+		}
+		&.checkbox-purple input:checked + label:before {
+			background: $purple;
+			border-color: $purple;
+		}
+		&.checkbox-inverse input:checked + label:before {
+			background: $inverse;
+			border-color: $inverse;
+		}
+		&.checkbox-warning input:checked + label:before {
+			background: $warning;
+			border-color: $warning;
+		}
+		&.checkbox-danger input:checked + label:before {
+			background: $danger;
+			border-color: $danger;
+		}
+		&.checkbox-info input:checked + label:before {
+			background: $info;
+			border-color: $info;
+		}
+		&.checkbox-pink input:checked + label:before {
+			background: $pink;
+			border-color: $pink;
+		}
+		&.checkbox-yellow input:checked + label:before {
+			background: $yellow;
+			border-color: $yellow;
+		}
+	}
+}

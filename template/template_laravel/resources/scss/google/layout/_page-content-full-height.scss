@@ -1,0 +1,17 @@
+.page-content-full-height {
+	height: 100%;
+	
+	& .content {
+		@include media-breakpoint-up(md) {
+			height: calc(100vh - #{$header-height});
+		}
+	}
+	&.page-without-header,
+	&.page-empty {
+		& .content {
+			@include media-breakpoint-up(md) {
+				height: 100vh;
+			}
+		}
+	}
+}

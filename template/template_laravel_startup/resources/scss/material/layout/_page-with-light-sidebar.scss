@@ -1,0 +1,161 @@
+.page-with-light-sidebar {
+	& .sidebar {
+		background: $white;
+		
+		& .nav {
+			& > li {
+				& > a {
+					color: $blue-grey-800;
+					font-weight: 500;
+					
+					&:hover,
+					&:focus {
+						color: $dark;
+					}
+				}
+				&.active {
+					& > a {
+						color: $white;
+					}
+				}
+				&.has-sub {
+					& > .sub-menu {
+						background: $blue-grey-50;
+					}
+				}
+				&.nav-header {
+					color: lighten($dark, 30%);
+				}
+				&.nav-profile {
+					
+					& > a {
+						color: $white !important;
+					}
+					
+					&.active {
+						& > a {
+							color: $white !important;
+						}
+					}
+				}
+				&.nav-search {
+					& .form-control {
+						background: none;
+						border: none;
+						padding-left: 0;
+						padding-right: 0;
+						border-bottom: 1px solid $border-color;
+						color: $dark;
+					
+						@include border-radius(0);
+					
+						&:focus {
+							border-color: darken($border-color, 15%);
+						
+							@include box-shadow(none);
+						}
+					}
+				}
+			}
+			& .sidebar-minify-btn {
+				background: $blue-grey-50;
+				color: $dark;
+			
+				& i {
+					color: lighten($dark, 45%);
+				}
+			
+				&:hover,
+				&:focus {
+					background: $blue-grey-100 !important;
+					color: $dark !important;
+					
+					& i {
+						color: $dark !important;
+					}
+				}
+			}
+			&.nav-profile {
+				border-color: $light;
+			}
+		}
+		& .sub-menu {
+			& > li {
+				& > a {
+					color: $blue-grey-400;
+					font-weight: 500 !important;
+					
+					&:hover,
+					&:focus {
+						color: $blue-grey-900;
+					}
+				}
+				&.active {
+					& > a {
+						color: $blue-grey-900;
+					}
+				}
+			}
+		}
+	}
+	& .sidebar-bg {
+		background: $white;
+	}
+	& .slimScrollDiv {
+		& .slimScrollBar {
+			background: $black !important;
+		}
+	}
+	& .float-sub-menu-container {
+		background: $light;
+		
+		& .float-sub-menu-arrow,
+		& .float-sub-menu-line {
+			background: darken($light, 7.5%);
+		}
+		& .float-sub-menu {
+			& li {
+				& > a {
+					color: lighten($dark, 30%);
+					font-weight: 500;
+					
+					&:hover,
+					&:focus {
+						color: $dark;
+					}
+					&:after {
+						background: darken($light, 7.5%);
+					}
+				}
+				&:before {
+					background: darken($light, 7.5%);
+				}
+				&:after {
+					background: $light;
+					border-color: darken($light, 7.5%);
+					border-width: 2px;
+				}
+				&.active,
+				&.expand,
+				&.expanding {
+					& > a {
+						color: $dark;
+					}
+				}
+			}
+		}
+	}
+	&.page-sidebar-minified {
+		& .sidebar {
+			& .nav {
+				& > li {
+					&.active {
+						& > a {
+							background: $light;
+						}
+					}
+				}
+			}
+		}
+	}
+}

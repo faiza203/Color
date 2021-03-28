@@ -1,0 +1,299 @@
+.nav-wizards-container {
+	@include media-breakpoint-down(md) {
+		overflow: scroll;
+		
+		& .nav.nav-wizards-1,
+		& .nav.nav-wizards-2,
+		& .nav.nav-wizards-3 {
+			min-width: rem(600px);
+		}
+	}
+}
+
+.nav {
+	&.nav-wizards-1 {
+		& .nav-item {
+			padding: 0;
+			
+			& .nav-link {
+				position: relative;
+				color: $gray-700;
+				
+				& .nav-no {
+					width: rem(40px);
+					height: rem(40px);
+					margin: 0 auto;
+					font-weight: 600;
+					background: $white;
+					border: 2px solid $gray-200;
+					position: relative;
+					z-index: 10;
+					font-size: $font-size-base * 1.25;
+					
+					@include border-radius(40px);
+					@include display-flex();
+					@include flex-align(center);
+					@include flex-justify-content(center);
+					@include transition(all .2s linear);
+				}
+				& .nav-text {
+					text-align: center;
+					margin-top: rem(5px);
+					font-weight: 600;
+					font-size: $font-size-base;
+				}
+				&.active,
+				&.completed {
+					color: $component-active-bg;
+					
+					& .nav-no {
+						border-color: $component-active-bg;
+						color: $component-active-bg;
+					}
+					&:after {
+						width: 100%;
+					}
+				}
+				&.active {
+					& .nav-no {
+						@include box-shadow(0 0 0 5px rgba($component-active-bg, .2));
+					}
+				}
+				&.disabled {
+					color: $gray-300;
+				}
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: $nav-link-padding-y + rem-default(19px);
+					right: 0;
+					height: rem(2px);
+					background: $gray-200;
+				}
+				&:after {
+					width: 0%;
+					background: $component-active-bg;
+					
+					@if $enable-rtl {
+						left: 0;
+					} @else {
+						right: 0
+					}
+					
+					@include transition(all .2s linear);
+				}
+			}
+			&:first-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							right: 50%;
+						} @else {
+							left: 50%;
+						}
+					}
+				}
+			}
+			&:last-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							left: 50%;
+						} @else {
+							right: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.nav-wizards-2 {
+		& .nav-item {
+			padding: 0 $nav-link-padding-x;
+			
+			& .nav-link {
+				position: relative;
+				color: $gray-800;
+				background: $gray-200;
+				
+				@include border-radius(60px);
+				
+				& .nav-text {
+					text-align: center;
+					font-weight: 600;
+					font-size: $font-size-base;
+					position: relative;
+					z-index: 10;
+					background: inherit;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					left: $nav-link-padding-x * -1;
+					right: $nav-link-padding-x * -1;
+					height: rem(2px);
+					top: 50%;
+					margin-top: rem(-1px);
+					background-color: $gray-200;
+					
+					@include transition(all .2s linear);
+				}
+				&:after {
+					width: 0%;
+					background: $component-active-bg;
+				}
+				&.disabled {
+					color: $gray-400;
+				}
+				&.active,
+				&.completed {
+					background: $component-active-bg;
+					color: $component-active-color;
+					
+					&:after {
+						width: calc(100% + #{$nav-link-padding-x * 2});
+					}
+				}
+				&.active {
+					@include box-shadow(0 0 0 4px rgba($component-active-bg, .2));
+				}
+			}
+			&:first-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							right: 50%;
+						} @else {
+							left: 50%;
+						}
+					}
+				}
+			}
+			&:last-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							left: 50%;
+						} @else {
+							right: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.nav-wizards-3 {
+		& .nav-item {
+			padding: 0;
+			
+			& .nav-link {
+				position: relative;
+				color: $gray-700;
+				
+				& .nav-dot {
+					width: rem(16px);
+					height: rem(16px);
+					margin: 0 auto;
+					font-weight: 500;
+					background: $white;
+					border: 3px solid $gray-200;
+					position: relative;
+					z-index: 10;
+					
+					@include border-radius(10px);
+					@include display-flex();
+					@include flex-align(center);
+					@include flex-justify-content(center);
+					@include transition(all .2s linear);
+				}
+				& .nav-title {
+					margin-top: rem(10px);
+					font-weight: 600;
+					text-align: center;
+					font-size: $font-size-lg;
+				}
+				& .nav-text {
+					text-align: center;
+					font-size: $font-size-base;
+					color: $gray-600;
+					font-weight: 600;
+				}
+				&.active,
+				&.completed {
+					color: $gray-900;
+					
+					& .nav-dot {
+						border-color: $component-active-bg;
+						color: $component-active-bg;
+					}
+					&:after {
+						width: 100%;
+					}
+				}
+				&.active {
+					& .nav-dot {
+						@include box-shadow(0 0 0 5px rgba($component-active-bg, .2));
+					}
+				}
+				&.disabled {
+					color: $gray-300;
+					
+					& .nav-text {
+						color: inherit;
+					}
+				}
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: $nav-link-padding-y + rem-default(6px);
+					right: 0;
+					height: rem(3px);
+					background: $gray-200;
+				}
+				&:after {
+					right: 0;
+					width: 0%;
+					background: $component-active-bg;
+					
+					@include transition(all .2s linear);
+				}
+			}
+			&:first-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							right: 50%;
+						} @else {
+							left: 50%;
+						}
+					}
+				}
+			}
+			&:last-child {
+				& .nav-link {
+					&:before,
+					&:after {
+						@if $enable-rtl {
+							left: 50%;
+						} @else {
+							right: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

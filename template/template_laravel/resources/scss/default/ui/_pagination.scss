@@ -1,0 +1,31 @@
+.pagination {
+	& .page-item {
+		& + .page-item {
+			margin-left: rem(5px);
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: rem(5px);
+			}
+		}
+		& .page-link {
+			font-weight: 600;
+			
+			@include border-radius($border-radius);
+		}
+	}
+	&.pagination-lg {
+		& .page-item {
+			& .page-link {
+				@include border-radius($border-radius-lg);
+			}
+		}
+	}
+	&.pagination-sm {
+		& .page-item {
+			& .page-link {
+				@include border-radius($border-radius-sm);
+			}
+		}
+	}
+}

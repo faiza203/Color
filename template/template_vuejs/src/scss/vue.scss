@@ -1,0 +1,812 @@
+@import 'default/styles';
+
+/* Dropdown Menu */
+.dropdown-menu {
+	&:focus {
+		outline: none;
+	}
+}
+
+/* Scrollbar */
+.overflow-scroll {
+  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ps-container .ps__rail-x,
+.ps-container .ps__rail-y {
+	z-index: 10;
+}
+.ps-container .ps__rail-y {
+	width: 6px;
+}
+.ps .ps__rail-x.ps--clicking, 
+.ps .ps__rail-x:focus, 
+.ps .ps__rail-x:hover, 
+.ps .ps__rail-y.ps--clicking, 
+.ps .ps__rail-y:focus, 
+.ps .ps__rail-y:hover {
+	background: none !important;
+	width: 6px !important;
+}
+.ps__rail-y.ps--clicking .ps__thumb-y, 
+.ps__rail-y:focus > .ps__thumb-y, 
+.ps__rail-y:hover > .ps__thumb-y {
+	width: 6px !important;
+}
+.page-sidebar-minified .sidebar .ps-container .ps__rail-x,
+.page-sidebar-minified .sidebar .ps-container .ps__rail-y {
+	display: none !important;
+}
+
+
+/* Widget Chart */
+.widget-chart-full-width .nvd3-svg {
+	margin: 0 -25px !important;
+	padding: 0 !important;
+	width: calc(100% + 100px) !important;
+	height: calc(100% + 30px) !important;
+}
+.nv-stacked-area-chart .nvd3-svg {
+	width: calc(100% + 12%) !important;
+}
+.widget-chart-sidebar .nvd3-svg {
+	margin: -25px !important;
+	width: calc(100% + 50px) !important;
+	height: calc(100% + 50px) !important;
+}
+
+
+/* Vue Calendar */
+.__vev_calendar-wrapper .cal-wrapper {
+	width: auto;
+	padding: 15px;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .weeks .item {
+	font-weight: bold;
+	font-size: 12px;
+	color: #2d353c;
+	line-height: 20px;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-header .title {
+	font-size: 18px;
+	font-weight: 500;
+	color: #2d353c;
+}
+.__vev_calendar-wrapper .cal-wrapper .date-num {
+	line-height: 30px;
+	font-size: 13px !important;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item .is-today {
+	width: 4px;
+	margin-left: -2px;
+	background: $primary !important;
+	margin-top: 10px;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-header {
+	padding-bottom: 15px;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item.event .date-num {
+	color: #242a30 !important;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item.event.selected-day .date-num {
+	color: #fff !important;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item.event .is-event {
+	background: #e2e7eb !important;
+	border-color: #e2e7eb !important;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item.event.selected-day .is-event {
+	background: #242a30 !important;
+	border-color: #242a30 !important;
+}
+.__vev_calendar-wrapper .cal-wrapper .cal-header > div {
+	padding: 1px;
+}
+.__vev_calendar-wrapper .events-wrapper {
+	display: none;
+}
+
+
+/* Vue Editor */
+.ve-select span {
+	font-size: 14px;
+}
+.vueditor [class^=icon] {
+	width: 14px;
+	height: 14px;
+}
+.ve-fullscreen {
+	height: auto !important;
+	border: none !important;
+	border-top: 1px solid #ccd0d4 !important;
+}
+.vueditor {
+	border: 1px solid #ccd0d4;
+}
+.ve-toolbar {
+	background: #f0f3f4;
+}
+.ve-toolbar div:hover {
+	background: #dcdfe0;
+}
+
+
+/* Vue Input Tag */
+.vue-input-tag-wrapper {
+	border-color: #d3d8de !important;
+	-webkit-appearance: none !important;
+}
+.email-to-input .vue-input-tag-wrapper {
+	border: none !important;
+	border-bottom: 1px solid #ccd0d4 !important;
+	padding: 7px 12px 9px 45px!important;
+}
+.vue-input-tag-wrapper .input-tag {
+	background: #348fe2 !important;
+	border-color: #348fe2 !important;
+	color: #fff !important;
+	border-radius: 3px !important;
+	padding: 2px 24px 2px 7px!important;
+	font-size: 12px !important;
+	margin: 2px 5px 2px 0 !important;
+	position: relative;
+	height: 24px;
+	line-height: 18px;
+}
+.vue-input-tag-wrapper .input-tag .remove {
+	color: #fff !important;
+	right: 2px!important;
+	line-height: 22px!important;
+	text-align: center!important;
+	top: 0!important;
+	margin: 0!important;
+	position: absolute;
+	width: 16px;
+}
+.vue-input-tag-wrapper .new-tag {
+	margin: 4px 0 !important;
+	padding: 0 !important;
+	font-size: 12px;
+}
+.vue-input-tag-wrapper.form-control {
+	height: auto;
+	min-height: 34px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.vue-input-tag-wrapper.form-control .input-tag {
+	height: 22px;
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}
+.vue-input-tag-wrapper.form-control .input-tag .remove {
+	line-height: 20px !important;
+}
+.vue-input-tag-wrapper.default .input-tag {
+	background: #b6c2c9 !important;
+	border-color: #b6c2c9 !important;
+}
+.vue-input-tag-wrapper.inverse .input-tag {
+	background: #2d353c !important;
+	border-color: #2d353c !important;
+}
+.vue-input-tag-wrapper.white .input-tag {
+	background: #fff!important;
+	border: 1px solid #ddd!important;
+	color: #000!important;
+}
+.vue-input-tag-wrapper.white .input-tag .remove {
+	color: #000!important;
+}
+.vue-input-tag-wrapper.info .input-tag {
+	background: #49b6d6 !important;
+	border-color: #49b6d6 !important;
+}
+.vue-input-tag-wrapper.success .input-tag {
+	background: $primary !important;
+	border-color: $primary !important;
+}
+.vue-input-tag-wrapper.warning .input-tag {
+	background: #f59c1a !important;
+	border-color: #f59c1a !important;
+}
+.vue-input-tag-wrapper.danger .input-tag {
+	background: #ff5b57 !important;
+	border-color: #ff5b57 !important;
+}
+
+
+/* Highlight JS */
+.hljs-section, .hljs-strong, .hljs-tag {
+	font-weight: 500;
+}
+
+
+/* Vue Sweetalert2 */
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+	background-color: $primary!important;
+}
+.swal2-icon.swal2-success {
+	border-color: $primary!important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+	border-color: rgba(0,172,172,.2)!important;
+}
+.swal2-icon.swal2-error {
+	border-color: #ff5b57;
+}
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+	background: #ff5b57;
+}
+.swal2-icon.swal2-warning {
+	border-color: #f59c1a;
+	color: #f59c1a;
+}
+.swal2-icon.swal2-info {
+	border-color: #49b6d6;
+	color: #49b6d6;
+}
+.swal2-popup .swal2-styled.swal2-confirm {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+
+/* Vue Notification */
+.notification.n-light {
+  margin: 10px;
+  margin-bottom: 0;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 10px 20px;
+  color: #495061;
+  background: #EAF4FE;
+  border: 1px solid #D4E8FD;
+}
+.notification.n-light .notification-title {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 10px;
+	color: #2589F3;
+}
+.vue-notification.notification {
+	margin: 0 5px 5px;
+}
+.vue-notification.error {
+	height: auto;
+	margin: 0 5px 5px;
+}
+.notification.success {
+	background: $primary;
+	border-left-color: #008a8a;
+}
+.notification.error {
+	background: #ff5b57;
+	border-left-color: #cc4946;
+}
+.notification.warn {
+	background: #f59c1a;
+	border-left-color: #c47d15;
+}
+.notification.custom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: left;
+  font-size: 13px;
+  margin: 5px;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background: #E8F9F0;
+  border: 2px solid #D0F2E1;
+}
+.notification.custom, 
+.notification.custom > div {
+	box-sizing: border-box;
+}
+.notification.custom .custom-icon {
+	flex: 0 1 auto;
+	color: #15C371;
+	font-size: 32px;
+	padding: 0 10px;
+}
+.notification.custom .custom-close {
+	flex: 0 1 auto;
+	padding: 0 20px;
+	font-size: 16px;
+	opacity: 0.2;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+.notification.custom .custom-content {
+	padding: 10px;
+	flex: 1 0 auto;
+}
+.notification.custom .custom-content .custom-title {
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: 600;
+}
+.v-fade-left-enter-active,
+.v-fade-left-leave-active,
+.v-fade-left-move {
+  transition: all .5s;
+}
+.v-fade-left-enter,
+.v-fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-500px) scale(0.2);
+}
+
+
+/* Social Button */
+.btn.btn-social {
+	padding-left: 44px;
+}
+
+
+/* Bootstrap Datetimepicker */
+.bootstrap-datetimepicker-widget .fa.fa-trash-o {
+	font-family: Font Awesome\ 5 Free, Font Awesome\ 5 Pro, FontAwesome !important;
+	font-weight: 900;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+}
+.bootstrap-datetimepicker-widget .fa.fa-trash-o:before {
+	content: '\f2ed';
+}
+
+
+/* Vue Datepicker */
+.vdp-datepicker input[readonly] {
+	opacity: 1;
+}
+.vdp-datepicker .vdp-datepicker__calendar {
+	border: none;
+	box-shadow: 0 5px 30px 0 rgba(0,0,0,.25);
+	padding: 5px;
+	border-radius: 6px;
+}
+.vdp-datepicker.inline .vdp-datepicker__calendar {
+	box-shadow: none;
+	padding: 0;
+	min-width: 300px;
+	width: 100%;
+}
+.vdp-datepicker__calendar .cell.day-header,
+.vdp-datepicker__calendar header span {
+	font-size: 12px;
+	font-weight: 700;
+	color: #2d353c;
+}
+.vdp-datepicker__calendar header span {
+	font-size: 16px;
+}
+.vdp-datepicker__calendar .cell {
+	height: 32px;
+	line-height: 32px;
+	color: #2d353c;
+	border: none;
+}
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, 
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, 
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+	border: none;
+	border-radius: 4px;
+	background: #eee;
+	color: #2d353c;
+}
+.vdp-datepicker__calendar .cell.selected {
+	border: none;
+	background: #348fe2 !important;
+	color: #fff !important;
+	border-radius: 4px;
+}
+body .vdp-datepicker__calendar .cell.day-header {
+	font-size: 12px;
+	height: 30px;
+}
+body .vdp-datepicker__calendar .cell {
+	height: 30px;
+	line-height: 30px;
+	border: none !important;
+	font-weight: 600;
+	color: #6f8293;
+}
+body .vdp-datepicker__calendar .month,
+body .vdp-datepicker__calendar .year {
+	height: 54px;
+	line-height: 54px;
+}
+body .vdp-datepicker__calendar .cell.day:not(.blank):not(.disabled):hover,
+body .vdp-datepicker__calendar .cell.day:not(.blank):not(.disabled):focus,
+body .vdp-datepicker__calendar .cell.month:not(.blank):not(.disabled):hover,
+body .vdp-datepicker__calendar .cell.month:not(.blank):not(.disabled):focus,
+body .vdp-datepicker__calendar .cell.year:not(.blank):not(.disabled):hover,
+body .vdp-datepicker__calendar .cell.year:not(.blank):not(.disabled):focus  {
+	background: #f2f4f5;
+  text-shadow: none;
+}
+body .vdp-datepicker__calendar header {
+	line-height: 30px;
+}
+
+body .vdp-datepicker__calendar header span {
+	font-size: 12px;
+	border-radius: 4px;
+}
+body .vdp-datepicker__calendar header span:not(.disabled):hover,
+body .vdp-datepicker__calendar header span:not(.disabled):focus {
+	background: #f2f4f5 !important;
+  text-shadow: none;
+}
+body .vdp-datepicker__calendar header span.next:after,
+body .vdp-datepicker__calendar header span.prev:after {
+	content: '\f054';
+	transform: none;
+	border: none;
+	font-family: Font Awesome\ 5 Free,Font Awesome\ 5 Pro,FontAwesome!important;
+	font-weight: 900;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	text-indent: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+body .vdp-datepicker__calendar header span.prev:after {
+	content: '\f053';
+}
+
+
+/* Vue Select */
+.v-select .dropdown-toggle {
+	border: 1px solid #d3d8de;
+	padding: 0;
+}
+.v-select input[type=search], 
+.v-select input[type=search]:focus {
+	height: 32px;
+	margin: 0;
+	border: none;
+}
+.v-select .dropdown-toggle:after {
+	display: none;
+}
+.v-select .vs__actions {
+	padding: 0 7px;
+}
+.v-select .selected-tag {
+	margin: 0 5px;
+}
+.v-select .open-indicator:before {
+	width: 8px;
+	height: 8px;
+	border-width: 2px 2px 0 0 !important;
+	transform: rotate(133deg) !important;
+}
+.v-select .dropdown-toggle .clear {
+	margin-right: 10px;
+}
+.v-select .dropdown-menu {
+	padding: 0;
+	border: none;
+	box-shadow: 0 5px 30px 0 rgba(0,0,0,.25);
+}
+.v-select .dropdown-menu>.highlight>a {
+	background: #348fe2;
+	color: #fff;
+}.v-select .vs__dropdown-toggle {
+	border: 1px solid #d5dbe0;
+	padding: 0;
+}
+.v-select .vs__dropdown-toggle .vs__selected {
+	margin: 0 4px;
+}
+.v-select.vs--single.vs--open .vs__selected {
+	top: 0;
+	bottom: 0;
+}
+.v-select .vs__actions {
+	padding: 0 12px;
+	opacity: 0.5;
+}
+.v-select .vs__actions:after,
+.v-select .vs__actions .vs__clear:after {
+	content: '\f078';
+	font-family: Font Awesome\ 5 Free,Font Awesome\ 5 Pro,FontAwesome!important;
+	font-weight: 900;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+}
+.v-select .vs__actions .vs__clear {
+	margin-right: 12px;
+}
+.v-select .vs__actions .vs__clear:after {
+	content: '\f00d';
+}
+.v-select .vs__actions .vs__open-indicator,
+.v-select .vs__actions .vs__clear svg {
+	display: none;
+}
+.vs__dropdown-menu {
+	border: 1px solid #d5dbe0;
+	border-top: none;
+	box-shadow: none;
+}
+.vs__dropdown-menu .vs__dropdown-option {
+	padding: 5px 15px;
+	font-weight: 600;
+}
+.vs__dropdown-menu .vs__dropdown-option.vs__dropdown-option--highlight {
+	color: #2d353c;
+  background: #f2f4f5;
+}
+
+
+/* Vue Colorpicker */
+.input-group-append .input-group-text .vue-colorpicker,
+.input-group-prepend .input-group-text .vue-colorpicker {
+	border: none;
+	padding: 0;
+	height: auto;
+	margin: 0 -6px;	
+}
+.input-group-append .input-group-text .vue-colorpicker-btn,
+.input-group-prepend .input-group-text .vue-colorpicker-btn {
+	border: none;
+  border-radius: 3px;
+}
+
+
+/* Vue Slider Component */
+.vue-slider-component .vue-slider-process,
+.vue-slider .vue-slider-process {
+	background: #348fe2;
+}
+.vue-slider-component .vue-slider-tooltip,
+.vue-slider .vue-slider-dot-tooltip .vue-slider-dot-tooltip-inner {
+	background: #2d353c;
+	border-color: #2d353c;
+	font-size: 12px;
+}
+.vue-slider .vue-slider-dot-handle-focus {
+	border-color: #348fe2;
+}
+.vue-slider .vue-slider-dot-handle,
+.vue-slider:hover .vue-slider-dot-handle {
+	border-color: #67abe9;
+}
+.vue-slider:hover .vue-slider-process {
+	background: #67abe9;
+}
+.vue-slider-component .vue-slider,
+.vue-slider .vue-slider-rail {
+	background: #d3d8df;
+}
+
+/* Vue Good Table */
+table.vgt-table {
+	font-size: 12px;
+	border: none;
+}
+table.vgt-table th:first-child,
+table.vgt-table td:first-child {
+	border-left: none;
+}
+table.vgt-table th:last-child,
+table.vgt-table td:last-child {
+	border-right: none;
+}
+table.vgt-table th,
+table.vgt-table.bordered th {
+	color: #242a30;
+	font-weight: 600;
+	border-top: none;
+	border-bottom: 1px solid #b6c2c9;
+}
+.vgt-table th.line-numbers, 
+.vgt-table th.vgt-checkbox-col,
+.vgt-table thead th {
+	background: #f2f3f4;
+}
+table.vgt-table.bordered td, 
+table.vgt-table.bordered tbody th,
+table.vgt-table.bordered tbody th {
+	border-color: #e2e7eb;
+}
+.vgt-input, .vgt-select {
+	background: #f2f3f4;
+	font-size: 12px;
+	border: 1px solid #d3d8de;
+}
+.vgt-global-search {
+	padding: 10px;
+	background: #fff;
+	border: none;
+	border-bottom: 1px solid #e2e7eb;
+}
+.vgt-global-search__input .input__icon .magnifying-glass {
+	margin-top: 6px;
+}
+.vgt-input:focus, 
+.vgt-select:focus {
+	border-color: #5db0ff;
+	outline: 0;
+	box-shadow: 0 0 0 0.125rem rgba(52,142,227,.3);
+}
+.vgt-table th.sorting:after,
+.vgt-table thead th.sorting-asc:after, 
+.vgt-table thead th.sorting-desc:after {
+	border-width: 5px;
+	right: 6px;
+	margin-top: -7px;
+}
+.vgt-table th.sorting:after,
+.vgt-table th.sorting:hover:after {
+	border-bottom-color: #348fe2;
+}
+.vgt-table thead th.sorting-desc:after,
+.vgt-table thead th.sorting-desc:hover:after {
+	border-bottom-color: #cfd3e0;
+}
+.vgt-table thead th.sorting-desc:after {
+	border-top-color: #348fe2;
+}
+.vgt-wrap__footer {
+	border: none;
+}
+.vgt-wrap__footer .footer__row-count__select {
+	background: #fff;
+	border: 1px solid #d3d8de;
+	font-size: 12px;
+	color: #242a30;
+}
+.vgt-wrap__footer .footer__row-count__label {
+	font-size: 12px;
+	color: #242a30;
+}
+.vgt-wrap__footer .footer__navigation__page-btn {
+	color: #242a30;
+	font-weight: 600;
+}
+.vgt-wrap__footer .footer__navigation {
+	font-size: 12px;
+}
+.vgt-wrap__footer .footer__navigation__page-btn .chevron.right::after {
+	border-left-color: #348fe2;
+}
+.vgt-wrap__footer .footer__navigation__page-btn .chevron.left::after {
+	border-right-color: #348fe2;
+}
+.vgt-selection-info-row {
+	background: #fff4b2;
+	color: #806d00;
+	border: none;
+	padding: 10px 15px;
+}
+
+
+/* Countdown */
+.countdown-section {
+	display: block;
+	text-align: center;
+	
+	.countdown-show1 & {
+		width: 98%;
+	}
+	.countdown-show2 & {
+		width: 48%;
+	}
+	.countdown-show3 & {
+		width: 32.5%;
+	}
+	.countdown-show4 & {
+		width: 24.5%;
+	}
+	.countdown-show5 & {
+		width: 19.5%;
+	}
+	.countdown-show6 & {
+		width: 16.25%;
+	}
+	.countdown-show7 & {
+		width: 14%;
+	}
+}
+.countdown-period {
+  display: block;
+}
+
+
+/* Mobile Sidebar */
+.mobile-click {
+	display: none;
+	z-index: 1010;
+}
+@media (max-width: 767px) {
+	.page-sidebar-toggled .mobile-click,
+	.page-right-sidebar-toggled .mobile-click {
+		position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+	}
+}
+
+
+/* ins progress */
+.ins-progress {
+	background: $primary !important;
+}
+
+
+/* Date Rangepicker */
+.vue-daterange-picker {
+	&.btn {
+		padding: 0;
+		
+		& .form-control {
+			color: inherit;
+			font-weight: inherit;
+			height: auto;
+			border: none;
+			background: none;
+		}
+	}
+	& .row {
+		margin: 0;
+		
+		@media (min-width: 992px) {
+			@include flex-wrap(nowrap);
+		}
+		@media (max-width: 991px) {
+			display: block;
+		}
+		
+		& > .calendars-container {
+			@media (min-width: 576px) {
+				@include display-flex();
+			}
+		}
+	}
+	& .daterangepicker {
+		@media (max-width: 520px) {
+			max-width: 340px;
+		}
+		@media (max-width: 420px) {
+			max-width: 320px;
+		}
+		@media (max-width: 380px) {
+			max-width: 280px;
+		}
+		& td.active,
+		& td.active:hover {
+			background: $form-component-active-bg;
+			color: $white !important;
+		}
+		&.show-ranges {
+			& .ranges {
+				@media (max-width: 991px) {
+					max-width: initial !important;
+				}
+				& ul {
+					@media (max-width: 767px) {
+						@include flex-wrap(nowrap);
+					}
+				}
+			}
+		}
+	}
+}

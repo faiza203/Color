@@ -1,0 +1,68 @@
+.slider-wrapper {
+	padding: rem(15px) rem(30px);
+	
+	@if $enable-rtl {
+		direction: ltr;
+		text-align: left;
+	}
+	
+	& .range-bar {
+		background: lighten($dark, 70%);
+		
+		& .range-min,
+		& .range-max {
+			color: $dark;
+		}
+		& .range-handle {
+			cursor: pointer;
+			
+			@include box-shadow(0 1px 3px rgba($black, .25));
+		}
+		& .range-quantity {
+			background: $form-component-active-bg;
+		}
+	}
+	
+	&.red {
+		& .range-bar {
+			& .range-quantity {
+				background: $red;
+			}
+		}
+	}
+	&.teal {
+		& .range-bar {
+			& .range-quantity {
+				background: $teal;
+			}
+		}
+	}
+	&.purple {
+		& .range-bar {
+			& .range-quantity {
+				background: $purple;
+			}
+		}
+	}
+	&.orange {
+		& .range-bar {
+			& .range-quantity {
+				background: $orange;
+			}
+		}
+	}
+	&.black {
+		& .range-bar {
+			& .range-quantity {
+				background: $dark;
+			}
+		}
+	}
+	&.slider-without-range {
+		padding: rem(15px) 0;
+	}
+	&.slider-vertical {
+		padding-left: rem(15px);
+		padding-right: rem(15px);
+	}
+}
