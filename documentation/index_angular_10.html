@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title> Documentation - Color Admin</title>
+	<!-- Bootstrap styles -->
+	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="assets/bootstrap/css/docs.css" rel="stylesheet">
+	<link href="assets/bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<div class="navbar navbar-inverse navbar-page">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">Admin Template</a>
+				
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="">
+							<a href="index.html">Design Template</a>
+						</li>
+						<li class="">
+							<a href="index_ajax.html">Ajax Version</a>
+						</li>
+						<li class="">
+							<a href="index_angular_1x.html">Angular 1.x</a>
+						</li>
+						<li class="active">
+							<a href="index_angular_10.html">Angular 10.0</a>
+						</li>
+						<li class="">
+							<a href="index_laravel.html">Laravel Version</a>
+						</li>
+						<li class="">
+							<a href="index_vue.html">Vue Version</a>
+						</li>
+						<li class="">
+							<a href="index_react.html">React Version</a>
+						</li>
+						<li class="">
+							<a href="index_asp.html">ASP.NET</a>
+						</li>
+						<li>
+							<a href="index_change_log.html">Change Log</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1 class="text-center">Color Admin</h1>
+			<p class="lead text-center">&ldquo;Angular 8 Version&rdquo; Documentation by &ldquo;Sean Ngu&rdquo; v4.7</p>
+		</div>
+		<div class="jumbotron-cover"></div>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="well with-cover">
+					<div class="well-cover" style="background-image: url(assets/images/angular.jpg); background-size: auto 80%; background-position: center; background-repeat: no-repeat; background-color: #fff;"><span style="position: absolute; bottom: 25px; right: 70px; font-weight: bold;">8.0</span></div>
+					<p>
+						<strong>
+							Last Updated: 25/October/2020<br>
+							By: Sean Ngu<br>
+							Email: <a href="mailto:nguoksiong@live.co.uk">nguoksiong@live.co.uk</a>
+						</strong>
+					</p>
+					<p>
+						Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file,
+						please feel free to email your question to my email <a href="mailTo:nguoksiong@live.co.uk">nguoksiong@live.co.uk</a>. Thanks so much!
+					</p>
+			
+				</div>
+			</div><!-- end span12 -->
+		</div><!-- end row -->
+		<div class="row">
+			<div class="span3 bs-docs-sidebar">
+				<ul class="nav nav-list bs-docs-sidenav affix-top">
+					<li><a href="#installation"><i class="icon-chevron-right"></i>Installation</a></li>
+					<li><a href="#fileStructure"><i class="icon-chevron-right"></i>File Structure</a></li>
+					<li><a href="#pageStructure"><i class="icon-chevron-right"></i>Page Structure</a></li>
+					<li><a href="#page-options"><i class="icon-chevron-right"></i>Page Options</a></li>
+					<li><a href="#page-jquery"><i class="icon-chevron-right"></i>Using jQuery Plugins</a></li>
+					<li><a href="#page-scss"><i class="icon-chevron-right"></i>SCSS</a></li>
+					<li><a href="#npm-package"><i class="icon-chevron-right"></i>NPM Package</a></li>
+				</ul>
+			</div>
+			<div class="span9">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="installation"><strong>A) Installation</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>
+							Follow the following step to install the angular 8 in your localhost<br />
+							You may refer to their official documentation for how to setup the development environment. <br />
+							<a href="https://angular.io/guide/setup" target="_blank">Setup Guide</a>
+						</p>
+<pre class="prettyprint linenums">
+&lt;!-- run the following command --&gt;
+cd /your-path-url/template_angular10
+npm install
+ng serve
+
+&lt;!-- browse the url --&gt;
+http://localhost:4200/
+</pre>
+						<p>
+							Verify that you are running at least node <code>10.9.x</code> or later and <code>npm 6.x.x</code> by running <code>node -v</code> and <code>npm -v</code> in a terminal/console window. Older versions produce errors, but newer versions are fine.
+						</p>
+						<hr />
+						<p>Copy over the required image from global <code>assets</code> folder</p>
+<pre class="prettyprint linenums">
+&lt;!-- copy the following folder--&gt;
+/admin/template/assets/img
+ 
+&lt;!-- paste it into Angular 10 folder --&gt;
+/admin/template/template_angular10/src/assets/img
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="fileStructure"><strong>B) File Structure</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>File structure overview for Angular JS 8 Version</p>
+						
+<pre class="prettyprint linenums">
+template_angularjs10/
+├── angular.json
+├── karma.conf.js
+├── package.json
+├── protractor.conf.js
+├── README.md
+├── tsconfig.json
+├── tslint.json
+├── e2e/
+└── src/
+    ├── favicon.ico
+    ├── index.html
+    ├── main.ts
+    ├── polyfills.ts
+    ├── styles.css
+    ├── tsconfig.app.json
+    ├── tsconfig.spec.json
+    ├── typings.d.ts
+    ├── app/
+    │   ├── app.routing.module.ts
+    │   ├── app.component.css
+    │   ├── app.component.html
+    │   ├── app.component.spec.ts
+    │   ├── app.component.ts
+    │   ├── app.module.ts
+    │   ├── components/
+    │   ├── config/
+    │   └── pages/
+    ├── assets/ 
+    ├── environments/
+    └── scss/
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="pageStructure"><strong>C) Page Structure</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>Below is the code from <code>app.component.html</code> which include the loading bar, header, sidebar, right sidebar, top menu, page content and footer. You may remove the component if you are not using it.</p>
+<pre class="prettyprint linenums">
+&lt;ngx-loading-bar [ngClass]="{ 'top': pageSettings.pageEmpty }"&gt;&lt;/ngx-loading-bar&gt;
+
+&lt;!-- begin #page-container --&gt;
+&lt;div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed show" [ngClass]="{
+  'has-scroll' : pageHasScroll,
+  'page-sidebar-minified': pageSettings.pageSidebarMinified,
+  'page-with-footer': pageSettings.pageWithFooter,
+  'page-content-full-height': pageSettings.pageContentFullHeight,
+  'page-without-sidebar': pageSettings.pageWithoutSidebar,
+  'page-with-right-sidebar': pageSettings.pageSidebarRight,
+  'page-with-two-sidebar': pageSettings.pageSidebarTwo,
+  'page-with-wide-sidebar': pageSettings.pageSidebarWide,
+  'page-right-sidebar-collapsed': pageSettings.pageSidebarRightCollapsed,
+  'page-with-light-sidebar': pageSettings.pageSidebarLight,
+  'page-with-top-menu': pageSettings.pageTopMenu,
+  'page-sidebar-toggled': pageSettings.pageMobileSidebarToggled,
+  'page-right-sidebar-toggled': pageSettings.pageMobileRightSidebarToggled,
+  'p-0': pageSettings.pageEmpty
+  }"&gt;
+
+  &lt;top-menu *ngIf="pageSettings.pageTopMenu && !pageSettings.pageEmpty"&gt;&lt;/top-menu&gt;
+
+  &lt;header 
+    (toggleSidebarRightCollapsed)="onToggleSidebarRight($event)" 
+    (toggleMobileSidebar)="onToggleMobileSidebar($event)"
+    (toggleMobileRightSidebar)="onToggleMobileRightSidebar($event)" 
+    [pageSidebarTwo]="pageSettings.pageSidebarTwo" 
+    *ngIf="!pageSettings.pageEmpty"&gt;
+  &lt;/header&gt;
+
+  &lt;sidebar 
+    (toggleSidebarMinified)="onToggleSidebarMinified($event)" 
+    (hideMobileSidebar)="onHideMobileSidebar($event)" 
+    *ngIf="!pageSettings.pageWithoutSidebar && !pageSettings.pageEmpty" 
+    [pageSidebarTransparent]="pageSettings.pageSidebarTransparent" 
+    [pageSidebarMinified]="pageSettings.pageSidebarMinified"&gt;
+  &lt;/sidebar&gt;
+
+  &lt;sidebar-right 
+    (hideMobileRightSidebar)="onHideMobileRightSidebar($event)" 
+    *ngIf="pageSettings.pageSidebarTwo && !pageSettings.pageEmpty"&gt;
+  &lt;/sidebar-right&gt;
+
+  &lt;div id="content" class="content" 
+    [ngClass]="{
+      'content-full-width': pageSettings.pageContentFullWidth,
+      'content-inverse-mode': pageSettings.pageContentInverseMode,
+      'p-0 m-0': pageSettings.pageEmpty
+    }"&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  &lt;/div&gt;
+
+  &lt;footer *ngIf="pageSettings.pageWithFooter"&gt;&lt;/footer&gt;
+&lt;/div&gt;
+&lt;!-- end #page-container --&gt;
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-options"><strong>D) Page Options</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>You may found the list of page options in <code>/src/app/config/page-settings.ts</code>. You may change the value from <b>false</b> to <b>true</b> if you wish to enable the options by page load.
+<pre class="prettyprint lineums">
+var pageSettings = {
+  pageSidebarMinified: false,
+  pageContentFullHeight: false,
+  pageContentFullWidth: false,
+  pageContentInverseMode: false,
+  pageWithFooter: false,
+  pageWithoutSidebar: false,
+  pageSidebarRight: false,
+  pageSidebarRightCollapsed: false,
+  pageSidebarTwo: false,
+  pageSidebarWide: false,
+  pageSidebarTransparent: false,
+  pageSidebarLight: false,
+  pageSidebarSearch: false,
+  pageTopMenu: false,
+  pageEmpty: false,
+  pageBodyWhite: false,
+  pageMegaMenu: false,
+  pageLanguageBar: false,
+  pageMobileSidebarToggled: false,
+  pageMobileSidebarFirstClicked: false,
+  pageMobileSidebarRightToggled: false,
+  pageMobileSidebarRightFirstClicked: false,
+  pageMobileTopMenuToggled: false,
+  pageMobileMegaMenuToggled: false
+};
+
+export default pageSettings;
+</pre>
+						<p>If you wish to set the page options for individual page, below is the example of setting the page settings in controller.</p>
+<pre class="prettyprint linenums">
+import { Component } from '@angular/core';
+import pageSettings from '../../config/page-settings';
+
+@Component({
+  selector: 'page-blank',
+  templateUrl: './page-blank.html'
+})
+
+export class PageBlank {
+  pageSettings = pageSettings;
+  
+  constructor() {
+    this.pageSettings.pageSidebarMinified = true;
+  }
+}
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-jquery"><strong>E) Using jQuery Plugins</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>
+							Here is an example for how to use jQuery plugins in Angular 8 (DataTables)
+						</p>
+						<div style="margin-bottom: 5px;"><b>NPM INSTALLATION:</b></div>
+<pre class="prettyprint linenums">
+npm install @types/jquery --save
+npm install datatables
+npm install datatables.net-bs
+npm install datatables.net-responsive-bs
+</pre>
+						<div style="margin-bottom: 5px;"><b>INCLUDE CSS:</b> <code>/src/styles.css</code></div>
+<pre class="prettyprint linenums">
+@import "~datatables.net-bs/css/dataTables.bootstrap.min.css";
+@import "~datatables.net-responsive-bs/css/responsive.bootstrap.min.css";
+</pre>
+						<div style="margin-bottom: 5px;"><b>TYPESCRIPT FILE:</b></div>
+<pre class="prettyprint linenums">
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as $ from 'jquery';
+import 'datatables';
+import 'datatables.net-bs';
+import 'datatables.net-responsive-bs';
+
+@Component({
+  selector: 'index',
+  templateUrl: './index.html'
+})
+
+export class IndexPage implements AfterViewInit {
+  ngAfterViewInit() {
+    $(document).ready(function() {
+       $('#data-table').DataTable({
+        responsive: true
+       });
+    });
+  }
+}
+</pre>
+					<div style="margin-bottom: 5px;"><b>ADD THIS TO /src/typings.d.ts</b></div>
+<pre class="prettyprint linenums">
+interface JQuery {
+  DataTable(options?: any, callback?: Function) : any;
+}
+</pre>
+					</div>
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-scss"><strong>F) Using SCSS</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>Angular 10 now is fully configured with scss file settings. You may include / switch the Color Admin theme by changing the file <code>/admin/src/scss/angular.scss</code>.</p>
+<pre class="prettyprint linenums">
+@import 'default/styles';
+
+&lt;!-- other themes --&gt;
+@import 'apple/styles';
+@import 'facebook/styles';
+@import 'google/styles';
+@import 'material/styles';
+@import 'transparent/styles';
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="npm-package"><strong>G) NPM Package</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>
+							Below is the list of package that has been installed in this project. You may use the following example to find the package from their official website.
+							<code>https://www.npmjs.com/package/</code><code>@ng-bootstrap/ng-bootstrap</code>
+						</p>
+<pre class="prettyprint linenums">
+{
+  "name": "color-admin",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
+  },
+  "private": true,
+  "dependencies": {
+    "@agm/core": "^1.1.0",
+    "@angular-devkit/build-angular": "^0.1001.7",
+    "@angular/animations": "^10.1.6",
+    "@angular/cdk": "^10.2.5",
+    "@angular/common": "^10.1.6",
+    "@angular/compiler": "^10.1.6",
+    "@angular/core": "^10.1.6",
+    "@angular/forms": "^10.1.6",
+    "@angular/localize": "^10.1.6",
+    "@angular/material": "^10.2.5",
+    "@angular/platform-browser": "^10.1.6",
+    "@angular/platform-browser-dynamic": "^10.1.6",
+    "@angular/router": "^10.1.6",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fullcalendar/angular": "^5.3.1",
+    "@fullcalendar/bootstrap": "^5.3.1",
+    "@fullcalendar/core": "^5.3.1",
+    "@fullcalendar/daygrid": "^5.3.2",
+    "@fullcalendar/interaction": "^5.3.1",
+    "@fullcalendar/list": "^5.3.1",
+    "@fullcalendar/resource-timegrid": "^5.3.1",
+    "@fullcalendar/timegrid": "^5.3.1",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "@ngx-loading-bar/core": "^5.1.0",
+    "@ngx-loading-bar/router": "^5.1.0",
+    "@sweetalert2/ngx-sweetalert2": "^8.1.1",
+    "@swimlane/ngx-charts": "^16.0.0",
+    "@swimlane/ngx-datatable": "^18.0.0",
+    "angular-calendar": "^0.28.22",
+    "bootstrap": "^4.5.3",
+    "bootstrap-social": "^5.1.1",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.6.5",
+    "d3": "^3.5.17",
+    "dart-sass": "^1.25.0",
+    "date-fns": "^2.16.1",
+    "fibers": "^5.0.0",
+    "flag-icon-css": "^3.5.0",
+    "moment": "^2.29.1",
+    "ng-chartjs": "^0.2.1",
+    "ng2-nvd3": "^2.0.0",
+    "ng4-charts": "^1.0.2",
+    "ngx-chips": "^2.2.1",
+    "ngx-countdown": "^10.0.1",
+    "ngx-daterangepicker-material": "^4.0.1",
+    "ngx-highlight-js": "^10.0.3",
+    "ngx-perfect-scrollbar": "^10.0.1",
+    "ngx-trend": "^6.0.0",
+    "nvd3": "^1.8.6",
+    "rxjs": "^6.6.3",
+    "rxjs-compat": "^6.6.3",
+    "simple-line-icons": "^2.5.5",
+    "sweetalert2": "^10.6.1",
+    "tslib": "^2.0.3",
+    "zone.js": "~0.11.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "^10.1.7",
+    "@angular/compiler-cli": "^10.1.6",
+    "@angular/language-service": "^10.1.6",
+    "@types/jasmine": "^3.5.14",
+    "@types/jasminewd2": "~2.0.8",
+    "@types/node": "^14.11.10",
+    "codelyzer": "^6.0.1",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~6.0.0",
+    "karma": "~5.2.3",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.3",
+    "karma-jasmine": "~4.0.1",
+    "karma-jasmine-html-reporter": "^1.5.4",
+    "protractor": "~7.0.0",
+    "ts-node": "^9.0.0",
+    "tslint": "~6.1.3",
+    "typescript": "^4.0.3"
+  }
+}
+</pre>
+					</div>
+				</div><!-- end row-fluid -->
+			</div><!-- end span12 -->
+		</div><!-- end row-fluid -->
+	</div><!-- end container -->
+	
+	<footer class="footer">
+		<div class="container text-left">
+			<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes, you might consider visiting the forums and asking your question via <a href="mailTo:nguoksiong@live.co.uk">email</a>.</p> 
+			<br />
+			<p class="append-bottom alt large"><strong>Sean Ngu</strong></p>
+			<p><a href="#top">Go To Table of Contents</a></p>
+		</div>
+	</footer><!-- end footer -->
+	
+	<script src="assets/bootstrap/js/jquery.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-transition.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-alert.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-modal.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-scrollspy.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-tooltip.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-popover.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-button.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-collapse.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-carousel.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-typeahead.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-affix.js"></script>
+
+	<script src="assets/bootstrap/js/holder/holder.js"></script>
+	<script src="assets/bootstrap/js/google-code-prettify/prettify.js"></script>
+	<script src="assets/bootstrap/js/application.js"></script>
+</body>
+</html>

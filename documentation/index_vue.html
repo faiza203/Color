@@ -1,0 +1,424 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title> Documentation - Color Admin</title>
+	<!-- Bootstrap styles -->
+	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="assets/bootstrap/css/docs.css" rel="stylesheet">
+	<link href="assets/bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<div class="navbar navbar-inverse navbar-page">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">Admin Template</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="">
+							<a href="index.html">Design Template</a>
+						</li>
+						<li class="">
+							<a href="index_ajax.html">Ajax Version</a>
+						</li>
+						<li class="">
+							<a href="index_angular_1x.html">Angular 1.x</a>
+						</li>
+						<li class="">
+							<a href="index_angular_10.html">Angular 10.0</a>
+						</li>
+						<li class="">
+							<a href="index_laravel.html">Laravel Version</a>
+						</li>
+						<li class="active">
+							<a href="index_vue.html">Vue Version</a>
+						</li>
+						<li class="">
+							<a href="index_react.html">React Version</a>
+						</li>
+						<li class="">
+							<a href="index_asp.html">ASP.NET</a>
+						</li>
+						<li>
+							<a href="index_change_log.html">Change Log</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="jumbotron subhead" id="overview">
+		<div class="container">
+			<h1 class="text-center">Color Admin</h1>
+			<p class="lead text-center">&ldquo;Vue JS Version&rdquo; Documentation by &ldquo;Sean Ngu&rdquo; v4.7</p>
+		</div>
+		<div class="jumbotron-cover"></div>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<div class="well with-cover">
+					<div class="well-cover" style="background-image: url(assets/images/vue.jpg); background-size: auto 80%; background-position: center; background-repeat: no-repeat; background-color: #fff;"><span style="position: absolute; bottom: 25px; right: 70px; font-weight: bold;">CLI</span></div>
+					<p>
+						<strong>
+							Last Updated: 25/October/2020<br>
+							By: Sean Ngu<br>
+							Email: <a href="mailto:nguoksiong@live.co.uk">nguoksiong@live.co.uk</a>
+						</strong>
+					</p>
+					<p>
+						Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file,
+						please feel free to email your question to my email <a href="mailTo:nguoksiong@live.co.uk">nguoksiong@live.co.uk</a>. Thanks so much!
+					</p>
+			
+				</div>
+			</div><!-- end span12 -->
+		</div><!-- end row -->
+		<div class="row">
+			<div class="span3 bs-docs-sidebar">
+				<ul class="nav nav-list bs-docs-sidenav affix-top">
+					<li><a href="#installation"><i class="icon-chevron-right"></i>Installation</a></li>
+					<li><a href="#fileStructure"><i class="icon-chevron-right"></i>File Structure</a></li>
+					<li><a href="#page-structure"><i class="icon-chevron-right"></i>Page Structure</a></li>
+					<li><a href="#page-components"><i class="icon-chevron-right"></i>Components</a></li>
+					<li><a href="#page-options"><i class="icon-chevron-right"></i>Page Options</a></li>
+					<li><a href="#page-scss"><i class="icon-chevron-right"></i>SCSS</a></li>
+					<li><a href="#npm-package"><i class="icon-chevron-right"></i>NPM Package</a></li>
+				</ul>
+			</div>
+			<div class="span9">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="installation"><strong>A) Installation</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>
+							Follow the following step to install the vue cli in your localhost<br />
+							You may refer to their official documentation for how to setup the development environment. <br />
+							<a href="https://cli.vuejs.org/guide/installation.html" target="_blank">Setup Guide</a>
+						</p>
+<pre class="prettyprint linenums">
+&lt;!-- run the following command --&gt;
+cd /your-path-url/template_vuejs
+npm install 
+npm run serve
+
+&lt;!-- browse the url --&gt;
+http://localhost:8081/
+</pre>
+						<p>
+							Verify that you are running at least node <code>10.9.x</code> or later and <code>npm 6.x.x</code> by running <code>node -v</code> and <code>npm -v</code> in a terminal/console window. Older versions produce errors, but newer versions are fine.
+						</p>
+						<hr />
+						<p>Copy over the required image from global <code>assets</code> folder</p>
+<pre class="prettyprint linenums">
+&lt;!-- copy the following folder--&gt;
+/admin/template/assets/img
+ 
+&lt;!-- paste it into vuejs folder --&gt;
+/admin/template/template_vuejs/public/assets/img
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="fileStructure"><strong>B) File Structure</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>File structure overview for Vue JS Version</p>
+						
+<pre class="prettyprint linenums">
+template_vue/
+├── package.json
+├── babel.conf.js
+├── public/
+└── src/
+    ├── App.vue
+    ├── main.js
+    ├── assets/
+    ├── components/
+    ├── config/
+    ├── pages/
+    ├── plugins/
+    └── scss/
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-structure"><strong>C) Page Structure</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>Below is the code from <code>App.vue</code> which include the header, sidebar, right sidebar, top menu, page content and footer. You may remove the component if you are not using it.</p>
+<pre class="prettyprint linenums">
+&lt;template&gt;
+  &lt;div class="fade page-sidebar-fixed page-header-fixed show page-container" v-if="!pageOptions.pageEmpty" v-bind:class="{ 
+    'page-sidebar-minified': pageOptions.pageSidebarMinified, 
+    'page-content-full-height': pageOptions.pageContentFullHeight, 
+    'page-without-sidebar': pageOptions.pageWithoutSidebar, 
+    'page-with-right-sidebar': pageOptions.pageWithRightSidebar, 
+    'page-with-two-sidebar': pageOptions.pageWithTwoSidebar,
+    'page-with-wide-sidebar': pageOptions.pageWithWideSidebar,
+    'page-with-light-sidebar': pageOptions.pageWithLightSidebar,
+    'page-with-top-menu': pageOptions.pageWithTopMenu,
+    'page-sidebar-toggled': pageOptions.pageMobileSidebarToggled,
+    'page-right-sidebar-toggled': pageOptions.pageMobileRightSidebarToggled || pageOptions.pageRightSidebarToggled,
+    'page-right-sidebar-collapsed': pageOptions.pageRightSidebarCollapsed,
+    'has-scroll': pageOptions.pageBodyScrollTop
+  }"&gt;
+    &lt;Header /&gt;
+    &lt;TopMenu v-if="pageOptions.pageWithTopMenu" /&gt;
+    &lt;Sidebar v-if="!pageOptions.pageWithoutSidebar" /&gt;
+    &lt;SidebarRight v-if="pageOptions.pageWithTwoSidebar" /&gt;
+    &lt;div id="content" class="content" v-bind:class="{ 'content-full-width': pageOptions.pageContentFullWidth, 'content-inverse-mode': pageOptions.pageContentInverseMode }"&gt;
+      &lt;router-view&gt;&lt;/router-view&gt;
+      &lt;vue-ins-progress-bar&gt;&lt;/vue-ins-progress-bar&gt;
+    &lt;/div&gt;
+    &lt;Footer v-if="pageOptions.pageWithFooter" /&gt;
+  &lt;/div&gt;
+  &lt;div v-else&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+    &lt;vue-ins-progress-bar&gt;&lt;/vue-ins-progress-bar&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-components"><strong>D) Components</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>List of components inside the components folder</p>
+<pre class="prettyprint linenums">
+components/
+├── footer/
+├── header
+├── sidebar/
+├── sidebar-right/
+├── top-menu/
+└── vue-chartjs/
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-options"><strong>E) Page Options</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>File to configure the default page options & page routes</p>
+<pre class="prettyprint linenums">
+config/
+├── PageOptions.vue
+└── PageRoutes.vue
+</pre>
+						<p>Example of how to change page options in single page</p>
+<pre class="prettyprint linenums">
+&lt;script&gt;
+import PageOptions from '../config/PageOptions.vue'
+
+export default {
+  created() {
+    PageOptions.pageWithTopMenu = true;
+    PageOptions.pageWithoutSidebar = true;
+  },
+  beforeRouteLeave (to, from, next) {
+    // change back to default
+    PageOptions.pageWithTopMenu = false;
+    PageOptions.pageWithoutSidebar = false;
+    next();
+  }
+}
+&lt;/script&gt;
+</pre>
+						<p>List of options:</p>
+<pre class="prettyprint linenums">
+&lt;script&gt;
+const pageOptions = {
+  pageSidebarMinified: false,
+  pageContentFullWidth: false,
+  pageContentInverseMode: false,
+  pageContentFullHeight: false,
+  pageWithLanguageBar: false,
+  pageWithFooter: false,
+  pageWithoutSidebar: false,
+  pageWithRightSidebar: false,
+  pageWithTwoSidebar: false,
+  pageWithWideSidebar: false,
+  pageWithLightSidebar: false,
+  pageWithMegaMenu: false,
+  pageWithTopMenu: false,
+  pageSidebarTransparent: false,
+  pageEmpty: false,
+  pageMobileSidebarToggled: false,
+  pageMobileRightSidebarToggled: false,
+  pageMobileTopMenu: false,
+  pageMobileMegaMenu: false,
+  pageRightSidebarToggled: false,
+  pageSidebarSearch: false,
+  pageBodyScrollTop: 0
+}
+
+export default pageOptions;
+&lt;/script&gt;
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="page-scss"><strong>F) Using SCSS</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>Now Vue.js version is fully scss configured. You may switch the Color Admin theme by changing the file <code>/admin/src/scss/angular.scss</code>.</p>
+<pre class="prettyprint linenums">
+@import 'default/styles';
+ 
+&lt;!-- other themes --&gt;
+@import 'apple/styles';
+@import 'facebook/styles';
+@import 'google/styles';
+@import 'material/styles';
+@import 'transparent/styles';
+</pre>
+					</div><!-- end span12 -->
+				</div><!-- end row-fluid -->
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="page-header">
+							<h3 id="npm-package"><strong>G) NPM Package</strong> - <a href="#top">top</a></h3>
+						</div>
+						<p>
+							Below is the list of package that has been installed in this project. You may use the following example to find the package from their official website.
+							<code>https://www.npmjs.com/package/</code><code>bootstrap-vue</code>
+						</p>
+<pre class="prettyprint linenums">
+{
+  "name": "color-admin",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@agametov/vueditor": "^0.4.1",
+    "@chenfengyuan/vue-countdown": "^1.1.5",
+    "apexcharts": "^3.22.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-social": "^5.1.1",
+    "bootstrap-vue": "^2.18.1",
+    "chart.js": "^2.9.4",
+    "core-js": "^3.6.5",
+    "flag-icon-css": "^3.5.0",
+    "ionicons": "^4.2.6",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.4",
+    "simple-line-icons": "^2.5.5",
+    "v-autocomplete": "^1.8.2",
+    "vue": "^2.6.12",
+    "vue-apexcharts": "^1.6.0",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
+    "vue-chartjs": "^3.5.1",
+    "vue-custom-scrollbar": "^1.4.0",
+    "vue-event-calendar": "^1.5.2",
+    "vue-full-calendar": "^2.8.0",
+    "vue-good-table": "^2.21.1",
+    "vue-hljs": "^1.1.2",
+    "vue-input-tag": "^2.0.7",
+    "vue-ins-progress-bar": "^1.3.8",
+    "vue-maskedinput": "^0.1.3",
+    "vue-notification": "^1.3.20",
+    "vue-nvd3": "^1.0.0",
+    "vue-pop-colorpicker": "^1.0.2",
+    "vue-router": "^3.4.7",
+    "vue-select": "^3.10.8",
+    "vue-slider-component": "^3.2.7",
+    "vue-sparklines": "^0.2.1",
+    "vue-sweetalert2": "^4.0.1",
+    "vue2-daterange-picker": "^0.6.1",
+    "vue2-google-maps": "^0.10.7",
+    "vuejs-datepicker": "^1.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-plugin-vue": "^7.1.0",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
+</pre>
+					</div>
+				</div><!-- end row-fluid -->
+			</div><!-- end span12 -->
+		</div><!-- end row-fluid -->
+	</div><!-- end container -->
+	
+	<footer class="footer">
+		<div class="container text-left">
+			<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes, you might consider visiting the forums and asking your question via <a href="mailTo:nguoksiong@live.co.uk">email</a>.</p> 
+			<br />
+			<p class="append-bottom alt large"><strong>Sean Ngu</strong></p>
+			<p><a href="#top">Go To Table of Contents</a></p>
+		</div>
+	</footer><!-- end footer -->
+	
+	<script src="assets/bootstrap/js/jquery.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-transition.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-alert.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-modal.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-dropdown.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-scrollspy.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-tab.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-tooltip.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-popover.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-button.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-collapse.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-carousel.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-typeahead.js"></script>
+	<script src="assets/bootstrap/js/bootstrap-affix.js"></script>
+
+	<script src="assets/bootstrap/js/holder/holder.js"></script>
+	<script src="assets/bootstrap/js/google-code-prettify/prettify.js"></script>
+	<script src="assets/bootstrap/js/application.js"></script>
+</body>
+</html>
