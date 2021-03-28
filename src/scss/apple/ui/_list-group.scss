@@ -1,0 +1,5 @@
+.list-group {
+	@if $enable-rtl {
+		padding-right: 0;
+	}
+}

@@ -1,0 +1,92 @@
+.note-editor {
+	& .note-toolbar {
+		background: $dark;
+		padding: rem(10px) rem(15px) !important;
+		
+		@include border-radius(0);
+		
+		&.panel-heading {
+			background: rgba($black, .25);
+			
+			& .note-btn-group {
+				margin-top: 0 !important;
+				
+				& .btn {
+					margin: 0 !important;
+					
+					&.dropdown-toggle {
+						@if $enable-rtl {
+							width: auto;
+							padding-left: rem(5px);
+							padding-right: rem(5px);
+						}
+					}
+				}
+			}
+		}
+		& .dropdown-menu {
+			& > li {
+				& > a {
+					display: block;
+					padding: rem(5px) rem(15px);
+					color: $dark;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+	& .note-placeholder {
+		padding: rem(15px) !important;
+	}
+	& .note-editing-area {
+		& .note-editable {
+			padding: rem(15px) !important;
+		}
+	}
+	& .modal {
+		& .modal-header {
+			display: block;
+			
+			& .close {
+				margin-top: rem(-10px);
+				
+				@if $enable-rtl {
+					float: left;
+				}
+			}
+			& .modal-title {
+				@if $enable-rtl {
+					float: right;
+				}
+			}
+		}
+	}
+	
+	&.note-frame {
+		border: none !important;
+		margin: 0 !important;
+		background: none;
+	}
+	&.fullscreen {
+		& .note-toolbar-wrapper {
+			display: none;
+		}
+	}
+}
+.note-popover {
+	&.popover {
+		display: none;
+		
+		& .popover-content,
+		& .note-toolbar {
+			padding: rem(10px) rem(15px) !important;
+			background: $dark;
+			
+			@include border-radius(0);
+		}
+	}
+}
+.note-toolbar .dropdown-toggle:after {
+	display: none !important;
+}

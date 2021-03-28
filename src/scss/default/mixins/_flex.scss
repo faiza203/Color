@@ -1,0 +1,5 @@
+@mixin flex($variable) {
+	-webkit-box-flex: $variable;
+	-ms-flex: $variable;
+	flex: $variable;
+}

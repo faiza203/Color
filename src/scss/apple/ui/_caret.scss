@@ -1,0 +1,37 @@
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: rem(2px);
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-top: 4px solid\9;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	
+	&:not(.caret-border) {
+		border: none;
+		font-size: rem(16px);
+		width: rem(10px);
+		height: rem(14px);
+		line-height: rem(14px);
+		text-align: center;
+		position: relative;
+		font-family: Ionicons;
+		speak: none;
+		font-style: normal;
+		font-weight: 400;
+		font-variant: normal;
+		text-transform: none;
+		text-rendering: auto;
+		
+		&:before {
+			content: '\f3d0';
+			display: inline-block;
+		}
+	}
+	@if $enable-rtl {
+		margin-left: 0;
+		margin-right: rem(2px);
+	}
+}

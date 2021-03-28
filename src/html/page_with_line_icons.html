@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('./partial/head.html', {"title": "Page with Line Icons"})
+	
+	<!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+	<link href="../assets/plugins/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+</head>
+<body>
+	@@include('./partial/page-loader.html')
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed@@if(context.theme == 'material' || context.theme == 'google') { page-with-wide-sidebar}@@if(context.theme == 'google') { page-with-light-sidebar}">
+		@@include('./partial/header.html')
+		
+		@@include('./partial/sidebar.html', {"pageOptionsClass": "active", "pageWithLineIconsClass": "active", "icon": "lineicons"})
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			<!-- begin breadcrumb -->
+			<ol class="breadcrumb@@if(context.theme != 'facebook'){ float-xl-right}">
+				<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+				<li class="breadcrumb-item"><a href="javascript:;">Page Options</a></li>
+				<li class="breadcrumb-item active">Page with Line Icons</li>
+			</ol>
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header">Page with Line Icons <small>header small text goes here...</small></h1>
+			<!-- end page-header -->
+			
+			<p>
+				Sample sidebar created with <a href="ui_simple_line_icons.html">Simple Line Icons</a>
+			</p>
+		</div>
+		<!-- end #content -->
+		
+		@@include('./partial/theme-panel.html')
+		
+		@@include('./partial/scroll-top-btn.html')
+	</div>
+	<!-- end page container -->
+	
+	@@include('./partial/script.html')
+</body>
+</html>

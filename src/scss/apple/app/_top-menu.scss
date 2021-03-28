@@ -1,0 +1,353 @@
+@include keyframes(topMenuControlSlideInLeft) {
+	from { left: rem(-50px); }
+	to { left: 0; }
+}
+@include keyframes(topMenuControlSlideInRight) {
+	from { right: rem(-50px); }
+	to { right: 0; }
+}
+.top-menu {
+	background: $dark-darker;
+	left: 0;
+	right: 0;
+	z-index: $top-menu-zindex;
+	
+	@include media-breakpoint-up(md) {
+		top: $header-height;
+		position: fixed;
+		height: $top-menu-height;
+	}
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+	
+	& .nav {
+		@include media-breakpoint-up(sm) {
+			@include display-flex();
+			@include flex-wrap(nowrap);
+		}
+		@include media-breakpoint-down(sm) {
+			display: block;
+			margin: 0 !important;
+		}
+		
+		& > li {
+			position: relative;
+			display: block;
+			
+			& > a {
+				padding: rem(10px) rem(20px);
+				color: rgba($white, .6);
+				line-height: rem(20px);
+				text-decoration: none;
+				white-space: nowrap;
+				
+				@include display-flex();
+				@include flex-align(center);
+				@include media-breakpoint-up(md) {
+					@include flex-justify-content(center);
+				}
+				
+				& i {
+					font-size: rem(20px);
+					margin-right: rem(10px);
+					margin-top: rem(-3px);
+					margin-bottom: rem(-3px);
+					line-height: rem(26px);
+					width: rem(26px);
+					height: 26px;
+					text-align: center;
+					color: $white;
+					background: rgba($white, .25);
+					
+					@include border-radius($border-radius-lg);
+					@include display-flex();
+					@include flex-align(center);
+					@include flex-justify-content(center);
+					
+					@if $enable-rtl {
+						margin-right: 0;
+						margin-left: rem(10px);
+					}
+				}
+				& .badge {
+					margin-left: rem(5px);
+					background: $dark;
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: auto;
+					}
+				}
+				& .label {
+					padding-top: 0;
+					padding-bottom: 0;
+					margin-left: rem(5px);
+					
+					@if $enable-rtl {
+						margin-left: 0;
+						margin-right: rem(5px);
+					}
+				}
+				& .icon-img {
+					float: left;
+					margin-right: rem(10px);
+					margin-top: rem(-3px);
+					margin-bottom: rem(-3px);
+					width: rem(26px);
+					height: rem(26px);
+					overflow: hidden;
+					
+					@include border-radius($border-radius-lg);
+					@include display-flex();
+					@include flex-align(center);
+					@if $enable-rtl {
+						float: right;
+						margin-left: rem(10px);
+						margin-right: 0;
+					}
+					
+					& img {
+						max-width: 100%;
+						max-height: 100%;
+						display: block;
+						margin: 0 auto;
+					}
+				}
+				& > span {
+					@include display-inline-flex();
+				}
+				&:hover,
+				&:focus {
+					background: none;
+					color: $white;
+				}
+			}
+			
+			&.active {
+				& > a {
+					position: relative;
+					z-index: 10;
+					color: $white;
+					background: $primary !important;
+					
+					& i {
+						color: $white;
+						background: none !important;
+					}
+					& .label,
+					& .badge {
+						background: rgba($black, .4);
+					}
+					& .caret {
+						color: $white;
+						opacity: 1;
+					}
+				}
+			}
+			&.menu-control {
+				position: absolute;
+				top: 0;
+				margin: 0;
+				z-index: 10;
+				
+				@include media-breakpoint-down(sm) {
+					display: none !important;
+				}
+				
+				& > a {
+					padding: 0;
+					text-align: center;
+					line-height: $top-menu-height;
+					width: $top-menu-height;
+					height: $top-menu-height;
+					background: $dark;
+					
+					& i {
+						float: none;
+						margin: 0;
+						font-size: rem(18px);
+						display: block;
+						line-height: rem(40px);
+						color: $white;
+						width: auto;
+						height: auto;
+						background: none;
+					}
+					&:hover,
+					&:focus {
+						background: darken($dark, 4%);
+					}
+				}
+				&.menu-control-left {
+					left: rem(-50px);
+					
+					@if $enable-rtl {
+						left: auto;
+						right: rem(-50px);
+					}
+					
+					& > a {
+						@include box-shadow(5px 0 8px -3px rgba($black, .5));
+					}
+					&.show {
+						left: 0;
+						
+						@include animation(topMenuControlSlideInLeft .2s);
+						@if $enable-rtl {
+							right: 0;
+							left: auto;
+							
+							@include animation(topMenuControlSlideInRight .2s);
+						}
+					}
+				}
+				&.menu-control-right {
+					right: rem(-50px);
+					
+					@if $enable-rtl {
+						left: rem(-50px);
+						right: auto;
+					}
+					
+					& > a {
+						@include box-shadow(-5px 0 8px -3px rgba($black, .5));
+					}
+					&.show {
+						right: 0;
+						
+						@include animation(topMenuControlSlideInRight .2s);
+						@if $enable-rtl {
+							left: 0;
+							right: auto;
+							
+							@include animation(topMenuControlSlideInLeft .2s);
+						}
+					}
+				}
+			}
+			&.has-sub {
+				&:hover {
+					& > .sub-menu {
+						@include media-breakpoint-up(md) {
+							display: block;
+						}
+					}
+				}
+			}
+			&:hover,
+			&:focus {
+				& > a {
+					background: none;
+					color: $white;
+				}
+			}
+		}
+		& .caret {
+			display: block;
+			width: rem(20px);
+			height: rem(20px);
+			line-height: rem(20px);
+			text-align: center;
+			font-size: rem(11px);
+			border: none;
+			margin-left: rem(5px);
+			
+			@include fontawesome();
+			@if $enable-rtl {
+				margin-right: rem(5px);
+				margin-left: 0;
+			}
+			@include media-breakpoint-down(sm) {
+				margin-left: auto;
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: auto;
+				}
+			}
+			
+			&:before {
+				content: '\f054';
+				display: block;
+				text-align: center;
+				opacity: 0.5;
+				
+				@include transition(all .2s linear);
+				@include transform(rotate(90deg));
+			}
+		}
+		& .sub-menu {
+			display: none;
+			top: $top-menu-height;
+			background: $dark;
+			list-style-type: none;
+			margin: 0;
+			padding: rem(10px) 0;
+			
+			@include media-breakpoint-up(md) {
+				width: $sidebar-width;
+				position: absolute;
+				left: 0;
+				max-height: calc(100vh - #{$top-menu-height + $header-height});
+				
+				@if $enable-rtl {
+					right: 0;
+					left: auto;
+				}
+			}
+			
+			& > li {
+				& > a {
+					padding: rem(5px) rem(20px);
+					color: rgba($white, .6);
+					text-decoration: none;
+					position: relative;
+					
+					@include display-flex();
+					@include flex-align(center);
+					@include media-breakpoint-down(sm) {
+						padding-left: rem(56px);
+						
+						@if $enable-rtl {
+							padding-left: rem(20px);
+							padding-right: rem(56px);
+						}
+					}
+					
+					& .caret {
+						margin-left: auto;
+						
+						@if $enable-rtl {
+							margin-left: 0;
+							margin-right: auto;
+						}
+					}
+					&:hover,
+					&:focus {
+						color: $white;	
+					}
+				}
+				&.active {
+					& > a {
+						background: $dark-darker;
+						color: $white;
+					}
+				}
+			}
+			& .sub-menu {
+				background: rgba($black, .2);
+				position: relative;
+				left: 0;
+				top: 0;
+				max-height: auto;
+				overflow: initial;
+				
+				@if $enable-rtl {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+}

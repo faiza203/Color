@@ -1,0 +1,127 @@
+body {
+	& .introjs-hint {
+		& .introjs-hint-dot {
+			border-color: rgba($dark, .3);
+		}
+		& .introjs-hint-pulse {
+			background-color: rgba($dark, .15);
+			border-color: rgba($dark, .15);
+		}
+		&:hover {
+			& .introjs-hint-pulse {
+				border-color:rgba($dark, .3);
+				background-color: rgba($dark, .3);
+			}
+		}
+	}
+	& .introjs-overlay {
+		background: $dark;
+	}
+	& .introjs-bullets {
+		& ul {
+			& li {
+				& a {
+					background: lighten($dark, 60%);
+				
+					&.active {
+						background: lighten($dark, 30%);
+					}
+				}
+			}
+		}
+	}
+	& .introjs-helperNumberLayer {
+		font-size: rem(36px);
+		background: none;
+		color: $white;
+		font-family: inherit;
+		border: none;
+		text-shadow: none;
+		padding: 0;
+		text-align: center;
+		width: rem(36px);
+		height: rem(36px);
+		line-height: rem(36px);
+		left: rem(-46px);
+		top: 0;
+		
+		@include box-shadow(none);
+	}
+	& .introjs-helperLayer {
+		border: none;
+		
+		@include border-radius($border-radius);
+		@include box-shadow(none);
+	}
+	& .introjs-tooltip {
+		@include border-radius($border-radius);
+		@include box-shadow(0 4px 16px rgba($black, .15));
+	}
+	& .introjs-button {
+		background: $light;
+		border-color: $light;
+		text-shadow: none;
+		color: $dark;
+	
+		@include box-shadow(none);
+	
+		&:hover,
+		&:focus {
+			background: $border-color;
+			border-color: $border-color;
+			
+			@include box-shadow(none);
+		}
+		&.introjs-nextbutton {
+			border-left-color: $border-color;
+			
+			@if $enable-rtl {
+				border-left: none;
+				border-right-color: $border-color;
+				
+				@include border-radius(0);
+				@include border-top-left-radius($border-radius-sm);
+				@include border-bottom-left-radius($border-radius-sm);
+			}
+		}
+		&.introjs-prevbutton {
+			@if $enable-rtl {
+				@include border-radius(0);
+				@include border-top-right-radius($border-radius-sm);
+				@include border-bottom-right-radius($border-radius-sm);
+			}
+		}
+		&.introjs-disabled,
+		&.introjs-disabled:hover,
+		&.introjs-disabled:focus {
+			color: lighten($dark, 45%);
+			background: $light;
+			border-color: $light;
+		}
+		&.introjs-skipbutton {
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: rem(5px);
+			}
+		}
+	}
+	& .introjs-tooltipbuttons {
+		@include display-flex();
+		@include flex-wrap(wrap);
+		
+		& .introjs-button {
+			&:first-child {
+				@if $enable-rtl {
+					@include border-top-right-radius(2px);
+					@include border-bottom-right-radius(2px);
+				}
+			}
+			&:last-child {
+				@if $enable-rtl {
+					@include border-top-left-radius(2px);
+					@include border-bottom-left-radius(2px);
+				}
+			}
+		}
+	}
+}

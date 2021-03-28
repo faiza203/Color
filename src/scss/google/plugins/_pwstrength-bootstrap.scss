@@ -1,0 +1,11 @@
+.pwstrength-progress {
+	& .progress {
+		height: rem(12px);
+		
+		@include border-radius($border-radius-lg * 10);
+		
+		& .progress-bar {
+			min-width: 10% !important;
+		}
+	}
+}

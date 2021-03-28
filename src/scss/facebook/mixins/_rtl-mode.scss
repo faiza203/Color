@@ -1,0 +1,5 @@
+@mixin rtl-mode() {
+	.rtl-mode & {
+		@content;
+	}
+}

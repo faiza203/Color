@@ -1,0 +1,5 @@
+@mixin flex-wrap($variable: wrap) {
+	-webkit-flex-wrap: $variable;
+	-ms-flex-wrap: $variable;
+	flex-wrap: $variable;
+}

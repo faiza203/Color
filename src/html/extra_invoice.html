@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('./partial/head.html', {"title": "Invoice"})
+</head>
+<body>
+	@@include('./partial/page-loader.html')
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed@@if(context.theme == 'material' || context.theme == 'google') { page-with-wide-sidebar}@@if(context.theme == 'google') { page-with-light-sidebar}">
+		@@include('./partial/header.html')
+		
+		@@include('./partial/sidebar.html', {"extraClass": "active", "extraInvoiceClass": "active"})
+		
+		<!-- begin #content -->
+		<div id="content" class="content">
+			<!-- begin breadcrumb -->
+			<ol class="breadcrumb hidden-print float-xl-right">
+				<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+				<li class="breadcrumb-item active">Invoice</li>
+			</ol>
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header hidden-print">Invoice <small>header small text goes here...</small></h1>
+			<!-- end page-header -->
+			<!-- begin invoice -->
+			<div class="invoice">
+				<!-- begin invoice-company -->
+				<div class="invoice-company">
+					<span class="pull-right hidden-print">
+						<a href="javascript:;" class="btn btn-sm btn-white m-b-10"><i class="fa fa-file-pdf t-plus-1 text-danger fa-fw fa-lg"></i> Export as PDF</a>
+						<a href="javascript:;" onclick="window.print()" class="btn btn-sm btn-white m-b-10"><i class="fa fa-print t-plus-1 fa-fw fa-lg"></i> Print</a>
+					</span>
+					Company Name, Inc
+				</div>
+				<!-- end invoice-company -->
+				<!-- begin invoice-header -->
+				<div class="invoice-header">
+					<div class="invoice-from">
+						<small>from</small>
+						<address class="m-t-5 m-b-5">
+							<strong class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">Twitter, Inc.</strong><br />
+							Street Address<br />
+							City, Zip Code<br />
+							Phone: (123) 456-7890<br />
+							Fax: (123) 456-7890
+						</address>
+					</div>
+					<div class="invoice-to">
+						<small>to</small>
+						<address class="m-t-5 m-b-5">
+							<strong class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">Company Name</strong><br />
+							Street Address<br />
+							City, Zip Code<br />
+							Phone: (123) 456-7890<br />
+							Fax: (123) 456-7890
+						</address>
+					</div>
+					<div class="invoice-date">
+						<small>Invoice / July period</small>
+						<div class="date @@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white} m-t-5">August 3,2012</div>
+						<div class="invoice-detail">
+							#0000123DSS<br />
+							Services Product
+						</div>
+					</div>
+				</div>
+				<!-- end invoice-header -->
+				<!-- begin invoice-content -->
+				<div class="invoice-content">
+					<!-- begin table-responsive -->
+					<div class="table-responsive">
+						<table class="table table-invoice">
+							<thead>
+								<tr>
+									<th>TASK DESCRIPTION</th>
+									<th class="text-center" width="10%">RATE</th>
+									<th class="text-center" width="10%">HOURS</th>
+									<th class="text-right" width="20%">LINE TOTAL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<span class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">Website design &amp; development</span><br />
+										<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
+									</td>
+									<td class="text-center">$50.00</td>
+									<td class="text-center">50</td>
+									<td class="text-right">$2,500.00</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">Branding</span><br />
+										<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
+									</td>
+									<td class="text-center">$50.00</td>
+									<td class="text-center">40</td>
+									<td class="text-right">$2,000.00</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">Redesign Service</span><br />
+										<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id sagittis arcu.</small>
+									</td>
+									<td class="text-center">$50.00</td>
+									<td class="text-center">50</td>
+									<td class="text-right">$2,500.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end table-responsive -->
+					<!-- begin invoice-price -->
+					<div class="invoice-price">
+						<div class="invoice-price-left">
+							<div class="invoice-price-row">
+								<div class="sub-price">
+									<small>SUBTOTAL</small>
+									<span class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">$4,500.00</span>
+								</div>
+								<div class="sub-price">
+									<i class="fa fa-plus text-muted"></i>
+								</div>
+								<div class="sub-price">
+									<small>PAYPAL FEE (5.4%)</small>
+									<span class="@@if(context.theme != 'transparent'){text-inverse}@@if(context.theme == 'transparent'){text-white}">$108.00</span>
+								</div>
+							</div>
+						</div>
+						<div class="invoice-price-right">
+							<small>TOTAL</small> <span class="f-w-600">$4508.00</span>
+						</div>
+					</div>
+					<!-- end invoice-price -->
+				</div>
+				<!-- end invoice-content -->
+				<!-- begin invoice-note -->
+				<div class="invoice-note">
+					* Make all cheques payable to [Your Company Name]<br />
+					* Payment is due within 30 days<br />
+					* If you have any questions concerning this invoice, contact  [Name, Phone Number, Email]
+				</div>
+				<!-- end invoice-note -->
+				<!-- begin invoice-footer -->
+				<div class="invoice-footer">
+					<p class="text-center m-b-5 f-w-600">
+						THANK YOU FOR YOUR BUSINESS
+					</p>
+					<p class="text-center">
+						<span class="m-r-10"><i class="fa fa-fw fa-lg fa-globe"></i> matiasgallipoli.com</span>
+						<span class="m-r-10"><i class="fa fa-fw fa-lg fa-phone-volume"></i> T:016-18192302</span>
+						<span class="m-r-10"><i class="fa fa-fw fa-lg fa-envelope"></i> rtiemps@gmail.com</span>
+					</p>
+				</div>
+				<!-- end invoice-footer -->
+			</div>
+			<!-- end invoice -->
+		</div>
+		<!-- end #content -->
+		
+		@@include('./partial/theme-panel.html')
+		
+		@@include('./partial/scroll-top-btn.html')
+	</div>
+	<!-- end page container -->
+	
+	@@include('./partial/script.html')
+</body>
+</html>

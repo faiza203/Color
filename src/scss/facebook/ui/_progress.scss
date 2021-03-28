@@ -1,0 +1,26 @@
+.progress {
+	& .progress-bar {
+		font-weight: 600;
+	}
+	&.progress-xs { 
+		height: rem(5px);
+		
+		& .progress-bar {
+			line-height: rem(5px);
+		}
+	}
+	&.progress-sm { 
+		height: rem(10px);
+		
+		& .progress-bar {
+			line-height: rem(10px);
+		}
+	}
+	&.progress-lg { 
+		height: rem(30px);
+		
+		& .progress-bar {
+			line-height: rem(30px);
+		}
+	}
+}

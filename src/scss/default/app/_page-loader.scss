@@ -1,0 +1,23 @@
+#page-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: $body-bg;
+	z-index: $page-loader-zindex;
+	
+	&.fade {
+		display: none;
+		
+		&.in,
+		&.show {
+			display: block;
+		}
+		&.d-none {
+			& .spinner {
+				@include animation(none);
+			}
+		}
+	}
+}

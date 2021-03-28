@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include('./partial/head.html', {"title": "404 Error Page"})
+</head>
+<body class="pace-top">
+	@@include('./partial/page-loader.html', {"withoutCover": "true"})
+	
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade">
+		<!-- begin error -->
+		<div class="error">
+			<div class="error-code">404</div>
+			<div class="error-content">
+				<div class="error-message">We couldn't find it...</div>
+				<div class="error-desc mb-3 mb-sm-4 mb-md-5">
+					The page you're looking for doesn't exist. <br />
+					Perhaps, there pages will help find what you're looking for.
+				</div>
+				<div>
+					<a href="index.html" class="btn btn-success p-l-20 p-r-20">Go Home</a>
+				</div>
+			</div>
+		</div>
+		<!-- end error -->
+		
+		@@include('./partial/theme-panel.html')
+		
+		@@include('./partial/scroll-top-btn.html')
+	</div>
+	<!-- end page container -->
+	
+	@@include('./partial/script.html')
+</body>
+</html>
