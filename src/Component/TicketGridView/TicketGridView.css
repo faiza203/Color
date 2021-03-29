@@ -1,0 +1,5 @@
+.ticketGridView_handleOverFlow {
+  position: absolute;
+  height: 40em;
+  overflow: scroll;
+}

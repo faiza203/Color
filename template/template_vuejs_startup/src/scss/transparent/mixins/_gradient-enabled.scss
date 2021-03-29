@@ -1,5 +1,0 @@
-@mixin gradient-enabled() {
-	.gradient-enabled & {
-		@content;
-	}
-}
