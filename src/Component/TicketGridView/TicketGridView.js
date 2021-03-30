@@ -21,7 +21,7 @@ class TicketGridView extends React.Component {
   render() {
     const { tickets } = this.state;
     return (
-      <div>
+      <div className="TicketCardsHo">
         {tickets.map((i) => (
           <TicketsInGrid key={i} />
         ))}
