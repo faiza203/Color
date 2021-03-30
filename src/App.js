@@ -10,6 +10,8 @@ import {
 } from "reactstrap";
 import "./App.css";
 
+import { dragOver, dragStart, dropOver, dropStart } from "./DragAndDrop";
+
 class Bootstrap4 extends React.Component {
   constructor(props) {
     super(props);
@@ -23,12 +25,12 @@ class Bootstrap4 extends React.Component {
   }
   changeVisibility = (number) => {
     const AllTicketsD = document.querySelectorAll(".ticketsD");
-    const ticketsD = AllTicketsD[number]
+    const ticketsD = AllTicketsD[number];
     ticketsD.classList.forEach((classname) => {
-        classname === "false"
-          ? ticketsD.classList.remove("false")
-          : ticketsD.classList.add("false");
-      });
+      classname === "false"
+        ? ticketsD.classList.remove("false")
+        : ticketsD.classList.add("false");
+    });
   };
 
   toggleTab1(tab) {
@@ -139,7 +141,7 @@ class Bootstrap4 extends React.Component {
               </button>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card " id="card1" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -290,7 +292,7 @@ class Bootstrap4 extends React.Component {
               </Card>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card2" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -441,7 +443,7 @@ class Bootstrap4 extends React.Component {
               </Card>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card3" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -656,7 +658,7 @@ class Bootstrap4 extends React.Component {
               </button>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card " id="card4" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -871,7 +873,7 @@ class Bootstrap4 extends React.Component {
               </button>
             </div>{" "}
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card5" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -1022,7 +1024,7 @@ class Bootstrap4 extends React.Component {
               </Card>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card6" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -1237,7 +1239,7 @@ class Bootstrap4 extends React.Component {
               </button>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card7" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -1388,7 +1390,7 @@ class Bootstrap4 extends React.Component {
               </Card>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card8" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
@@ -1539,7 +1541,7 @@ class Bootstrap4 extends React.Component {
               </Card>
             </div>
             <div className="mb-2 mt-2 ticketCardWidth">
-              <Card className="border-0 m-t-0 card ">
+              <Card className="border-0 m-t-0 card "  id="card9" draggable={true} onDragStart={dragStart} onDragEnd={dragOver}>
                 <CardBody>
                   <CardTitle tag="h4" className="title m-t-0">
                     Ticket title
