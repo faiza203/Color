@@ -8,10 +8,15 @@
   width: 20em;
 }
 
+.card-footer{
+  padding:  2em;
+}
+
 .card{
-  width: 20rem;
+  width: 23rem;
 }
 
 .card-link button{
   margin: 0;
+  padding: 5px 7px;
 }
