@@ -138,3 +138,46 @@
 .ticketsD:nth-child(0) {
   background-color: gray !important;
 }
+
+li a {
+  font-size: 10px;
+}
+
+
+.btn-green , .btn-red , .btn-lime ,.btn-purple , .btn-orange , .btn-indigo , .btn-gray{
+  color: #ffff;
+}
+.btn-green {
+  background-color: #32a932;
+  border-color: #32a932;
+}
+
+.btn-red {
+  background-color: #ff5b57;
+  border-color: #ff5b57;
+}
+
+.btn-lime {
+  background-color: #90ca4b;
+  border-color: #90ca4b;
+}
+
+.btn-purple {
+  background-color: #727cb6;
+  border-color: #727cb6;
+}
+
+.btn-orange {
+  background-color: #f59c1a;
+  border-color: #f59c1a;
+}
+
+.btn-indigo {
+  background-color: #8753de;
+  border-color: #8753de;
+}
+
+.btn-gray {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
