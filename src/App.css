@@ -8,8 +8,8 @@
   color: #000;
 }
 
-.breadcrumb{
-    margin-bottom: 0;
+.breadcrumb {
+  margin-bottom: 0;
 }
 
 .breadcrumb-item {
@@ -25,11 +25,6 @@
   color: #6c757d;
 }
 
-.card-body:hover {
-  transform: scale(1.1);
-  padding: 15px 25px;
-}
-
 .btn-white {
   color: #2d353c;
   border-color: #d5dbe0;
@@ -40,14 +35,7 @@
 .btn-white.active {
   background-color: #d5dbe0 !important;
 }
-
-.ticketGridView_handleOverFlow {
-  position: absolute;
-  height: 40em;
-  overflow: scroll;
-}
-
-.TicketCardsHo{
+.TicketCardsHo {
   position: absolute;
   height: 80em;
   display: flex;
@@ -64,18 +52,24 @@
   border-radius: 5px;
 }
 .ticketCardWidth {
-  width: 35em;
-  background-color: red;
   padding: 2em;
+  margin: 0 !important;
+  width: 100%;
 }
 
 .card-footer {
-  padding: 2em;
+  padding: 2em 5px;
 }
 
 .card-link button {
   margin: 0;
-  padding: 5px 7px;
+  padding: 1px 3px;
+  font-size: 10px;
+}
+
+.card-link button a,
+.card-link button span {
+  background-color: #00acac;
 }
 
 .m-b-0 {
@@ -121,9 +115,26 @@
   border-color: #f2f3f4;
 }
 
-.card.true {
+.ticketsD.true .ticketCardWidth {
   visibility: visible;
 }
-.card.false {
+.ticketsD.false .ticketCardWidth {
   visibility: hidden;
+}
+
+.tickets {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.ticketsD {
+  display: flex;
+  flex-direction: column;
+  height: 80em;
+  position: relative;
+  overflow-y: scroll;
+}
+.ticketsD:nth-child(0) {
+  background-color: gray !important;
 }
