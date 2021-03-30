@@ -21,7 +21,7 @@ class TicketGridView extends React.Component {
   render() {
     const { tickets } = this.state;
     return (
-      <div className="d-flex flex-row ticketGridView_handleOverFlow">
+      <div>
         {tickets.map((i) => (
           <TicketsInGrid key={i} />
         ))}

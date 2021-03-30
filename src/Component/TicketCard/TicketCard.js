@@ -27,7 +27,7 @@ class TicketCard extends React.Component {
       <div className="mb-2 mt-2 ticketCardWidth">
         <Card className="border-0 " >
           <CardBody>
-            <CardTitle tag="h4" className="m-t-0">
+            <CardTitle tag="h4" className="title m-t-0">
               Ticket title
             </CardTitle>
             <CardSubtitle className="m-b-10 text-muted">
@@ -116,8 +116,7 @@ class TicketCard extends React.Component {
                   type="button"
                   className="btn btn-purple btn-xs m-r-5 m-b-5"
                 >
-                  <i className="ion-md-share"></i>
-                </button>
+<span class="iconify" data-icon="ion-md-share" data-inline="false"></span>                </button>
               </Link>
               <Link to="/bootstrap-4" className="card-link" title="save as PDF">
                 <button

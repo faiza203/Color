@@ -1,3 +1,17 @@
+.title {
+  color: #000;
+  margin-bottom: 15px !important;
+  font-size: 18px;
+  font-weight: 530;
+}
 .ticketCardWidth {
   width: 20em;
+}
+
+.card{
+  width: 20rem;
+}
+
+.card-link button{
+  margin: 0;
 }
