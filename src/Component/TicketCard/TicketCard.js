@@ -25,7 +25,32 @@ class TicketCard extends React.Component {
   render() {
     return (
       <div className="mb-2 mt-2 ticketCardWidth">
-        <Card className="border-0 " >
+        <div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">
+                Action
+              </a>
+              <a class="dropdown-item" href="#">
+                Another action
+              </a>
+              <a class="dropdown-item" href="#">
+                Something else here
+              </a>
+            </div>
+          </div>
+        </div>
+        <Card className="border-0 ">
           <CardBody>
             <CardTitle tag="h4" className="title m-t-0">
               Ticket title
@@ -116,7 +141,12 @@ class TicketCard extends React.Component {
                   type="button"
                   className="btn btn-purple btn-xs m-r-5 m-b-5"
                 >
-<span class="iconify" data-icon="ion-md-share" data-inline="false"></span>                </button>
+                  <span
+                    class="iconify"
+                    data-icon="ion-md-share"
+                    data-inline="false"
+                  ></span>{" "}
+                </button>
               </Link>
               <Link to="/bootstrap-4" className="card-link" title="save as PDF">
                 <button

@@ -9,7 +9,7 @@ class TicketsInGrid extends React.Component {
 
   componentDidMount() {
     let tickets = [];
-    for (let index = 0; index < 30; index++) {
+    for (let index = 0; index < 1; index++) {
       tickets.push(index);
     }
     this.setState({
@@ -19,7 +19,7 @@ class TicketsInGrid extends React.Component {
   render() {
     const { tickets } = this.state;
     return (
-      <div className="d-flex flex-column border overflow-scroll bg-primary">
+      <div>
         {tickets.map((i) => (
           <TicketCard key={i} className=" bg-primary" />
         ))}

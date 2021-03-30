@@ -11,7 +11,7 @@ class TicketGridView extends React.Component {
 
   componentDidMount() {
     let tickets = [];
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 5; index++) {
       tickets.push(index);
     }
     this.setState({
