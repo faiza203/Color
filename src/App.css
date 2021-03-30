@@ -1,4 +1,42 @@
-.card-body:hover{
-transform: scale(1.1);
-padding: 15px 25px;
+.page-header {
+  font-size: 24px;
+  margin: 0 0 15px;
+  padding: 0;
+  border: none;
+  line-height: 32px;
+  font-weight: 450;
+  color: #000;
+}
+
+.breadcrumb{
+    margin-bottom: 0;
+}
+
+.breadcrumb-item {
+  line-height: 32px;
+}
+.breadcrumb-item a {
+  color: #2d353c;
+  text-decoration: none !important;
+  background-color: transparent;
+}
+
+.breadcrumb-item:active {
+  color: #6c757d;
+}
+
+.card-body:hover {
+  transform: scale(1.1);
+  padding: 15px 25px;
+}
+
+.btn-white {
+  color: #2d353c;
+  border-color: #d5dbe0;
+  background-color: #ffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.btn-white.active {
+  background-color: #d5dbe0 !important;
 }

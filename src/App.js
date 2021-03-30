@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-
+import "./App.css"
 import TicketGridView from "./Component/TicketGridView/TicketGridView";
 
 class Bootstrap4 extends React.Component {
@@ -33,7 +33,7 @@ class Bootstrap4 extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="m-3">
         <ol className="breadcrumb float-xl-right">
           <li className="breadcrumb-item">
             <Router>
@@ -56,6 +56,7 @@ class Bootstrap4 extends React.Component {
               <i className="far fa-trash-alt"></i>
             </button>
           </div>
+		  <p className="m-b-20"></p>
         </div>
         <TicketGridView />
       </div>
