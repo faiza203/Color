@@ -3,20 +3,71 @@
   margin-bottom: 15px !important;
   font-size: 18px;
   font-weight: 530;
+  background: #c7c7c7;
+  padding: 7px;
+  border-radius: 5px;
 }
 .ticketCardWidth {
-  width: 32em;
+  width: 35em;
+  background-color: red;
+  padding: 2em;
 }
 
-.card-footer{
-  padding:  2em;
+.card-footer {
+  padding: 2em;
 }
 
-.card{
-  width: 23rem;
-}
-
-.card-link button{
+.card-link button {
   margin: 0;
   padding: 5px 7px;
+}
+
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.actions {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.actions p {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.min {
+  width: 1.7em;
+  height: 1.7em;
+  margin: 0 0.5em;
+  background: orange !important;
+  border-radius: 50%;
+  border: none;
+}
+
+.drpdwn {
+  border-radius: 5px;
+  line-height: 1;
+  background: #f2f3f4;
+  color: black;
+  height: 2.5em;
+}
+
+.dropdown-toggle {
+  border-radius: 0;
+  line-height: 1;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #f2f3f4;
+  border-color: #f2f3f4;
+}
+
+.card.true {
+  visibility: visible;
+}
+.card.false {
+  visibility: hidden;
 }
