@@ -87,10 +87,20 @@ const Filter = () => {
           </ul>
         </div>
         <button className="btn btn-light">
-          {day.getDate() + "-" + day.getMonth() + "-" + day.getFullYear()}
+          {day.getDate() + " " + day.getMonth() + "," + day.getFullYear()}
         </button>
       </div>
-      <div></div>
+      <div className="d-flex search">
+        <input
+          className="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
     </div>
   );
 };

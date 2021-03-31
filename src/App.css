@@ -229,7 +229,7 @@ li a {
   font-weight: 600;
   height: 3.5em;
   padding: 1em 2.5em;
-  margin: 0 2em;
+  margin: 0 5px;
 }
 
 .btn-danger {
@@ -241,4 +241,15 @@ li a {
   background-color: #49b6d6 !important;
   border-radius: 0;
   border: #49b6d6;
+}
+
+
+.filters{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.search{
+  flex-direction: row;
 }
