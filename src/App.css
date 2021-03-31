@@ -12,6 +12,10 @@
   margin-bottom: 0;
 }
 
+.card-body {
+  padding: 0 !important;
+}
+
 .breadcrumb-item {
   line-height: 32px;
 }
@@ -48,13 +52,16 @@
   font-size: 18px;
   font-weight: 530;
   background: #c7c7c7;
-  padding: 7px;
-  border-radius: 5px;
+  padding: 10px 7px 7px 7px;
 }
 .ticketCardWidth {
-  padding: 2em;
+  width: 24em;
+  padding: 10px;
   margin: 0 !important;
-  width: 100%;
+}
+
+.card-subtitle{
+  margin-left: 7px;
 }
 
 .card-footer {
@@ -63,7 +70,7 @@
 
 .card-link button {
   margin: 0;
-  padding: 1px 3px;
+  padding: 3px 5px;
   font-size: 10px;
 }
 
@@ -81,6 +88,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin: 0;
+  padding: 10px;
 }
 .actions p {
   font-size: 12px;
@@ -126,25 +135,57 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-.ticketsD {
+.cards {
   display: flex;
   flex-direction: column;
-  height: 80em;
+  height: 60em;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
-.ticketsD:nth-child(0) {
-  background-color: gray !important;
+.ticketsD.t1 {
+  background-color: #efefef;
+}
+.ticketsD.t1  .actions{
+  background-color: #efefef;
+}
+.ticketsD.t2 {
+  background-color: #ff6fff;
+}
+
+.ticketsD.t2 .actions {
+  background-color: #ff00ff;
+}
+
+.ticketsD.t3 {
+  background-color: #ffff6f;
+}
+
+.ticketsD.t3 .actions {
+  background-color: #ff0;
+}
+
+.ticketsD.t4 {
+  background-color: #c7dff6;
+}
+
+.ticketsD.t4 .actions {
+  background-color: #9cc6ef;
 }
 
 li a {
   font-size: 10px;
 }
 
-
-.btn-green , .btn-red , .btn-lime ,.btn-purple , .btn-orange , .btn-indigo , .btn-gray{
+.btn-green,
+.btn-red,
+.btn-lime,
+.btn-purple,
+.btn-orange,
+.btn-indigo,
+.btn-gray {
   color: #ffff;
 }
 .btn-green {
