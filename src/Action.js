@@ -27,7 +27,7 @@ const Actions = ({ actionN, backgroundC }) => {
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
               <a className="dropdown-item" href="#">
-                <i class="fa fa-save"></i> Save
+                <i className="fa fa-save"></i> Save
               </a>
             </li>
             <li>
@@ -47,12 +47,12 @@ const Actions = ({ actionN, backgroundC }) => {
             </li>
             <li>
               <a className="dropdown-item" href="#">
-                <i class="fas fa-ticket-alt"></i> Add Card
+                <i className="fas fa-ticket-alt"></i> Add Card
               </a>
             </li>
             <li>
               <a className="dropdown-item" href="#">
-                <i class="fa fa-comment"></i> Comments
+                <i className="fa fa-comment"></i> Comments
               </a>
             </li>
             <li>

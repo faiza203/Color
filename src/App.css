@@ -60,7 +60,7 @@
   margin: 0 !important;
 }
 
-.card-subtitle{
+.card-subtitle {
   margin-left: 7px;
 }
 
@@ -136,6 +136,7 @@
   flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
+  margin-top: 5em;
 }
 
 .cards {
@@ -148,7 +149,7 @@
 .ticketsD.t1 {
   background-color: #efefef;
 }
-.ticketsD.t1  .actions{
+.ticketsD.t1 .actions {
   background-color: #efefef;
 }
 .ticketsD.t2 {
@@ -221,4 +222,23 @@ li a {
 .btn-gray {
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+.filters button {
+  font-size: 10px;
+  font-weight: 600;
+  height: 3.5em;
+  padding: 1em 2.5em;
+  margin: 0 2em;
+}
+
+.btn-danger {
+  background-color: red !important;
+  border-radius: 0;
+  border: red;
+}
+.btn-primary {
+  background-color: #49b6d6 !important;
+  border-radius: 0;
+  border: #49b6d6;
 }

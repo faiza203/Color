@@ -1,68 +1,94 @@
+const day = new Date();
+
 const Filter = () => {
   return (
-    <div>
+    <div className="filters">
       <div className="d-flex">
-        <button className="btn btn-light">Add List</button>
+        <button className="btn btn-light addList">Add List</button>
         <div className="dropdown">
           <button
             className="btn btn-primary dropdown-toggle"
             type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Show All
           </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">
-              Show All
-            </a>
-            <a className="dropdown-item divider" href="#"></a>
-            <a className="dropdown-item" href="#">
-              Open Hold
-            </a>
-            <a className="dropdown-item" href="#">
-              Solved
-            </a>
-            <a className="dropdown-item" href="#">
-              Closed
-            </a>
-            <a className="dropdown-item" href="#">
-              Re-open
-            </a>
-          </div>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a className="dropdown-item" href="#">
+                Show All
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Open
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                On Hold
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Solved
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Closed
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Re-open
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="dropdown">
           <button
             className="btn btn-danger dropdown-toggle"
             type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Show All
           </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">
-              Show All
-            </a>
-            <a className="dropdown-item divider" href="#"></a>
-            <a className="dropdown-item" href="#">
-              Urgent
-            </a>
-            <a className="dropdown-item" href="#">
-              High
-            </a>
-            <a className="dropdown-item" href="#">
-              Normal
-            </a>
-            <a className="dropdown-item" href="#">
-              Low
-            </a>
-          </div>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a className="dropdown-item" href="#">
+                Show All
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Urgent
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Hight
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Normal
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Low
+              </a>
+            </li>
+          </ul>
         </div>
+        <button className="btn btn-light">
+          {day.getDate() + "-" + day.getMonth() + "-" + day.getFullYear()}
+        </button>
       </div>
       <div></div>
     </div>
