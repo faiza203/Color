@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import { dragOver, dragStart, dropOver, dropStart } from "./DragAndDrop";
 
-export const TicketCard = () => {
+const TicketCard = () => {
   return (
     <div className="mb-2 mt-2 ticketCardWidth">
       <Card
@@ -32,13 +32,19 @@ export const TicketCard = () => {
               }}
             ></div>
           </CardSubtitle>
-          <CardSubtitle className="m-b-10 text-muted">Status</CardSubtitle>
-          <CardSubtitle className="m-b-10 text-muted">Priority</CardSubtitle>
+          <CardSubtitle className="m-b-10 text-muted">
+            Created on: 0000-00-00 00:00:00
+          </CardSubtitle>
+          <CardSubtitle className="m-b-10 text-muted">
+            Deadline on: 0000-00-00 00:00:00
+          </CardSubtitle>
           <CardSubtitle className="m-b-10 text-muted">Created on</CardSubtitle>
           <CardSubtitle className="m-b-10 text-muted">Deadline</CardSubtitle>
-          <CardSubtitle className="m-b-10 text-muted">Catergory</CardSubtitle>
           <CardSubtitle className="m-b-10 text-muted">
-            Assigned To
+            Assigned To:
+          </CardSubtitle>
+          <CardSubtitle className="m-b-10 text-muted">
+            Tickets-todo card adding
             <div className="d-flex">
               <div
                 className="widget-img widget-img-xs rounded-circle bg-inverse mr-n2"
@@ -131,3 +137,5 @@ export const TicketCard = () => {
     </div>
   );
 };
+
+export default TicketCard;

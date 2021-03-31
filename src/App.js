@@ -3,8 +3,9 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
 
-import { TicketCard } from "./Card";
-import { Actions } from "./Action";
+import TicketCard from "./Card";
+import Actions from "./Action";
+import Filter from "./Filters";
 
 class Bootstrap4 extends React.Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class Bootstrap4 extends React.Component {
           <p className="m-b-20"></p>
         </div>
         <div className="scroll">
+          <Filter />
           <div className="tickets">
             <div className="ticketsD t1">
               <Actions actionN={0} backgroundC="#efefef" />

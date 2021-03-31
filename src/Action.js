@@ -1,4 +1,4 @@
-export const Actions = ({ actionN, backgroundC }) => {
+const Actions = ({ actionN, backgroundC }) => {
   const changeVisibility = (number) => {
     const AllTicketsD = document.querySelectorAll(".ticketsD");
     const ticketsD = AllTicketsD[number];
@@ -27,7 +27,7 @@ export const Actions = ({ actionN, backgroundC }) => {
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
               <a className="dropdown-item" href="#">
-                <i className="far fa-eye"></i> View
+                <i class="fa fa-save"></i> Save
               </a>
             </li>
             <li>
@@ -37,17 +37,22 @@ export const Actions = ({ actionN, backgroundC }) => {
             </li>
             <li>
               <a className="dropdown-item" href="#">
-                <i className="far fa-comments"></i> Comment
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                <i className="far fa-file-pdf"></i> Download
+                <i className="far fa-trash-alt"></i> Edit
               </a>
             </li>
             <li>
               <a className="dropdown-item" href="#">
                 <i className="fas fa-print"></i> Print
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                <i class="fas fa-ticket-alt"></i> Add Card
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                <i class="fa fa-comment"></i> Comments
               </a>
             </li>
             <li>
@@ -74,3 +79,5 @@ export const Actions = ({ actionN, backgroundC }) => {
     </div>
   );
 };
+
+export default Actions;
