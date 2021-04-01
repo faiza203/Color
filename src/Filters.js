@@ -98,7 +98,7 @@ const Filter = () => {
           aria-label="Search"
         />
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-          <i class="fa fa-search"></i>
+          <i className="fa fa-search"></i>
         </button>
       </div>
     </div>

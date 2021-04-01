@@ -8,6 +8,8 @@
   color: #000;
 }
 
+
+
 .breadcrumb {
   margin-bottom: 0;
 }
@@ -138,6 +140,12 @@
   overflow-y: hidden;
   margin-top: 5em;
 }
+
+
+.ticketsD{
+  width:  25em !important;
+}
+
 
 .cards {
   display: flex;

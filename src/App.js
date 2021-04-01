@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
@@ -7,96 +8,156 @@ import TicketCard from "./Card";
 import Actions from "./Action";
 import Filter from "./Filters";
 
-class Bootstrap4 extends React.Component {
-  constructor(props) {
-    super(props);
+import uuid from "uuid/v4";
 
-    this.toggleTab1 = this.toggleTab1.bind(this);
-    this.toggleTab2 = this.toggleTab2.bind(this);
-    this.state = {
-      activeTab1: "1",
-      activeTab2: "1",
-    };
+const itemsFromBackend = [
+  { id: uuid(), content: "First task" },
+  { id: uuid(), content: "Second task" },
+  { id: uuid(), content: "Third task" },
+  { id: uuid(), content: "Fourth task" },
+  { id: uuid(), content: "Fifth task" },
+];
+
+const columnsFromBackend = {
+  [uuid()]: {
+    name: "Requested",
+    items: itemsFromBackend,
+    classN: "t1",
+  },
+  [uuid()]: {
+    name: "To do",
+    items: [],
+    classN: "t2",
+  },
+  [uuid()]: {
+    name: "In Progress",
+    items: [],
+    classN: "t3",
+  },
+  [uuid()]: {
+    name: "Done",
+    items: [],
+    classN: "t4",
+  },
+};
+
+const onDragEnd = (result, columns, setColumns) => {
+  if (!result.destination) return;
+  const { source, destination } = result;
+
+  if (source.droppableId !== destination.droppableId) {
+    const sourceColumn = columns[source.droppableId];
+    const destColumn = columns[destination.droppableId];
+    const sourceItems = [...sourceColumn.items];
+    const destItems = [...destColumn.items];
+    const [removed] = sourceItems.splice(source.index, 1);
+    destItems.splice(destination.index, 0, removed);
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...sourceColumn,
+        items: sourceItems,
+      },
+      [destination.droppableId]: {
+        ...destColumn,
+        items: destItems,
+      },
+    });
+  } else {
+    const column = columns[source.droppableId];
+    const copiedItems = [...column.items];
+    const [removed] = copiedItems.splice(source.index, 1);
+    copiedItems.splice(destination.index, 0, removed);
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...column,
+        items: copiedItems,
+      },
+    });
   }
-  toggleTab1(tab) {
-    if (this.state.activeTab1 !== tab) {
-      this.setState({
-        activeTab1: tab,
-      });
-    }
-  }
+};
+function Bootstrap4() {
+  const [columns, setColumns] = useState(columnsFromBackend);
 
-  toggleTab2(tab) {
-    if (this.state.activeTab2 !== tab) {
-      this.setState({
-        activeTab2: tab,
-      });
-    }
-  }
+  return (
+    <div className="m-3">
+      <ol className="breadcrumb float-xl-right">
+        <li className="breadcrumb-item">
+          <Router>
+            <Link to="/bootstrap-4">Home</Link>
+          </Router>
+        </li>
+        <li className="breadcrumb-item active">Tickets</li>
+      </ol>
+      <h1 className="page-header m-b-10">Gridview of Tickets</h1>
 
-  render() {
-    return (
-      <div className="m-3">
-        <ol className="breadcrumb float-xl-right">
-          <li className="breadcrumb-item">
-            <Router>
-              <Link to="/bootstrap-4">Home</Link>
-            </Router>
-          </li>
-          <li className="breadcrumb-item active">Tickets</li>
-        </ol>
-        <h1 className="page-header m-b-10">Gridview of Tickets</h1>
-
-        <div className="panel-toolbar">
-          <div className="btn-group m-r-5">
-            <button className="btn btn-white">
-              <i className="fa fa-plus"></i> Ticket
-            </button>
-            <button className="btn btn-white active">
-              <i className="fa fa-edit"></i>
-            </button>
-            <button className="btn btn-white">
-              <i className="far fa-trash-alt"></i>
-            </button>
-          </div>
-          <p className="m-b-20"></p>
+      <div className="panel-toolbar">
+        <div className="btn-group m-r-5">
+          <button className="btn btn-white">
+            <i className="fa fa-plus"></i> Ticket
+          </button>
+          <button className="btn btn-white active">
+            <i className="fa fa-edit"></i>
+          </button>
+          <button className="btn btn-white">
+            <i className="far fa-trash-alt"></i>
+          </button>
         </div>
-        <div className="scroll">
-          <Filter />
-          <div className="tickets">
-            <div className="ticketsD t1">
-              <Actions actionN={0} backgroundC="#efefef" />
-              <div className="cards">
-                <TicketCard />
-                <TicketCard />
-                <TicketCard />
-              </div>
-            </div>
-            <div className="ticketsD t2">
-              <Actions actionN={1} backgroundC="#ff6fff" />
-              <div className="cards">
-                <TicketCard />
-                <TicketCard />
-              </div>
-            </div>
-            <div className="ticketsD t3">
-              <Actions actionN={2} backgroundC="#ffff6f" />
-              <div className="cards">
-                <TicketCard />
-              </div>
-            </div>
-            <div className="ticketsD t4">
-              <Actions actionN={3} backgroundC="#c7dff6" />
-              <div className="cards">
-                <TicketCard />
-                <TicketCard />
-              </div>
-            </div>
-          </div>
+        <p className="m-b-20"></p>
+      </div>
+      <div className="scroll">
+        <Filter />
+        <div className="tickets">
+          <DragDropContext
+            onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
+          >
+            {Object.entries(columns).map(([columnId, column], index) => {
+              return (
+                <div className={`ticketsD ${column.classN}`}>
+                  <Droppable droppableId={columnId} key={columnId}>
+                    {(provided, snapshot) => {
+                      return (
+                        <div
+                          {...provided.droppableProps}
+                          ref={provided.innerRef}
+                        >
+                          <Actions />
+
+                          {column.items.map((item, index) => {
+                            return (
+                              <Draggable
+                                key={item.id}
+                                draggableId={item.id}
+                                index={index}
+                              >
+                                {(provided, snapshot) => {
+                                  return (
+                                    <div
+                                      ref={provided.innerRef}
+                                      {...provided.draggableProps}
+                                      {...provided.dragHandleProps}
+                                    >
+                                      <TicketCard />
+                                    </div>
+                                  );
+                                }}
+                              </Draggable>
+                            );
+                          })}
+                          {provided.placeholder}
+                        </div>
+                      );
+                    }}
+                  </Droppable>
+                </div>
+              );
+            })}
+          </DragDropContext>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Bootstrap4;
