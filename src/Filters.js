@@ -1,6 +1,7 @@
+import React,{Component} from "react";
 const day = new Date();
 
-const Filter = () => {
+const Filter = (props) => {
   return (
     <div className="filters">
       <div className="d-flex">

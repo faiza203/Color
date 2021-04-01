@@ -1,43 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
 
-import TicketCard from "./Card";
-import Actions from "./Action";
-import Filter from "./Filters";
+import TicketCard from "./card";
+import Actions from "./action";
+import Filter from "./filters";
 
-import uuid from "uuid/v4";
 
 const itemsFromBackend = [
-  { id: uuid(), content: "First task" },
-  { id: uuid(), content: "Second task" },
-  { id: uuid(), content: "Third task" },
-  { id: uuid(), content: "Fourth task" },
-  { id: uuid(), content: "Fifth task" },
-  { id: uuid(), content: "Six task" },
-  { id: uuid(), content: "Seven task" },
-  { id: uuid(), content: "Eight task" },
+  { id: "a", content: "First task",owner:"Alex" },
+  { id: "b", content: "Second task",owner:"John" },
+  { id: "c", content: "Third task" ,owner:"Trump"},
+  { id: "d", content: "Fourth task",owner:"Pierre" },
+  { id: "e", content: "Fifth task",owner:"Bob" },
+  { id: "f", content: "Six task" ,owner:"Boby"},
+  { id: "g", content: "Seven task" ,owner:"Michel"},
+  { id: "h", content: "Eight task" ,owner:"Sam"},
 ];
 
 const columnsFromBackend = {
-  [uuid()]: {
+ "1": {
     name: "Requested",
     items: [itemsFromBackend[0], itemsFromBackend[1], itemsFromBackend[2]],
     classN: "t1",
   },
-  [uuid()]: {
+  "2": {
     name: "To do",
     items: [itemsFromBackend[3], itemsFromBackend[4]],
     classN: "t2",
   },
-  [uuid()]: {
+  "3": {
     name: "In Progress",
     items: [itemsFromBackend[5]],
     classN: "t3",
   },
-  [uuid()]: {
+  "4": {
     name: "Done",
     items: [itemsFromBackend[6], itemsFromBackend[7]],
     classN: "t4",
@@ -47,7 +46,7 @@ const columnsFromBackend = {
 const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
   const { source, destination } = result;
-
+console.log(result);
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
@@ -80,8 +79,17 @@ const onDragEnd = (result, columns, setColumns) => {
     });
   }
 };
-function Bootstrap4() {
+
+
+
+
+function KanBanBoard(props) {
   const [columns, setColumns] = useState(columnsFromBackend);
+
+  useEffect(()=>{
+
+    console.log(Object.entries(columns));
+  });
 
   return (
     <div className="m-3">
@@ -118,6 +126,7 @@ function Bootstrap4() {
             {Object.entries(columns).map(([columnId, column], index) => {
               return (
                 <div className={`ticketsD ${column.classN}`}>
+                  {column.name}
                   <Droppable droppableId={columnId} key={columnId}>
                     {(provided, snapshot) => {
                       return (
@@ -141,7 +150,7 @@ function Bootstrap4() {
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
                                       >
-                                        <TicketCard />
+                                        <TicketCard content={item} />
                                       </div>
                                     );
                                   }}
@@ -163,4 +172,4 @@ function Bootstrap4() {
   );
 }
 
-export default Bootstrap4;
+export default KanBanBoard;

@@ -1,4 +1,7 @@
+import React,{Component} from "react";
+import ReactDOM from 'react-dom';
 const Actions = ({ actionN, backgroundC }) => {
+
   const changeVisibility = (number) => {
     const AllTicketsD = document.querySelectorAll(".ticketsD");
     const ticketsD = AllTicketsD[number];
