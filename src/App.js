@@ -16,27 +16,30 @@ const itemsFromBackend = [
   { id: uuid(), content: "Third task" },
   { id: uuid(), content: "Fourth task" },
   { id: uuid(), content: "Fifth task" },
+  { id: uuid(), content: "Six task" },
+  { id: uuid(), content: "Seven task" },
+  { id: uuid(), content: "Eight task" },
 ];
 
 const columnsFromBackend = {
   [uuid()]: {
     name: "Requested",
-    items: itemsFromBackend,
+    items: [itemsFromBackend[0], itemsFromBackend[1], itemsFromBackend[2]],
     classN: "t1",
   },
   [uuid()]: {
     name: "To do",
-    items: [],
+    items: [itemsFromBackend[3], itemsFromBackend[4]],
     classN: "t2",
   },
   [uuid()]: {
     name: "In Progress",
-    items: [],
+    items: [itemsFromBackend[5]],
     classN: "t3",
   },
   [uuid()]: {
     name: "Done",
-    items: [],
+    items: [itemsFromBackend[6], itemsFromBackend[7]],
     classN: "t4",
   },
 };
@@ -108,7 +111,7 @@ function Bootstrap4() {
       </div>
       <div className="scroll">
         <Filter />
-        <div className="tickets">
+        <div className="TicketCardsHo">
           <DragDropContext
             onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
           >
@@ -123,29 +126,29 @@ function Bootstrap4() {
                           ref={provided.innerRef}
                         >
                           <Actions />
-
-                          {column.items.map((item, index) => {
-                            return (
-                              <Draggable
-                                key={item.id}
-                                draggableId={item.id}
-                                index={index}
-                              >
-                                {(provided, snapshot) => {
-                                  return (
-                                    <div
-                                      ref={provided.innerRef}
-                                      {...provided.draggableProps}
-                                      {...provided.dragHandleProps}
-                                    >
-                                      <TicketCard />
-                                    </div>
-                                  );
-                                }}
-                              </Draggable>
-                            );
-                          })}
-                          {provided.placeholder}
+                          <div className="cards">
+                            {column.items.map((item, index) => {
+                              return (
+                                <Draggable
+                                  key={item.id}
+                                  draggableId={item.id}
+                                  index={index}
+                                >
+                                  {(provided, snapshot) => {
+                                    return (
+                                      <div
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                      >
+                                        <TicketCard />
+                                      </div>
+                                    );
+                                  }}
+                                </Draggable>
+                              );
+                            })}
+                          </div>
                         </div>
                       );
                     }}
