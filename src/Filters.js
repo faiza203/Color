@@ -2,7 +2,7 @@ const day = new Date();
 
 const Filter = () => {
   return (
-    <div className="filters">
+    <div className="filters d-flex justify-content-between mb-3">
       <div className="d-flex">
         <button className="btn btn-light addList">Add List</button>
         <div className="dropdown">
@@ -90,7 +90,7 @@ const Filter = () => {
           {day.getDate() + " " + day.getMonth() + "," + day.getFullYear()}
         </button>
       </div>
-      <div className="d-flex search">
+      <div className="d-inline-flex search">
         <input
           className="form-control mr-sm-2"
           type="search"

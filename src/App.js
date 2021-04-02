@@ -117,7 +117,7 @@ function Bootstrap4() {
           >
             {Object.entries(columns).map(([columnId, column], index) => {
               return (
-                <div className={`ticketsD ${column.classN}`}>
+                <div className={`${column.classN}`}>
                   <Droppable droppableId={columnId} key={columnId}>
                     {(provided, snapshot) => {
                       return (
@@ -126,7 +126,7 @@ function Bootstrap4() {
                           ref={provided.innerRef}
                         >
                           <Actions />
-                          <div className="cards">
+                          <div className="cards  ticketsD ">
                             {column.items.map((item, index) => {
                               return (
                                 <Draggable

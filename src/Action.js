@@ -15,7 +15,7 @@ const Actions = ({ actionN, backgroundC }) => {
   return (
     <div className="mb-2 actions">
       <div className=" d-inline-flex drpdwn">
-        <p className="m-b-0">Action</p>
+        <p className="m-b-0 d-flex align-items-center">Action</p>
         <div className="dropdown">
           <button
             className="btn btn-secondary dropdown-toggle"
