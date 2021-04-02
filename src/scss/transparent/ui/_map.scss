@@ -1,0 +1,32 @@
+.map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	overflow: hidden;
+	
+	@include transform(translateZ(0));
+	@include media-breakpoint-down(sm) {
+		position: fixed;
+		top: $header-height-sm * 2;
+	}
+	
+	& .map-float-table {
+		position: absolute;
+		right: rem(25px);
+		bottom: rem(25px);
+		background: rgba($gray-900, .9);
+		
+		@if $enable-rtl {
+			right: auto;
+			left: rem(25px);
+		}
+	}
+}
+.map-content {
+	padding: 0 $content-padding-x;
+	z-index: 10;
+	position: relative;
+}

@@ -1,0 +1,12 @@
+@mixin helper-size($className) {
+	.#{$className}-full {
+		#{$className}: 100%;
+	}
+	@for $i from 0 through 12 {
+		$classInt: $i * 50;
+		
+		.#{$className}-#{$classInt} {
+			#{$className}: rem($classInt) !important;
+		}
+	}
+}

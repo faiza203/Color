@@ -1,0 +1,36 @@
+.parsley-error {
+	background: $input-bg !important;
+	border-color: lighten($danger, 15%) !important;
+	color: $white !important;
+	
+	&:focus {
+		border-color: lighten($danger, 15%) !important;
+		outline: 0;
+		
+		@include box-shadow(none !important);
+	}
+}
+.parsley-success {
+	background: $input-bg !important;
+	border-color: lighten($success, 15%) !important;
+	color: $white !important;
+	
+	&:focus {
+		border-color: lighten($success, 15%) !important;
+		outline: 0;
+		
+		@include box-shadow(none !important);
+	}
+}
+.parsley-errors-list {
+	padding: 0 !important;
+	list-style-type: none !important;
+	margin: 0 !important;
+	color: lighten($danger, 15%);
+	font-size: rem(12px) !important;
+	line-height: inherit !important;
+	
+	&.filled {
+		margin-top: rem(5px) !important;
+	}
+}

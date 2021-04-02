@@ -1,0 +1,122 @@
+.page-with-two-sidebar {
+	& .sidebar-right {
+		&.sidebar,
+		&.sidebar-bg {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					right: auto;
+					left: 0;
+				} @else {
+					right: 0;
+					left: auto;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				@if $enable-rtl {
+					left: -$sidebar-width-sm;
+				} @else {
+					right: -$sidebar-width-sm;
+				}
+			}
+		}
+	}
+	& .content {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				margin-left: $sidebar-width;
+			} @else {
+				margin-right: $sidebar-width;
+			}
+		}
+	}
+	& .footer {
+		@include media-breakpoint-up(md) {
+			@if $enable-rtl {
+				margin-left: $sidebar-width + $content-padding-x;
+			} @else {
+				margin-right: $sidebar-width + $content-padding-x;
+			}
+		}
+	}
+	&.page-sidebar-minified {
+		& .sidebar-right {
+			&.sidebar,
+			&.sidebar-bg {
+				width: $sidebar-width;
+			}
+		}
+		&.page-with-wide-sidebar {
+			& .sidebar-right {
+				&.sidebar,
+				&.sidebar-bg {
+					width: $sidebar-wide-width;
+				}
+			}
+		}
+	}
+	&.page-with-wide-sidebar {
+		& .footer {
+			@include media-breakpoint-up(md) {
+				@if $enable-rtl {
+					margin-left: $sidebar-wide-width + $content-padding-x;
+				} @else {
+					margin-right: $sidebar-wide-width + $content-padding-x;
+				}
+			}
+		}
+	}
+	&.page-sidebar-fixed {
+		& .sidebar {
+			&.sidebar-right {
+				position: fixed;
+			}
+		}
+	}
+	&.page-right-sidebar-collapsed {
+		& .sidebar-right {
+			&.sidebar,
+			&.sidebar-bg {
+				@if $enable-rtl {
+					left: -$sidebar-width;
+				} @else {
+					right: -$sidebar-width;
+				}
+				
+				@include media-breakpoint-down(sm) {
+					@if $enable-rtl {
+						left: -$sidebar-width-sm;
+					} @else {
+						right: -$sidebar-width-sm;
+					}
+				}
+			}
+		}
+		& .content {
+			@if $enable-rtl {
+				margin-left: 0;
+			} @else {
+				margin-right: 0;
+			}
+		}
+		
+		&.page-with-wide-sidebar {
+			& .sidebar-right {
+				&.sidebar,
+				&.sidebar-bg {
+					@if $enable-rtl {
+						left: -$sidebar-wide-width;
+					} @else {
+						right: -$sidebar-wide-width;
+					}
+				}
+			}
+			& .content {
+				@if $enable-rtl {
+					margin-left: 0;
+				} @else {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

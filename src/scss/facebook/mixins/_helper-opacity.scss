@@ -1,0 +1,7 @@
+@mixin helper-opacity($from, $to) {
+	@for $i from $from through $to {
+		.opacity-#{$i} {
+			opacity: ($i / 10) !important;
+		}
+	}
+}

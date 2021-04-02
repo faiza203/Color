@@ -1,0 +1,44 @@
+.cke {
+	border: none !important;
+	
+	& .cke_toolbar {
+		@if $enable-rtl {
+			float: right;
+		}
+	}
+	& .cke_toolbar_break {
+		@if $enable-rtl {
+			clear: right;
+		}
+	}
+	& .cke_top {
+		border-color: $border-color;
+		background: lighten($dark, 75%);
+		
+		& .cke_button_off,
+		& .cke_combo_button {
+			&:hover,
+			&:focus {
+				border-color: $border-color;
+				background: $border-color;
+				
+				@include border-radius($border-radius);
+			}
+		}
+		& .cke_button_on,
+		& .cke_combo_on {
+			background: $white;
+			border-color: $border-color;
+			
+			@include border-radius($border-radius);	
+		}
+	}
+	& .cke_bottom {
+		border-color: $border-color;
+		background: lighten($dark, 75%);
+		
+		& .cke_resizer {
+			border-right-color: lighten($dark, 45%);
+		}
+	}
+}

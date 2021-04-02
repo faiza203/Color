@@ -1,0 +1,199 @@
+@import 'functions';
+@import 'variables';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'mixins';
+
+a {
+	color: $primary;
+	
+	&:hover,
+	&:focus {
+		color: mix($black, $primary, 20%);
+	}
+}
+.header {
+	& .navbar-brand {
+		& .navbar-logo {
+			background: $primary;
+		}
+	}
+	& .navbar-nav {
+		& > li {
+			& > a {
+				& .label {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.sidebar {
+	& .nav {
+		& > li {
+			& > a {
+				& .label {
+					&.label-theme {
+						@if $primary-color == 'yellow' or $primary-color == 'lime' {
+							color: $black;
+						}
+						@include gradient-enabled {
+							@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+						}
+					}
+				}
+			}
+			&.active {
+				& > a {
+					background: $primary;
+					
+					@if $primary-color == 'yellow' or $primary-color == 'lime' {
+						color: $black;
+						
+						& i {
+							color: $black;
+						}
+					}
+					
+					@include gradient-enabled {
+						@include gradient-linear(to bottom, (lighten($primary, 5%) 0%, darken($primary, 5%) 100%));
+					}
+					
+					& .label {
+						&.label-theme {
+							@if ($primary-color == 'black') {
+								background: rgba($white, .35);
+							} @else {
+								background: rgba($black, .65);
+							}
+							@include gradient-enabled {
+								@if ($primary-color == 'black') {
+									background: rgba($white, .35);
+								} @else {
+									background: rgba($black, .65);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.top-menu {
+	& .nav {
+		& > li {
+			&.active {
+				& > a {
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.float-sub-menu-container {
+	& .float-sub-menu {
+		& li {
+			&.active {
+				&:after {
+					border-color: $primary;
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+.bg-theme {
+	background-color: $primary !important;
+}
+.label-theme {
+	background-color: $primary;
+}
+.text-theme {
+	color: $primary;
+}
+.page-with-light-sidebar {
+	& .sidebar {
+		& .sub-menu {
+			& > li {
+				&.active {
+					&:after {
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.coming-soon {
+	& .brand {
+		& .logo {
+			background: $primary;
+		}	
+	}
+}
+.todolist {
+	& > li {
+		&.active {
+			& > a {
+				& i {
+					&:before {
+						content: '\f14a';
+						color: $primary;
+					}
+				}
+				&:hover,
+				&:focus {
+					& i {
+						&:before {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.login {
+	&.login-v1 {
+		& .login-container {
+			& .login-header {
+				& .brand {
+					& .logo {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+	&.login-v2 {
+		& .login-header {
+			& .brand {
+				& .logo {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	&.login-with-news-feed {
+		& .right-content {
+			& .login-header {
+				& .brand {
+					& .logo {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+.pace {
+	& .pace-progress {
+		background: $primary;
+	}
+	& .pace-activity {
+		border-top-color: $primary;
+		border-left-color: $primary;
+	}
+}

@@ -1,0 +1,4 @@
+@mixin flex-align($variable) {
+	-ms-flex-align: $variable;
+	align-items: $variable;
+}

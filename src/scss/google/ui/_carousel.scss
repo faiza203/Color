@@ -1,0 +1,31 @@
+.carousel {
+	& .carousel-control {
+		& .fa {
+			position: absolute;
+			top: 50%;
+			display: block;
+			width: rem(30px);
+			height: rem(30px);
+			margin-top: rem(-15px);
+			text-align: center;
+			line-height: rem(30px);
+			margin-left: rem(-15px);
+			z-index: 5;
+			
+			@if $enable-rtl {
+				margin-left: 0;
+				margin-right: rem(-15px);
+			}
+		}
+		&.left {
+			& .fa {
+				margin-left: rem(15px);
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(15px);
+				}
+			}
+		}
+	}
+}

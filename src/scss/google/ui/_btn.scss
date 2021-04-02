@@ -1,0 +1,208 @@
+.btn {
+	font-weight: 500;
+	
+	&.btn-circle,
+	&.btn-rounded {
+		@include border-radius(rem(200px));
+	}
+	&.btn-icon {
+		width: rem(28px);
+		height: rem(28px);
+		padding: 0;
+		border: none;
+		line-height: rem(28px);
+		text-align: center;
+		font-size: rem(14px);
+		
+		&.btn-xs {
+			width: rem(16px);
+			height: rem(16px);
+			font-size: rem(8px);
+			line-height: rem(16px);
+		}
+		&.btn-sm {
+			width: rem(22px);
+			height: rem(22px);
+			font-size: rem(11px);
+			line-height: rem(22px);
+		}
+		&.btn-lg {
+			width: rem(34px);
+			height: rem(34px);
+			font-size: rem(17px);
+			line-height: rem(34px);
+		}
+	}
+	&.btn-theme {
+		padding: rem(12px) rem(30px);
+		font-weight: bold;
+	
+		@include border-radius($border-radius-lg);
+	}
+	&.btn-xs {
+		font-size: rem(12px);
+		line-height: rem(18px);
+		padding: rem(1px) rem(5px);
+	}
+	&.btn-white {
+		&.btn-white-without-border {
+			border-color: $white;
+			
+			&:not(.active) {
+				&:hover,
+				&:focus {
+					border-color: lighten($dark, 75%) !important;
+					background: lighten($dark, 75%) !important;
+				}
+			}
+			&.active {
+				border-color: lighten($dark, 70%) !important;
+			}
+		}
+	}
+}
+
+.btn-default {
+	@include button-variant($light, $light, darken($light, 15%), darken($light, 15%), darken($light, 15%), darken($light, 15%));
+}
+
+@each $color, $value in $theme-colors {
+	@if $color == 'primary' {
+		$value: $blue;
+	}
+  .btn-#{$color} {
+    @include button-variant($value, $value, darken($value, 10%), darken($value, 10%), darken($value, 10%), darken($value, 10%));
+    
+    @if $color == 'warning' or $color == 'info' or $color == 'grey' {
+    	color: $white;
+    }
+    @if $color == 'grey' {
+    	&:hover,
+    	&:focus {
+    		color: $white;
+    	}
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  .btn-#{$color} {
+  	@if $color == 'white' {
+  		@include button-variant($value, $border-color, darken($value, 5%), $border-color, $border-color, $border-color);
+  	}
+  	@if $color != 'white' {
+    	@include button-variant($value, $value, darken($value, 10%), darken($value, 10%), darken($value, 10%), darken($value, 10%));
+    }
+    @if $color == 'orange' or $color == 'aqua' or $color == 'lime' {
+    	color: $white;
+    }
+    @if $color == 'lime' {
+    	&:hover,
+    	&:focus {
+    		color: $white;
+    	}
+    }
+  }
+}
+
+.btn-group,
+.input-group-prepend,
+.input-group-append {
+	& .btn-default {
+		& + .btn-default {
+			border-left-color: lighten($silver, 10%);
+			
+			@if $enable-rtl {
+				border-right: 1px solid lighten($silver, 10%);
+				
+				&:not(:last-child) {
+					border-left: none;
+				}
+			} 
+		}
+	}
+	@each $color, $value in $theme-colors {
+		@if $color == 'primary' {
+			$value: $blue;
+		}
+  	& .btn-#{$color} {
+  		& + .btn-#{$color} {
+  			border-left-color: darken($value, 10%);
+  				
+				@if $enable-rtl {
+					border-right: 1px solid darken($value, 10%); 
+					
+					&:not(:last-child) {
+						border-left: none;
+					}
+				}
+  		}
+  	}
+	}
+	@each $color, $value in $colors {
+		& .btn-#{$color} {
+			& + .btn-#{$color} {
+				@if $color == 'white' {
+					border-left-color: $border-color;
+					
+					@if $enable-rtl {
+						border-right: 1px solid $border-color;
+					
+						&:not(:last-child) {
+							border-left: 1px solid $border-color;
+						}
+					}
+				}
+				@if $color != 'white' {
+					border-left-color: darken($value, 10%);
+					
+					@if $enable-rtl {
+						border-right: 1px solid darken($value, 10%); 
+					
+						&:not(:last-child) {
+							border-left: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn-group {
+	& > .btn {
+		@if $enable-rtl {
+			@include border-radius(0);
+			
+			&:first-child {
+				margin-left: rem(-1px);
+			}
+			&:first-child:last-child {
+				@include border-radius($border-radius);
+			}
+			&:not(:first-child):not(:last-child),
+			&:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+				@include border-radius(0);
+			}
+			&:not(:first-child),
+			&:not(:first-child):not(.dropdown-toggle),,
+			&:not(:first-child).dropdown-toggle {
+				@include border-top-left-radius($border-radius);
+				@include border-bottom-left-radius($border-radius);
+			}
+			&:not(:last-child),
+			&:not(:last-child):not(.dropdown-toggle) {
+				@include border-top-right-radius($border-radius);
+				@include border-bottom-right-radius($border-radius);
+			}
+			& + .btn {
+				@include border-top-right-radius(0);
+				@include border-bottom-right-radius(0);
+			}
+		}
+	}
+	& > .btn-group:not(:first-child) {
+		margin-left: 0;
+		margin-right: rem(-1px);
+	}
+}

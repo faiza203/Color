@@ -1,0 +1,329 @@
+/*
+   1.0 Color system
+   2.0 RTL Setting
+   3.0 Component Color Setting 
+   4.0 Grid & Container Setting
+   5.0 Body Setting
+   6.0 App Component Setting
+   7.0 z-index Setting
+   8.0 Font Setting
+   9.0 Radius Setting
+  10.0 Caret Setting
+  11.0 Heading / Paragraph Setting
+  12.0 Pagination Setting
+  13.0 Button Setting
+  14.0 Form Component Setting
+  15.0 Input Setting
+  16.0 Table Setting
+  17.0 Modal Setting
+  18.0 List Group Setting
+  19.0 Tabs Setting
+  20.0 Alert Setting
+  21.0 Card Setting
+  22.0 Dropown Setting
+  23.0 Progress Setting
+*/
+
+// 1.0 Color system
+
+$amber:         #FFC107 !default;
+$black:         #000000 !default;
+$blue:          #4285f4 !default;
+$brown:         #795548 !default;
+$cyan:          #00BCD4 !default;
+$dark:          #212121 !default;
+$dark-darker:   #000000 !default;
+$deep-purple:   #673AB7 !default;
+$deep-orange:   #FF5722 !default;
+$green:         #33a853 !default;
+$grey:          #5f6368 !default;
+$indigo:        #3F51B5 !default;
+$lime:          #CDDC39 !default;
+$light:         #f2f3f4 !default;
+$light-green:   #8BC34A !default;
+$orange:        #ff9800 !default;
+$purple:        #9C27B0 !default;
+$pink:          #E91E63 !default;
+$red:           #ea4335 !default;
+$silver:        #EEEEEE !default;
+$teal:          #009688 !default;
+$white:         #FFFFFF !default;
+$yellow:        #fecf4a !default;
+$inverse:       $dark !default;
+$link-color:    $blue !default;
+$warning:       $orange !default;
+$gray-100:      mix($white, $dark, 95%) !default;
+$gray-200:      mix($white, $dark, 90%) !default;
+$gray-300:      mix($white, $dark, 80%) !default;
+$gray-400:      mix($white, $dark, 65%) !default;
+$gray-500:      mix($white, $dark, 50%) !default;
+$gray-600:      mix($white, $dark, 40%) !default;
+$gray-700:      mix($white, $dark, 25%) !default;
+$gray-800:      mix($white, $dark, 10%) !default;
+$gray-900:      $dark !default;
+$colors: (
+	'amber': $amber,
+	'black': $black,
+	'blue': $blue,
+	'cyan': $cyan,
+	'dark': $dark,
+	'dark-darker': $dark-darker,
+	'deep-orange': $deep-orange,
+	'deep-purple': $deep-purple,
+	'green': $green,
+	'grey': lighten($grey, 20%),
+	'indigo': $indigo,
+	'lime': $lime,
+	'light': $light,
+	'light-green': $light-green,
+	'orange': $orange,
+	'purple': $purple,
+	'pink': $pink,
+	'red': $red,
+	'silver': $silver,
+	'teal': $teal,
+	'white': $white,
+	'yellow': $yellow,
+	'muted': darken($silver, 30%),
+	'aqua': $cyan,
+	'gray-100': $gray-100,
+	'gray-200': $gray-200,
+	'gray-300': $gray-300,
+	'gray-400': $gray-400,
+	'gray-500': $gray-500,
+	'gray-600': $gray-600,
+	'gray-700': $gray-700,
+	'gray-800': $gray-800,
+	'gray-900': $gray-900,
+);
+$theme-colors: (
+	'dark': $dark,
+	'inverse': $dark,
+	'black': $black,
+	'white': $white,
+	'grey': $silver,
+	'muted': $silver,
+	'silver': $silver,
+	'lime': $lime,
+	'aqua': $cyan,
+	'warning': $orange
+);
+$primary-color:   'blue' !default;
+$primary:          map-get($colors, $primary-color) !default;
+
+
+
+// 2.0 RTL Setting
+
+$enable-rtl: false !default;
+
+
+// 3.0 Component Color Setting 
+
+$component-active-bg:                           $blue !default;
+$component-active-color:                        $white !default;
+$custom-control-indicator-checked-disabled-bg:  rgba($blue, .5) !default;
+
+
+// 4.0 Grid & Container Setting
+
+$grid-breakpoints: (
+	xs: 360px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1660px,
+  xxxl: 1900px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 750px,
+  lg: 960px,
+  xl: 1170px
+) !default;
+$spacer:                            rem(16px) !default;
+$grid-gutter-width:                 30px !default;
+
+
+// 5.0 Body Setting
+
+$body-bg:                           $white !default;
+$body-color:                        lighten($black, 13%);
+$body-letter-spacing:               0 !default;
+$border-color:                      #dadce0 !default;
+$border-color-transparent:          rgba(100,120,140,0.25) !default;
+
+
+// 6.0 App Component Setting
+
+$boxed-layout-width:                rem(1280px) !default;
+$content-padding-x:                 rem(36px) !default;
+$content-padding-y:                 rem(24px) !default;
+$content-padding-x-sm:              rem(20px) !default;
+$content-padding-y-sm:              rem(20px) !default;
+$header-height:                     rem(64px) !default;
+$header-height-sm:                  rem(50px) !default;
+$sidebar-width:                     rem(230px) !default;
+$sidebar-minified-width:            rem(73px) !default;
+$sidebar-wide-width:                rem(260px) !default;
+$top-menu-height:                   rem(46px) !default;
+
+
+// 7.0 z-index Setting
+
+$btn-scroll-to-top-zindex:          1020 !default;
+$content-zindex:                    1020 !default;
+$float-submenu-zindex:              1020 !default;
+$footer-zindex:                     1020 !default;
+$header-zindex:                     1020 !default;
+$header-fixed-zindex:               1040 !default;
+$sidebar-zindex:                    1010 !default;
+$top-menu-zindex:                   1015 !default;
+$theme-panel-zindex:                1035 !default;
+$page-loader-zindex :               9999 !default;
+$page-title-zindex:                 1020 !default;
+$pace-loader-zindex:                1030 !default;
+$panel-expand-zindex:               1080 !default;
+
+
+// 8.0 Font Setting
+
+$font-family-base:                  'Roboto', sans-serif !default;
+$font-size-base:                    rem-default(14px) !default;
+$font-size-sm:					            rem-default(13px) !default;
+$font-size-lg:					            rem-default(16px) !default;
+$line-height-base:			            1.5 !default;
+$line-height-sm:				            1.4 !default;
+$line-height-lg:				            1.8 !default;
+
+
+// 9.0 Radius Setting
+
+$border-radius:                     6px !default;
+$border-radius-lg:                  8px !default;
+$border-radius-sm:                  4px !default;
+
+
+// 10.0 Caret Setting
+
+$enable-caret:                      false !default;
+
+
+// 11.0 Heading / Paragraph Setting
+
+$headings-font-weight:              500 !default;
+$paragraph-margin-bottom:           rem(15px) !default;
+
+
+// 12.0 Pagination Setting
+
+$pagination-border-width:           1px !default;
+$pagination-color:				          lighten($dark, 30%) !default;
+$pagination-hover-color:            $dark !default;
+$pagination-hover-border-color:     $border-color !default;
+$pagination-active-color:           $component-active-color !default;
+$pagination-active-bg:              $component-active-bg !default;
+$pagination-active-border-color:    $component-active-bg !default;
+$pagination-focus-box-shadow:       0 !default;
+
+
+// 13.0 Button Setting
+
+$btn-focus-width:                   0 !default;
+$btn-box-shadow:                    0 !default;
+$btn-border-width:                  1px !default;
+$btn-font-size-sm:                  $font-size-sm !default;
+
+
+// 14.0 Form Component Setting
+
+$form-component-active-bg:          $blue;
+$form-component-active-color:       $blue;
+$form-feedback-font-size:           rem(11px) !default;
+$form-feedback-tooltip-font-size:   rem(11px) !default;
+
+
+// 15.0 Input Setting
+
+$input-border-width:                1px !default;
+$input-focus-border-color:          $blue !default;
+$input-btn-padding-y:               rem-default(7px) !default;
+$input-btn-padding-y-sm:            0.3125rem !default;
+$input-btn-padding-x-sm:            0.625rem !default;
+$input-btn-font-size-sm:            0.75rem !default;
+$input-btn-line-height-sm:          $line-height-sm !default;
+$input-color:                       $dark !default;
+$input-border-color:                $border-color !default;
+$input-group-addon-bg:              $light !default;
+$input-group-addon-border-color:    $border-color !default;
+
+
+// 16.0 Table Setting
+
+$table-cell-padding:                rem(8px) !default;
+$table-cell-padding-sm:             rem(5px) !default;
+$table-accent-bg:                   $light !default;
+$table-hover-bg:                    $light !default;
+$table-border-color:                $border-color !default;
+$table-component-active-bg:         $blue !default;
+$table-component-active-color:      $blue !default;
+
+
+// 17.0 Modal Setting
+
+$modal-header-padding-y:            rem(15px) !default;
+$modal-header-padding-x:            rem(15px) !default;
+
+
+// 18.0 List Group Setting
+
+$list-group-border-color:           rgba($dark, .125) !default;
+$list-group-item-padding-y:         rem(12px) !default;
+$list-group-item-padding-x:         rem(16px) !default;
+
+
+// 19.0 Tabs Setting
+
+$nav-tabs-border-width:             0 !default;
+$nav-tabs-link-active-bg:           $white !default;
+
+
+// 20.0 Alert Setting
+
+$alert-padding-y:                   1rem !default; // 16px
+$alert-padding-x:                   1rem !default; // 16px
+$alert-margin-bottom:               1.25rem !default; // 20px
+$alert-border-width:                0 !default;
+
+
+// 21.0 Card Setting
+
+$card-spacer-y:                     rem(12px) !default;
+$card-spacer-x:                     rem(16px) !default;
+$card-img-overlay-padding:          rem(16px) !default;
+$card-columns-gap:                  rem(16px) !default;
+$card-border-color:                 $border-color-transparent !default;
+$card-cap-bg:                       $light !default;
+
+
+// 22.0 Dropown Setting
+
+$dropdown-border-width:             0 !default;
+$dropdown-font-size: 		            $font-size-sm !default;
+$dropdown-box-shadow:               rgba(255,255,255,.9) 0px 1px 0px inset, rgba(0,0,0,.03) 0px -1px 0px inset, rgba(0,0,0,.2) 0px 1px 3px !default;
+$dropdown-padding-y:                rem(10px) !default;
+$dropdown-item-padding-y:           rem(6px) !default;
+$dropdown-item-padding-x:           rem(20px) !default;
+$dropdown-link-hover-bg:            $light !default;
+$dropdown-border-radius:            $border-radius-lg !default;
+$dropdown-spacer:                   rem(6px) !default;
+
+
+// 23.0 Progress Setting
+
+$progress-bar-bg:                   $blue !default;
+$progress-bg:                       $light !default;
+$progress-border-radius:            $border-radius !default;
+$progress-box-shadow:               none !default;
+$progress-bar-color:                $white !default;

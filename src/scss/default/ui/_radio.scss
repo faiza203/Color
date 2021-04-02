@@ -1,0 +1,146 @@
+.has-success,
+.is-valid {
+	&.radio,
+	& .radio {
+		&.radio-css {
+			& label {
+				color: darken($success, 5%);
+				
+				&:before {
+					background: rgba($success, .5);
+				}
+			}
+		}
+	}
+}
+.has-error,
+.is-invalid {
+	&.radio,
+	& .radio {
+		&.radio-css {
+			& label {
+				color: darken($danger, 5%);
+				
+				&:before {
+					background: rgba($danger, .5);
+				}
+			}
+		}
+	}
+}
+
+.radio { 
+	&.radio-css {
+		position: relative;
+		line-height: rem(16px);
+		padding-top: rem(7px);
+		
+		& label {
+			padding-left: rem(24px);
+			margin: 0;
+			position: relative;
+			
+			@if $enable-rtl {
+				padding-left: 0;
+				padding-right: rem(24px);
+			}
+			
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: rem(16px);
+				height: rem(16px);
+				background: lighten($dark, 65%);
+				
+				@include border-radius(rem(16px));
+				@if $enable-rtl {
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		& input {
+			display: none;
+			
+			&:checked {
+				& + label {
+					&:before {
+						background: $form-component-active-bg;
+						border-color: $form-component-active-bg;
+					}
+					&:after {
+						content: '';
+						position: absolute;
+						top: rem(5px);
+						left: rem(5px);
+						width: rem(6px);
+						height: rem(6px);
+						background: $white;
+						
+						@include border-radius(rem(6px));
+						@if $enable-rtl {
+							left: auto;
+							right: rem(5px);
+						}
+					}
+				}
+			}
+		}
+		
+		&.radio-inline {
+			padding-left: 0;
+			display: inline-block;
+			
+			& + .radio-inline {
+				margin-left: rem(15px);
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(15px);
+				}
+			}
+		}
+		&.radio-success input:checked + label:before {
+			background: $success;
+			border-color: $success;
+		}
+		&.radio-lime input:checked + label:before {
+			background: $lime;
+			border-color: $lime;
+		}
+		&.radio-indigo input:checked + label:before {
+			background: $indigo;
+			border-color: $indigo;
+		}
+		&.radio-purple input:checked + label:before {
+			background: $purple;
+			border-color: $purple;
+		}
+		&.radio-inverse input:checked + label:before {
+			background: $inverse;
+			border-color: $inverse;
+		}
+		&.radio-warning input:checked + label:before {
+			background: $warning;
+			border-color: $warning;
+		}
+		&.radio-danger input:checked + label:before {
+			background: $danger;
+			border-color: $danger;
+		}
+		&.radio-info input:checked + label:before {
+			background: $info;
+			border-color: $info;
+		}
+		&.radio-pink input:checked + label:before {
+			background: $pink;
+			border-color: $pink;
+		}
+		&.radio-yellow input:checked + label:before {
+			background: $yellow;
+			border-color: $yellow;
+		}
+	}
+}

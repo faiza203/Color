@@ -1,0 +1,251 @@
+body {
+	& .daterangepicker {
+		z-index: 1020;
+		border: none;
+		font-family: inherit;
+		font-size: inherit;
+		
+		@include border-radius($border-radius-lg);
+		@include box-shadow(0 6px 30px rgba($black, .2));
+		@if $enable-rtl {
+			direction: rtl;
+			text-align: right;
+		}
+		
+		&:before {
+			display: none;
+		}
+		&:after {
+			border-width: rem(7px);
+			top: rem(-7px);
+			left: rem(10px);
+		}
+		& select.monthselect,
+		& select.yearselect {
+			font-size: rem(13px);
+		}
+		& .drp-calendar {
+			max-width: inherit;
+			padding: rem(15px);
+			
+			& .calendar-table {
+				& table {
+					& thead {
+						& tr {
+							& th {
+								min-width: auto;
+								width: auto;
+								height: auto;
+								line-height: 1;
+								padding: rem(7px) rem(7px);
+								color: $dark;
+								font-weight: bold;
+								font-size: inherit;
+								border: none;
+								
+								&.prev,
+								&.next {
+									& span {
+										border-color: $dark;
+									}
+									&:hover,
+									&:focus {
+										background: $light;
+										color: $dark;
+									}
+								}
+								&.month {
+									& .yearselect,
+									& .monthselect {
+										border-color: $border-color;
+										background: $white;
+										
+										@include border-radius($border-radius);
+										@include transition(all .2s linear);
+										
+										&:focus {
+											outline: none;
+											border-color: $input-focus-border-color;
+											
+											@include box-shadow(0 0 0 0.125rem rgba($input-focus-border-color ,.3));
+										}
+									}
+								}
+							}
+							&:last-child {
+								& th {
+									padding-bottom: rem(14px);
+								}
+							}
+						}
+					}
+					& tbody {
+						& tr {
+							& td {
+								min-width: auto;
+								width: auto;
+								height: auto;
+								line-height: 1;
+								padding: rem(7px) rem(9px);
+								font-weight: 400;
+								color: $dark;
+								border: none;
+								font-size: inherit;
+								
+								&.available {
+									@include border-radius($border-radius);
+									
+									&:hover,
+									&:focus {
+										background: $light;
+									}
+									&.in-range {
+										background: lighten($form-component-active-bg, 40%);
+										color: darken($form-component-active-color, 30%);
+										
+										@include border-radius(0);
+									}
+									&.active {
+										background: $form-component-active-bg;
+										color: $white;
+									}
+									&.start-date {
+										@include border-radius($border-radius 0 0 $border-radius);
+									}
+									&.end-date {
+										@include border-radius(0 $border-radius $border-radius 0);
+									}
+								}
+								&.off {
+									background: none;
+									color: lighten($dark, 60%);
+								}
+							}
+						}
+					}
+				}
+			}
+			&.left {
+				padding: rem(10px) !important;
+				
+				& .calendar-table {
+					padding: 0 !important;
+				}
+			}
+			&.right {
+				padding: rem(10px) !important;
+				border-left: 1px solid $border-color;
+				
+				@include media-breakpoint-down(xs) {
+					border-left: none;
+					border-top: 1px solid $border-color;
+				}
+			}
+		}
+		& .drp-buttons {
+			padding: rem(12px);
+			border-color: $border-color;
+			
+			& .btn {
+				font-size: rem(13px);
+				font-weight: 500;
+				
+				@if $enable-rtl {
+					margin-left: 0;
+					margin-right: rem(8px);
+				}
+			}
+			& .drp-selected {
+				font-weight: 500;
+				color: lighten($dark, 30%);
+			}
+		}
+		& .ranges {
+			display: none;
+		}
+		& select.monthselect {
+			@if $enable-rtl {
+				margin-right: 0;
+				margin-left: 2%;
+			}
+		}
+		&.show-ranges {
+			& .ranges {
+				position: relative;
+				display: block;
+				
+				@if $enable-rtl {
+					float: right;
+				}
+				@include media-breakpoint-down(md) {
+					float: none;
+					margin: 0;
+					padding: rem(10px);
+					border-bottom: 1px solid $border-color;
+					overflow: scroll;
+					max-width: rem(560px);
+					
+					@if $enable-rtl {
+						float: none;
+					}
+				}
+				
+				& ul {
+					@include media-breakpoint-down(md) {
+						width: auto;
+						white-space: nowrap;
+						padding-right: rem(10px);
+						
+						@include display-flex();
+						@include flex-wrap(nowrap);
+					}
+					
+					& li {
+						color: $dark;
+						font-size: rem(13px);
+						font-weight: 400;
+						
+						@include media-breakpoint-down(md) {
+							margin-right: rem(10px) !important;
+							
+							@include border-radius($border-radius);
+						}
+						
+						&:hover,
+						&:focus {
+							background: $light;
+							color: $dark;
+						}
+						&.active {
+							background: $form-component-active-bg;
+							color: $white;
+							margin-right: rem(-1px);
+						}
+					}
+				}
+			}
+			& .drp-calendar {
+				&.left { 
+					border-left: 1px solid $border-color;
+					
+					@if $enable-rtl {
+						border-left: none !important;
+					}
+					@include media-breakpoint-down(md) {
+						border-left: none;
+					}
+				}
+				&.right { 
+					@if $enable-rtl {
+						border-right: 1px solid $border-color;
+					}
+					@include media-breakpoint-down(md) {
+						@if $enable-rtl {
+							border-right: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

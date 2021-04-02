@@ -1,0 +1,5 @@
+@mixin flex-justify-content($variable) {
+	-webkit-box-pack: $variable;
+	-ms-flex-pack: $variable;
+	justify-content: $variable;
+}
